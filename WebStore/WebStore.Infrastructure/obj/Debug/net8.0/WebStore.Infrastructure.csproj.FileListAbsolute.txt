@@ -1,0 +1,5 @@
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Infrastructure\obj\Debug\net8.0\WebStore.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Infrastructure\obj\Debug\net8.0\WebStore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Infrastructure\obj\Debug\net8.0\WebStore.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Infrastructure\obj\Debug\net8.0\WebStore.Infrastructure.AssemblyInfo.cs
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Infrastructure\obj\Debug\net8.0\WebStore.Infrastructure.csproj.CoreCompileInputs.cache

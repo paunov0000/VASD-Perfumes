@@ -1,0 +1,9 @@
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.csproj.AssemblyReference.cache
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.AssemblyInfoInputs.cache
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.AssemblyInfo.cs
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.csproj.CoreCompileInputs.cache
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.RazorAssemblyInfo.cache
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.RazorAssemblyInfo.cs

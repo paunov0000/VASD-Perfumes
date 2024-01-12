@@ -1,0 +1,11 @@
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\bin\Debug\net8.0\WebStore.Core.deps.json
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\bin\Debug\net8.0\WebStore.Core.dll
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\bin\Debug\net8.0\WebStore.Core.pdb
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\WebStore.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\WebStore.Core.AssemblyInfoInputs.cache
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\WebStore.Core.AssemblyInfo.cs
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\WebStore.Core.csproj.CoreCompileInputs.cache
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\WebStore.Core.dll
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\refint\WebStore.Core.dll
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\WebStore.Core.pdb
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\ref\WebStore.Core.dll
