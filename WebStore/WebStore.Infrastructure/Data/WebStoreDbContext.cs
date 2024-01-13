@@ -4,7 +4,7 @@ using WebStore.Infrastructure.Data.Entities;
 
 namespace WebStore.MVC.Data
 {
-    public class WebStoreDbContext : IdentityDbContext<ApplicationUser>
+    public class WebStoreDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
     {
         public WebStoreDbContext(DbContextOptions<WebStoreDbContext> options)
             : base(options)
@@ -19,6 +19,17 @@ namespace WebStore.MVC.Data
         //public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public DbSet<Review> Reviews { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+
+            builder.Entity<Product>()
+                .Property(p => p.Price)
+                .HasPrecision(18, 2);
+
+
+            base.OnModelCreating(builder);
+        }
 
 
     }
