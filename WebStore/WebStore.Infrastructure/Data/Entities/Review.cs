@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static WebStore.Core.Constants.EntityConstant.Review;
 
 namespace WebStore.Infrastructure.Data.Entities
 {
@@ -9,9 +10,11 @@ namespace WebStore.Infrastructure.Data.Entities
         public Guid Id { get; set; }
 
         [Required]
+        [MaxLength(TitleMaxLength)]
         public string Title { get; set; } = null!;
 
         [Required]
+        [MaxLength(CommentMaxLength)]
         public string Comment { get; set; } = null!;
 
         [Required]

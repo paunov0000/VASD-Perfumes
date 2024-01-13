@@ -22,5 +22,11 @@ namespace WebStore.Core.Constants
             public const int DescriptionMaxLength = 1000;
             //public const int ImageMaxLength = 1000;
         }
+
+        public static class Review
+        {
+            public const int TitleMaxLength = 50;
+            public const int CommentMaxLength = 500;
+        }
     }
 }

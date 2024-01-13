@@ -9,3 +9,4 @@ C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core
 C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\refint\WebStore.Core.dll
 C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\WebStore.Core.pdb
 C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\ref\WebStore.Core.dll
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.Core\obj\Debug\net8.0\WebStore.Core.sourcelink.json

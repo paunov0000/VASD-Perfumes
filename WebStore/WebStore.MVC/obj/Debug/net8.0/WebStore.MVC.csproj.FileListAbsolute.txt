@@ -142,3 +142,4 @@ C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\
 C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.pdb
 C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.genruntimeconfig.cache
 C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\ref\WebStore.MVC.dll
+C:\Users\mitko\OneDrive\Documents\workspace\VASD-Perfumes\WebStore\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.MvcApplicationPartsAssemblyInfo.cs
