@@ -13,6 +13,7 @@ namespace WebStore.Core.Constants
             public const int NameMaxLength = 100;
             public const int DescriptionMaxLength = 1000;
             public const int PriceMaxValue = 5000;
+            public const int ManufacturerMaxLength = 100;
             //public const int ImageMaxLength = 1000;
         }
 
@@ -28,5 +29,7 @@ namespace WebStore.Core.Constants
             public const int TitleMaxLength = 50;
             public const int CommentMaxLength = 500;
         }
+
+
     }
 }

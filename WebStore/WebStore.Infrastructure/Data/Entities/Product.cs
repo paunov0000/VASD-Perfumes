@@ -23,6 +23,11 @@ namespace WebStore.Infrastructure.Data.Entities
         public string Description { get; set; } = null!;
 
         [Required]
+        [MaxLength(ManufacturerMaxLength)]
+        [Comment("Manufacturer of the product")]
+        public string Manufacturer { get; set; } = null!;
+
+        [Required]
         [Comment("Price of the product")]
         public decimal Price { get; set; }
 

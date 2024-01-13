@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using WebStore.Infrastructure.Data;
 using WebStore.Infrastructure.Data.Entities;
 
 namespace WebStore.MVC.Data
