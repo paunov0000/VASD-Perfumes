@@ -13,8 +13,7 @@
           "Microsoft.AspNetCore.Identity.UI": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.0",
-          "WebStore.Core": "1.0.0",
-          "WebStore.Infrastructure": "1.0.0"
+          "WebStore.Core": "1.0.0"
         },
         "runtime": {
           "WebStore.MVC.dll": {}
@@ -919,6 +918,9 @@
         }
       },
       "WebStore.Core/1.0.0": {
+        "dependencies": {
+          "WebStore.Infrastructure": "1.0.0"
+        },
         "runtime": {
           "WebStore.Core.dll": {}
         }
@@ -928,8 +930,7 @@
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
-          "WebStore.Core": "1.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
         },
         "runtime": {
           "WebStore.Infrastructure.dll": {}

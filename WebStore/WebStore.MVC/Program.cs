@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using WebStore.Infrastructure.Common;
 using WebStore.Infrastructure.Data;
 using WebStore.Infrastructure.Data.Entities;
-using WebStore.MVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +12,18 @@ builder.Services.AddDbContext<WebStoreDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+    options.SignIn.RequireConfirmedEmail = false;
+    options.SignIn.RequireConfirmedPhoneNumber = false;
+    options.Password.RequiredLength = 2;
+    options.Password.RequireNonAlphanumeric = false;
+})
+    .AddRoles<ApplicationRole>()
     .AddEntityFrameworkStores<WebStoreDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IRepository, Repository>();
 
 var app = builder.Build();
 

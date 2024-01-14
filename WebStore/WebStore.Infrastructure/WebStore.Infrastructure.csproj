@@ -17,8 +17,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\WebStore.Core\WebStore.Core.csproj" />
-  </ItemGroup>
-
 </Project>

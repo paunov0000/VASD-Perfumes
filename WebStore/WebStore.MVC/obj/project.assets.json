@@ -1650,6 +1650,9 @@
       "WebStore.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "WebStore.Infrastructure": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/WebStore.Core.dll": {}
         },
@@ -1664,8 +1667,7 @@
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
           "Microsoft.AspNetCore.Identity.UI": "8.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
-          "WebStore.Core": "1.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
         },
         "compile": {
           "bin/placeholder/WebStore.Infrastructure.dll": {}
@@ -4496,8 +4498,7 @@
       "Microsoft.AspNetCore.Identity.UI >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
-      "WebStore.Core >= 1.0.0",
-      "WebStore.Infrastructure >= 1.0.0"
+      "WebStore.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4529,9 +4530,6 @@
           "projectReferences": {
             "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Core\\WebStore.Core.csproj": {
               "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Core\\WebStore.Core.csproj"
-            },
-            "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj"
             }
           }
         }

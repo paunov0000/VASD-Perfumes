@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using WebStore.Infrastructure.Data.Configuration;
 using WebStore.Infrastructure.Data.Entities;
 
-namespace WebStore.MVC.Data
+namespace WebStore.Infrastructure.Data
 {
     public class WebStoreDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
     {

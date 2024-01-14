@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static WebStore.Core.Constants.ModelConstants.Product;
+using static WebStore.Infrastructure.Data.Constants.ModelConstants.Product;
 
 namespace WebStore.Infrastructure.Data.Entities
 {
