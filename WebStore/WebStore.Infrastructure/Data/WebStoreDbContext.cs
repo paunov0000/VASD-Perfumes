@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebStore.Infrastructure.Data;
+using WebStore.Infrastructure.Data.Configuration;
 using WebStore.Infrastructure.Data.Entities;
 
 namespace WebStore.MVC.Data
@@ -27,6 +27,9 @@ namespace WebStore.MVC.Data
             builder.Entity<Product>()
                 .Property(p => p.Price)
                 .HasPrecision(18, 2);
+
+            builder.ApplyConfiguration(new ProductConfiguration());
+            builder.ApplyConfiguration(new ProductCategoryConfiguration());
 
 
             base.OnModelCreating(builder);
