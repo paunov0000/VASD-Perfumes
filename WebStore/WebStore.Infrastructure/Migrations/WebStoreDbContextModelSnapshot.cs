@@ -288,6 +288,10 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("nvarchar(1000)")
                         .HasComment("Description of the product");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Manufacturer")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -322,6 +326,108 @@ namespace WebStore.Infrastructure.Migrations
                         {
                             t.HasComment("Holds info for the Product entity");
                         });
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6f"),
+                            Description = "Iconic blend of rose and jasmine, a classic from luxury brand Chanel",
+                            ImageUrl = "https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
+                            Manufacturer = "Chanel",
+                            Name = "Chanel No. 5",
+                            Price = 120.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6e"),
+                            Description = "Youthful and fresh floral scent with notes of jasmine and violet",
+                            ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
+                            Manufacturer = "Marc Jacobs",
+                            Name = "Marc Jacobs Daisy",
+                            Price = 80.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6d"),
+                            Description = "Modern and vibrant floral bouquet featuring tuberose and jasmine",
+                            ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
+                            Manufacturer = "Gucci",
+                            Name = "Gucci Bloom",
+                            Price = 150.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6c"),
+                            Description = "Intensely floral with notes of jasmine, rose, and orchid",
+                            ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
+                            Manufacturer = "Viktor&Rolf",
+                            Name = "Viktor&Rolf Flowerbomb",
+                            Price = 110.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6b"),
+                            Description = "Timeless oriental scent with vanilla, iris, and amber notes",
+                            ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
+                            Manufacturer = "Guerlain",
+                            Name = "Shalimar by Guerlain",
+                            Price = 140.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6d")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6a"),
+                            Description = "Rich and spicy oriental fragrance with exotic undertones",
+                            ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
+                            Manufacturer = "Yves Saint Laurent",
+                            Name = "Opium by Yves Saint Laurent",
+                            Price = 100.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6e")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b69"),
+                            Description = "Luxurious blend of black truffle, vanilla, and orchid",
+                            ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
+                            Manufacturer = "Tom Ford",
+                            Name = "Black Orchid by Tom Ford",
+                            Price = 180.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6e")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b68"),
+                            Description = "Fresh and aquatic scent with notes of citrus and rosemary",
+                            ImageUrl = "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg?imwidth=612",
+                            Manufacturer = "Giorgio Armani",
+                            Name = "Acqua di Gio by Giorgio Armani",
+                            Price = 85.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6e")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b67"),
+                            Description = "Citrusy and woody fragrance with notes of grapefruit and cedar",
+                            ImageUrl = "https://www.sephora.com/productimages/sku/s915447-main-zoom.jpg?imwidth=612",
+                            Manufacturer = "Hermès",
+                            Name = "Terre d'Hermès by Hermès",
+                            Price = 120.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6f")
+                        },
+                        new
+                        {
+                            Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b66"),
+                            Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
+                            ImageUrl = "https://creedboutique.com/cdn/shop/files/aventus-100ml-bottle_3413e5f4-3eee-40b3-8451-2546a370ec5b.jpg?v=1700498936&width=1500",
+                            Manufacturer = "Creed",
+                            Name = "Aventus by Creed",
+                            Price = 250.00m,
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6f")
+                        });
                 });
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.ProductCategory", b =>
@@ -346,6 +452,32 @@ namespace WebStore.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
+                            Description = "Floral scents are the most popular and widely used perfume family. Floral perfumes are feminine, romantic, and ultra-feminine.",
+                            Name = "Floral"
+                        },
+                        new
+                        {
+                            Id = new Guid("53146915-6199-44eb-aedb-e9902299be6d"),
+                            Description = "Oriental perfumes are warm, sensual, and exotic. They are often described as spicy, sweet, and even opulent.",
+                            Name = "Oriental"
+                        },
+                        new
+                        {
+                            Id = new Guid("53146915-6199-44eb-aedb-e9902299be6e"),
+                            Description = "Fresh perfumes are often referred to as citrus or green. They are light, airy, and clean.",
+                            Name = "Fresh"
+                        },
+                        new
+                        {
+                            Id = new Guid("53146915-6199-44eb-aedb-e9902299be6f"),
+                            Description = "Woody perfumes are warm, earthy, and sensual. They are often described as musky, aromatic, and spicy.",
+                            Name = "Woody"
+                        });
                 });
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Review", b =>

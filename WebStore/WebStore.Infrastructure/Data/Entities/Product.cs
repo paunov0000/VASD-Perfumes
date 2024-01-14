@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static WebStore.Infrastructure.Data.Constants.EntityConstants.Product;
+using static WebStore.Core.Constants.ModelConstants.Product;
 
 namespace WebStore.Infrastructure.Data.Entities
 {
@@ -31,8 +31,8 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Price of the product")]
         public decimal Price { get; set; }
 
-        //[Required]
-        //public string Image { get; set; } = null!;
+        [Required]
+        public string ImageUrl { get; set; } = null!;
 
         [Required]
         [ForeignKey(nameof(ProductCategory))]
