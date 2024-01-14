@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using static WebStore.Core.Constants.EntityConstant.ProductCategory;
+using static WebStore.Infrastructure.Data.Constants.EntityConstants.ProductCategory;
 
 namespace WebStore.Infrastructure.Data.Entities
 {
