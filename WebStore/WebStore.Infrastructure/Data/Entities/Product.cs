@@ -5,7 +5,7 @@ using static WebStore.Core.Constants.ModelConstants.Product;
 
 namespace WebStore.Infrastructure.Data.Entities
 {
-    [Comment($"Holds info for the {nameof(Product)} entity")]
+    [Comment("Holds info for the Product entity")]
     public class Product
     {
         [Key]
@@ -39,5 +39,9 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Foreign key of the product category")]
         public Guid ProductCategoryId { get; set; }
         public ProductCategory ProductCategory { get; set; } = null!;
+
+        [Required]
+        [Comment("Orders of the product")]
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

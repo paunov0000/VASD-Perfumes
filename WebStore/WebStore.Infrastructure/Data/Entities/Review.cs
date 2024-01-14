@@ -5,6 +5,7 @@ using static WebStore.Core.Constants.ModelConstants.Review;
 
 namespace WebStore.Infrastructure.Data.Entities
 {
+    [Comment("Holds info for the Review entity")]
     public class Review
     {
         [Key]

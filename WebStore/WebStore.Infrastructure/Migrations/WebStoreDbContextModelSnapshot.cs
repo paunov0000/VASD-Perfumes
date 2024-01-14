@@ -125,6 +125,21 @@ namespace WebStore.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("OrderProduct", b =>
+                {
+                    b.Property<int>("OrdersId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("ProductsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("OrdersId", "ProductsId");
+
+                    b.HasIndex("ProductsId");
+
+                    b.ToTable("OrderProduct");
+                });
+
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.ApplicationRole", b =>
                 {
                     b.Property<Guid>("Id")
@@ -244,7 +259,10 @@ namespace WebStore.Infrastructure.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("AspNetUsers", null, t =>
+                        {
+                            t.HasComment("Holds info for the Application User entity");
+                        });
                 });
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Order", b =>
@@ -272,7 +290,10 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", t =>
+                        {
+                            t.HasComment("Holds info for the Order entity");
+                        });
                 });
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Product", b =>
@@ -304,9 +325,6 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasComment("Name of the product");
 
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Price")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)")
@@ -317,8 +335,6 @@ namespace WebStore.Infrastructure.Migrations
                         .HasComment("Foreign key of the product category");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
 
                     b.HasIndex("ProductCategoryId");
 
@@ -451,7 +467,10 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductCategories");
+                    b.ToTable("ProductCategories", t =>
+                        {
+                            t.HasComment("Holds info for the Product Category entity");
+                        });
 
                     b.HasData(
                         new
@@ -525,7 +544,10 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", t =>
+                        {
+                            t.HasComment("Holds info for the Review entity");
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -579,6 +601,21 @@ namespace WebStore.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("OrderProduct", b =>
+                {
+                    b.HasOne("WebStore.Infrastructure.Data.Entities.Order", null)
+                        .WithMany()
+                        .HasForeignKey("OrdersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebStore.Infrastructure.Data.Entities.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Order", b =>
                 {
                     b.HasOne("WebStore.Infrastructure.Data.Entities.ApplicationUser", "User")
@@ -592,10 +629,6 @@ namespace WebStore.Infrastructure.Migrations
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Product", b =>
                 {
-                    b.HasOne("WebStore.Infrastructure.Data.Entities.Order", null)
-                        .WithMany("Products")
-                        .HasForeignKey("OrderId");
-
                     b.HasOne("WebStore.Infrastructure.Data.Entities.ProductCategory", "ProductCategory")
                         .WithMany("Products")
                         .HasForeignKey("ProductCategoryId")
@@ -627,11 +660,6 @@ namespace WebStore.Infrastructure.Migrations
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.ApplicationUser", b =>
                 {
                     b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Order", b =>
-                {
-                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.ProductCategory", b =>

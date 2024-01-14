@@ -4,6 +4,7 @@ using static WebStore.Core.Constants.ModelConstants.ProductCategory;
 
 namespace WebStore.Infrastructure.Data.Entities
 {
+    [Comment("Holds info for the Product Category entity")]
     public class ProductCategory
     {
         [Key]

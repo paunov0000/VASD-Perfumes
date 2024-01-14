@@ -5,6 +5,7 @@ using WebStore.Core.Constants;
 
 namespace WebStore.Infrastructure.Data.Entities
 {
+    [Comment("Holds info for the Order entity")]
     public class Order
     {
         [Key]
