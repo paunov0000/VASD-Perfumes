@@ -341,6 +341,9 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasComment("Foreign key of the product category");
 
+                    b.Property<int>("SoldCount")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductCategoryId");
@@ -354,112 +357,122 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6f"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5025),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8232),
                             Description = "Iconic blend of rose and jasmine, a classic from luxury brand Chanel",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Chanel",
                             Name = "Chanel No. 5",
                             Price = 120.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
+                            SoldCount = 0
                         },
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6e"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5031),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8241),
                             Description = "Youthful and fresh floral scent with notes of jasmine and violet",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Marc Jacobs",
                             Name = "Marc Jacobs Daisy",
                             Price = 80.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
+                            SoldCount = 0
                         },
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6d"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5034),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8244),
                             Description = "Modern and vibrant floral bouquet featuring tuberose and jasmine",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Gucci",
                             Name = "Gucci Bloom",
                             Price = 150.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
+                            SoldCount = 0
                         },
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6c"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5037),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8246),
                             Description = "Intensely floral with notes of jasmine, rose, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Viktor&Rolf",
                             Name = "Viktor&Rolf Flowerbomb",
                             Price = 110.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
+                            SoldCount = 0
                         },
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6b"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5039),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8248),
                             Description = "Timeless oriental scent with vanilla, iris, and amber notes",
                             ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
                             Manufacturer = "Guerlain",
                             Name = "Shalimar by Guerlain",
                             Price = 140.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6d")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6d"),
+                            SoldCount = 0
                         },
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6a"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5042),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8253),
                             Description = "Rich and spicy oriental fragrance with exotic undertones",
                             ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
                             Manufacturer = "Yves Saint Laurent",
                             Name = "Opium by Yves Saint Laurent",
                             Price = 100.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6e")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6e"),
+                            SoldCount = 0
                         },
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b69"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5045),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8259),
                             Description = "Luxurious blend of black truffle, vanilla, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Tom Ford",
                             Name = "Black Orchid by Tom Ford",
                             Price = 180.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6e")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6e"),
+                            SoldCount = 0
                         },
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b68"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5047),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8261),
                             Description = "Fresh and aquatic scent with notes of citrus and rosemary",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Giorgio Armani",
                             Name = "Acqua di Gio by Giorgio Armani",
                             Price = 85.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6e")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6e"),
+                            SoldCount = 0
                         },
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b67"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5049),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8263),
                             Description = "Citrusy and woody fragrance with notes of grapefruit and cedar",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s915447-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Hermès",
                             Name = "Terre d'Hermès by Hermès",
                             Price = 120.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6f")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6f"),
+                            SoldCount = 0
                         },
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b66"),
-                            AddedOn = new DateTime(2024, 1, 17, 18, 42, 54, 173, DateTimeKind.Utc).AddTicks(5052),
+                            AddedOn = new DateTime(2024, 1, 17, 19, 36, 44, 822, DateTimeKind.Utc).AddTicks(8266),
                             Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
                             ImageUrl = "https://creedboutique.com/cdn/shop/files/aventus-100ml-bottle_3413e5f4-3eee-40b3-8451-2546a370ec5b.jpg?v=1700498936&width=1500",
                             Manufacturer = "Creed",
                             Name = "Aventus by Creed",
                             Price = 250.00m,
-                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6f")
+                            ProductCategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6f"),
+                            SoldCount = 0
                         });
                 });
 
