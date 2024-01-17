@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using WebStore.Core.Contracts;
+using WebStore.Core.Services;
 using WebStore.Infrastructure.Common;
 using WebStore.Infrastructure.Data;
 using WebStore.Infrastructure.Data.Entities;
@@ -24,6 +26,7 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     .AddEntityFrameworkStores<WebStoreDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IRepository, Repository>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 

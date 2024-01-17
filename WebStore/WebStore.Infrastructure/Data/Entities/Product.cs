@@ -41,6 +41,9 @@ namespace WebStore.Infrastructure.Data.Entities
         public int SoldCount { get; set; }
 
         [Required]
+        public bool OnSale { get; set; }
+
+        [Required]
         [ForeignKey(nameof(ProductCategory))]
         [Comment("Foreign key of the product category")]
         public Guid ProductCategoryId { get; set; }
