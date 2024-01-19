@@ -23,10 +23,19 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     options.Password.RequireNonAlphanumeric = false;
 })
     .AddRoles<ApplicationRole>()
-    .AddEntityFrameworkStores<WebStoreDbContext>();
+    .AddEntityFrameworkStores<WebStoreDbContext>()
+    .AddDefaultTokenProviders() // Add this line to register the default token providers
+    .AddUserManager<UserManager<ApplicationUser>>();
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+
+//// Add UserManager service
+//builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+//    .AddEntityFrameworkStores<WebStoreDbContext>()
+//    .AddDefaultTokenProviders()
+//    .AddUserManager<UserManager<ApplicationUser>>();
 
 var app = builder.Build();
 
