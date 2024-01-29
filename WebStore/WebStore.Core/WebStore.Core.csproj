@@ -10,8 +10,4 @@
     <ProjectReference Include="..\WebStore.Infrastructure\WebStore.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Constants\" />
-  </ItemGroup>
-
 </Project>

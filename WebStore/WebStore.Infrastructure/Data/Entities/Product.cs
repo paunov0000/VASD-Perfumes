@@ -35,7 +35,7 @@ namespace WebStore.Infrastructure.Data.Entities
         public string ImageUrl { get; set; } = null!;
 
         [Required]
-        public DateTime AddedOn { get; set; }
+        public DateTime CreatedOn { get; set; }
 
         [Required]
         public int SoldCount { get; set; }

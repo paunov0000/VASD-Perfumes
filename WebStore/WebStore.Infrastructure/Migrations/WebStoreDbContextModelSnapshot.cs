@@ -197,6 +197,10 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasComment("Country of the user");
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2")
+                        .HasComment("Date of creating the user");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -307,7 +311,7 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasComment("Primary key of the product");
 
-                    b.Property<DateTime>("AddedOn")
+                    b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -360,7 +364,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6f"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(595),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3045),
                             Description = "Iconic blend of rose and jasmine, a classic from luxury brand Chanel",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Chanel",
@@ -373,7 +377,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6e"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(604),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3062),
                             Description = "Youthful and fresh floral scent with notes of jasmine and violet",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Marc Jacobs",
@@ -386,7 +390,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6d"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(607),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3064),
                             Description = "Modern and vibrant floral bouquet featuring tuberose and jasmine",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Gucci",
@@ -399,7 +403,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6c"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(609),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3067),
                             Description = "Intensely floral with notes of jasmine, rose, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Viktor&Rolf",
@@ -412,7 +416,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6b"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(612),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3069),
                             Description = "Timeless oriental scent with vanilla, iris, and amber notes",
                             ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
                             Manufacturer = "Guerlain",
@@ -425,7 +429,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6a"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(681),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3073),
                             Description = "Rich and spicy oriental fragrance with exotic undertones",
                             ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
                             Manufacturer = "Yves Saint Laurent",
@@ -438,7 +442,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b69"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(684),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3076),
                             Description = "Luxurious blend of black truffle, vanilla, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Tom Ford",
@@ -451,7 +455,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b68"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(686),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3079),
                             Description = "Fresh and aquatic scent with notes of citrus and rosemary",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Giorgio Armani",
@@ -464,7 +468,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b67"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(689),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3082),
                             Description = "Citrusy and woody fragrance with notes of grapefruit and cedar",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s915447-main-zoom.jpg?imwidth=612",
                             Manufacturer = "Hermès",
@@ -477,7 +481,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b66"),
-                            AddedOn = new DateTime(2024, 1, 17, 19, 44, 12, 597, DateTimeKind.Utc).AddTicks(692),
+                            CreatedOn = new DateTime(2024, 1, 29, 16, 28, 43, 354, DateTimeKind.Utc).AddTicks(3086),
                             Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
                             ImageUrl = "https://creedboutique.com/cdn/shop/files/aventus-100ml-bottle_3413e5f4-3eee-40b3-8451-2546a370ec5b.jpg?v=1700498936&width=1500",
                             Manufacturer = "Creed",

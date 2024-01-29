@@ -25,7 +25,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Chanel",
                     Price = 120.00M,
                     ImageUrl ="https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(FloralId)
                 },
                 new Product
@@ -36,7 +36,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Marc Jacobs",
                     Price = 80.00M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(FloralId)
                 },
                 new Product
@@ -47,7 +47,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Gucci",
                     Price = 150.00M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(FloralId)
                 },
                 new Product
@@ -58,7 +58,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Viktor&Rolf",
                     Price = 110.00M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(FloralId)
                 },
                 new Product
@@ -69,7 +69,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Guerlain",
                     Price = 140.00M,
                     ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(OrientalId)
                 },
                 new Product
@@ -80,7 +80,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Yves Saint Laurent",
                     Price = 100.00M,
                     ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(FreshId)
                 },
                 new Product
@@ -91,7 +91,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Tom Ford",
                     Price = 180.00M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(FreshId)
                 },
                 new Product
@@ -102,7 +102,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Giorgio Armani",
                     Price = 85.00M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg?imwidth=612",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(FreshId)
                 },
                 new Product
@@ -113,7 +113,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Hermès",
                     Price = 120.00M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s915447-main-zoom.jpg?imwidth=612",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(WoodyId)
                 },
                 new Product
@@ -124,7 +124,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Manufacturer = "Creed",
                     Price = 250.00M,
                     ImageUrl = "https://creedboutique.com/cdn/shop/files/aventus-100ml-bottle_3413e5f4-3eee-40b3-8451-2546a370ec5b.jpg?v=1700498936&width=1500",
-                    AddedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.UtcNow,
                     ProductCategoryId = Guid.Parse(WoodyId)
                 }
             };

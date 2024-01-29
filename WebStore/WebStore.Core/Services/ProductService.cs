@@ -17,7 +17,7 @@ namespace WebStore.Core.Services
 
         public async Task<IEnumerable<ProductViewModel>> Get12MostRecent()
         {
-            var result = await this.repo.AllReadonly<Product>().OrderByDescending(x => x.AddedOn).Take(12).Select(x => new ProductViewModel()
+            var result = await this.repo.AllReadonly<Product>().OrderByDescending(x => x.CreatedOn).Take(12).Select(x => new ProductViewModel()
             {
                 Description = x.Description,
                 Id = x.Id,

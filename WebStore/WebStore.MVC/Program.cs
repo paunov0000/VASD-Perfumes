@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebStore.Core.Contracts;
+using WebStore.Core.Misc;
 using WebStore.Core.Services;
 using WebStore.Infrastructure.Common;
 using WebStore.Infrastructure.Data;
@@ -21,11 +22,14 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     options.SignIn.RequireConfirmedPhoneNumber = false;
     options.Password.RequiredLength = 2;
     options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireLowercase = false;
 })
     .AddRoles<ApplicationRole>()
     .AddEntityFrameworkStores<WebStoreDbContext>()
     .AddDefaultTokenProviders()
-    .AddUserManager<UserManager<ApplicationUser>>(); // Add UserManager service
+    .AddUserManager<UserManager<ApplicationUser>>()
+    .AddErrorDescriber<CustomIdentityErrorDescriber>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IRepository, Repository>();

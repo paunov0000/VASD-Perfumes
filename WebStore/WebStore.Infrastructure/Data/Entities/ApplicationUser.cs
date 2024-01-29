@@ -27,6 +27,9 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Region of the user")]
         public string? Region { get; set; }
 
+        [Comment("Date of creating the user")]
+        public DateTime CreatedOn { get; set; }
+
         [Comment("Orders of the user")]
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
