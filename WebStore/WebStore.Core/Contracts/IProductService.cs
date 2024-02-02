@@ -16,5 +16,7 @@ namespace WebStore.Core.Contracts
         Task<IEnumerable<ProductViewModel>> GetMostSold();
 
         Task<IEnumerable<ProductViewModel>> GetOnSale();
+
+        Task AddProductAsync(ProductAddViewModel model);
     }
 }

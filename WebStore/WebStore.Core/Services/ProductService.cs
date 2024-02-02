@@ -15,6 +15,23 @@ namespace WebStore.Core.Services
             this.repo = repo;
         }
 
+        public async Task AddProductAsync(ProductAddViewModel model)
+        {
+            await repo.AddAsync(new Product()
+            {
+                CreatedOn = DateTime.UtcNow,
+                Description = model.Description,
+                ImageUrl = model.ImageUrl,
+                Name = model.Name,
+                Price = model.Price,
+                Manufacturer = model.Manufacturer,
+                OnSale = model.OnSale,
+                ProductCategoryId = model.ProductCategoryId
+            });
+
+            await repo.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<ProductViewModel>> Get12MostRecent()
         {
             var result = await this.repo.AllReadonly<Product>().OrderByDescending(x => x.CreatedOn).Take(12).Select(x => new ProductViewModel()
@@ -62,7 +79,7 @@ namespace WebStore.Core.Services
 
         public async Task<IEnumerable<ProductViewModel>> GetOnSale()
         {
-            var result = await this.repo.AllReadonly<Product>(p=> p.OnSale == true).Select(x => new ProductViewModel()
+            var result = await this.repo.AllReadonly<Product>(p => p.OnSale == true).Select(x => new ProductViewModel()
             {
                 Description = x.Description,
                 Id = x.Id,
