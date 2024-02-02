@@ -25,7 +25,6 @@ namespace WebStore.Core.Services
                 Name = model.Name,
                 Price = model.Price,
                 Manufacturer = model.Manufacturer,
-                OnSale = model.OnSale,
                 ProductCategoryId = model.ProductCategoryId
             });
 
@@ -90,6 +89,15 @@ namespace WebStore.Core.Services
             }).ToListAsync();
 
             return result;
+        }
+
+        public IEnumerable<ProductCategoryFormViewModel> GetAllProductCategories() //TODO: Must make it async
+        {
+            return this.repo.AllReadonly<ProductCategory>().Select(x => new ProductCategoryFormViewModel()
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToList();
         }
     }
 }
