@@ -31,6 +31,12 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
     .AddUserManager<UserManager<ApplicationUser>>()
     .AddErrorDescriber<CustomIdentityErrorDescriber>();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Accounts/Login";
+    options.AccessDeniedPath = "/Accounts/AccessDenied";
+});
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IProductService, ProductService>();
