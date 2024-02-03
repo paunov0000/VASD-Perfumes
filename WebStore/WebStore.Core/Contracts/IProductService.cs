@@ -19,6 +19,6 @@ namespace WebStore.Core.Contracts
 
         Task AddProductAsync(ProductAddViewModel model);
 
-        IEnumerable<ProductCategoryFormViewModel> GetAllProductCategories();
+        Task<IEnumerable<ProductCategoryFormViewModel>> GetAllProductCategories();
     }
 }

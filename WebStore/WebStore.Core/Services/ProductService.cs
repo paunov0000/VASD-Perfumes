@@ -91,13 +91,13 @@ namespace WebStore.Core.Services
             return result;
         }
 
-        public IEnumerable<ProductCategoryFormViewModel> GetAllProductCategories() //TODO: Must make it async
+        public async Task<IEnumerable<ProductCategoryFormViewModel>> GetAllProductCategories()
         {
-            return this.repo.AllReadonly<ProductCategory>().Select(x => new ProductCategoryFormViewModel()
+            return await this.repo.AllReadonly<ProductCategory>().Select(x => new ProductCategoryFormViewModel()
             {
                 Id = x.Id,
                 Name = x.Name
-            }).ToList();
+            }).ToListAsync();
         }
     }
 }
