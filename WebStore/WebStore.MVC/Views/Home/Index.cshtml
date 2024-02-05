@@ -14,7 +14,7 @@
                     <h5 class="card-title">@product.Name</h5>
                     <p class="card-text">@product.Description</p>
                     <p class="card-text">@(product.Price) лв.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary">Редактирай</a>
                 </div>
             </div>
         </div>

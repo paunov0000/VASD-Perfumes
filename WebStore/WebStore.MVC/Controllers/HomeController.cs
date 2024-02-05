@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebStore.Core.Contracts;
@@ -6,6 +7,7 @@ using WebStore.MVC.Models;
 
 namespace WebStore.MVC.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -19,6 +21,7 @@ namespace WebStore.MVC.Controllers
             productService = _productService;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var mostRecent = await productService.Get12MostRecent();
@@ -37,6 +40,7 @@ namespace WebStore.MVC.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

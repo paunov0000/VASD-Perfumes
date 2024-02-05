@@ -99,5 +99,35 @@ namespace WebStore.Core.Services
                 Name = x.Name
             }).ToListAsync();
         }
+
+        public async Task<ProductAddViewModel> GetProductByIdAsync(Guid id)
+        {
+            var product = await this.repo.GetByIdAsync<Product>(id);
+
+            return new ProductAddViewModel()
+            {
+                Description = product.Description,
+                Id = product.Id,
+                ImageUrl = product.ImageUrl,
+                Name = product.Name,
+                Price = product.Price,
+                Manufacturer = product.Manufacturer,
+                ProductCategoryId = product.ProductCategoryId
+            };
+        }
+
+        public async Task EditProductAsync(ProductAddViewModel model)
+        {
+            var entity = await repo.GetByIdAsync<Product>(model.Id);
+
+            entity.Description = model.Description;
+            entity.ImageUrl = model.ImageUrl;
+            entity.Name = model.Name;
+            entity.Price = model.Price;
+            entity.Manufacturer = model.Manufacturer;
+            entity.ProductCategoryId = model.ProductCategoryId;
+
+            await repo.SaveChangesAsync();
+        }
     }
 }

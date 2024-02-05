@@ -20,5 +20,9 @@ namespace WebStore.Core.Contracts
         Task AddProductAsync(ProductAddViewModel model);
 
         Task<IEnumerable<ProductCategoryFormViewModel>> GetAllProductCategories();
+
+        Task<ProductAddViewModel> GetProductByIdAsync(Guid id);
+
+        Task EditProductAsync (ProductAddViewModel model);
     }
 }
