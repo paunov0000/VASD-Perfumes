@@ -6,6 +6,7 @@ using WebStore.Core.Services;
 using WebStore.Infrastructure.Common;
 using WebStore.Infrastructure.Data;
 using WebStore.Infrastructure.Data.Entities;
+using WebStore.MVC.ModelBinders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,7 +38,11 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Accounts/AccessDenied";
 });
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+});
+
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
