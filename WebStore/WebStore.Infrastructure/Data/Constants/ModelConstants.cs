@@ -16,8 +16,8 @@ namespace WebStore.Infrastructure.Data.Constants
             public const int DescriptionMinLength = 10;
             public const int ManufacturerMaxLength = 100;
             public const int ManufacturerMinLength = 5;
-            public const decimal PriceMaxValue = 5000M;
-            public const decimal PriceMinValue = 0M;
+            public const string PriceMaxValue = "5000";
+            public const string PriceMinValue = "0";
             //public const int ImageMaxLength = 1000;
         }
 
