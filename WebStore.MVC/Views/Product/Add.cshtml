@@ -1,0 +1,66 @@
+﻿@model ProductAddViewModel
+@* a simple Add view for my ProductAddViewModel *@
+@{
+    ViewData["Title"] = "Добави артикул";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h1 class="mb-3">@ViewData["Title"]</h1>
+
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.Name"></label>
+                    <input type="text" asp-for="@Model.Name" class="form-control" />
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.Manufacturer"></label>
+                    <input type="text" asp-for="@Model.Manufacturer" class="form-control" />
+                    <span asp-validation-for="@Model.Manufacturer" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.Description"></label>
+                    <input type="text" asp-for="@Model.Description" class="form-control" />
+                    <span asp-validation-for="@Model.Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.Price"></label>
+                    <input type="number" asp-for="@Model.Price" class="form-control" />
+                    <span asp-validation-for="@Model.Price" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.ImageUrl"></label>
+                    <input type="text" asp-for="@Model.ImageUrl" class="form-control" />
+                    <span asp-validation-for="@Model.ImageUrl" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.ProductCategoryId"></label>
+                    <select asp-for="@Model.ProductCategoryId" class="form-control">
+                        @foreach (var category in ViewBag.ProductCategories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="@Model.ProductCategoryId" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Добави</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
