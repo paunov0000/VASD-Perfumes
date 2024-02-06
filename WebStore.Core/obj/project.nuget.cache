@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b4try6uGuq6O/0PwYEwKYDcTn/3gnit49jVU8QQBFvln7FieHtOO2Tsb/sKBOe+x1//nxfgtNnJo960EXeymgA==",
+  "dgSpecHash": "d9/if2xXmOw+RpS9f7EXAAXwRaYWlMmzFELzaDDFIIetgN616GK5R5PWYq510Hxa2lV+ShwXcs19tNsnygqDvQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Core\\WebStore.Core.csproj",
+  "projectFilePath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Core\\WebStore.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mitko\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\mitko\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

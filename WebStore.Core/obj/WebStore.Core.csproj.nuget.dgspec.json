@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Core\\WebStore.Core.csproj": {}
+    "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Core\\WebStore.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Core\\WebStore.Core.csproj": {
+    "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Core\\WebStore.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Core\\WebStore.Core.csproj",
+        "projectUniqueName": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Core\\WebStore.Core.csproj",
         "projectName": "WebStore.Core",
-        "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Core\\WebStore.Core.csproj",
+        "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Core\\WebStore.Core.csproj",
         "packagesPath": "C:\\Users\\mitko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Core\\obj\\",
+        "outputPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mitko\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj"
+              "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj": {
+    "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj",
         "projectName": "WebStore.Infrastructure",
-        "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\mitko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore\\WebStore.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mitko\\AppData\\Roaming\\NuGet\\NuGet.Config",
