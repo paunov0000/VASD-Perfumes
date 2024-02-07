@@ -7,8 +7,7 @@ using WebStore.MVC.Models;
 
 namespace WebStore.MVC.Controllers
 {
-    [Authorize]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService productService;

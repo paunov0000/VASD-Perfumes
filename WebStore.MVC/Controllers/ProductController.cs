@@ -1,13 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using WebStore.Core.Contracts;
 using WebStore.Core.Model.Product;
 
 namespace WebStore.MVC.Controllers
 {
-    [Authorize]
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         private readonly IProductService productService;
 

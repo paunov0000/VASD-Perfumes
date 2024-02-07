@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebStore.Infrastructure.Data.Entities;
 using WebStore.MVC.Models.Account;
@@ -6,7 +7,7 @@ using static WebStore.Core.Constants.ErrorMessageConstants.Account;
 
 namespace WebStore.MVC.Controllers
 {
-    public class AccountsController : Controller
+    public class AccountsController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -20,12 +21,14 @@ namespace WebStore.MVC.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(AccountRegisterViewModel model)
         {
             if (!ModelState.IsValid)
@@ -59,12 +62,14 @@ namespace WebStore.MVC.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(AccountLoginViewModel model)
         {
             if (!ModelState.IsValid)
