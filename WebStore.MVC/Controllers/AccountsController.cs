@@ -65,12 +65,13 @@ namespace WebStore.MVC.Controllers
         [AllowAnonymous]
         public IActionResult Login()
         {
+
             return View();
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(AccountLoginViewModel model)
+        public async Task<IActionResult> Login(AccountLoginViewModel model, string returnUrl = "")
         {
             if (!ModelState.IsValid)
             {
@@ -86,6 +87,11 @@ namespace WebStore.MVC.Controllers
 
             if (result.Succeeded)
             {
+                if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
 
