@@ -221,6 +221,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate-extension.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate-extension.js"
+    },
+    {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },

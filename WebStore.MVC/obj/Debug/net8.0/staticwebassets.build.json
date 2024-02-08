@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ghFTQR1gfSfxbp4qKWAhBRl3f0xDl8/EHTVBM1FKYm8=",
+  "Hash": "7vXG4kNHtY9wrOmRnTY27Y9u9ZSieFU/blwRpu0n8AE=",
   "Source": "WebStore.MVC",
   "BasePath": "_content/WebStore.MVC",
   "Mode": "Default",
@@ -2257,6 +2257,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate-extension.js",
+      "SourceId": "WebStore.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\",
+      "BasePath": "_content/WebStore.MVC",
+      "RelativePath": "lib/jquery-validation/dist/jquery.validate-extension.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate-extension.js"
     },
     {
       "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
