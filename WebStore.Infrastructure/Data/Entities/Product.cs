@@ -32,15 +32,19 @@ namespace WebStore.Infrastructure.Data.Entities
         public decimal Price { get; set; }
 
         [Required]
+        [Comment("Image URL of the product")]
         public string ImageUrl { get; set; } = null!;
 
         [Required]
+        [Comment("Date of the product creation")]
         public DateTime CreatedOn { get; set; }
 
         [Required]
+        [Comment("Quantity of products sold")]
         public int SoldCount { get; set; }
 
         [Required]
+        [Comment("A flag which sets the product state whether its on sale or not")]
         public bool OnSale { get; set; }
 
         [Required]

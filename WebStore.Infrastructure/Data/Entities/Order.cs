@@ -22,14 +22,15 @@ namespace WebStore.Infrastructure.Data.Entities
 
         [Required]
         [ForeignKey(nameof(User))]
-        [Comment("Foreign key of the user")]
+        [Comment("Foreign key of the ApplicationUser")]
         public Guid UserId { get; set; }
 
         [Required]
+        [Comment("ApplicationUser associated with the Order")]
         public ApplicationUser User { get; set; } = null!;
 
         [Required]
-        [Comment("Products of the order")]
+        [Comment("Products of the Order")]
         public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }
