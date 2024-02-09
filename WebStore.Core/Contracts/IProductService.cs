@@ -64,5 +64,7 @@ namespace WebStore.Core.Contracts
         /// </summary>
         /// <param name="model">A viewmodel which holds the data</param>
         Task EditProductAsync (ProductAddViewModel model);
+
+        Task DeleteProductAsync (Guid id);
     }
 }

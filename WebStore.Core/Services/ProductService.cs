@@ -167,5 +167,19 @@ namespace WebStore.Core.Services
 
             await repo.SaveChangesAsync();
         }
+
+        public async Task DeleteProductAsync(Guid id)
+        {
+            var entity = await repo.GetByIdAsync<Product>(id);
+
+            if (entity.IsDeleted == true)
+            {
+                throw new InvalidOperationException("Product not found");
+            }
+
+            entity.IsDeleted = true;
+
+            await repo.SaveChangesAsync();
+        }
     }
 }

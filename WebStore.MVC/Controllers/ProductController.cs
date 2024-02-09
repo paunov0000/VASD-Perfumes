@@ -92,6 +92,23 @@ namespace WebStore.MVC.Controllers
                 return NotFound(ex.Message);
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            try
+            {
+                await productService.DeleteProductAsync(id);
+
+                TempData[Status.Success] = "Успешно изтрихте продукта.";
+
+                return RedirectToAction("Index", "Home");
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 
 }
