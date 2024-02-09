@@ -17,7 +17,7 @@ namespace WebStore.MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var model = await productService.GetAllProductsAsync();
+            var model = await productService.GetAllProductsAsync(isDeleted: true);
 
             return View(model);
         }
@@ -40,7 +40,7 @@ namespace WebStore.MVC.Controllers
             {
                 ViewBag.ProductCategories = await productService.GetAllProductCategories();
 
-                TempData[Status.Error] = "Невалидни данни, пробвай пак.";
+                TempData[Status.Error] = "Невалидни данни, опитай отново.";
 
                 return View(model);
             }
@@ -79,12 +79,19 @@ namespace WebStore.MVC.Controllers
                 return View(model);
             }
 
-            await productService.EditProductAsync(model);
+            try
+            {
+                await productService.EditProductAsync(model);
 
-            return RedirectToAction("Index", "Home");
+                TempData[Status.Success] = "Успешно редактирахте продукта.";
+
+                return RedirectToAction("Index", "Home");
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
-
-
     }
 
 }

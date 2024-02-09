@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fNeY3AaZwzljc/Akm6Ddy/a5eumRb5hhZeG6L6FMnYs=",
+  "Hash": "ff7Q9oIFaxRMxn6+OPhl1qm58yrOM9XLIAJvRVqji7s=",
   "Source": "WebStore.MVC",
   "BasePath": "_content/WebStore.MVC",
   "Mode": "Default",
@@ -2354,12 +2354,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\toastr\\toastr.min.css",
+      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\lib\\toastr\\toastr.min.css",
       "SourceId": "WebStore.MVC",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\",
       "BasePath": "_content/WebStore.MVC",
-      "RelativePath": "toastr/toastr.min.css",
+      "RelativePath": "lib/toastr/toastr.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2370,15 +2370,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\toastr\\toastr.min.css"
+      "OriginalItemSpec": "wwwroot\\lib\\toastr\\toastr.min.css"
     },
     {
-      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\toastr\\toastr.min.js",
+      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\lib\\toastr\\toastr.min.js",
       "SourceId": "WebStore.MVC",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\",
       "BasePath": "_content/WebStore.MVC",
-      "RelativePath": "toastr/toastr.min.js",
+      "RelativePath": "lib/toastr/toastr.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2389,7 +2389,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\toastr\\toastr.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\toastr\\toastr.min.js"
     }
   ]
 }

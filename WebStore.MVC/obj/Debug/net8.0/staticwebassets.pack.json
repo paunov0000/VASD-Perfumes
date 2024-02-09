@@ -249,12 +249,12 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\toastr\\toastr.min.css",
-      "PackagePath": "staticwebassets\\toastr\\toastr.min.css"
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\lib\\toastr\\toastr.min.css",
+      "PackagePath": "staticwebassets\\lib\\toastr\\toastr.min.css"
     },
     {
-      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\toastr\\toastr.min.js",
-      "PackagePath": "staticwebassets\\toastr\\toastr.min.js"
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\lib\\toastr\\toastr.min.js",
+      "PackagePath": "staticwebassets\\lib\\toastr\\toastr.min.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebStore.MVC.Microsoft.AspNetCore.StaticWebAssets.props",

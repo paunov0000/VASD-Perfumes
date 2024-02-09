@@ -48,9 +48,26 @@ namespace WebStore.Core.Services
             return result;
         }
 
-        public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync()
+        public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync(bool isDeleted)
         {
-            var result = await this.repo.AllReadonly<Product>()
+            IEnumerable<ProductViewModel> result;
+
+            if (isDeleted)
+            {
+                result = await this.repo.AllReadonly<Product>()
+                    .Select(x => new ProductViewModel()
+                    {
+                        Description = x.Description,
+                        Id = x.Id,
+                        ImageUrl = x.ImageUrl,
+                        Name = x.Name,
+                        Price = x.Price
+
+                    }).ToListAsync();
+            }
+            else
+            {
+                result = await this.repo.AllReadonly<Product>()
                 .Where(p => p.IsDeleted == false)
                 .Select(x => new ProductViewModel()
                 {
@@ -61,6 +78,7 @@ namespace WebStore.Core.Services
                     Price = x.Price
 
                 }).ToListAsync();
+            }
 
             return result;
         }
@@ -135,7 +153,7 @@ namespace WebStore.Core.Services
         {
             var entity = await repo.GetByIdAsync<Product>(model.Id);
 
-            if (entity.IsDeleted == true) 
+            if (entity.IsDeleted == true)
             {
                 throw new InvalidOperationException("Product not found");
             }
