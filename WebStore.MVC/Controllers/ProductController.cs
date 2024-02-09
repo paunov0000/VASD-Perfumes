@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebStore.Core.Contracts;
 using WebStore.Core.Model.Product;
+using static WebStore.Core.Constants.TempDataKeyConstants;
 
 namespace WebStore.MVC.Controllers
 {
@@ -39,10 +40,14 @@ namespace WebStore.MVC.Controllers
             {
                 ViewBag.ProductCategories = await productService.GetAllProductCategories();
 
+                TempData[Status.Error] = "Невалидни данни, пробвай пак.";
+
                 return View(model);
             }
 
             await productService.AddProductAsync(model);
+
+            TempData[Status.Success] = "Успешно добавихте продукт.";
 
             return RedirectToAction("Index", "Home");
         }

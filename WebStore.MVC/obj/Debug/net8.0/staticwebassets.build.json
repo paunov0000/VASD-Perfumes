@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7vXG4kNHtY9wrOmRnTY27Y9u9ZSieFU/blwRpu0n8AE=",
+  "Hash": "fNeY3AaZwzljc/Akm6Ddy/a5eumRb5hhZeG6L6FMnYs=",
   "Source": "WebStore.MVC",
   "BasePath": "_content/WebStore.MVC",
   "Mode": "Default",
@@ -2352,6 +2352,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\toastr\\toastr.min.css",
+      "SourceId": "WebStore.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\",
+      "BasePath": "_content/WebStore.MVC",
+      "RelativePath": "toastr/toastr.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\toastr\\toastr.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\toastr\\toastr.min.js",
+      "SourceId": "WebStore.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\",
+      "BasePath": "_content/WebStore.MVC",
+      "RelativePath": "toastr/toastr.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\toastr\\toastr.min.js"
     }
   ]
 }

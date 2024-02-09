@@ -48,6 +48,10 @@ namespace WebStore.Infrastructure.Data.Entities
         public bool OnSale { get; set; }
 
         [Required]
+        [Comment("A flag which sets the product state as whether its visible or not")]
+        public bool IsDeleted { get; set; }
+
+        [Required]
         [ForeignKey(nameof(ProductCategory))]
         [Comment("Foreign key of the product category")]
         public Guid ProductCategoryId { get; set; }

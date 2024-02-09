@@ -31,4 +31,8 @@
     <ProjectReference Include="..\WebStore.Core\WebStore.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\toastr\" />
+  </ItemGroup>
+
 </Project>
