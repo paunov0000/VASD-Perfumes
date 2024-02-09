@@ -33,60 +33,69 @@ namespace WebStore.Core.Services
 
         public async Task<IEnumerable<ProductViewModel>> Get12MostRecent()
         {
-            var result = await this.repo.AllReadonly<Product>().OrderByDescending(x => x.CreatedOn).Take(12).Select(x => new ProductViewModel()
-            {
-                Description = x.Description,
-                Id = x.Id,
-                ImageUrl = x.ImageUrl,
-                Name = x.Name,
-                Price = x.Price
+            var result = await this.repo.AllReadonly<Product>()
+                .Where(p => p.IsDeleted == false)
+                .OrderByDescending(x => x.CreatedOn).Take(12).Select(x => new ProductViewModel()
+                {
+                    Description = x.Description,
+                    Id = x.Id,
+                    ImageUrl = x.ImageUrl,
+                    Name = x.Name,
+                    Price = x.Price
 
-            }).ToListAsync();
+                }).ToListAsync();
 
             return result;
         }
 
         public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync()
         {
-            var result = await this.repo.AllReadonly<Product>().Select(x => new ProductViewModel()
-            {
-                Description = x.Description,
-                Id = x.Id,
-                ImageUrl = x.ImageUrl,
-                Name = x.Name,
-                Price = x.Price
+            var result = await this.repo.AllReadonly<Product>()
+                .Where(p => p.IsDeleted == false)
+                .Select(x => new ProductViewModel()
+                {
+                    Description = x.Description,
+                    Id = x.Id,
+                    ImageUrl = x.ImageUrl,
+                    Name = x.Name,
+                    Price = x.Price
 
-            }).ToListAsync();
+                }).ToListAsync();
 
             return result;
         }
 
         public async Task<IEnumerable<ProductViewModel>> GetMostSold()
         {
-            var result = await this.repo.AllReadonly<Product>().OrderByDescending(x => x.SoldCount).Take(12).Select(x => new ProductViewModel()
-            {
-                Description = x.Description,
-                Id = x.Id,
-                ImageUrl = x.ImageUrl,
-                Name = x.Name,
-                Price = x.Price
+            var result = await this.repo.AllReadonly<Product>()
+                .Where(p => p.IsDeleted == false)
+                .OrderByDescending(x => x.SoldCount)
+                .Take(12)
+                .Select(x => new ProductViewModel()
+                {
+                    Description = x.Description,
+                    Id = x.Id,
+                    ImageUrl = x.ImageUrl,
+                    Name = x.Name,
+                    Price = x.Price
 
-            }).ToListAsync();
+                }).ToListAsync();
 
             return result;
         }
 
         public async Task<IEnumerable<ProductViewModel>> GetOnSale()
         {
-            var result = await this.repo.AllReadonly<Product>(p => p.OnSale == true).Select(x => new ProductViewModel()
-            {
-                Description = x.Description,
-                Id = x.Id,
-                ImageUrl = x.ImageUrl,
-                Name = x.Name,
-                Price = x.Price
+            var result = await this.repo.AllReadonly<Product>(p => p.OnSale == true && p.IsDeleted == false)
+                .Select(x => new ProductViewModel()
+                {
+                    Description = x.Description,
+                    Id = x.Id,
+                    ImageUrl = x.ImageUrl,
+                    Name = x.Name,
+                    Price = x.Price
 
-            }).ToListAsync();
+                }).ToListAsync();
 
             return result;
         }
@@ -100,9 +109,14 @@ namespace WebStore.Core.Services
             }).ToListAsync();
         }
 
-        public async Task<ProductAddViewModel> GetProductByIdAsync(Guid id)
+        public async Task<ProductAddViewModel> GetProductByIdAsync(Guid id) //TODO: Add exception handling
         {
             var product = await this.repo.GetByIdAsync<Product>(id);
+
+            if (product.IsDeleted == true)
+            {
+                throw new InvalidOperationException("Product not found");
+            }
 
             return new ProductAddViewModel()
             {
@@ -113,12 +127,18 @@ namespace WebStore.Core.Services
                 Price = product.Price,
                 Manufacturer = product.Manufacturer,
                 ProductCategoryId = product.ProductCategoryId
+
             };
         }
 
-        public async Task EditProductAsync(ProductAddViewModel model)
+        public async Task EditProductAsync(ProductAddViewModel model) //TODO: Add exception handling
         {
             var entity = await repo.GetByIdAsync<Product>(model.Id);
+
+            if (entity.IsDeleted == true) 
+            {
+                throw new InvalidOperationException("Product not found");
+            }
 
             entity.Description = model.Description;
             entity.ImageUrl = model.ImageUrl;
