@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\toastr\**" />
+    <Content Remove="wwwroot\toastr\**" />
+    <EmbeddedResource Remove="wwwroot\toastr\**" />
+    <None Remove="wwwroot\toastr\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.extension.js" />
   </ItemGroup>
 
@@ -29,10 +36,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebStore.Core\WebStore.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\toastr\" />
   </ItemGroup>
 
 </Project>

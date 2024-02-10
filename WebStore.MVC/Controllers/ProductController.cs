@@ -100,8 +100,6 @@ namespace WebStore.MVC.Controllers
             {
                 await productService.DeleteProductAsync(id);
 
-                TempData[Status.Success] = "Успешно изтрихте продукта.";
-
                 return RedirectToAction("Index", "Home");
             }
             catch (InvalidOperationException ex)
