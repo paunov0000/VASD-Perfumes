@@ -16,5 +16,16 @@ namespace WebStore.Core.Constants
             public const string Info = "Info";
         }
 
+        public static class Product
+        {
+            public const string SuccessOnAddMessage = "Успешно добавихте артикул.";
+
+            public const string SuccessOnEditMessage = "Успешно редактирахте артикул.";
+
+            public const string SuccessOnDeleteMessage = "Успешно изтрихте артикул.";
+
+            public const string InvalidInputMessage = "Невалидни данни, опитай отново.";
+        }
+
     }
 }

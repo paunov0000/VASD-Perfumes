@@ -40,14 +40,14 @@ namespace WebStore.MVC.Controllers
             {
                 ViewBag.ProductCategories = await productService.GetAllProductCategories();
 
-                TempData[Status.Error] = "Невалидни данни, опитай отново.";
+                TempData[Status.Error] = Product.InvalidInputMessage;
 
                 return View(model);
             }
 
             await productService.AddProductAsync(model);
 
-            TempData[Status.Success] = "Успешно добавихте продукт.";
+            TempData[Status.Success] = Product.SuccessOnAddMessage;
 
             return RedirectToAction("Index", "Home");
         }
@@ -76,6 +76,8 @@ namespace WebStore.MVC.Controllers
             {
                 ViewBag.ProductCategories = await productService.GetAllProductCategories();
 
+                TempData[Status.Error] = Product.InvalidInputMessage;
+
                 return View(model);
             }
 
@@ -83,7 +85,7 @@ namespace WebStore.MVC.Controllers
             {
                 await productService.EditProductAsync(model);
 
-                TempData[Status.Success] = "Успешно редактирахте продукта.";
+                TempData[Status.Success] = Product.SuccessOnEditMessage;
 
                 return RedirectToAction("Index", "Home");
             }
