@@ -1,13 +1,13 @@
 ﻿@model ProductHomeViewModel;
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
 <div class="row">
     @foreach (var product in Model.AllProducts)
     {
-        <div class="col-md-3">
+        <div class="col-md-3 mb-5">
             <div class="card h-100" style="width: 18rem;">
                 <img src="@product.ImageUrl" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -16,11 +16,13 @@
                     <p class="card-text">@(product.Price) лв.</p>
                     @if (User.Identity?.IsAuthenticated ?? false)
                     {
-                        <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary">Редактирай</a>
-                        <form asp-controller="Product" asp-action="Delete" method="post">
-                            <input type="hidden" name="id" value="@product.Id" />
-                            <button type="submit" class="btn btn-danger" onclick="deleteProduct(event)">Изтрий</button>
-                        </form>
+                        <div class="btn-group d-flex justify-content-between">
+                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary">Редактирай</a>
+                            <form asp-controller="Product" asp-action="Delete" method="post">
+                                <input type="hidden" name="id" value="@product.Id" />
+                                <button type="submit" class="btn btn-danger" onclick="deleteProduct(event)">Изтрий</button>
+                            </form>
+                        </div>
                     }
                 </div>
             </div>
@@ -28,27 +30,8 @@
     }
 </div>
 
-<script>
-    async function deleteProduct(e) {
-        e.preventDefault();
-        const result = await Swal.fire({
-            title: 'Изтриване на артикул',
-            text: 'Сигурни ли сте, че искате да изтриете този артикул?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Да, изтрий!',
-            cancelButtonText: 'Отказ'
-        });
 
-        if (result.isConfirmed) {
-            await Swal.fire(
-                'Изтрит!',
-                'Артикулът е изтрит успешно.',
-                'success'
-            );
-            e.target.closest('form').submit();
-        }
-    }
-</script>
+
+@section Scripts {
+  <partial name="_SweetAlertScriptsPartial" />
+}
