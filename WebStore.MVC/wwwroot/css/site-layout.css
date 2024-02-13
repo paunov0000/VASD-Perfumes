@@ -1,0 +1,21 @@
+#header-top, 
+#header-mid, 
+#header-mid-options, 
+#header-bottom > #header-nav > ul,
+#article-clients-sources,
+#article-subscribe-form > form,
+#article-icons,
+#site-footer-top-wrapper,
+#site-footer-mid-wrapper {
+  display: flex;
+}
+
+#article-subscribe-form > form {
+  flex-direction: column;
+}
+
+#header-top {
+  background-color: pink;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}

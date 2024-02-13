@@ -2,16 +2,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -27,20 +17,4 @@ body {
 
 img{
   display: block;
-}
-
-#header-top, 
-#header-mid, 
-#header-mid-options, 
-#header-bottom > #header-nav > ul,
-#article-clients-sources,
-#article-subscribe-form > form,
-#article-icons,
-#site-footer-top-wrapper,
-#site-footer-mid-wrapper {
-  display: flex;
-}
-
-#article-subscribe-form > form {
-  flex-direction: column;
 }
