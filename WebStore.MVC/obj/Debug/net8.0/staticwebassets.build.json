@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ff7Q9oIFaxRMxn6+OPhl1qm58yrOM9XLIAJvRVqji7s=",
+  "Hash": "EukIGxDT8AZQClHdbCYJJKqiWRzxQwIxc5Mj9lU3uaY=",
   "Source": "WebStore.MVC",
   "BasePath": "_content/WebStore.MVC",
   "Mode": "Default",
@@ -2390,6 +2390,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\toastr\\toastr.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\layout.html",
+      "SourceId": "WebStore.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\",
+      "BasePath": "_content/WebStore.MVC",
+      "RelativePath": "pages/layout.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pages\\layout.html"
     }
   ]
 }
