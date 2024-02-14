@@ -44,7 +44,23 @@ body {
 
 #header-mid-search {
   align-self: center;
+  /* display: flex;
+  flex-direction: column; */
   /* margin: 0 auto; */
+}
+
+#header-mid-search > input {
+  /* width: 100%; */
+  padding: 0.5em 1em;
+  border-radius: 3em;
+  border-style: solid;
+}
+
+#header-mid-search > button {
+  /* text-align: center; */
+  justify-content: center;
+  padding: 0.5em 1em;
+  border-radius: 3em;
 }
 
 #header-mid-options {
