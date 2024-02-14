@@ -5,8 +5,20 @@
       "PackagePath": "staticwebassets\\WebStore.MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\reset.css",
+      "PackagePath": "staticwebassets\\css\\reset.css"
+    },
+    {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\site-layout.css",
+      "PackagePath": "staticwebassets\\css\\site-layout.css"
+    },
+    {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\typography.css",
+      "PackagePath": "staticwebassets\\css\\typography.css"
     },
     {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\favicon.ico",
