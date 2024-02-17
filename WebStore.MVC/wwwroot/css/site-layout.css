@@ -47,6 +47,8 @@ body {
   /* display: flex;
   flex-direction: column; */
   /* margin: 0 auto; */
+  display: flex;
+  align-items: baseline;
 }
 
 #header-mid-search > input {
@@ -58,9 +60,20 @@ body {
 
 #header-mid-search > button {
   /* text-align: center; */
-  justify-content: center;
+  /* justify-content: center; */
   padding: 0.5em 1em;
   border-radius: 3em;
+}
+
+#header-mid-search-icon > i {
+  position: relative;
+  /* left: 0.5em; */
+  right: 2em;
+  font-size: 0.9em;
+}
+
+#header-mid-search-icon > i:hover {
+  cursor: pointer;
 }
 
 #header-mid-options {
