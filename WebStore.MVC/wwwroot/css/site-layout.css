@@ -1,15 +1,3 @@
-/* #header-top, 
-#header-mid, 
-#header-mid-options, 
-#header-bottom > #header-nav > ul,
-#article-clients-sources,
-#article-subscribe-form > form,
-#article-icons,
-#site-footer-top-wrapper,
-#site-footer-mid-wrapper {
-  display: flex;
-} */
-
 #article-subscribe-form > form {
   flex-direction: column;
 }
@@ -18,16 +6,20 @@
   font-size: 4em;
 }
 
+#site-header > *, #article-subscribe, #article-icons, #site-footer {
+  padding: 0.7em 2.5em 4em 2.5em;
+}
+
 #header-top {
   display: flex;
   /* gap: 2em; */
   justify-content: space-between;
-  padding: 0.7em 2.5em 0.7em 2.5em;
-  background-color: pink;
+  /* padding: 0.7em 2.5em 0.7em 2.5em; */
+  /* background-color: pink; */
 }
 
 body {
-  padding: 2em 10em;
+  padding: 1em 0em 1em 0em;
 }
 
 #site {
@@ -38,8 +30,8 @@ body {
 #header-mid {
   display: flex;
   justify-content: space-between;
-  padding: 0.7em 2.5em 0.7em 2.5em;
-  background-color: lightblue;
+  /* padding: 0.7em 2.5em 0.7em 2.5em; */
+  /* background-color: lightblue; */
 }
 
 #header-mid-search {
@@ -107,8 +99,8 @@ body {
 #header-bottom {
   /* display: flex; */
   /* justify-content: space-between; */
-  padding: 0.7em 2.5em 0.7em 2.5em;
-  background-color: lightgreen;
+  /* padding: 0.7em 2.5em 0.7em 2.5em; */
+  /* background-color: lightgreen; */
 }
 
 #header-nav > ul {
@@ -123,7 +115,7 @@ body {
   align-items: center;
   /* justify-content: space-between; */
   padding: 0.7em 2.5em 0.7em 2.5em;
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
 }
 
 #article-clients-sources {
@@ -132,7 +124,7 @@ body {
   /* align-items: center; */
   justify-content: center;
   padding: 0.7em 2.5em 0.7em 2.5em;
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   /* width: 100%; */
 }
 
@@ -148,8 +140,8 @@ body {
   flex-direction: column;
   align-items: center;
   /* justify-content: space-between; */
-  padding: 0.7em 2.5em 0.7em 2.5em;
-  background-color: lightgray;
+  /* padding: 0.7em 2.5em 0.7em 2.5em; */
+  /* background-color: lightgray; */
 }
 
 #article-subscribe-form > form {
@@ -160,8 +152,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 4em;
-  padding: 0.7em 2.5em 0.7em 2.5em;
-  background-color: lightyellow;
+  /* padding: 0.7em 2.5em 0.7em 2.5em; */
+  /* background-color: lightyellow; */
 }
 
 .article-icons-element {
@@ -198,6 +190,7 @@ body {
   /* border-radius: 3em; */
   font-size: 1em;
   border-style: solid;
+  margin-bottom: 1.2em;
 }
 
 #article-subscribe-form > form {
@@ -206,7 +199,7 @@ body {
   gap: 0.5em;
 }
 
-#article-subscribe-form > form > button {
+#subscribe-newsletter-button {
   /* width: 50%; */
   background-color: #4CAF50; /* Green background */
   border: 2px solid #4CAF50; /* Remove border */
@@ -225,35 +218,54 @@ body {
   /* border-radius: 12px; Rounded corners */
 }
 
-#article-subscribe-form > form > button:hover {
+#subscribe-newsletter-button:hover {
   background-color: white; /* White background */
   color: black; /* Black text */
   /* border: 2px solid #4CAF50; */
+}
+
+#article-subscribe-form > form > div {
+  display: flex;
+  justify-content: center;
 }
 
 #site-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 0;
   /* justify-content: space-between; */
-  padding: 0.7em 2.5em 0.7em 2.5em;
-  background-color: lightgray;
+  /* padding: 0.7em 2.5em 0.7em 2.5em; */
+  /* background-color: lightgray; */
 }
 
 #site-footer-top-wrapper {
   width: 100%;
-  display: flex;
+  /* display: flex; */
+  /* flex-basis: 100%; */
   justify-content: space-between;
   /* padding: 0.7em 2.5em 0.7em 2.5em; */
-  background-color: lightgray;
+  /* background-color: lightgray; */
   /* text-align: end; */
 }
 
 #site-footer-mid-wrapper {
-  width: 100%;
+  /* width: 100%; */
+  /* flex-basis: 100%; */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   /* padding: 0.7em 2.5em 0.7em 2.5em; */
-  background-color: lightgray;
+  /* background-color: lightgray; */
   /* text-align: end; */
+}
+
+#site-footer-top-wrapper > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* width: 100%; */
+}
+
+#site-footer-bottom-wrapper {
+  margin-top: 7em;
 }
