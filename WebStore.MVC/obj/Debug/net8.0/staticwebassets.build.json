@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9teg1DK6aUv8ROgYmEUoLWdX7DwSB6Vrp8FXDbII3oY=",
+  "Hash": "QAQWCEi5Dtu9Gs15kwqPBbFAtHyAQuMLrPznBMJFoqM=",
   "Source": "WebStore.MVC",
   "BasePath": "_content/WebStore.MVC",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebStore.MVC.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\account.css",
+      "SourceId": "WebStore.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\",
+      "BasePath": "_content/WebStore.MVC",
+      "RelativePath": "css/account.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\account.css"
     },
     {
       "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\reset.css",
@@ -2447,6 +2466,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\toastr\\toastr.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\account.html",
+      "SourceId": "WebStore.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\",
+      "BasePath": "_content/WebStore.MVC",
+      "RelativePath": "pages/account.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pages\\account.html"
     },
     {
       "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\layout.html",

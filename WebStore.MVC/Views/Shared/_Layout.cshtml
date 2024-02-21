@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - VASD Perfumes</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @* <link rel="stylesheet" href="~/WebStore.MVC.styles.css" asp-append-version="true" /> *@
     <link rel="stylesheet" href="~/css/reset.css" />
     <link rel="stylesheet" href="~/css/typography.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -13,7 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet" />
-    <link rel="stylesheet" href="~/WebStore.MVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -55,183 +57,209 @@
                 <div id="header-mid-logo">
                     <a asp-controller="Home" asp-action="Index">
                         <p id="header-mid-logo-title">VASD</p>
-                        <img src="images/logo.png" alt="logo" />
                     </a>
+                    <!-- <img src="images/logo.png" alt="logo" /> -->
                 </div>
                 <div id="header-mid-search">
-                    <input type="text" placeholder="Търси продукт" />
-                    <button>Търси</button>
+                    <input type="text" placeholder="Търси..." />
+                    <div id="header-mid-search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <!-- <button>Търси</button> -->
                 </div>
                 <div id="header-mid-options">
-                    <div id="header-mid-options-login">
-                        <a asp-controller="Accounts" asp-action="Login">
-                            <img src="images/login.png" alt="login" />
-                            <p>Вход</p>
-                        </a>
-                    </div>
-                    <div id="header-mid-options-cart">
-                        <img src="images/cart.png" alt="cart" />
+                    <a asp-controller="Accounts" asp-action="Login" id="header-mid-options-login">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Вход</p>
+                    </a>
+                    <a href="#" id="header-mid-options-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
                         <p>Количка</p>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div id="header-bottom">
                 <nav id="header-nav">
                     <ul>
-                        <li><a href="#">Начало</a></li>
-                        <li><a href="#">Продукти</a></li>
-                        <li><a href="#">За нас</a></li>
-                        <li><a href="#">Контакти</a></li>
+                        <li><a href="#">Парфюми</a></li>
+                        <li><a href="#">Парфюми без опаковка</a></li>
+                        <li><a href="#">Грим</a></li>
+                        <li><a href="#">Козметика</a></li>
+                        <li><a href="#">Комплекти</a></li>
+                        <li><a href="#">Ароматни свещи</a></li>
+                        <li><a href="#">Марки</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
-
-        @* <footer class="border-top footer text-muted">
-        <div class="container">
-        &copy; @(DateTime.UtcNow.Year == 2024 ? DateTime.UtcNow.Year : $"2024 - {DateTime.UtcNow.Year}") - VASD Perfumes
-        </div>
-        </footer> *@
-
-        <article id="article-clients">
-            <div id="article-clients-title">
-                <h1>Нашите клиенти</h1>
-            </div>
-            <div id="article-clients-sources" href="#">
-                <a class="article-clients-sources-source" href="#">
-                    <figure class="article-clients-sources-source-logo-wrapper">
-                        <img src="images/client1.png"
-                             alt="client1"
-                             class="article-clients-sources-source-logo" />
-                    </figure>
-                    <div class="article-clients-sources-source-rating">
-                        <div class="article-clients-sources-source-rating-stars">
-                            <span>*</span>
-                            <span>*</span>
-                            <span>*</span>
-                            <span>*</span>
-                            <span>*</span>
-                        </div>
-                        <div>
-                            <p>5 от 5</p>
-                        </div>
-                    </div>
-                    <div class="article-clients-sources-source-text">
-                        <p>от над 6000 реални отзива</p>
-                    </div>
-                </a>
-                <a class="article-clients-sources-source" href="#">
-                    <figure class="article-clients-sources-source-logo-wrapper">
-                        <img src="images/client1.png"
-                             alt="client1"
-                             class="article-clients-sources-source-logo" />
-                    </figure>
-                    <div class="article-clients-sources-source-rating">
-                        <div class="article-clients-sources-source-rating-stars">
-                            <span>*</span>
-                            <span>*</span>
-                            <span>*</span>
-                            <span>*</span>
-                            <span>*</span>
-                        </div>
-                        <div>
-                            <p>5 от 5</p>
-                        </div>
-                    </div>
-                    <div class="article-clients-sources-source-text">
-                        <p>от над 6000 реални отзива</p>
-                    </div>
-                </a>
-            </div>
-        </article>
+        <main id="site-main">
+            @RenderBody()
+        </main>
+        <!-- <article id="article-clients">
+          <div id="article-clients-title">
+            <h1>Нашите клиенти</h1>
+          </div>
+          <div id="article-clients-sources" href="#">
+            <a class="article-clients-sources-source" href="#">
+              <figure class="article-clients-sources-source-logo-wrapper">
+                <img
+                  src="images/client1.png"
+                  alt="client1"
+                  class="article-clients-sources-source-logo"
+                />
+              </figure>
+              <div class="article-clients-sources-source-rating">
+                <div class="article-clients-sources-source-rating-stars">
+                  <span>*</span>
+                  <span>*</span>
+                  <span>*</span>
+                  <span>*</span>
+                  <span>*</span>
+                </div>
+                <div>
+                  <p>5 от 5</p>
+                </div>
+              </div>
+              <div class="article-clients-sources-source-text">
+                <p>от над 6000 реални отзива</p>
+              </div>
+            </a>
+            <a class="article-clients-sources-source" href="#">
+              <figure class="article-clients-sources-source-logo-wrapper">
+                <img
+                  src="images/client1.png"
+                  alt="client1"
+                  class="article-clients-sources-source-logo"
+                />
+              </figure>
+              <div class="article-clients-sources-source-rating">
+                <div class="article-clients-sources-source-rating-stars">
+                  <span>*</span>
+                  <span>*</span>
+                  <span>*</span>
+                  <span>*</span>
+                  <span>*</span>
+                </div>
+                <div>
+                  <p>5 от 5</p>
+                </div>
+              </div>
+              <div class="article-clients-sources-source-text">
+                <p>от над 6000 реални отзива</p>
+              </div>
+            </a>
+          </div>
+        </article> -->
         <article id="article-subscribe">
-            <div id="article-subscribe-title">
-                <h1>Абонирай се за нашия бюлетин</h1>
-            </div>
-            <div id="article-subscribe-form">
-                <form action="#">
-                    <input type="email" placeholder="Въведи своя имейл" />
-                    <button>Абонирай се</button>
-                </form>
+            <div>
+                <div id="article-subscribe-title">
+                    <p>
+                        Абонирайте се за нашия бюлетин и получавайте <br />
+                        ексклузивни намаления, новини и <br />
+                        промокодове за отстъпка!
+                    </p>
+                </div>
+                <div id="article-subscribe-form">
+                    <form action="#">
+                        <label for="subscribe-newsletter">Имейл *</label>
+                        <input id="subscribe-newsletter"
+                               type="email"
+                               placeholder="Въведи своя имейл" />
+                        <div>
+                            <button id="subscribe-newsletter-button">Абонирай ме!</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </article>
         <article id="article-icons">
             <div class="article-icons-element">
-                <figure>
-                    <img src="images/icon1.png" alt="icon1" />
-                </figure>
-                <p>Безплатна доставка над 100 лв</p>
+                <div>
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div>
+                    <p>Експресна Доставка</p>
+                </div>
             </div>
             <div class="article-icons-element">
-                <figure>
-                    <img src="images/icon2.png" alt="icon2" />
-                </figure>
-                <p>30 дни право на връщане</p>
+                <div>
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+                <div>
+                    <p>Безплатна Застраховка</p>
+                </div>
             </div>
             <div class="article-icons-element">
-                <figure>
-                    <img src="images/icon3.png" alt="icon3" />
-                </figure>
-                <p>Подарък за всяка поръчка</p>
+                <div>
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+                <div>
+                    <p>Подарък за всяка поръчка</p>
+                </div>
+            </div>
+            <div class="article-icons-element">
+                <div>
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <div>
+                    <p>Безплатна Консултация</p>
+                </div>
             </div>
         </article>
 
         <footer id="site-footer">
             <div id="site-footer-top-wrapper">
-                <div id="site-footer-top-wrapper-about">
-                    <h2>Информация</h2>
-                    <ul>
-                        <li><a asp-controller="About" asp-action="Index">За нас</a></li>
-                        <li><a asp-controller="About" asp-action="Shipping">Доставка</a></li>
-                        <li><a asp-controller="About" asp-action="Payment">Плащане</a></li>
-                        <li><a asp-controller="About" asp-action="Contacts">Контакти</a></li>
-                        <li><a asp-controller="About" asp-action="Terms">Общи условия</a></li>
-                        <li><a href="#">Нашите предимства</a></li>
-                        <li><a href="#">Оригинални продукти</a></li>
-                    </ul>
-                </div>
-                <!-- <div id="site-footer-top-wrapper-links">
-                  <iframe src="" frameborder="0"></iframe>
-                </div> -->
-                <div id="site-footer-top-wrapper-contact">
-                    <h2>За Контакт</h2>
-                    <p>Телефон: +359 88 8888888</p>
-                    <p>Имейл: office@vasd.com</p>
-                    <p>Адрес: гр. София, ул. "Търговска" 10</p>
-                    <p>Работно време: 9:00 - 17:00</p>
-                    <div id="site-footer-top-wrapper-contact-socials">
-                        <a href="#">
-                            <img src="images/facebook.png" alt="facebook" />
-                        </a>
-                        <a href="#">
-                            <img src="images/instagram.png" alt="instagram" />
-                        </a>
+                <div>
+                    <div id="site-footer-top-wrapper-about">
+                        <h2>Информация</h2>
+                        <ul>
+                            <li><a href="#">За нас</a></li>
+                            <li><a href="#">Доставка</a></li>
+                            <li><a href="#">Плащане</a></li>
+                            <li><a href="#">Контакти</a></li>
+                            <li><a href="#">Общи условия</a></li>
+                            <li><a href="#">Нашите предимства</a></li>
+                            <li><a href="#">Оригинални продукти</a></li>
+                        </ul>
+                    </div>
+                    <!-- <div id="site-footer-top-wrapper-links">
+                      <iframe src="" frameborder="0"></iframe>
+                    </div> -->
+                    <div id="site-footer-top-wrapper-contact">
+                        <h2>За Контакт</h2>
+                        <p>Телефон: +359 88 8888888</p>
+                        <p>Имейл: office@vasd.com</p>
+                        <p>Адрес: гр. София, ул. "Търговска" 10</p>
+                        <p>Работно време: 9:00 - 17:00</p>
+                        <div id="site-footer-top-wrapper-contact-socials">
+                            <a href="#">
+                                <img src="images/facebook.png" alt="facebook" />
+                            </a>
+                            <a href="#">
+                                <img src="images/instagram.png" alt="instagram" />
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="site-footer-mid-wrapper">
-                <section id="site-footer-mid-wrapper-delivery">
+                <!-- <div id="site-footer-mid-wrapper">
+                  <section id="site-footer-mid-wrapper-delivery">
                     <div>
-                        <p>Доставка</p>
+                      <p>Доставка</p>
                     </div>
-                    <img src="#" alt="Доставка с ЕКОНТ" />
-                </section>
+                     <img src="#" alt="Доставка с ЕКОНТ" /> -->
+                <!-- </section>
 
                 <section id="site-footer-mid-wrapper-payment">
-                    <div>
-                        <p>Плащане</p>
-                    </div>
-                    <img src="#" alt="Плащане с карта" />
-                    <span> Наложен платеж </span>
-                </section>
+                  <div>
+                    <p>Плащане</p>
+                  </div> -->
+                <!-- <img src="#" alt="Плащане с карта" /> -->
+                <!-- <span> Наложен платеж </span>
+                  </section>
+                </div> -->
             </div>
             <div id="site-footer-bottom-wrapper">
-                <p>© 2021 Всички права запазени</p>
+                <p>&copy; @(DateTime.UtcNow.Year) Всички права запазени</p>
             </div>
         </footer>
     </div>

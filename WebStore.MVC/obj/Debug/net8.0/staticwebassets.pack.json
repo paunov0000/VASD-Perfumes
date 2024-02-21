@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebStore.MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\account.css",
+      "PackagePath": "staticwebassets\\css\\account.css"
+    },
+    {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\reset.css",
       "PackagePath": "staticwebassets\\css\\reset.css"
     },
@@ -267,6 +271,10 @@
     {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\lib\\toastr\\toastr.min.js",
       "PackagePath": "staticwebassets\\lib\\toastr\\toastr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\account.html",
+      "PackagePath": "staticwebassets\\pages\\account.html"
     },
     {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\layout.html",
