@@ -67,16 +67,7 @@
                     </div>
                     <!-- <button>Търси</button> -->
                 </div>
-                <div id="header-mid-options">
-                    <a asp-controller="Accounts" asp-action="Login" id="header-mid-options-login">
-                        <i class="fa-solid fa-user"></i>
-                        <p>Вход</p>
-                    </a>
-                    <a href="#" id="header-mid-options-cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <p>Количка</p>
-                    </a>
-                </div>
+                <partial name="_LoginPartial" />
             </div>
             <div id="header-bottom">
                 <nav id="header-nav">
