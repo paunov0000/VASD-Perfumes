@@ -38,7 +38,7 @@
                     </div>
                     <div id="rememberme-wrapper">
                         <label class="form-label" for="rememberme-check">Запомни ме</label>
-                        <input id="rememberme-check" type="checkbox" />
+                        <input asp-for="@Model.RememberMe" id="rememberme-check" type="checkbox" />
                     </div>
                     <button type="submit">@ViewData["Title"]</button>
                 </div>
