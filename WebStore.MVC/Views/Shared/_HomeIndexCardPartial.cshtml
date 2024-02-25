@@ -1,0 +1,15 @@
+﻿@model ProductViewModel;
+
+
+<div class="card">
+    <a href="#">
+        <div class="card-img-container">
+            <img src="@Model.ImageUrl"
+                 alt="Product Image" />
+        </div>
+    </a>
+    <div class="card-label-container">
+        <a href="#">@Model.Name</a>
+        <p class="card-label-container-price">@(Model.Price) лв.</p>
+    </div>
+</div>

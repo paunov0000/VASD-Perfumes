@@ -4,34 +4,35 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="row">
+<div class="cards-container">
     @foreach (var product in Model.AllProducts)
     {
-        <div class="col-md-3 mb-5">
-            <div class="card h-100" style="width: 18rem;">
-                <img src="@product.ImageUrl" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">@product.Name</h5>
-                    <p class="card-text">@product.Description</p>
-                    <p class="card-text">@(product.Price) лв.</p>
-                    @if (User.Identity?.IsAuthenticated ?? false)
-                    {
-                        <div class="btn-group d-flex justify-content-between">
-                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary">Редактирай</a>
-                            <form asp-controller="Product" asp-action="Delete" method="post">
-                                <input type="hidden" name="id" value="@product.Id" />
-                                <button type="submit" class="btn btn-danger" onclick="deleteProduct(event)">Изтрий</button>
-                            </form>
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
+        @* <div class="col-md-3 mb-5">
+    <div class="card h-100" style="width: 18rem;">
+    <img src="@product.ImageUrl" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title">@product.Name</h5>
+    <p class="card-text">@product.Description</p>
+    <p class="card-text">@(product.Price) лв.</p>
+    @if (User.Identity?.IsAuthenticated ?? false)
+    {
+    <div class="btn-group d-flex justify-content-between">
+    <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary">Редактирай</a>
+    <form asp-controller="Product" asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@product.Id" />
+    <button type="submit" class="btn btn-danger" onclick="deleteProduct(event)">Изтрий</button>
+    </form>
+    </div>
+    }
+    </div>
+    </div>
+    </div> *@
+        <partial name="_HomeIndexCardPartial" model="product" />
     }
 </div>
 
 
 
 @section Scripts {
-  <partial name="_SweetAlertScriptsPartial" />
+    <partial name="_SweetAlertScriptsPartial" />
 }
