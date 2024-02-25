@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  padding: 0.5em 0.7em 0.5em 0.7em;
+}
+
+.card-label-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75em;
+    text-align: center;
+    margin: 1em 0em 1em 0em;
+}
+
+.card-label-container-price {
+    font-weight: bold;
+}
+
+.card-img-container > img {
+    mix-blend-mode: multiply;
+}
+
+.card:hover {
+    box-shadow: 0 0 0 0.05em gray;
+}
+
+body {
+    padding: 3em;
+}
