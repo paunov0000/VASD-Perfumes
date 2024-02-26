@@ -109,6 +109,21 @@ namespace WebStore.MVC.Controllers
                 return NotFound(ex.Message);
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid id)
+        {
+            try
+            {
+                var model = await productService.GetProductByIdAsync(id);
+
+                return View(model);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 
 }

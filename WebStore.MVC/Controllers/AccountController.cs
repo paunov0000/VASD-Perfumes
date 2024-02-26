@@ -7,12 +7,12 @@ using static WebStore.Core.Constants.ErrorMessageConstants.Account;
 
 namespace WebStore.MVC.Controllers
 {
-    public class AccountsController : BaseController
+    public class AccountController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountsController(
+        public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager)
         {
