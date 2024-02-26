@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebStore.Infrastructure.Data.Entities;
 using WebStore.MVC.Models.Account;
 using static WebStore.Core.Constants.ErrorMessageConstants.Account;
+using static WebStore.Core.Constants.TempDataKeyConstants.Account;
 using static WebStore.Core.Constants.TempDataKeyConstants;
 
 namespace WebStore.MVC.Controllers
@@ -88,6 +89,8 @@ namespace WebStore.MVC.Controllers
 
             if (result.Succeeded)
             {
+                TempData[Status.Success] = SuccessOnLoginMessage;
+
                 if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                 {
                     return Redirect(returnUrl);
@@ -96,7 +99,7 @@ namespace WebStore.MVC.Controllers
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
 
-            ModelState.AddModelError(string.Empty, InvalidCredentialsMessage);
+            //ModelState.AddModelError(string.Empty, InvalidCredentialsMessage);
 
             TempData[Status.Error] = InvalidCredentialsMessage;
 
@@ -106,6 +109,8 @@ namespace WebStore.MVC.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+
+            TempData[Status.Success] = SuccessOnLogoutMessage;
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
