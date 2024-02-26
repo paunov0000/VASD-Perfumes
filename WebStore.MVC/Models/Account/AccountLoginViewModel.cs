@@ -14,6 +14,7 @@ namespace WebStore.MVC.Models.Account
         [Required(ErrorMessage = RequiredFieldMessage)]
         [DataType(DataType.Password)]
         [Display(Name = DisplayPassword)]
+        [MinLength(6, ErrorMessage = "Test message for passwordlength")]
         public string Password { get; set; } = null!;
 
         [Display(Name = DisplayRememberMe)]

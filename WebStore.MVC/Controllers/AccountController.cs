@@ -96,7 +96,7 @@ namespace WebStore.MVC.Controllers
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
 
-            //ModelState.AddModelError(string.Empty, InvalidCredentialsMessage);
+            ModelState.AddModelError(string.Empty, InvalidCredentialsMessage);
 
             TempData[Status.Error] = InvalidCredentialsMessage;
 
