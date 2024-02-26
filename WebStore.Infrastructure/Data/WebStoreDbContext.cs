@@ -23,6 +23,8 @@ namespace WebStore.Infrastructure.Data
 
         public DbSet<Review> Reviews { get; set; }
 
+        public DbSet<OrderStatus> OrderStatuses { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
 

@@ -16,9 +16,10 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Date of the order")]
         public DateTime OrderDate { get; set; }
 
-        [Required]
-        [Comment("Status of the order")]
-        public OrderStatus Status { get; set; }
+        [ForeignKey(nameof(OrderStatus))]
+        public int OrderStatusId { get; set; }
+
+        public OrderStatus OrderStatus { get; set; } = null!;
 
         [Required]
         [ForeignKey(nameof(Customer))]
