@@ -21,7 +21,7 @@
 
         public static class Account
         {
-            public const string InvalidCredentialsMessage = "Грешенни данни за вход.";
+            public const string InvalidCredentialsMessage = "Грешни данни за вход";
 
             public const string PasswordsDoNotMatchMessage = "Паролите не съвпадат.";
         }

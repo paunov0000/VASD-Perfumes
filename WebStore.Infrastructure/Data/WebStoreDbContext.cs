@@ -34,6 +34,7 @@ namespace WebStore.Infrastructure.Data
 
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new ProductCategoryConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
 
 
             base.OnModelCreating(builder);
