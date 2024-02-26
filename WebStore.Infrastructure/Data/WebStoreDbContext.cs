@@ -19,6 +19,8 @@ namespace WebStore.Infrastructure.Data
 
         //public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+
         public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
