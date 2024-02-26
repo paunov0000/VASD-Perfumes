@@ -21,13 +21,13 @@ namespace WebStore.Infrastructure.Data.Entities
         public OrderStatus Status { get; set; }
 
         [Required]
-        [ForeignKey(nameof(User))]
+        [ForeignKey(nameof(Customer))]
         [Comment("Foreign key of the ApplicationUser")]
-        public Guid UserId { get; set; }
+        public Guid CustomerId { get; set; }
 
         [Required]
         [Comment("ApplicationUser associated with the Order")]
-        public ApplicationUser User { get; set; } = null!;
+        public Customer Customer { get; set; } = null!;
 
         [Required]
         [Comment("Products of the Order")]
