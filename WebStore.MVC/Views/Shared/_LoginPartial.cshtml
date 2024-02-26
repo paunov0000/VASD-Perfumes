@@ -7,7 +7,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-        <a asp-controller="Accounts" asp-action="Login" id="header-mid-options-login">
+        <a asp-controller="Account" asp-action="Login" id="header-mid-options-login">
             <i class="fa-solid fa-user"></i>
             <p>Профил</p>
         </a>
@@ -15,14 +15,14 @@
             <i class="fa-solid fa-cart-shopping"></i>
             <p>Количка</p>
         </a>
-        <a asp-controller="Accounts" asp-action="Logout" id="header-mid-options-login">
+        <a asp-controller="Account" asp-action="Logout" id="header-mid-options-login">
             <i class="fa-solid fa-right-from-bracket"></i>
             <p>Изход</p>
         </a>
 }
 else
 {
-        <a asp-controller="Accounts" asp-action="Login" id="header-mid-options-login">
+        <a asp-controller="Account" asp-action="Login" id="header-mid-options-login">
             <i class="fa-solid fa-user-secret"></i>
             <p>Вход</p>
         </a>
