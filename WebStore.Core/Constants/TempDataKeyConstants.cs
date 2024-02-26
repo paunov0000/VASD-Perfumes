@@ -27,5 +27,16 @@ namespace WebStore.Core.Constants
             public const string InvalidInputMessage = "Невалидни данни, опитай отново.";
         }
 
+        public static class Account
+        {
+            public const string SuccessOnRegisterMessage = "Успешна регистрация.";
+
+            public const string SuccessOnLoginMessage = "Успешно влизане.";
+
+            public const string SuccessOnLogoutMessage = "Успешно излизане.";
+
+            public const string InvalidInputMessage = "Невалидни данни за вход";
+        }
+
     }
 }

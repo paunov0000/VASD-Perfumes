@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebStore.Infrastructure.Data.Entities;
 using WebStore.MVC.Models.Account;
 using static WebStore.Core.Constants.ErrorMessageConstants.Account;
+using static WebStore.Core.Constants.TempDataKeyConstants;
 
 namespace WebStore.MVC.Controllers
 {
@@ -95,7 +96,9 @@ namespace WebStore.MVC.Controllers
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
 
-            ModelState.AddModelError(string.Empty, InvalidCredentialsMessage);
+            //ModelState.AddModelError(string.Empty, InvalidCredentialsMessage);
+
+            TempData[Status.Error] = InvalidCredentialsMessage;
 
             return View(model);
         }
