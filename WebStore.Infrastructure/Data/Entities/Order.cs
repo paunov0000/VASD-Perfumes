@@ -22,7 +22,7 @@ namespace WebStore.Infrastructure.Data.Entities
 
         [Required]
         [ForeignKey(nameof(Customer))]
-        [Comment("Foreign key of the ApplicationUser")]
+        [Comment("Foreign key of the Customer")]
         public Guid CustomerId { get; set; }
 
         [Required]

@@ -12,8 +12,8 @@ using WebStore.Infrastructure.Data;
 namespace WebStore.Infrastructure.Migrations
 {
     [DbContext(typeof(WebStoreDbContext))]
-    [Migration("20240226185035_RemovedBusinessLogicFromApplicationUser")]
-    partial class RemovedBusinessLogicFromApplicationUser
+    [Migration("20240226190744_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -302,8 +302,9 @@ namespace WebStore.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasComment("Foreign key of the Customer");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2")
@@ -313,15 +314,9 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasComment("Status of the order");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasComment("Foreign key of the ApplicationUser");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Orders", t =>
                         {
@@ -397,7 +392,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6f"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8510),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7278),
                             Description = "Iconic blend of rose and jasmine, a classic from luxury brand Chanel",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
                             IsDeleted = false,
@@ -411,7 +406,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6e"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8537),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7287),
                             Description = "Youthful and fresh floral scent with notes of jasmine and violet",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
                             IsDeleted = false,
@@ -425,7 +420,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6d"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8540),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7290),
                             Description = "Modern and vibrant floral bouquet featuring tuberose and jasmine",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
                             IsDeleted = false,
@@ -439,7 +434,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6c"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8543),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7292),
                             Description = "Intensely floral with notes of jasmine, rose, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
                             IsDeleted = false,
@@ -453,7 +448,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6b"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8546),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7294),
                             Description = "Timeless oriental scent with vanilla, iris, and amber notes",
                             ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
                             IsDeleted = false,
@@ -467,7 +462,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6a"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8550),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7299),
                             Description = "Rich and spicy oriental fragrance with exotic undertones",
                             ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
                             IsDeleted = false,
@@ -481,7 +476,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b69"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8552),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7302),
                             Description = "Luxurious blend of black truffle, vanilla, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
                             IsDeleted = false,
@@ -495,7 +490,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b68"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8555),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7304),
                             Description = "Fresh and aquatic scent with notes of citrus and rosemary",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg?imwidth=612",
                             IsDeleted = false,
@@ -509,7 +504,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b67"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8558),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7306),
                             Description = "Citrusy and woody fragrance with notes of grapefruit and cedar",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s915447-main-zoom.jpg?imwidth=612",
                             IsDeleted = false,
@@ -523,7 +518,7 @@ namespace WebStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b66"),
-                            CreatedOn = new DateTime(2024, 2, 26, 18, 50, 34, 903, DateTimeKind.Utc).AddTicks(8562),
+                            CreatedOn = new DateTime(2024, 2, 26, 19, 7, 44, 412, DateTimeKind.Utc).AddTicks(7309),
                             Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
                             ImageUrl = "https://creedboutique.com/cdn/shop/files/aventus-100ml-bottle_3413e5f4-3eee-40b3-8451-2546a370ec5b.jpg?v=1700498936&width=1500",
                             IsDeleted = false,
@@ -606,6 +601,10 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("datetime2")
                         .HasComment("Date of the review");
 
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasComment("Foreign key of the Customer");
+
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier")
                         .HasComment("Foreign key of the product");
@@ -624,15 +623,11 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("datetime2")
                         .HasComment("Date of updating the review");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasComment("Foreign key of the user");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("CustomerId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("Reviews", t =>
                         {
@@ -719,17 +714,13 @@ namespace WebStore.Infrastructure.Migrations
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Order", b =>
                 {
-                    b.HasOne("WebStore.Infrastructure.Data.Entities.Customer", null)
+                    b.HasOne("WebStore.Infrastructure.Data.Entities.Customer", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("CustomerId");
-
-                    b.HasOne("WebStore.Infrastructure.Data.Entities.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Product", b =>
@@ -745,21 +736,21 @@ namespace WebStore.Infrastructure.Migrations
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Review", b =>
                 {
+                    b.HasOne("WebStore.Infrastructure.Data.Entities.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("WebStore.Infrastructure.Data.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebStore.Infrastructure.Data.Entities.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Customer");
 
                     b.Navigation("Product");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Customer", b =>

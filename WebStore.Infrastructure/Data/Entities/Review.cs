@@ -42,10 +42,10 @@ namespace WebStore.Infrastructure.Data.Entities
         public Product Product { get; set; } = null!;
 
         [Required]
-        [ForeignKey(nameof(User))]
-        [Comment("Foreign key of the user")]
-        public Guid UserId { get; set; }
+        [ForeignKey(nameof(Customer))]
+        [Comment("Foreign key of the Customer")]
+        public Guid CustomerId { get; set; }
 
-        public ApplicationUser User { get; set; } = null!;
+        public Customer Customer { get; set; } = null!;
     }
 }
