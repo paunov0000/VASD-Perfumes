@@ -2,30 +2,67 @@
 @model AccountRegisterViewModel
 
 @{
-    ViewData["Title"] = "Регистрация";
     Layout = null;
+    ViewData["Title"] = "Регистрация";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>@ViewData["Title"] - VASD</title>
-    <link rel="stylesheet" type="text/css" href="slide navbar style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slide navbar style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
+          rel="stylesheet" />
+    <link href="~/css/reset.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="~/css/account.css" rel="stylesheet" />
+    <link href="~/lib/toastr/toastr.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    @* <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" /> *@
 </head>
 <body>
+    <partial name="_ToastrAlertMessagesPartial" />
     <div class="main">
-        <input type="checkbox" id="chk" aria-hidden="true">
+        <!-- @* <input type="checkbox" id="chk" aria-hidden="true"> *@ -->
         <div class="signup">
-            <form>
-                <label for="chk" aria-hidden="true">Sign up</label>
-                <input type="text" name="txt" placeholder="User name" required="">
-                <input type="email" name="email" placeholder="Email" required="">
-                <input type="password" name="pswd" placeholder="Password" required="">
-                <button>Sign up</button>
+            <form method="post">
+                <div id="input-wrapper">
+                    <label id="action-title">@ViewData["Title"]</label>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <!-- @* <input type="text" name="txt" placeholder="User name" required=""> *@ -->
+                    @* <label asp-for="@Model.Email" class="form-label"></label> *@
+                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                    <input class="form-input"
+                           asp-for="@Model.Email"
+                           placeholder="Имейл" />
+                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                    <input class="form-input"
+                           asp-for="@Model.Password"
+                           placeholder="Парола" />
+                    <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
+                    <input class="form-input" 
+                           asp-for="@Model.ConfirmPassword" 
+                           placeholder="Повтори парола" />
+                    <div id="register-wrapper">
+                        <p>
+                            Имате акаунт?
+                            <a class="register-text" asp-controller="Account" asp-action="Login">Вход</a>
+                        </p>
+                    </div>
+                    @* <div id="rememberme-wrapper">
+                    <label class="form-label" for="rememberme-check">Запомни ме</label>
+                    <input asp-for="@Model.RememberMe" id="rememberme-check" type="checkbox" />
+                    </div> *@
+                    <button type="submit">@ViewData["Title"]</button>
+                </div>
             </form>
         </div>
     </div>
+
+    @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
+    @* <script src="~/js/site.js" asp-append-version="true"></script> *@
+    <partial name="_ValidationScriptsPartial"></partial>
+    <script src="~/lib/toastr/toastr.min.js"></script>
 </body>
 </html>
