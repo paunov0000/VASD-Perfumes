@@ -133,7 +133,7 @@ namespace WebStore.Core.Services
 
             if (product.IsDeleted == true)
             {
-                throw new InvalidOperationException("Product not found");
+                throw new InvalidOperationException("Entity not found");
             }
 
             return new ProductAddViewModel()

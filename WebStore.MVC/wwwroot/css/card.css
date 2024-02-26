@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 10em;
-  padding: 0.5em 0.7em 0.5em 0.7em;
+  padding: 0.5em 0.7em 0.7em 0.7em;
 }
 
 .card-label-container {
@@ -10,7 +10,7 @@
     flex-direction: column;
     gap: 1.75em;
     text-align: center;
-    margin: 1em 0em 1em 0em;
+    margin: 1em 0em 0em 0em;
 }
 
 .card-label-container-price {
@@ -18,8 +18,18 @@
 }
 
 .card-img-container > img {
-    mix-blend-mode: multiply;
+    height: 10em;
 }
+
+/* .card-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10em;
+    overflow: hidden;
+    margin: 0em 0em 1em 0em;
+
+} */
 
 .card:hover {
     box-shadow: 0 0 0 0.05em gray;
@@ -31,4 +41,12 @@
     gap: 3em;
     justify-content: center;
     /* margin: 1em 0em 1em 0em; */
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin: 1em 0em 0em 0em;
+    font-size: 1.2em;
 }
