@@ -25,29 +25,58 @@
 
     <img src="#" alt="Manufacturer Logo" />
 
-    <div id="product-listings">
-      <div class="product-listing">
-        <input type="checkbox" name="30ml" />
-        <p>30 ml</p>
-        <p>199.65 лв.</p>
+    <div id="product-interaction">
+      <div id="product-listings">
+        <div class="product-listing">
+          <input type="checkbox" name="30ml" />
+          <p>30 ml</p>
+          <p>199.65 лв.</p>
+        </div>
+        <div class="product-listing">
+          <input type="checkbox" name="60ml" />
+          <p>60 ml</p>
+          <p>213.31 лв.</p>
+        </div>
+        <div class="product-listing">
+          <input type="checkbox" name="200ml" />
+          <p>200 ml</p>
+          <p>663.31 лв.</p>
+        </div>
       </div>
-      <div class="product-listing">
-        <input type="checkbox" name="60ml" />
-        <p>60 ml</p>
-        <p>213.31 лв.</p>
+      <div id="quantity-select">
+        <span id="arrow-down">-</span>
+        <input type="text" name="pquantity" id="product-quantity" value="1" />
+        <span id="arrow-up">+</span>
       </div>
-      <div class="product-listing">
-        <input type="checkbox" name="200ml" />
-        <p>200 ml</p>
-        <p>663.31 лв.</p>
+      <button id="add-to-cart">Добави в количката</button>
+      <button id="buy-now">Купи сега</button>
+    </div>
+    <div id="product-description">
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
+        nesciunt enim? Tenetur eaque rem veniam, sunt autem sapiente, ullam
+        ipsam ad magni aspernatur accusamus pariatur nostrum explicabo neque,
+        cupiditate tempora.
+      </p>
+    </div>
+    <div id="product-details">
+      <div>
+        <p>Име на продукт</p>
+        <p>Christian Dior Sauvage парфюм за мъже EDT</p>
+      </div>
+      <div>
+        <p>Категория</p>
+        <p>Арабски парфюми</p>
+      </div>
+      <div>
+        <p>Описание</p>
+        <p>Eau de Parfum За мъже</p>
+      </div>
+      <div>
+        <p>ID</p>
+        <p>123456789</p>
       </div>
     </div>
-    <div id="quantity-select">
-      <span id="arrow-down">-</span>
-      <input type="text" inputmode="numeric" name="pquantity" id="product-quantity" value="1">
-      <span id="arrow-up">+</span>
-    </div>
-
     <script src="../js/site.js"></script>
   </body>
 </html>

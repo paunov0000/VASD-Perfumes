@@ -21,5 +21,5 @@ document.getElementById("arrow-up").onclick = function (e) {
 }
 
 document.getElementById("product-quantity").oninput = function (e) {
-  this.value = this.value.replace(/[^0-9]/g, '');
+  this.value = this.value.replace(/[^0-9]/g, ''); //probably can be done better, think about a solution, the marker is affected by each input
 }
