@@ -19,3 +19,7 @@ document.getElementById("arrow-up").onclick = function (e) {
   var quantity = parseInt(text.value);
   text.value = quantity + 1;
 }
+
+document.getElementById("product-quantity").oninput = function (e) {
+  this.value = this.value.replace(/[^0-9]/g, '');
+}
