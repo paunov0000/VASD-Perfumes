@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../css/reset.css" />
-        <link rel="stylesheet" href="../css/site-layout.css" />
-        <link rel="stylesheet" href="../css/site.css" />
-        <link rel="stylesheet" href="../css/typography.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        />
-        <title>Document</title>
-      </head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/site-layout.css" />
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/typography.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Christian Dior Sauvage парфюм за мъже EDT</p>
+
+    <img src="#" alt="Manufacturer Logo" />
+
+    <div id="product-listings">
+      <div class="product-listing">
+        <input type="checkbox" name="30ml" />
+        <p>30 ml</p>
+        <p>199.65 лв.</p>
+      </div>
+      <div class="product-listing">
+        <input type="checkbox" name="60ml" />
+        <p>60 ml</p>
+        <p>213.31 лв.</p>
+      </div>
+      <div class="product-listing">
+        <input type="checkbox" name="200ml" />
+        <p>200 ml</p>
+        <p>663.31 лв.</p>
+      </div>
+    </div>
+    <div id="quantity-select">
+      <span id="arrow-down">-</span>
+      <input type="number" pattern="0+[0-9]*[1-9][0-9]*$" name="pquantity" id="product-quantity" value="1">
+      <span id="arrow-up">+</span>
+    </div>
+
+    <script src="../js/site.js"></script>
+  </body>
 </html>

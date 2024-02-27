@@ -1,4 +1,21 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿document.getElementById("arrow-down").onclick = function (e) {
+  var text = document.getElementById(`product-quantity`);
+  if (text.value === "") {
+    text.value = 1;
+  }
+  var quantity = parseInt(text.value);
+  if (quantity <= 1) {
+    text.value = 1;
+  } else {
+    text.value = quantity - 1;
+  }
+};
 
-// Write your JavaScript code.
+document.getElementById("arrow-up").onclick = function (e) {
+  var text = document.getElementById(`product-quantity`);
+  if (text.value === "") {
+    text.value = 1;
+  }
+  var quantity = parseInt(text.value);
+  text.value = quantity + 1;
+}
