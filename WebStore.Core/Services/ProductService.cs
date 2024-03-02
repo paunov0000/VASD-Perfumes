@@ -32,11 +32,11 @@ namespace WebStore.Core.Services
             await repo.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<ProductViewModel>> Get12MostRecent()
+        public async Task<IEnumerable<ProductViewModel>> GetMostRecent(int count)
         {
             var result = await this.repo.AllReadonly<Product>()
                 .Where(p => p.IsDeleted == false)
-                .OrderByDescending(x => x.CreatedOn).Take(12).Select(x => new ProductViewModel()
+                .OrderByDescending(x => x.CreatedOn).Take(count).Select(x => new ProductViewModel()
                 {
                     Description = x.Description,
                     Id = x.Id,

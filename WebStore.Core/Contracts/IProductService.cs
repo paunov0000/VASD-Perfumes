@@ -19,8 +19,10 @@ namespace WebStore.Core.Contracts
         /// <summary>
         /// Fetches the 12 most recent products from the database and maps them to an IEnumerable of ProductViewModel
         /// </summary>
+        /// <param name="count">The quantity of most recent entities to be returned</param>
         /// <returns>An IEnumerable of ProductViewModel</returns>
-        Task<IEnumerable<ProductViewModel>> Get12MostRecent();
+        /// 
+        Task<IEnumerable<ProductViewModel>> GetMostRecent(int count);
 
 
         /// <summary>
