@@ -115,6 +115,9 @@ namespace WebStore.Infrastructure.Common
             context.Dispose();
         }
 
+
+       
+        
         public async Task<T> GetByIdAsync<T>(object id) where T : class
         {
             var entity = await DbSet<T>().FindAsync(id);
@@ -124,7 +127,7 @@ namespace WebStore.Infrastructure.Common
                 throw new InvalidOperationException("Entity not found");
             }
 
-            return entity;
+            return entity!;
         }
 
         public async Task<T> GetByIdsAsync<T>(object[] ids) where T : class

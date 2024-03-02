@@ -43,6 +43,7 @@ namespace WebStore.Infrastructure.Common
         /// </summary>
         /// <param name="id">record identificator</param>
         /// <returns>Single record</returns>
+        /// <exception cref="InvalidOperationException">Throws an InvalidOperationException when the entity is not found</exception>
         Task<T> GetByIdAsync<T>(object id) where T : class;
 
 
