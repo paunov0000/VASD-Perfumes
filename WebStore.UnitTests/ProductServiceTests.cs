@@ -40,7 +40,7 @@ namespace WebStore.UnitTests
         public async Task AddProductAsync_ShouldAddProduct()
         {
             var productCategoryGuid = Guid.Parse("072a4bec-c3d3-4a66-aa9f-d3d7bc10d88e");
-            var productGuid = Guid.Parse("072a4bec-c3d3-4a66-aa9f-d3d7bc10d88e");
+            var productGuid = Guid.Parse("072a4bec-c3d3-4a66-aa9f-d3d7bc10d88f");
 
             var product = new ProductAddViewModel()
             {
@@ -57,17 +57,15 @@ namespace WebStore.UnitTests
 
             var result = await this.repo.GetByIdAsync<Product>(productCategoryGuid);
 
-            Assert.That(result != null);
-            if (result != null)
-            {
-                Assert.That(productCategoryGuid == result.ProductCategoryId);
-                Assert.That(productGuid == result.Id);
-                Assert.That("Test Description" == result.Description);
-                Assert.That("Test ImageUrl" == result.ImageUrl);
-                Assert.That("Test Manufacturer" == result.Manufacturer);
-                Assert.That("Test Name" == result.Name);
-                Assert.That(100 == result.Price);
-            }
+
+            Assert.That(productCategoryGuid == result.ProductCategoryId);
+            Assert.That(productGuid == result.Id);
+            Assert.That("Test Description" == result.Description);
+            Assert.That("Test ImageUrl" == result.ImageUrl);
+            Assert.That("Test Manufacturer" == result.Manufacturer);
+            Assert.That("Test Name" == result.Name);
+            Assert.That(100 == result.Price);
+
 
         }
 
