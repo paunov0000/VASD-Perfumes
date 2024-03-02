@@ -25,7 +25,8 @@ namespace WebStore.Core.Services
                 Name = model.Name,
                 Price = model.Price,
                 Manufacturer = model.Manufacturer,
-                ProductCategoryId = model.ProductCategoryId
+                ProductCategoryId = model.ProductCategoryId,
+                Id = model.Id
             });
 
             await repo.SaveChangesAsync();
