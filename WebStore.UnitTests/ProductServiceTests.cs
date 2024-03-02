@@ -33,6 +33,7 @@ namespace WebStore.UnitTests
             this.productService = new ProductService(repo);
 
             this.dbContext.Database.EnsureDeleted();
+
             this.dbContext.Database.EnsureCreated();
         }
 
@@ -55,7 +56,7 @@ namespace WebStore.UnitTests
 
             await this.productService.AddProductAsync(product);
 
-            var result = await this.repo.GetByIdAsync<Product>(productCategoryGuid);
+            var result = await this.repo.GetByIdAsync<Product>(productGuid);
 
 
             Assert.That(productCategoryGuid == result.ProductCategoryId);
@@ -67,6 +68,32 @@ namespace WebStore.UnitTests
             Assert.That(100 == result.Price);
 
 
+        }
+
+        [Test]
+        public async Task GetMostRecent_ShouldReturn3MostRecentProducts()
+        {
+            var result = await this.productService.GetMostRecent(3);
+
+            Assert.That(result.Count() == 3);
+        }
+
+        [Test]
+        public async Task GetMostRecent_ShouldReturnAllProductsWhenCountParamIsGreaterThanProductCount()
+        {
+            var countToBeExpected = this.dbContext.Products.Count();
+
+            var result = await this.productService.GetMostRecent(100);
+
+            Assert.That(result.Count() == countToBeExpected);
+        }
+
+        [Test]
+        public async Task GetMostRecent_ShouldReturnAnEmptyCollectionWhenCountIs0()
+        {
+            var result = await this.productService.GetMostRecent(0);
+
+            Assert.That(result.Count() == 0);
         }
 
         [TearDown]
