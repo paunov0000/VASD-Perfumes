@@ -35,7 +35,7 @@ namespace WebStore.Core.Services
         public async Task<IEnumerable<ProductViewModel>> GetMostRecent(int count)
         {
             var result = await this.repo.AllReadonly<Product>()
-                .Where(p => p.IsDeleted == false)
+                .Where(p => p.IsActive)
                 .OrderByDescending(x => x.CreatedOn).Take(count).Select(x => new ProductViewModel()
                 {
                     Description = x.Description,
@@ -49,11 +49,11 @@ namespace WebStore.Core.Services
             return result;
         }
 
-        public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync(bool isDeleted)
+        public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync(bool isActive = true)
         {
             IEnumerable<ProductViewModel> result;
 
-            if (isDeleted)
+            if (isActive == false)
             {
                 result = await this.repo.AllReadonly<Product>()
                     .Select(x => new ProductViewModel()
@@ -69,7 +69,7 @@ namespace WebStore.Core.Services
             else
             {
                 result = await this.repo.AllReadonly<Product>()
-                .Where(p => p.IsDeleted == false)
+                .Where(p => p.IsActive)
                 .Select(x => new ProductViewModel()
                 {
                     Description = x.Description,
@@ -87,7 +87,7 @@ namespace WebStore.Core.Services
         public async Task<IEnumerable<ProductViewModel>> GetMostSold()
         {
             var result = await this.repo.AllReadonly<Product>()
-                .Where(p => p.IsDeleted == false)
+                .Where(p => p.IsActive)
                 .OrderByDescending(x => x.SoldCount)
                 .Take(12)
                 .Select(x => new ProductViewModel()
@@ -105,7 +105,7 @@ namespace WebStore.Core.Services
 
         public async Task<IEnumerable<ProductViewModel>> GetOnSale()
         {
-            var result = await this.repo.AllReadonly<Product>(p => p.OnSale == true && p.IsDeleted == false)
+            var result = await this.repo.AllReadonly<Product>(p => p.OnSale == true && p.IsActive)
                 .Select(x => new ProductViewModel()
                 {
                     Description = x.Description,
@@ -132,7 +132,7 @@ namespace WebStore.Core.Services
         {
             var product = await this.repo.GetByIdAsync<Product>(id);
 
-            if (product.IsDeleted == true)
+            if (product.IsActive == false) //TODO: Is it okay to check if isActive here or should it be checked in the controller?
             {
                 throw new InvalidOperationException("Entity not found");
             }
@@ -154,7 +154,7 @@ namespace WebStore.Core.Services
         {
             var entity = await repo.GetByIdAsync<Product>(model.Id);
 
-            if (entity.IsDeleted == true)
+            if (entity.IsActive == false) //TODO: Is it okay to check if isActive here or should it be checked in the controller?
             {
                 throw new InvalidOperationException("Product not found");
             }
@@ -173,12 +173,12 @@ namespace WebStore.Core.Services
         {
             var entity = await repo.GetByIdAsync<Product>(id);
 
-            if (entity.IsDeleted == true)
+            if (entity.IsActive == false) //TODO: Is it okay to check if isActive here or should it be checked in the controller?
             {
                 throw new InvalidOperationException("Product not found");
             }
 
-            entity.IsDeleted = true;
+            entity.IsActive = false;
 
             await repo.SaveChangesAsync();
         }
