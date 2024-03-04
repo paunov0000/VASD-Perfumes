@@ -13,7 +13,7 @@ namespace WebStore.Core.Contracts
         /// Fetches all Product entities from the database and maps them to an IEnumerable of ProductViewModel
         /// </summary>
         /// <returns>An IEnumerable of ProductViewModel</returns>
-        Task<IEnumerable<ProductViewModel>> GetAllProductsAsync(bool isDeleted = false);
+        Task<IEnumerable<ProductViewModel>> GetAllProductsAsync(bool isActive = true);
 
 
         /// <summary>
