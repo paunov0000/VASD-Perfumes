@@ -17,8 +17,6 @@ namespace WebStore.Infrastructure.Data
 
         public DbSet<Order> Orders { get; set; }
 
-        //public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-
         public DbSet<Customer> Customers { get; set; }
 
         public DbSet<Review> Reviews { get; set; }
@@ -27,11 +25,6 @@ namespace WebStore.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-
-            builder.Entity<Product>()
-                .Property(p => p.Price)
-                .HasPrecision(18, 2);
-
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new ProductCategoryConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());

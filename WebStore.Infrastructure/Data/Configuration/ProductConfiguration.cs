@@ -10,8 +10,13 @@ namespace WebStore.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.Property(p=> p.IsActive)
+            builder
+                .Property(p => p.IsActive)
                 .HasDefaultValue(true);
+
+            builder
+                .Property(p => p.Price)
+                .HasPrecision(18, 2);
 
             builder.HasData(CreateProducts());
         }
