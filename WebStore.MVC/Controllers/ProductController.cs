@@ -15,9 +15,11 @@ namespace WebStore.MVC.Controllers
             this.productService = productService;
         }
 
+        [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var model = await productService.GetAllProductsAsync(isDeleted: true);
+            var model = await productService.GetAllProductsAsync();
 
             return View(model);
         }
@@ -87,7 +89,7 @@ namespace WebStore.MVC.Controllers
 
                 TempData[Status.Success] = Product.SuccessOnEditMessage;
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Product");
             }
             catch (InvalidOperationException ex)
             {
