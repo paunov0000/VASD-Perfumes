@@ -49,7 +49,7 @@ namespace WebStore.Infrastructure.Data.Entities
 
         [Required]
         [Comment("A flag which sets the product state as whether its visible or not")]
-        public bool IsDeleted { get; set; }
+        public bool IsActive { get; set; } = true;
 
         [Required]
         [ForeignKey(nameof(ProductCategory))]
