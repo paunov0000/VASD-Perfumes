@@ -99,7 +99,7 @@ namespace WebStore.UnitTests
         [Test]
         public async Task GetAllProductsAsync_ShouldFetchAllProductsWhichAreNotMarkedAsDeleted()
         {
-            var expectedCount = this.dbContext.Products.Count(p => p.IsDeleted == false);
+            var expectedCount = this.dbContext.Products.Count(p => p.IsActive);
 
             var result = await this.productService.GetAllProductsAsync();
 
@@ -109,7 +109,7 @@ namespace WebStore.UnitTests
         [Test]
         public async Task GetAllProductsAsync_WithBoolFalseInCtorShouldFetchAllProductsNotMarkedAsDeleted()
         {
-            var expectedCount = this.dbContext.Products.Count(p => p.IsDeleted == false);
+            var expectedCount = this.dbContext.Products.Count(p => p.IsActive);
 
             var result = await this.productService.GetAllProductsAsync(false);
 
