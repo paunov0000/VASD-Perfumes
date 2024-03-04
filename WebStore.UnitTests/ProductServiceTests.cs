@@ -96,6 +96,36 @@ namespace WebStore.UnitTests
             Assert.That(result.Count() == 0);
         }
 
+        [Test]
+        public async Task GetAllProductsAsync_ShouldFetchAllProductsWhichAreNotMarkedAsDeleted()
+        {
+            var expectedCount = this.dbContext.Products.Count(p => p.IsDeleted == false);
+
+            var result = await this.productService.GetAllProductsAsync();
+
+            Assert.That(expectedCount == result.Count());
+        }
+
+        [Test]
+        public async Task GetAllProductsAsync_WithBoolFalseInCtorShouldFetchAllProductsNotMarkedAsDeleted()
+        {
+            var expectedCount = this.dbContext.Products.Count(p => p.IsDeleted == false);
+
+            var result = await this.productService.GetAllProductsAsync(false);
+
+            Assert.That(expectedCount == result.Count());
+        }
+
+        [Test]
+        public async Task GetAllProductsAsync_WithBoolTrueInCtorShouldFetchAllRegardlessOfTheirState()
+        {
+            var expectedCount = this.dbContext.Products.Count();
+
+            var result = await this.productService.GetAllProductsAsync(true);
+
+            Assert.That(expectedCount == result.Count());
+        }
+
         [TearDown]
         public void TearDown()
         {
