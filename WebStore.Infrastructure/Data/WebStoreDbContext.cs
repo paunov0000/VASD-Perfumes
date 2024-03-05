@@ -28,6 +28,9 @@ namespace WebStore.Infrastructure.Data
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new ProductCategoryConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
+            builder.ApplyConfiguration(new CustomerConfiguration());
+            builder.ApplyConfiguration(new RoleConfiguration());
+            builder.ApplyConfiguration(new UserRoleConfiguration());
 
 
             base.OnModelCreating(builder);
