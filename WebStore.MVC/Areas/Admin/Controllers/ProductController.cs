@@ -1,21 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebStore.Core.Contracts;
+using WebStore.Core.Contracts.Admin;
 
 namespace WebStore.MVC.Areas.Admin.Controllers
 {
     public class ProductController : BaseController
     {
-        private readonly IProductService productService;
+        private readonly IProductManageService productManageService;
 
-        public ProductController(IProductService _productService)
+        public ProductController(IProductManageService _productManageService)
         {
-            productService = _productService;
+            productManageService = _productManageService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var model = await productService.GetAllProductsAsync();
+            var model = await productManageService.GetAllProductsAsync();
 
             return View(model);
         }
