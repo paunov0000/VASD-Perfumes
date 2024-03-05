@@ -8,7 +8,7 @@ using WebStore.Core.Model.Product;
 
 namespace WebStore.Core.Contracts.Admin
 {
-    public interface IProductService
+    public interface IProductManageService
     {
         Task<IEnumerable<ProductTableModel>> GetAllProductsAsync();
 
