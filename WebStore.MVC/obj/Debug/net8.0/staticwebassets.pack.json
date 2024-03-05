@@ -281,6 +281,10 @@
       "PackagePath": "staticwebassets\\pages\\account.html"
     },
     {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\admin-layout.html",
+      "PackagePath": "staticwebassets\\pages\\admin-layout.html"
+    },
+    {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\card_partial.html",
       "PackagePath": "staticwebassets\\pages\\card_partial.html"
     },

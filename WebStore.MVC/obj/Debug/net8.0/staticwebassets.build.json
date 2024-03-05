@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pSl6IgN1RrKyS4jeDe0g2EhYJmIBXQUxP9PXuqD3iWo=",
+  "Hash": "7pqS8zpvOM0kM1xEbKHlSOYSbKFNKX9UZaVpixlM78I=",
   "Source": "WebStore.MVC",
   "BasePath": "_content/WebStore.MVC",
   "Mode": "Default",
@@ -2542,6 +2542,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\pages\\account.html"
+    },
+    {
+      "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\admin-layout.html",
+      "SourceId": "WebStore.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\",
+      "BasePath": "_content/WebStore.MVC",
+      "RelativePath": "pages/admin-layout.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pages\\admin-layout.html"
     },
     {
       "Identity": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\card_partial.html",
