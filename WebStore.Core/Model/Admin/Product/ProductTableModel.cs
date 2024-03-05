@@ -15,9 +15,11 @@ namespace WebStore.Core.Model.Admin.Product
 
         public int SoldCount { get; set; }
 
-        [ForeignKey(nameof(ProductCategory))]
+        public int Quantity { get; set; }
+
+        public bool OnSale { get; set; }
+
         public Guid ProductCategoryId { get; set; }
 
-        public ProductCategory ProductCategory { get; set; } = null!;
     }
 }
