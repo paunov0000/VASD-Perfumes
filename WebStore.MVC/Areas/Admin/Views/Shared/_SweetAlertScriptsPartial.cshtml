@@ -1,0 +1,24 @@
+﻿<script>
+    async function deleteProduct(e) {
+        e.preventDefault();
+        const result = await Swal.fire({
+            title: 'Изтриване на артикул',
+            text: 'Сигурни ли сте, че искате да изтриете този артикул?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Да, изтрий!',
+            cancelButtonText: 'Отказ'
+        });
+
+        if (result.isConfirmed) {
+            await Swal.fire(
+                'Изтрит!',
+                'Артикулът е изтрит успешно.',
+                'success'
+            );
+            e.target.closest('form').submit();
+        }
+    }
+</script>

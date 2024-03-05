@@ -1,0 +1,22 @@
+﻿﻿@using static WebStore.Core.Constants.TempDataKeyConstants
+
+@if (TempData[Status.Error] != null)
+{
+    <script>
+        $(function () { toastr.error('@TempData[Status.Error].ToString()'); });
+    </script>
+}
+
+@if (TempData[Status.Info] != null)
+{
+    <script>
+        $(function () { toastr.warning('@TempData[Status.Info].ToString()'); });
+    </script>
+}
+
+@if (TempData[Status.Success] != null)
+{
+    <script>
+        $(function () { toastr.success('@TempData[Status.Success].ToString()'); });
+    </script>
+}
