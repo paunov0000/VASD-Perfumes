@@ -48,6 +48,10 @@ namespace WebStore.Infrastructure.Data.Entities
         public bool OnSale { get; set; }
 
         [Required]
+        [Comment("Quantity of the product available")]
+        public int Quantity { get; set; }
+
+        [Required]
         [Comment("A flag which sets the product state as whether its visible or not")]
         public bool IsActive { get; set; } = true;
 
