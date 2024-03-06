@@ -17,9 +17,23 @@ namespace WebStore.MVC.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string search = "")
         {
-            var model = await productService.GetAllProductsAsync();
+            IEnumerable<ProductViewModel> model;
+
+            if (string.IsNullOrEmpty(search))
+            {
+                model = await productService.GetAllProductsAsync();
+            }
+            else
+            {
+                model = await productService.GetFilteredProductsAsync(search);
+
+                if (model.Count() == 0)
+                {
+                    TempData[Status.Error] = "Няма намерени резултати";
+                }
+            }
 
             return View(model);
         }
