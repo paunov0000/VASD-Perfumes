@@ -2,23 +2,27 @@
   display: flex;
   flex-direction: column;
   width: 10em;
+  height: 17em;
   padding: 0.5em 0.7em 0.7em 0.7em;
 }
 
 .card-label-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.75em;
-    text-align: center;
-    margin: 1em 0em 0em 0em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75em;
+  text-align: center;
+  margin: 1em 0em 0em 0em;
 }
 
 .card-label-container-price {
-    font-weight: bold;
+  font-weight: bold;
+  align-self: stretch;
+  margin-top: auto;
+  text-align: center;
 }
 
 .card-img-container > img {
-    height: 10em;
+  height: 10em;
 }
 
 /* .card-img-container {
@@ -32,21 +36,28 @@
 } */
 
 .card:hover {
-    box-shadow: 0 0 0 0.05em gray;
+  box-shadow: 0 0 0 0.05em gray;
 }
 
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3em;
-    justify-content: center;
-    /* margin: 1em 0em 1em 0em; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+  justify-content: center;
+  /* margin: 1em 0em 1em 0em; */
 }
 
 .card-actions {
-    display: flex;
-    justify-content: center;
-    gap: 3em;
-    margin: 1em 0em 0em 0em;
-    font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+  margin: 1em 0em 0em 0em;
+  font-size: 1.2em;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5em;
+  /* margin: 1em 0em 1em 0em; */
 }
