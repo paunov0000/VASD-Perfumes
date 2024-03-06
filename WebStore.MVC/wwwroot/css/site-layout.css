@@ -164,6 +164,10 @@ body {
   gap: 1.1em;
 }
 
+.article-icons-element * p {
+  text-align: center;
+}
+
 .article-icons-element > div > i {
   font-size: 2em;
 }
