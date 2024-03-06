@@ -259,12 +259,18 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/toastr/toastr.min.js"></script>
     <script>
+        toastr.options = {
+            "preventDuplicates": true,
+        };
+    </script>
+    <script>
         document.getElementById("header-mid-search-icon").onclick = function (e) {
             var input = e.currentTarget.previousElementSibling;
+            var minSearchLength = 2;
             var searchText = input.value;
 
-            if (searchText.length < 2) {
-                toastr.warning("Моля, въведете поне 2 символа");
+            if (searchText.length < minSearchLength) {
+                toastr.warning(`Моля, въведете поне ${minSearchLength} символа`);
                 return;
             }
 
