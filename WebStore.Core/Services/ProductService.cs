@@ -182,5 +182,22 @@ namespace WebStore.Core.Services
 
             await repo.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<ProductViewModel>> GetFilteredProductsAsync(string search)
+        {
+            var result = await this.repo.AllReadonly<Product>()
+                .Where(p => p.Name.StartsWith(search))
+                .Select(x => new ProductViewModel()
+                {
+                    Description = x.Description,
+                    Id = x.Id,
+                    ImageUrl = x.ImageUrl,
+                    Name = x.Name,
+                    Price = x.Price
+
+                }).ToListAsync();
+
+            return result;
+        }
     }
 }

@@ -17,6 +17,14 @@ namespace WebStore.Core.Contracts
 
 
         /// <summary>
+        /// Fetches all Product entities from the database which match the search string and maps them to an IEnumerable of ProductViewModel
+        /// </summary>
+        /// <param name="search">String filter which is applied</param>
+        /// <returns>An IEnumerable of ProductViewModel</returns>
+        Task<IEnumerable<ProductViewModel>> GetFilteredProductsAsync(string search);
+
+
+        /// <summary>
         /// Fetches the 12 most recent products from the database and maps them to an IEnumerable of ProductViewModel
         /// </summary>
         /// <param name="count">The quantity of most recent entities to be returned</param>
