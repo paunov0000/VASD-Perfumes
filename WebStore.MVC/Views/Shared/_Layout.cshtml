@@ -70,19 +70,19 @@
                 </div>
                 <partial name="_LoginPartial" />
             </div>
-            <div id="header-bottom">
-                <nav id="header-nav">
-                    <ul>
-                        <li><a href="#">Парфюми</a></li>
-                        <li><a href="#">Парфюми без опаковка</a></li>
-                        <li><a href="#">Грим</a></li>
-                        <li><a href="#">Козметика</a></li>
-                        <li><a href="#">Комплекти</a></li>
-                        <li><a href="#">Ароматни свещи</a></li>
-                        <li><a href="#">Марки</a></li>
-                    </ul>
-                </nav>
-            </div>
+            @* <div id="header-bottom">
+            <nav id="header-nav">
+            <ul>
+            <li><a href="#">Парфюми</a></li>
+            <li><a href="#">Парфюми без опаковка</a></li>
+            <li><a href="#">Грим</a></li>
+            <li><a href="#">Козметика</a></li>
+            <li><a href="#">Комплекти</a></li>
+            <li><a href="#">Ароматни свещи</a></li>
+            <li><a href="#">Марки</a></li>
+            </ul>
+            </nav>
+            </div> *@
         </header>
         <main id="site-main">
             @RenderBody()
@@ -258,6 +258,16 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/toastr/toastr.min.js"></script>
+    <script>
+        document.getElementById("header-mid-search-icon").onclick = function (e) {
+            var input = e.currentTarget.previousElementSibling;
+            var searchText = input.value;
+
+            if (searchText) {
+                window.location.href = `/Product/Index?search=${searchText}`;
+            }
+        };
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
