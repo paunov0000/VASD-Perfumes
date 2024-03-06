@@ -263,6 +263,11 @@
             var input = e.currentTarget.previousElementSibling;
             var searchText = input.value;
 
+            if (searchText.length < 2) {
+                toastr.warning("Моля, въведете поне 2 символа");
+                return;
+            }
+
             if (searchText) {
                 window.location.href = `/Product/Index?search=${searchText}`;
             }
