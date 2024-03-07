@@ -28,10 +28,10 @@ namespace WebStore.Core.Services.Admin
                 {
                     Id = p.Id,
                     Name = p.Name,
-                    Manufacturer = p.Manufacturer,
+                    BrandName = p.Brand.Name,
                     Price = p.Price,
                     SoldCount = p.SoldCount,
-                    ProductCategoryId = p.ProductCategoryId,
+                    CategoryName = p.Category.Name,
                     OnSale = p.OnSale,
                     Quantity = p.Quantity,
                 })
