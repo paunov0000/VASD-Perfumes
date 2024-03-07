@@ -9,7 +9,7 @@ namespace WebStore.Core.Model.Admin.Product
 
         public string Name { get; set; } = null!;
 
-        public string Manufacturer { get; set; } = null!;
+        public string BrandName { get; set; } = null!;
 
         public decimal Price { get; set; }
 
@@ -19,7 +19,8 @@ namespace WebStore.Core.Model.Admin.Product
 
         public bool OnSale { get; set; }
 
-        public Guid ProductCategoryId { get; set; }
+        public string CategoryName { get; set; }
+
 
     }
 }
