@@ -3,6 +3,7 @@ using static WebStore.Core.Constants.ErrorMessageConstants.General;
 using static WebStore.Core.Constants.ErrorMessageConstants.Product;
 using static WebStore.Core.Constants.DisplayAttributeNameConstants.Product;
 using static WebStore.Infrastructure.Data.Constants.ModelConstants.Product;
+using WebStore.Infrastructure.Data.Constants;
 
 namespace WebStore.Core.Model.Product
 {
@@ -36,15 +37,12 @@ namespace WebStore.Core.Model.Product
         [Required(ErrorMessage = RequiredFieldMessage)]
         public string ImageUrl { get; set; } = null!;
 
-        [Display(Name = DisplayManufacturer)]
+        [Display(Name = DisplayBrand)]
         [Required(ErrorMessage = RequiredFieldMessage)]
-        [StringLength(ManufacturerMaxLength,
-            MinimumLength = ManufacturerMinLength,
-            ErrorMessage = InvalidFieldLengthMessage)]
-        public string Manufacturer { get; set; } = null!;
+        public Guid BrandId { get; set; }
 
         [Display(Name = DisplayCategory)]
         [Required(ErrorMessage = RequiredFieldMessage)]
-        public Guid ProductCategoryId { get; set; }
+        public Guid CategoryId { get; set; }
     }
 }
