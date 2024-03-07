@@ -14,19 +14,15 @@ namespace WebStore.Infrastructure.Data.Constants
             public const int NameMinLength = 3;
             public const int DescriptionMaxLength = 1000;
             public const int DescriptionMinLength = 10;
-            public const int ManufacturerMaxLength = 100;
-            public const int ManufacturerMinLength = 5;
             public const string PriceMaxValue = "5000";
             public const string PriceMinValue = "0";
             //public const int ImageMaxLength = 1000;
         }
 
-        public static class ProductCategory
+        public static class Category
         {
             public const int NameMaxLength = 100;
             public const int NameMinLength = 3;
-            public const int DescriptionMaxLength = 1000;
-            public const int DescriptionMinLength = 10;
             //public const int ImageMaxLength = 1000;
         }
 
@@ -38,6 +34,12 @@ namespace WebStore.Infrastructure.Data.Constants
             public const int CommentMinLength = 2;
         }
 
+        public static class Brand
+        {
+            public const int NameMaxLength = 100;
+            public const int NameMinLength = 5;
+            //public const int ImageMaxLength = 1000;
+        }
 
     }
 }
