@@ -40,7 +40,8 @@ namespace WebStore.UnitTests
         [Test]
         public async Task AddProductAsync_ShouldAddProduct()
         {
-            var productCategoryGuid = Guid.Parse("072a4bec-c3d3-4a66-aa9f-d3d7bc10d88e");
+            var categoryGuid = Guid.Parse("072a4bec-c3d3-4a66-aa9f-d3d7bc10d88e");
+            var brandGuid = Guid.Parse("df582419-a255-4774-8845-8cb094d59e78");
             var productGuid = Guid.Parse("072a4bec-c3d3-4a66-aa9f-d3d7bc10d88f");
 
             var product = new ProductAddViewModel()
@@ -48,10 +49,10 @@ namespace WebStore.UnitTests
                 Id = productGuid,
                 Description = "Test Description",
                 ImageUrl = "Test ImageUrl",
-                Manufacturer = "Test Manufacturer",
+                BrandId = brandGuid,
                 Name = "Test Name",
                 Price = 100,
-                ProductCategoryId = productCategoryGuid
+                CategoryId = categoryGuid
             };
 
             await this.productService.AddProductAsync(product);
@@ -59,11 +60,11 @@ namespace WebStore.UnitTests
             var result = await this.repo.GetByIdAsync<Product>(productGuid);
 
 
-            Assert.That(productCategoryGuid == result.ProductCategoryId);
+            Assert.That(categoryGuid == result.CategoryId);
             Assert.That(productGuid == result.Id);
             Assert.That("Test Description" == result.Description);
             Assert.That("Test ImageUrl" == result.ImageUrl);
-            Assert.That("Test Manufacturer" == result.Manufacturer);
+            Assert.That(brandGuid == result.BrandId);
             Assert.That("Test Name" == result.Name);
             Assert.That(100 == result.Price);
 
