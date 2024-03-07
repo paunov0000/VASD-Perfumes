@@ -19,9 +19,14 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.Manufacturer"></label>
-                    <input type="text" asp-for="@Model.Manufacturer" class="form-control" />
-                    <span asp-validation-for="@Model.Manufacturer" class="text-danger"></span>
+                    <label class="form-label" asp-for="@Model.BrandId"></label>
+                    <select asp-for="@Model.BrandId" class="form-control">
+                        @foreach (var brand in ViewBag.ProductCategories)
+                        {
+                            <option value="@brand.Id">@brand.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="@Model.BrandId" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
@@ -43,14 +48,14 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.ProductCategoryId"></label>
-                    <select asp-for="@Model.ProductCategoryId" class="form-control">
+                    <label class="form-label" asp-for="@Model.CategoryId"></label>
+                    <select asp-for="@Model.CategoryId" class="form-control">
                         @foreach (var category in ViewBag.ProductCategories)
                         {
                             <option value="@category.Id">@category.Name</option>
                         }
                     </select>
-                    <span asp-validation-for="@Model.ProductCategoryId" class="text-danger"></span>
+                    <span asp-validation-for="@Model.CategoryId" class="text-danger"></span>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Редактирай</button>
