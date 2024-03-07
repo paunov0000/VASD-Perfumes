@@ -44,7 +44,7 @@ namespace WebStore.MVC.Controllers
         {
             var model = new ProductAddViewModel();
 
-            ViewBag.ProductCategories = await productService.GetAllProductCategories();
+            ViewBag.ProductCategories = await productService.GetAllCategories();
 
             return View(model);
         }
@@ -54,7 +54,7 @@ namespace WebStore.MVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.ProductCategories = await productService.GetAllProductCategories();
+                ViewBag.ProductCategories = await productService.GetAllCategories();
 
                 TempData[Status.Error] = Product.InvalidInputMessage;
 
@@ -75,7 +75,7 @@ namespace WebStore.MVC.Controllers
             {
                 var model = await productService.GetProductByIdAsync(id);
 
-                ViewBag.ProductCategories = await productService.GetAllProductCategories();
+                ViewBag.ProductCategories = await productService.GetAllCategories();
 
                 return View(model);
             }
@@ -90,7 +90,7 @@ namespace WebStore.MVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.ProductCategories = await productService.GetAllProductCategories();
+                ViewBag.ProductCategories = await productService.GetAllCategories();
 
                 TempData[Status.Error] = Product.InvalidInputMessage;
 
