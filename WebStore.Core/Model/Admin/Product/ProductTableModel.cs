@@ -19,7 +19,7 @@ namespace WebStore.Core.Model.Admin.Product
 
         public bool OnSale { get; set; }
 
-        public string CategoryName { get; set; }
+        public string CategoryName { get; set; } = null!;
 
 
     }
