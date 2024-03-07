@@ -23,8 +23,11 @@ namespace WebStore.Infrastructure.Data
 
         public DbSet<OrderStatus> OrderStatuses { get; set; }
 
+        public DbSet<Brand> Brands { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.ApplyConfiguration(new BrandConfiguration());
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
