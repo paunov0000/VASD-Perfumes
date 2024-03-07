@@ -24,8 +24,8 @@ namespace WebStore.Core.Services
                 ImageUrl = model.ImageUrl,
                 Name = model.Name,
                 Price = model.Price,
-                Manufacturer = model.Manufacturer,
-                ProductCategoryId = model.ProductCategoryId,
+                BrandId = model.BrandId,
+                CategoryId = model.CategoryId,
                 Id = model.Id
             });
 
@@ -119,9 +119,9 @@ namespace WebStore.Core.Services
             return result;
         }
 
-        public async Task<IEnumerable<ProductCategoryFormViewModel>> GetAllProductCategories()
+        public async Task<IEnumerable<CategoryFormViewModel>> GetAllCategories()
         {
-            return await this.repo.AllReadonly<ProductCategory>().Select(x => new ProductCategoryFormViewModel()
+            return await this.repo.AllReadonly<Category>().Select(x => new CategoryFormViewModel()
             {
                 Id = x.Id,
                 Name = x.Name
@@ -144,9 +144,8 @@ namespace WebStore.Core.Services
                 ImageUrl = product.ImageUrl,
                 Name = product.Name,
                 Price = product.Price,
-                Manufacturer = product.Manufacturer,
-                ProductCategoryId = product.ProductCategoryId
-
+                BrandId = product.BrandId,
+                CategoryId = product.CategoryId
             };
         }
 
@@ -163,8 +162,8 @@ namespace WebStore.Core.Services
             entity.ImageUrl = model.ImageUrl;
             entity.Name = model.Name;
             entity.Price = model.Price;
-            entity.Manufacturer = model.Manufacturer;
-            entity.ProductCategoryId = model.ProductCategoryId;
+            entity.BrandId = model.BrandId;
+            entity.CategoryId = model.CategoryId;
 
             await repo.SaveChangesAsync();
         }
