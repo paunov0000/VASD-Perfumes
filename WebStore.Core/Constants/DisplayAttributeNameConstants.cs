@@ -18,7 +18,7 @@
             public const string DisplayQuantity = "Количество";
             public const string DisplayCategory = "Категория";
             public const string DisplayImage = "Снимка";
-            public const string DisplayManufacturer = "Производител";
+            public const string DisplayBrand = "Марка";
         }
     }
 }
