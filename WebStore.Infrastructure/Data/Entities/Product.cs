@@ -23,9 +23,10 @@ namespace WebStore.Infrastructure.Data.Entities
         public string Description { get; set; } = null!;
 
         [Required]
-        [MaxLength(ManufacturerMaxLength)]
-        [Comment("Manufacturer of the product")]
-        public string Manufacturer { get; set; } = null!;
+        [ForeignKey(nameof(Brand))]
+        [Comment("Foreign key of the brand")]
+        public Guid BrandId { get; set; }
+        public Brand Brand { get; set; } = null!;
 
         [Required]
         [Comment("Price of the product")]
@@ -56,10 +57,10 @@ namespace WebStore.Infrastructure.Data.Entities
         public bool IsActive { get; set; } = true;
 
         [Required]
-        [ForeignKey(nameof(ProductCategory))]
-        [Comment("Foreign key of the product category")]
-        public Guid ProductCategoryId { get; set; }
-        public ProductCategory ProductCategory { get; set; } = null!;
+        [ForeignKey(nameof(Category))]
+        [Comment("Foreign key of the category")]
+        public Guid CategoryId { get; set; }
+        public Category Category { get; set; } = null!;
 
         [Required]
         [Comment("Orders of the product")]
