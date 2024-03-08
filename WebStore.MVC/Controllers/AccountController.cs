@@ -6,6 +6,7 @@ using WebStore.MVC.Models.Account;
 using static WebStore.Core.Constants.ErrorMessageConstants.Account;
 using static WebStore.Core.Constants.TempDataKeyConstants.Account;
 using static WebStore.Core.Constants.TempDataKeyConstants;
+using WebStore.Infrastructure.Common;
 
 namespace WebStore.MVC.Controllers
 {
@@ -124,6 +125,12 @@ namespace WebStore.MVC.Controllers
             TempData[Status.Success] = SuccessOnLogoutMessage;
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
+        }
+
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
 
 
