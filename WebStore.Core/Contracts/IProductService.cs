@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebStore.Core.Model.Product;
+﻿using WebStore.Core.Model.Product;
 
 namespace WebStore.Core.Contracts
 {
@@ -13,7 +8,7 @@ namespace WebStore.Core.Contracts
         /// Fetches all Product entities from the database and maps them to an IEnumerable of ProductViewModel
         /// </summary>
         /// <returns>An IEnumerable of ProductViewModel</returns>
-        Task<IEnumerable<ProductViewModel>> GetAllProductsAsync(bool isActive = true);
+        Task<IEnumerable<ProductViewModel>> GetAllProductsAsync();
 
 
         /// <summary>
@@ -46,23 +41,6 @@ namespace WebStore.Core.Contracts
         /// <returns>An IEnumerable of ProductViewModel</returns>
         Task<IEnumerable<ProductViewModel>> GetOnSale();
 
-
-        /// <summary>
-        /// Adds a new Product entity to the database
-        /// </summary>
-        /// <param name="model">View model which holds the data</param>
-        Task AddProductAsync(ProductAddViewModel model);
-
-
-        /// <summary>
-        /// Fetches all Category entities from the database and maps them to an IEnumerable of CategoryFormViewModel
-        /// </summary>
-        /// <returns>An IEnumerable of CategoryFormViewModel</returns>
-        Task<IEnumerable<CategoryFormViewModel>> GetAllCategories();
-
-        Task<IEnumerable<BrandFormViewModel>> GetAllBrands();
-
-
         /// <summary>
         /// Fetches a Product entity from the database by its id and maps it to a ProductAddViewModel
         /// </summary>
@@ -70,13 +48,5 @@ namespace WebStore.Core.Contracts
         /// <returns>Product entity mapped to ProductAddViewModel</returns>
         Task<ProductAddViewModel> GetProductByIdAsync(Guid id);
 
-
-        /// <summary>
-        /// Edits/Updates a Product entity in the database
-        /// </summary>
-        /// <param name="model">A viewmodel which holds the data</param>
-        Task EditProductAsync (ProductAddViewModel model);
-
-        Task DeleteProductAsync (Guid id);
     }
 }
