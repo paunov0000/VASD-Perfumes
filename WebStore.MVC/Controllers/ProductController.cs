@@ -44,7 +44,8 @@ namespace WebStore.MVC.Controllers
         {
             var model = new ProductAddViewModel();
 
-            ViewBag.ProductCategories = await productService.GetAllCategories();
+            ViewBag.Categories = await productService.GetAllCategories();
+            ViewBag.Brands = await productService.GetAllBrands();
 
             return View(model);
         }
@@ -54,7 +55,8 @@ namespace WebStore.MVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.ProductCategories = await productService.GetAllCategories();
+                ViewBag.Categories = await productService.GetAllCategories();
+                ViewBag.Brands = await productService.GetAllBrands();
 
                 TempData[Status.Error] = Product.InvalidInputMessage;
 
