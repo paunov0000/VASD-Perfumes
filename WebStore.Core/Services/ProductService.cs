@@ -15,22 +15,6 @@ namespace WebStore.Core.Services
             this.repo = repo;
         }
 
-        public async Task AddProductAsync(ProductAddViewModel model)
-        {
-            await repo.AddAsync(new Product()
-            {
-                CreatedOn = DateTime.UtcNow,
-                Description = model.Description,
-                ImageUrl = model.ImageUrl,
-                Name = model.Name,
-                Price = model.Price,
-                BrandId = model.BrandId,
-                CategoryId = model.CategoryId,
-                Id = model.Id
-            });
-
-            await repo.SaveChangesAsync();
-        }
 
         public async Task<IEnumerable<ProductViewModel>> GetMostRecent(int count)
         {
@@ -49,40 +33,25 @@ namespace WebStore.Core.Services
             return result;
         }
 
-        public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync(bool isActive = true)
+
+        public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync()
         {
-            IEnumerable<ProductViewModel> result;
+            var result = await this.repo.AllReadonly<Product>()
+             .Where(p => p.IsActive)
+             .Select(x => new ProductViewModel()
+             {
+                 Description = x.Description,
+                 Id = x.Id,
+                 ImageUrl = x.ImageUrl,
+                 Name = x.Name,
+                 Price = x.Price
 
-            if (isActive == false)
-            {
-                result = await this.repo.AllReadonly<Product>()
-                    .Select(x => new ProductViewModel()
-                    {
-                        Description = x.Description,
-                        Id = x.Id,
-                        ImageUrl = x.ImageUrl,
-                        Name = x.Name,
-                        Price = x.Price
+             }).ToListAsync();
 
-                    }).ToListAsync();
-            }
-            else
-            {
-                result = await this.repo.AllReadonly<Product>()
-                .Where(p => p.IsActive)
-                .Select(x => new ProductViewModel()
-                {
-                    Description = x.Description,
-                    Id = x.Id,
-                    ImageUrl = x.ImageUrl,
-                    Name = x.Name,
-                    Price = x.Price
-
-                }).ToListAsync();
-            }
 
             return result;
         }
+
 
         public async Task<IEnumerable<ProductViewModel>> GetMostSold()
         {
@@ -103,6 +72,7 @@ namespace WebStore.Core.Services
             return result;
         }
 
+
         public async Task<IEnumerable<ProductViewModel>> GetOnSale()
         {
             var result = await this.repo.AllReadonly<Product>(p => p.OnSale == true && p.IsActive)
@@ -119,14 +89,24 @@ namespace WebStore.Core.Services
             return result;
         }
 
-        public async Task<IEnumerable<CategoryFormViewModel>> GetAllCategories()
+
+        public async Task<IEnumerable<ProductViewModel>> GetFilteredProductsAsync(string search)
         {
-            return await this.repo.AllReadonly<Category>().Select(x => new CategoryFormViewModel()
-            {
-                Id = x.Id,
-                Name = x.Name
-            }).ToListAsync();
+            var result = await this.repo.AllReadonly<Product>()
+                .Where(p => p.Name.StartsWith(search))
+                .Select(x => new ProductViewModel()
+                {
+                    Description = x.Description,
+                    Id = x.Id,
+                    ImageUrl = x.ImageUrl,
+                    Name = x.Name,
+                    Price = x.Price
+
+                }).ToListAsync();
+
+            return result;
         }
+
 
         public async Task<ProductAddViewModel> GetProductByIdAsync(Guid id) //TODO: Add exception handling
         {
@@ -147,67 +127,6 @@ namespace WebStore.Core.Services
                 BrandId = product.BrandId,
                 CategoryId = product.CategoryId
             };
-        }
-
-        public async Task EditProductAsync(ProductAddViewModel model) //TODO: Add exception handling
-        {
-            var entity = await repo.GetByIdAsync<Product>(model.Id);
-
-            if (entity.IsActive == false) //TODO: Is it okay to check if isActive here or should it be checked in the controller?
-            {
-                throw new InvalidOperationException("Product not found");
-            }
-
-            entity.Description = model.Description;
-            entity.ImageUrl = model.ImageUrl;
-            entity.Name = model.Name;
-            entity.Price = model.Price;
-            entity.BrandId = model.BrandId;
-            entity.CategoryId = model.CategoryId;
-
-            await repo.SaveChangesAsync();
-        }
-
-        public async Task DeleteProductAsync(Guid id)
-        {
-            var entity = await repo.GetByIdAsync<Product>(id);
-
-            if (entity.IsActive == false) //TODO: Is it okay to check if isActive here or should it be checked in the controller?
-            {
-                throw new InvalidOperationException("Product not found");
-            }
-
-            entity.IsActive = false;
-
-            await repo.SaveChangesAsync();
-        }
-
-        public async Task<IEnumerable<ProductViewModel>> GetFilteredProductsAsync(string search)
-        {
-            var result = await this.repo.AllReadonly<Product>()
-                .Where(p => p.Name.StartsWith(search))
-                .Select(x => new ProductViewModel()
-                {
-                    Description = x.Description,
-                    Id = x.Id,
-                    ImageUrl = x.ImageUrl,
-                    Name = x.Name,
-                    Price = x.Price
-
-                }).ToListAsync();
-
-            return result;
-        }
-
-        public async Task<IEnumerable<BrandFormViewModel>> GetAllBrands()
-        {
-            var result = await this.repo.AllReadonly<Brand>().Select(x => new BrandFormViewModel()
-            {
-                Id = x.Id,
-                Name = x.Name
-            }).ToListAsync();
-
-            return result;
         }
     }
 }
