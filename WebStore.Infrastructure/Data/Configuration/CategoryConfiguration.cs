@@ -24,7 +24,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                 new Category
                 {
                     Id = Guid.Parse(FragranceId),
-                    Name = "Fragrances",
+                    Name = "Fragrance",
                 },
                 //new Category
                 //{
