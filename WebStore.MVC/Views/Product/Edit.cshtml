@@ -21,7 +21,7 @@
                 <div class="mb-3">
                     <label class="form-label" asp-for="@Model.BrandId"></label>
                     <select asp-for="@Model.BrandId" class="form-control">
-                        @foreach (var brand in ViewBag.ProductCategories)
+                        @foreach (var brand in ViewBag.Brands)
                         {
                             <option value="@brand.Id">@brand.Name</option>
                         }
@@ -50,7 +50,7 @@
                 <div class="mb-3">
                     <label class="form-label" asp-for="@Model.CategoryId"></label>
                     <select asp-for="@Model.CategoryId" class="form-control">
-                        @foreach (var category in ViewBag.ProductCategories)
+                        @foreach (var category in ViewBag.Categories)
                         {
                             <option value="@category.Id">@category.Name</option>
                         }
