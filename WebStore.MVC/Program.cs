@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebStore.Core.Contracts;
+using WebStore.Core.Contracts.Admin;
 using WebStore.Core.Misc;
 using WebStore.Core.Services;
+using WebStore.Core.Services.Admin;
 using WebStore.Infrastructure.Common;
 using WebStore.Infrastructure.Data;
 using WebStore.Infrastructure.Data.Entities;
@@ -16,21 +18,23 @@ builder.Services.AddDbContext<WebStoreDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = false;
-    options.SignIn.RequireConfirmedEmail = false;
-    options.SignIn.RequireConfirmedPhoneNumber = false;
-    options.Password.RequiredLength = 6;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = false;
-    options.Password.RequireLowercase = false;
-})
-    .AddRoles<ApplicationRole>()
-    .AddEntityFrameworkStores<WebStoreDbContext>()
-    .AddDefaultTokenProviders()
-    .AddUserManager<UserManager<ApplicationUser>>()
-    .AddErrorDescriber<CustomIdentityErrorDescriber>();
+//builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+//{
+//    options.SignIn.RequireConfirmedAccount = builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
+//    options.SignIn.RequireConfirmedEmail = builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedEmail");
+//    options.SignIn.RequireConfirmedPhoneNumber = builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedPhoneNumber");
+//    options.Password.RequiredLength = builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
+//    options.Password.RequireNonAlphanumeric = builder.Configuration.GetValue<bool>("Identity:Password:RequireNonAlphanumeric");
+//    options.Password.RequireUppercase = builder.Configuration.GetValue<bool>("Identity:Password:RequireUppercase");
+//    options.Password.RequireLowercase = builder.Configuration.GetValue<bool>("Identity:Password:RequireLowercase");
+//})
+//    .AddRoles<ApplicationRole>()
+//    .AddEntityFrameworkStores<WebStoreDbContext>()
+//    .AddDefaultTokenProviders()
+//    .AddUserManager<UserManager<ApplicationUser>>()
+//    .AddErrorDescriber<CustomIdentityErrorDescriber>();
+
+builder.Services.AddApplicationIdentity<ApplicationUser>(builder.Configuration);
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -43,8 +47,7 @@ builder.Services.AddControllersWithViews(options =>
     options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
 });
 
-builder.Services.AddScoped<IRepository, Repository>();
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
