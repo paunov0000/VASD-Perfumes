@@ -60,6 +60,8 @@ namespace WebStore.Core.Contracts
         /// <returns>An IEnumerable of CategoryFormViewModel</returns>
         Task<IEnumerable<CategoryFormViewModel>> GetAllCategories();
 
+        Task<IEnumerable<BrandFormViewModel>> GetAllBrands();
+
 
         /// <summary>
         /// Fetches a Product entity from the database by its id and maps it to a ProductAddViewModel
