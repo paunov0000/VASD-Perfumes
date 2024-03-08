@@ -58,7 +58,7 @@ namespace WebStore.MVC.Areas.Admin.Controllers
 
             TempData[Status.Success] = Product.SuccessOnAddMessage;
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home", new {area= ""});
         }
 
         [HttpGet]
