@@ -198,5 +198,16 @@ namespace WebStore.Core.Services
 
             return result;
         }
+
+        public async Task<IEnumerable<BrandFormViewModel>> GetAllBrands()
+        {
+            var result = await this.repo.AllReadonly<Brand>().Select(x => new BrandFormViewModel()
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToListAsync();
+
+            return result;
+        }
     }
 }
