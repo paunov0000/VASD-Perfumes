@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WebStore.Infrastructure.Data.Constants
+﻿namespace WebStore.Infrastructure.Data.Constants
 {
     public static class ModelConstants
     {
@@ -39,6 +33,24 @@ namespace WebStore.Infrastructure.Data.Constants
             public const int NameMaxLength = 100;
             public const int NameMinLength = 5;
             //public const int ImageMaxLength = 1000;
+        }
+
+        public static class OrderStatus
+        {
+            public const int NameMaxLength = 100;
+            public const int NameMinLength = 3;
+        }
+
+        public static class Customer
+        {
+            public const int AddressMaxLength = 100;
+            public const int AddressMinLength = 10;
+            public const int CityMaxLength = 100;
+            public const int CityMinLength = 3;
+            public const int StateMaxLength = 50;
+            public const int StateMinLength = 2;
+            public const int ZipMaxLength = 4;
+            public const int ZipMinLength = 4;
         }
 
     }
