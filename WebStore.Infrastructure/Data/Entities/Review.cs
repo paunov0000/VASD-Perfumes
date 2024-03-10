@@ -28,10 +28,10 @@ namespace WebStore.Infrastructure.Data.Entities
 
         [Required]
         [Comment("Date of creating the review")]
-        public DateTime Created { get; set; }
+        public DateTime CreatedOn { get; set; }
 
         [Comment("Date of updating the review")]
-        public DateTime? Updated { get; set; }
+        public DateTime? UpdatedOn { get; set; }
 
         [Required]
         [ForeignKey(nameof(Product))]
