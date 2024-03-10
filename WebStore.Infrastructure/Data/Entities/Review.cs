@@ -27,11 +27,11 @@ namespace WebStore.Infrastructure.Data.Entities
         public int Rating { get; set; }
 
         [Required]
-        [Comment("Date of the review")]
+        [Comment("Date of creating the review")]
         public DateTime Created { get; set; }
 
         [Comment("Date of updating the review")]
-        public DateTime Updated { get; set; }
+        public DateTime? Updated { get; set; }
 
         [Required]
         [ForeignKey(nameof(Product))]
@@ -39,6 +39,7 @@ namespace WebStore.Infrastructure.Data.Entities
         public Guid ProductId { get; set; }
 
         [Required]
+        [Comment("Navigation property to the Product")]
         public Product Product { get; set; } = null!;
 
         [Required]
@@ -46,6 +47,9 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Foreign key of the Customer")]
         public Guid CustomerId { get; set; }
 
+
+        [Required]
+        [Comment("Navigation property to the Customer")]
         public Customer Customer { get; set; } = null!;
     }
 }
