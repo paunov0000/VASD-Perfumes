@@ -13,7 +13,10 @@ namespace WebStore.Infrastructure.Data
         }
 
         public DbSet<Product> Products { get; set; }
+
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Subcategory> Subcategories { get; set; }
 
         public DbSet<Order> Orders { get; set; }
 
@@ -25,6 +28,7 @@ namespace WebStore.Infrastructure.Data
 
         public DbSet<Brand> Brands { get; set; }
 
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new BrandConfiguration());
@@ -34,6 +38,7 @@ namespace WebStore.Infrastructure.Data
             builder.ApplyConfiguration(new CustomerConfiguration());
             builder.ApplyConfiguration(new RoleConfiguration());
             builder.ApplyConfiguration(new UserRoleConfiguration());
+            builder.ApplyConfiguration(new SubcategoryConfiguration())
 
 
             base.OnModelCreating(builder);
