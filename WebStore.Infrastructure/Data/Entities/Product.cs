@@ -26,6 +26,9 @@ namespace WebStore.Infrastructure.Data.Entities
         [ForeignKey(nameof(Brand))]
         [Comment("Foreign key of the brand")]
         public Guid BrandId { get; set; }
+
+        [Required]
+        [Comment("Navigation property to the Brand")]
         public Brand Brand { get; set; } = null!;
 
         [Required]
@@ -58,8 +61,11 @@ namespace WebStore.Infrastructure.Data.Entities
 
         [Required]
         [ForeignKey(nameof(Category))]
-        [Comment("Foreign key of the category")]
+        [Comment("Foreign key of the Category")]
         public Guid CategoryId { get; set; }
+
+        [Required]
+        [Comment("Navigation property to the Category")]
         public Category Category { get; set; } = null!;
 
         [Required]
