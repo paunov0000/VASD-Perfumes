@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static WebStore.Infrastructure.Data.Constants.ModelConstants.OrderStatus;
 
 namespace WebStore.Infrastructure.Data.Entities
 {
+    [Comment("Holds info for the Status of the Order")]
     public class OrderStatus
     {
+        [Key]
+        [Comment("Primary key of the Order Status")]
         public int Id { get; set; }
 
         [Required]
-        public string StatusName { get; set; } = null!;
+        [MaxLength(NameMaxLength)]
+        [Comment("Name of the Order Status")]
+        public string Name { get; set; } = null!;
     }
 }
