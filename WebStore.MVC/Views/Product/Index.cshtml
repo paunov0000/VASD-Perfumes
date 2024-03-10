@@ -12,11 +12,6 @@
                 <h5 class="card-title">@product.Name</h5>
                 <p class="card-text">@product.Description</p>
                 <p class="card-text">@(product.Price) лв.</p>
-                <a asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-primary">Редактирай</a>
-                <form asp-controller="Product" asp-action="Delete" method="post">
-                    <input type="hidden" name="id" value="@product.Id" />
-                    <button type="submit" class="btn btn-danger" onclick="deleteProduct(event)">Изтрий</button>
-                </form>
             </div>
         </div>
     }
