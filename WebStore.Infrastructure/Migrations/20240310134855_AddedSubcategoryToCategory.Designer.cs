@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebStore.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using WebStore.Infrastructure.Data;
 namespace WebStore.Infrastructure.Migrations
 {
     [DbContext(typeof(WebStoreDbContext))]
-    partial class WebStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240310134855_AddedSubcategoryToCategory")]
+    partial class AddedSubcategoryToCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -273,7 +276,7 @@ namespace WebStore.Infrastructure.Migrations
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6c"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e5661aa3-6646-40cd-bbb3-090d23c435c5",
+                            ConcurrencyStamp = "28f3b6de-a072-44e1-a278-e8281af6617e",
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bojkata@abv.bg",
                             EmailConfirmed = true,
@@ -282,7 +285,7 @@ namespace WebStore.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "BOJKATA@ABV.BG",
                             NormalizedUserName = "BOJKATA@ABV.BG",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAW2+YOcEt0fSaL96B77Y9hYl7H49s/VZ3eOUW8KwKtyFP+afLvPpw0yZlb9vyoFZA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHtvqKSA9bENB/HHVmGeWSXvSG9y8lIjcVEF58afN8nUfeJCWhz/CoUKs71HqOrViQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "675bdfac-f10f-4acc-a641-4233cd7a4c14",
                             TwoFactorEnabled = false,
@@ -292,7 +295,7 @@ namespace WebStore.Infrastructure.Migrations
                         {
                             Id = new Guid("753efde4-efa1-4f88-abc9-8f091cf8b670"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4a3efa90-71a0-47c9-8336-9632df618470",
+                            ConcurrencyStamp = "e0497402-fd3a-4ee4-8b50-88ff70b4332f",
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@admin.bg",
                             EmailConfirmed = true,
@@ -301,7 +304,7 @@ namespace WebStore.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.BG",
                             NormalizedUserName = "ADMIN@ADMIN.BG",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBAg4mAe1TL73U9JGt8Z1AhBdd2XBdbteq+Znbl0vf4LDaGcPeh4hpomFxrxDzHCBQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIHwa7PnKkbHoaArlmAOLb8r2SV7dqmwdXG+sFI6ZqRJX3CS6p19WxeW0hnYJeppLw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "efcff289-5cd2-42eb-8280-5faaab34daf5",
                             TwoFactorEnabled = false,
@@ -417,18 +420,15 @@ namespace WebStore.Infrastructure.Migrations
                         .HasComment("Primary key of the customer");
 
                     b.Property<string>("Address")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
+                        .HasColumnType("nvarchar(max)")
                         .HasComment("Address of the Customer entity");
 
                     b.Property<string>("City")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
+                        .HasColumnType("nvarchar(max)")
                         .HasComment("City of the Customer entity");
 
                     b.Property<string>("State")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasColumnType("nvarchar(max)")
                         .HasComment("State of the Customer entity");
 
                     b.Property<Guid>("UserId")
@@ -436,8 +436,7 @@ namespace WebStore.Infrastructure.Migrations
                         .HasComment("Foreign key to the ApplicationUser entity");
 
                     b.Property<string>("Zip")
-                        .HasMaxLength(4)
-                        .HasColumnType("nvarchar(4)")
+                        .HasColumnType("nvarchar(max)")
                         .HasComment("Zip of the Customer entity");
 
                     b.HasKey("Id");
@@ -479,8 +478,7 @@ namespace WebStore.Infrastructure.Migrations
                         .HasComment("Date of the order");
 
                     b.Property<int>("OrderStatusId")
-                        .HasColumnType("int")
-                        .HasComment("Foreign key of the OrderStatus");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -498,23 +496,17 @@ namespace WebStore.Infrastructure.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasComment("Primary key of the Order Status");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("StatusName")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasComment("Name of the Order Status");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatuses", t =>
-                        {
-                            t.HasComment("Holds info for the Status of the Order");
-                        });
+                    b.ToTable("OrderStatuses");
                 });
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.Product", b =>
@@ -530,7 +522,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier")
-                        .HasComment("Foreign key of the Category");
+                        .HasComment("Foreign key of the category");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2")
@@ -593,7 +585,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6f"),
                             BrandId = new Guid("361f69c3-cdfb-4156-a88a-1620db540c6c"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7056),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6606),
                             Description = "Iconic blend of rose and jasmine, a classic from luxury brand Chanel",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -608,7 +600,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6e"),
                             BrandId = new Guid("c3a935d2-8a70-40f4-aa02-7dc52d4688ed"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7064),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6663),
                             Description = "Youthful and fresh floral scent with notes of jasmine and violet",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -623,7 +615,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6d"),
                             BrandId = new Guid("6c86c626-bef8-4627-a314-de021502e335"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7067),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6667),
                             Description = "Modern and vibrant floral bouquet featuring tuberose and jasmine",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -638,7 +630,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6c"),
                             BrandId = new Guid("99f87405-5144-46e6-ad55-724d05928736"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7070),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6670),
                             Description = "Intensely floral with notes of jasmine, rose, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -653,7 +645,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6b"),
                             BrandId = new Guid("586011c7-d606-4e73-a7e8-fca768656c03"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7073),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6673),
                             Description = "Timeless oriental scent with vanilla, iris, and amber notes",
                             ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
                             IsActive = true,
@@ -668,7 +660,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6a"),
                             BrandId = new Guid("57d95637-ffa7-4109-9d26-03bae7e0e6e1"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7077),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6677),
                             Description = "Rich and spicy oriental fragrance with exotic undertones",
                             ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
                             IsActive = true,
@@ -683,7 +675,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b69"),
                             BrandId = new Guid("28f3d7f5-3469-4036-b919-ec683688314b"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7081),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6683),
                             Description = "Luxurious blend of black truffle, vanilla, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -698,7 +690,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b68"),
                             BrandId = new Guid("dc6ccd03-c8c8-47a8-b9fe-83e878b158f8"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7098),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6686),
                             Description = "Fresh and aquatic scent with notes of citrus and rosemary",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -713,7 +705,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b67"),
                             BrandId = new Guid("dc4a85cb-8f2d-452b-8027-c3409538c244"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7127),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6690),
                             Description = "Citrusy and woody fragrance with notes of grapefruit and cedar",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s915447-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -728,7 +720,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b66"),
                             BrandId = new Guid("f33371d7-fa64-42f0-89bd-7f707e285279"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 3, 10, 14, 20, 30, 506, DateTimeKind.Utc).AddTicks(7131),
+                            CreatedOn = new DateTime(2024, 3, 10, 13, 48, 54, 944, DateTimeKind.Utc).AddTicks(6693),
                             Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
                             ImageUrl = "https://creedboutique.com/cdn/shop/files/aventus-100ml-bottle_3413e5f4-3eee-40b3-8451-2546a370ec5b.jpg?v=1700498936&width=1500",
                             IsActive = true,
@@ -753,9 +745,9 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("nvarchar(500)")
                         .HasComment("Comment of the review");
 
-                    b.Property<DateTime>("CreatedOn")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("datetime2")
-                        .HasComment("Date of creating the review");
+                        .HasComment("Date of the review");
 
                     b.Property<Guid>("CustomerId")
                         .HasColumnType("uniqueidentifier")
@@ -775,7 +767,7 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasComment("Title of the review");
 
-                    b.Property<DateTime?>("UpdatedOn")
+                    b.Property<DateTime>("Updated")
                         .HasColumnType("datetime2")
                         .HasComment("Date of updating the review");
 
