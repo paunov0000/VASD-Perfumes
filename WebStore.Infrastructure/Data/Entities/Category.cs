@@ -25,5 +25,9 @@ namespace WebStore.Infrastructure.Data.Entities
         [Required]
         [Comment("Collection of products for the given Category")]
         public ICollection<Product> Products { get; set; } = new List<Product>();
+
+        [Required]
+        [Comment("Collection of subcategories for the given Category")]
+        public ICollection<Subcategory> Subcategories { get; set; } = new List<Subcategory>();
     }
 }
