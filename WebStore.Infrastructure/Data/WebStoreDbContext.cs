@@ -38,7 +38,7 @@ namespace WebStore.Infrastructure.Data
             builder.ApplyConfiguration(new CustomerConfiguration());
             builder.ApplyConfiguration(new RoleConfiguration());
             builder.ApplyConfiguration(new UserRoleConfiguration());
-            builder.ApplyConfiguration(new SubcategoryConfiguration())
+            builder.ApplyConfiguration(new SubcategoryConfiguration());
 
 
             base.OnModelCreating(builder);
