@@ -16,9 +16,12 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Date of the order")]
         public DateTime OrderDate { get; set; }
 
+        [Comment("Foreign key of the OrderStatus")]
         [ForeignKey(nameof(OrderStatus))]
         public int OrderStatusId { get; set; }
 
+        [Required]
+        [Comment("Navigation property to the OrderStatus")]
         public OrderStatus OrderStatus { get; set; } = null!;
 
         [Required]
@@ -27,7 +30,7 @@ namespace WebStore.Infrastructure.Data.Entities
         public Guid CustomerId { get; set; }
 
         [Required]
-        [Comment("ApplicationUser associated with the Order")]
+        [Comment("Navigation property to the Customer")]
         public Customer Customer { get; set; } = null!;
 
         [Required]
