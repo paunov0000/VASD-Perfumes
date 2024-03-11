@@ -4,6 +4,7 @@ using WebStore.Infrastructure.Data.Entities;
 using static WebStore.Infrastructure.Data.Constants.ConfigurationConstants.Product;
 using static WebStore.Infrastructure.Data.Constants.ConfigurationConstants.Category;
 using static WebStore.Infrastructure.Data.Constants.ConfigurationConstants.Brand;
+using static WebStore.Infrastructure.Data.Constants.ConfigurationConstants.Subcategory;
 
 namespace WebStore.Infrastructure.Data.Configuration
 {
@@ -35,6 +36,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl ="https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(ChanelId)
                 },
                 new Product
@@ -46,6 +48,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(MarcJacobsId)
                 },
                 new Product
@@ -57,6 +60,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(GucciId)
                 },
                 new Product
@@ -68,6 +72,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(ViktorRolfId)
                 },
                 new Product
@@ -79,6 +84,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(GuerlainId)
                 },
                 new Product
@@ -90,6 +96,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(YvesSaintLaurentId)
                 },
                 new Product
@@ -101,6 +108,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(TomFordId)
                 },
                 new Product
@@ -112,6 +120,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl = "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(MenSubcategoryId),
                     BrandId = Guid.Parse(ArmaniId)
                 },
                 new Product
@@ -123,6 +132,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl = "https://www.sephora.com/productimages/sku/s915447-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(MenSubcategoryId),
                     BrandId = Guid.Parse(HermesId)
                 },
                 new Product
@@ -134,6 +144,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     ImageUrl = "https://creedboutique.com/cdn/shop/files/aventus-100ml-bottle_3413e5f4-3eee-40b3-8451-2546a370ec5b.jpg?v=1700498936&width=1500",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
+                    SubcategoryId = Guid.Parse(UnisexSubcategoryId),
                     BrandId = Guid.Parse(CreedId)
                 }
             };
