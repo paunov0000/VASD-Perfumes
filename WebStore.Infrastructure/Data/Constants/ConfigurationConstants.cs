@@ -43,5 +43,12 @@ namespace WebStore.Infrastructure.Data.Constants
             public const string HermesId = "dc4a85cb-8f2d-452b-8027-c3409538c244";
             public const string CreedId = "f33371d7-fa64-42f0-89bd-7f707e285279";
         }
+
+        public static class Subcategory
+        {
+            public const string WomenSubcategoryId = "98C91D15-4A4C-4FC4-B226-F9835E1560D2";
+            public const string MenSubcategoryId = "5F1EFCF7-0A16-4079-AE7F-AEBBD4F5CA3B";
+            public const string UnisexSubcategoryId = "45C73D43-2499-422E-A5B5-5F0086331E51";
+        }
     }
 }
