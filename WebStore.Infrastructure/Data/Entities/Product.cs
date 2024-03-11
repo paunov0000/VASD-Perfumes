@@ -69,6 +69,15 @@ namespace WebStore.Infrastructure.Data.Entities
         public Category Category { get; set; } = null!;
 
         [Required]
+        [ForeignKey(nameof(Subcategory))]
+        [Comment("Foreign key of the Subcategory")]
+        public Guid SubcategoryId { get; set; }
+
+        [Required]
+        [Comment("Navigation property to the Subcategory")]
+        public Subcategory Subcategory { get; set; } = null!;
+
+        [Required]
         [Comment("Orders of the product")]
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
