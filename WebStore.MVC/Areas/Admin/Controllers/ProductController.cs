@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebStore.Core.Contracts.Admin;
-using static WebStore.Core.Constants.TempDataKeyConstants;
-using WebStore.Core.Model.Product;
-using WebStore.Core.Services;
 using WebStore.Core.Contracts;
+using WebStore.Core.Contracts.Admin;
+using WebStore.Core.Model.Product;
+using static WebStore.Core.Constants.TempDataKeyConstants;
 
 namespace WebStore.MVC.Areas.Admin.Controllers
 {
@@ -13,9 +12,8 @@ namespace WebStore.MVC.Areas.Admin.Controllers
         private readonly IProductService productService;
 
         public ProductController(
-                                IProductManageService _productManageService,
-                                IProductService _productService
-                                )
+            IProductManageService _productManageService,
+            IProductService _productService)
         {
             productManageService = _productManageService;
             productService = _productService;
@@ -29,7 +27,6 @@ namespace WebStore.MVC.Areas.Admin.Controllers
             return View(model);
         }
 
-        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Add()
         {
