@@ -1,1 +1,63 @@
-﻿
+﻿@model IEnumerable<ProductTableModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrandName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoldCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OnSale)
+        </th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>
+                @product.Quantity
+            </td>
+            <td>
+                @product.Name
+            </td>
+            <td>
+                @product.BrandName
+            </td>
+            <td>
+                @product.Price
+            </td>
+            <td>
+                @product.CategoryName
+            </td>
+            <td>
+                @product.SubcategoryName
+            </td>
+            <td>
+                @product.SoldCount
+            </td>
+            <td>
+                @product.OnSale
+            </td>
+        </tr>
+    }
+</table>
