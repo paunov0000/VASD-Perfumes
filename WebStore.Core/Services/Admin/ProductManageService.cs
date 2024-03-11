@@ -26,6 +26,7 @@ namespace WebStore.Core.Services.Admin
                      Price = p.Price,
                      SoldCount = p.SoldCount,
                      CategoryName = p.Category.Name,
+                     SubcategoryName = p.Subcategory.Name,
                      OnSale = p.OnSale,
                      Quantity = p.Quantity,
                  })
