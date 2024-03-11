@@ -23,7 +23,7 @@ namespace WebStore.Infrastructure.Data.Configuration
             var subcategory = new Subcategory
             {
                 Id = Guid.Parse("5f1efcf7-0a16-4079-ae7f-aebbd4f5ca3b"),
-                Name = "Man",
+                Name = "Men",
                 CategoryId = Guid.Parse("53146915-6199-44EB-AEDB-E9902299BE6C")
             };
 
@@ -32,7 +32,7 @@ namespace WebStore.Infrastructure.Data.Configuration
             subcategory = new Subcategory
             {
                 Id = Guid.Parse("98c91d15-4a4c-4fc4-b226-f9835e1560d2"),
-                Name = "Woman",
+                Name = "Women",
                 CategoryId = Guid.Parse("53146915-6199-44EB-AEDB-E9902299BE6C")
             };
 
