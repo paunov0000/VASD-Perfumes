@@ -1,0 +1,38 @@
+.site {
+    display: flex;
+    /* flex-direction: column; */
+    max-width: 1300px;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.header {
+    display: flex;
+    /* flex-direction: column; */
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #CDCDCD;
+}
+
+a:hover {
+    color: #FFC42A;
+}

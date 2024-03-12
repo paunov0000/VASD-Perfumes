@@ -101,7 +101,6 @@ namespace WebStore.Core.Services.Admin
             }
 
             entity.IsActive = false;
-
             await repo.SaveChangesAsync();
         }
     }

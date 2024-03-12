@@ -1,0 +1,36 @@
+.theader th {
+  font-weight: bold;
+  text-align: center;
+  width: 6em;
+}
+
+.theader {
+  display: flex;
+  gap: 3em;
+  background-color: #ffffff;
+  padding: 0.5em 0em 0.5em 0em;
+}
+
+.item td {
+  width: 6em;
+}
+
+.item {
+  display: flex;
+  gap: 3em;
+  text-align: center;
+  padding: 0.5em 0em 0.5em 0em;
+}
+
+
+.item:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.item:nth-child(even) {
+  background-color: #f7f6fe;
+}
+
+.item:hover {
+  background-color: #FFC42A;
+}
