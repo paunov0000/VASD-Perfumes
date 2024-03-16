@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\css\\account.css"
     },
     {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\admin-layout.css",
+      "PackagePath": "staticwebassets\\css\\admin-layout.css"
+    },
+    {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\admin-products.css",
+      "PackagePath": "staticwebassets\\css\\admin-products.css"
+    },
+    {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\card.css",
       "PackagePath": "staticwebassets\\css\\card.css"
     },
