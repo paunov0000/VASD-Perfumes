@@ -64,25 +64,31 @@
             <div class="search-query"></div>
           </div>
           <div class="add-product"></div> -->
+          <div class="query">
+            <div class="display-count">
+              <label for="count">Show</label>
+              <select id="count">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+              <span>entries</span>
+            </div>
+            <div class="search-query">
+              <input type="text" placeholder="Search" />
+              <button>Search</button>
+            </div>
+            <div class="product-actions">
+              <a class="add-product">
+                <span>
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+                Add Product
+              </a>
+            </div>
+          </div>
           <table>
-            <div class="query">
-              <div class="display-count">
-                <label for="count">Show</label>
-                <select id="count">
-                  <option value="10">10</option>
-                  <option value="20">20</option>
-                  <option value="50">50</option>
-                  <option value="100">100</option>
-                </select>
-              </div>
-              <div class="search-query">
-                <input type="text" placeholder="Search" />
-                <button>Search</button>
-              </div>
-            </div>
-            <div class="add-product">
-              <button>Add Product</button>
-            </div>
             <tr class="theader">
               <th>Quantity</th>
               <th>Name</th>
