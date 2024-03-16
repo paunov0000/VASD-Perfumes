@@ -4,8 +4,32 @@
     ViewBag.Title = "Index";
 }
 
+<div class="query">
+    <div class="display-count">
+        <label for="count">Show</label>
+        <select id="count">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+        <span>entries</span>
+    </div>
+    <div class="search-query">
+        <input type="text" placeholder="Search" />
+        <button>Search</button>
+    </div>
+    <div class="product-actions">
+        <a asp-area="Admin" asp-controller="Product" asp-action="Add" class="add-product">
+            <span>
+                <i class="fa-solid fa-plus"></i>
+            </span>
+            Add Product
+        </a>
+    </div>
+</div>
 <table>
-    <tr>
+    <tr class="theader">
         <th>
             @Html.DisplayNameFor(model => model.Quantity)
         </th>
@@ -22,7 +46,7 @@
             @Html.DisplayNameFor(model => model.CategoryName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CategoryName)
+            @Html.DisplayNameFor(model => model.SubcategoryName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SoldCount)
@@ -33,7 +57,7 @@
     </tr>
     @foreach (var product in Model)
     {
-        <tr>
+        <tr class="item">
             <td>
                 @product.Quantity
             </td>
@@ -44,7 +68,7 @@
                 @product.BrandName
             </td>
             <td>
-                @product.Price
+                @(product.Price) лв.
             </td>
             <td>
                 @product.CategoryName
