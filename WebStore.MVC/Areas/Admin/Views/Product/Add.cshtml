@@ -4,66 +4,65 @@
     ViewData["Title"] = "Добави артикул";
 }
 
-<div class="container mt-5">
-    <div class="row justify-content-center align-items-center">
-        <div class="col-sm-12 col-md-12 col-lg-4">
-            <h1 class="mb-3">@ViewData["Title"]</h1>
-
-            <form asp-area="Admin" asp-controller="Product" asp-action="Add" method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.Name"></label>
-                    <input type="text" asp-for="@Model.Name" class="form-control" />
-                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.BrandId"></label>
-                    <select asp-for="@Model.BrandId" class="form-control">
-                        @foreach (var brand in ViewBag.Brands)
-                        {
-                            <option value="@brand.Id">@brand.Name</option>
-                        }
-                    </select>
-                    <span asp-validation-for="@Model.BrandId" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.Description"></label>
-                    <input type="text" asp-for="@Model.Description" class="form-control" />
-                    <span asp-validation-for="@Model.Description" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.Price"></label>
-                    <input type="text" asp-for="@Model.Price" class="form-control" />
-                    <span asp-validation-for="@Model.Price" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.ImageUrl"></label>
-                    <input type="text" asp-for="@Model.ImageUrl" class="form-control" />
-                    <span asp-validation-for="@Model.ImageUrl" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.CategoryId"></label>
-                    <select asp-for="@Model.CategoryId" class="form-control">
-                        @foreach (var category in ViewBag.Categories)
-                        {
-                            <option value="@category.Id">@category.Name</option>
-                        }
-                    </select>
-                    <span asp-validation-for="@Model.CategoryId" class="text-danger"></span>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Добави</button>
-
-            </form>
-        </div>
+<form asp-controller="Product" asp-action="Add" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="input-wrapper">
+        <label asp-for="@Model.Name"></label>
+        <input asp-for="@Model.Name" class="form-control" type="text" id="name" />
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
     </div>
-</div>
+    <div class="input-wrapper">
+        <label asp-for="@Model.Price"></label>
+        <input asp-for="@Model.Price" class="form-control" type="text" id="price" />
+        <span asp-validation-for="@Model.Price" class="text-danger"></span>
+    </div>
+    <div class="input-wrapper">
+        <label asp-for="@Model.Quantity"></label>
+        <input asp-for="@Model.Quantity" class="form-control" type="text" id="quantity" />
+        <span asp-validation-for="@Model.Quantity" class="text-danger"></span>
+    </div>
+    <div class="input-wrapper">
+        <label asp-for="@Model.Description"></label>
+        <textarea asp-for="@Model.Description" class="form-control" id="description"></textarea>
+        <span asp-validation-for="@Model.Description" class="text-danger"></span>
+    </div>
+    <div class="input-wrapper">
+        <label asp-for="@Model.ImageUrl"></label>
+        <input asp-for="@Model.ImageUrl" class="form-control" type="text" id="image" />
+        <span asp-validation-for="@Model.ImageUrl" class="text-danger"></span>
+    </div>
+    <div class="input-wrapper">
+        <label asp-for="@Model.CategoryId"></label>
+        <select asp-for="@Model.CategoryId">
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option value="@category.Id">@category.Name</option>
+            }
+        </select>
+        <span asp-validation-for="@Model.CategoryId" class="text-danger"></span>
+    </div>
+    <div class="input-wrapper">
+        <label asp-for="@Model.BrandId"></label>
+        <select asp-for="@Model.BrandId">
+            @foreach (var brand in ViewBag.Brands)
+            {
+                <option value="@brand.Id">@brand.Name</option>
+            }
+        </select>
+    </div>
+    <div class="input-wrapper">
+        <label asp-for="@Model.SubcategoryId"></label>
+        <select asp-for="@Model.SubcategoryId">
+            @foreach (var subcategory in ViewBag.Subcategories)
+            {
+                <option value="@subcategory.Id">@subcategory.Name</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit">Добави</button>
+</form>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
