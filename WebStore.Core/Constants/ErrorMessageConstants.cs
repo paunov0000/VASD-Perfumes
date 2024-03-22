@@ -32,10 +32,12 @@
             public const string InvalidFieldLengthMessage = "Полето {0} трябва да бъде между {2} и {1} символа.";
             public const string InvalidFieldMessage = "Невалидна стойност за поле {0}.";
         }
-        
+
         public static class Product
         {
             public const string InvalidPriceRangeMessage = "Цената трябва да бъде между {1} и {2}.";
+
+            public const string InvalidQuantityRangeMessage = "Количеството трябва да бъде между {1} и {2}.";
         }
 
     }
