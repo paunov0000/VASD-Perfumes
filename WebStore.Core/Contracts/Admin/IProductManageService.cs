@@ -42,5 +42,12 @@ namespace WebStore.Core.Contracts.Admin
         /// </summary>
         /// <param name="id">Unique identifier of the Entity performing actions on</param>
         Task DeleteProductAsync(Guid id);
+
+
+        /// <summary>
+        /// Fetches all Subcategory entities from the database and maps them to an IEnumerable of SubcategoryFormModel
+        /// </summary>
+        /// <returns>An IEnumerable of SubcategoryFormModel</returns>
+        Task<IEnumerable<SubcategoryFormModel>> GetAllSubcategories();
     }
 }
