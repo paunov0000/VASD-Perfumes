@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\admin-layout.css"
     },
     {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\admin-product-add.css",
+      "PackagePath": "staticwebassets\\css\\admin-product-add.css"
+    },
+    {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\css\\admin-products.css",
       "PackagePath": "staticwebassets\\css\\admin-products.css"
     },
@@ -291,6 +295,10 @@
     {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\admin-layout.html",
       "PackagePath": "staticwebassets\\pages\\admin-layout.html"
+    },
+    {
+      "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\admin-product-add.html",
+      "PackagePath": "staticwebassets\\pages\\admin-product-add.html"
     },
     {
       "Id": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\wwwroot\\pages\\card_partial.html",
