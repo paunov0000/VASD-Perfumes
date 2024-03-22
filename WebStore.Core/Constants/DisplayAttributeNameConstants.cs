@@ -17,6 +17,7 @@
             public const string DisplayPrice = "Цена";
             public const string DisplayQuantity = "Количество";
             public const string DisplayCategory = "Категория";
+            public const string DisplaySubcategory = "Подкатегория";
             public const string DisplayImage = "Снимка";
             public const string DisplayBrand = "Марка";
         }
