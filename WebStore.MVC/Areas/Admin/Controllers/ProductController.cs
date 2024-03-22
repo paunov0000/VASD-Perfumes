@@ -34,6 +34,7 @@ namespace WebStore.MVC.Areas.Admin.Controllers
 
             ViewBag.Categories = await productManageService.GetAllCategories();
             ViewBag.Brands = await productManageService.GetAllBrands();
+            ViewBag.Subcategories = await productManageService.GetAllSubcategories();
 
             return View(model);
         }
