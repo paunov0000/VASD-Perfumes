@@ -33,6 +33,10 @@ namespace WebStore.Core.Model.Product
         //[RegularExpression(@"^\d+$", ErrorMessage = "Please enter a valid number.")]
         public decimal Price { get; set; }
 
+        [Required(ErrorMessage = RequiredFieldMessage)]
+        [Range(0, 5000, ErrorMessage = InvalidQuantityRangeMessage)]
+        public int Quantity { get; set; }
+
         [Display(Name = DisplayImage)]
         [Required(ErrorMessage = RequiredFieldMessage)]
         public string ImageUrl { get; set; } = null!;
@@ -44,5 +48,9 @@ namespace WebStore.Core.Model.Product
         [Display(Name = DisplayCategory)]
         [Required(ErrorMessage = RequiredFieldMessage)]
         public Guid CategoryId { get; set; }
+
+        [Display(Name = DisplaySubcategory)]
+        [Required(ErrorMessage = RequiredFieldMessage)]
+        public Guid SubcategoryId { get; set; }
     }
 }
