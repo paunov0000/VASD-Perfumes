@@ -8522,19 +8522,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mitko\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\WebStore.MVC.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\WebStore.MVC.csproj",
       "projectName": "WebStore.MVC",
-      "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\WebStore.MVC.csproj",
-      "packagesPath": "C:\\Users\\mitko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.MVC\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\WebStore.MVC.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mitko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8548,8 +8548,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Core\\WebStore.Core.csproj": {
-              "projectPath": "C:\\Users\\mitko\\OneDrive\\Documents\\workspace\\VASD-Perfumes\\WebStore.Core\\WebStore.Core.csproj"
+            "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Core\\WebStore.Core.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Core\\WebStore.Core.csproj"
             }
           }
         }
@@ -8558,6 +8558,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -8612,7 +8617,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
