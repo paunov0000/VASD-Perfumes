@@ -683,3 +683,10 @@ C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\obj\Debug\net8.0\refint\Web
 C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.pdb
 C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\obj\Debug\net8.0\WebStore.MVC.genruntimeconfig.cache
 C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\obj\Debug\net8.0\ref\WebStore.MVC.dll
+C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll

@@ -130,6 +130,7 @@ namespace WebStore.UnitTests
         public void TearDown()
         {
             this.dbContext.Dispose();
+            this.repo.Dispose(); //TODO: why would I dispose it?
         }
     }
 }
