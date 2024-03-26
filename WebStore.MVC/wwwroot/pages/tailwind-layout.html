@@ -16,9 +16,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
-  <body class="flex justify-center m-auto max-w-screen-xl">
-    <div class="flex flex-col w-full">
-      <header>
+  <body class="flex justify-center m-auto max-w-screen-xl bg-red-500">
+    <div class="flex flex-col w-full gap-6">
+      <header class="flex flex-col gap-20">
         <div class="flex justify-between">
           <p>
             Избери перфектния подарък с до -40% и ОЩЕ -10% с код LOVE над 140
@@ -49,79 +49,11 @@
             </a>
           </div>
         </div>
-        <!-- <div>
-          <nav>
-            <ul>
-              <li><a href="#">Парфюми</a></li>
-              <li><a href="#">Парфюми без опаковка</a></li>
-              <li><a href="#">Грим</a></li>
-              <li><a href="#">Козметика</a></li>
-              <li><a href="#">Комплекти</a></li>
-              <li><a href="#">Ароматни свещи</a></li>
-              <li><a href="#">Марки</a></li>
-            </ul>
-          </nav>
-        </div> -->
       </header>
-      <!-- <article id="article-clients">
-        <div id="article-clients-title">
-          <h1>Нашите клиенти</h1>
-        </div>
-        <div id="article-clients-sources" href="#">
-          <a class="article-clients-sources-source" href="#">
-            <figure class="article-clients-sources-source-logo-wrapper">
-              <img
-                src="images/client1.png"
-                alt="client1"
-                class="article-clients-sources-source-logo"
-              />
-            </figure>
-            <div class="article-clients-sources-source-rating">
-              <div class="article-clients-sources-source-rating-stars">
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
-              </div>
-              <div>
-                <p>5 от 5</p>
-              </div>
-            </div>
-            <div class="article-clients-sources-source-text">
-              <p>от над 6000 реални отзива</p>
-            </div>
-          </a>
-          <a class="article-clients-sources-source" href="#">
-            <figure class="article-clients-sources-source-logo-wrapper">
-              <img
-                src="images/client1.png"
-                alt="client1"
-                class="article-clients-sources-source-logo"
-              />
-            </figure>
-            <div class="article-clients-sources-source-rating">
-              <div class="article-clients-sources-source-rating-stars">
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
-                <span>*</span>
-              </div>
-              <div>
-                <p>5 от 5</p>
-              </div>
-            </div>
-            <div class="article-clients-sources-source-text">
-              <p>от над 6000 реални отзива</p>
-            </div>
-          </a>
-        </div>
-      </article> -->
       <main></main>
       <article>
         <div class="flex flex-col items-center">
-          <div>
+          <div class="text-center">
             <p>
               Абонирайте се за нашия бюлетин и получавайте <br />
               ексклузивни намаления, новини и <br />
@@ -136,15 +68,15 @@
                 type="email"
                 placeholder="Въведи своя имейл"
               />
-              <div>
+              <div class="text-center">
                 <button>Абонирай ме!</button>
               </div>
             </form>
           </div>
         </div>
       </article>
-      <article class="flex justify-center">
-        <div>
+      <article class="flex justify-center gap-12">
+        <div class="flex flex-col items-center">
           <div>
             <i class="fa-solid fa-truck-fast"></i>
           </div>
@@ -152,7 +84,7 @@
             <p>Експресна Доставка</p>
           </div>
         </div>
-        <div>
+        <div class="flex flex-col items-center">
           <div>
             <i class="fa-solid fa-clipboard-check"></i>
           </div>
@@ -160,7 +92,7 @@
             <p>Безплатна Застраховка</p>
           </div>
         </div>
-        <div>
+        <div class="flex flex-col items-center">
           <div>
             <i class="fa-solid fa-gift"></i>
           </div>
@@ -168,7 +100,7 @@
             <p>Подарък за всяка поръчка</p>
           </div>
         </div>
-        <div>
+        <div class="flex flex-col items-center">
           <div>
             <i class="fa-solid fa-headset"></i>
           </div>
@@ -179,55 +111,36 @@
       </article>
 
       <footer class="flex flex-col items-center">
-        <div>
-          <div class="flex">
-            <div>
-              <h2>Информация</h2>
-              <ul>
-                <li><a href="#">За нас</a></li>
-                <li><a href="#">Доставка</a></li>
-                <li><a href="#">Плащане</a></li>
-                <li><a href="#">Контакти</a></li>
-                <li><a href="#">Общи условия</a></li>
-                <li><a href="#">Нашите предимства</a></li>
-                <li><a href="#">Оригинални продукти</a></li>
-              </ul>
-            </div>
-            <!-- <div id="site-footer-top-wrapper-links">
+        <div class="flex justify-between w-full">
+          <div>
+            <h2>Информация</h2>
+            <ul>
+              <li><a href="#">За нас</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Плащане</a></li>
+              <li><a href="#">Контакти</a></li>
+              <li><a href="#">Общи условия</a></li>
+              <!-- <li><a href="#">Нашите предимства</a></li> -->
+            </ul>
+          </div>
+          <!-- <div id="site-footer-top-wrapper-links">
             <iframe src="" frameborder="0"></iframe>
           </div> -->
+          <div>
+            <h2>За Контакт</h2>
+            <p>Телефон: +359 88 8888888</p>
+            <p>Имейл: office@webstore.com</p>
+            <p>Адрес: гр. София, ул. "Търговска" 22222</p>
+            <p>Работно време: 9:00 - 17:00</p>
             <div>
-              <h2>За Контакт</h2>
-              <p>Телефон: +359 88 8888888</p>
-              <p>Имейл: office@webstore.com</p>
-              <p>Адрес: гр. София, ул. "Търговска" 22222</p>
-              <p>Работно време: 9:00 - 17:00</p>
-              <div>
-                <a href="#">
-                  <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="#">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
-              </div>
+              <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
             </div>
           </div>
-          <!-- <div id="site-footer-mid-wrapper">
-            <section id="site-footer-mid-wrapper-delivery">
-              <div>
-                <p>Доставка</p>
-              </div>
-               <img src="#" alt="Доставка с ЕКОНТ" /> -->
-          <!-- </section>
-
-            <section id="site-footer-mid-wrapper-payment">
-              <div>
-                <p>Плащане</p>
-              </div> -->
-          <!-- <img src="#" alt="Плащане с карта" /> -->
-          <!-- <span> Наложен платеж </span>
-            </section>
-          </div> -->
         </div>
         <div>
           <p>© 2021 Всички права запазени</p>
