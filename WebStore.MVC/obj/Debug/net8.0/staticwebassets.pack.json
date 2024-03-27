@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\css\\card.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\css\\input.css",
+      "PackagePath": "staticwebassets\\css\\input.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\css\\output.css",
+      "PackagePath": "staticwebassets\\css\\output.css"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\css\\reset.css",
       "PackagePath": "staticwebassets\\css\\reset.css"
     },
@@ -311,6 +319,14 @@
     {
       "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\pages\\product_details.html",
       "PackagePath": "staticwebassets\\pages\\product_details.html"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\pages\\tailwind-card-partial.html",
+      "PackagePath": "staticwebassets\\pages\\tailwind-card-partial.html"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\pages\\tailwind-layout.html",
+      "PackagePath": "staticwebassets\\pages\\tailwind-layout.html"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebStore.MVC.Microsoft.AspNetCore.StaticWebAssets.props",
