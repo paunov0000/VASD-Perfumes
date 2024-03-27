@@ -1,7 +1,28 @@
 ﻿@model ProductViewModel;
 
+<div class="flex flex-col max-w-36 gap-5 justify-between items-center">
+<!-- make somehow its' children stretch to the full width or sum idk, marso looks off -->
+<!-- the max-w makes it obv take less than the threshold of the value given up until this value  -->
+<!-- the max-w makes it have some spare space on left and right (width) -->
+    <div class="flex flex-col gap-3">
+        <div>
+            <a href="#">
+                <div class="h-44">
+                    <img class="max-w-full h-full" src="@Model.ImageUrl"
+                         alt="Product Image" />
+                </div>
+            </a>
+        </div>
+        <div class="text-center">
+            <a href="#">@Model.Name</a>
+        </div>
+    </div>
+    <div class="text-center font-bold">
+        <p>@(Model.Price) лв.</p>
+    </div>
+</div>
 
-<div class="card">
+<!-- <div class="card">
     <a asp-controller="Product" asp-action="About" asp-route-id="@Model.Id">
 
         <div class="card-img-container">
@@ -13,4 +34,4 @@
         </div>
         <p class="card-label-container-price">@(Model.Price) лв.</p>
     </a>
-</div>
+</div> -->
