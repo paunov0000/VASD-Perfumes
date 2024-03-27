@@ -19,19 +19,19 @@
   <body class="flex justify-center m-auto max-w-screen-xl">
     <div class="flex flex-col w-full gap-6">
       <header class="flex flex-col gap-20">
-        <div class="flex justify-between">
+        <div class="flex justify-between bg-pink-400 px-8 py-1 rounded-b-lg">
           <p>
             Избери перфектния подарък с до -40% и ОЩЕ -10% с код LOVE над 140
             лв! ❤️
           </p>
           <p>+359 88 8888888</p>
         </div>
-        <div class="flex justify-between">
-          <div class="flex items-center">
+        <div class="grid grid-cols-3">
+          <div class="flex items-center font-mono text-4xl">
             <p>WebStore</p>
             <!-- <img src="images/logo.png" alt="logo" /> -->
           </div>
-          <div class="flex items-center gap-5">
+          <div class="flex items-center gap-5 justify-center">
             <div>
               <input type="text" placeholder="Търси..." />
             </div>
@@ -54,8 +54,8 @@
       </header>
       <main></main>
       <article>
-        <div class="flex flex-col items-center">
-          <div class="text-center">
+        <div class="flex flex-col items-center gap-7">
+          <div class="text-center text-2xl">
             <p>
               Абонирайте се за нашия бюлетин и получавайте <br />
               ексклузивни намаления, новини и <br />
@@ -63,15 +63,22 @@
             </p>
           </div>
           <div>
-            <form action="#">
-              <label for="subscribe-newsletter">Имейл *</label>
-              <input
-                id="subscribe-newsletter"
-                type="email"
-                placeholder="Въведи своя имейл"
-              />
+            <form class="flex flex-col gap-4" action="#">
+              <div class="flex flex-col items-start gap-2">
+                <label class="text-xs italic" for="subscribe-newsletter"
+                  >Имейл *</label
+                >
+                <input
+                  class="bg-gray-100 rounded-r-xl px-5 py-2"
+                  id="subscribe-newsletter"
+                  type="email"
+                  placeholder="Въведи своя имейл"
+                />
+              </div>
               <div class="text-center">
-                <button>Абонирай ме!</button>
+                <button class="bg-lime-300 rounded-2xl px-5 py-1 text-sm">
+                  Абонирай ме!
+                </button>
               </div>
             </form>
           </div>
@@ -79,7 +86,7 @@
       </article>
       <article class="flex justify-center gap-12">
         <div class="flex flex-col items-center">
-          <div>
+          <div class="text-xl">
             <i class="fa-solid fa-truck-fast"></i>
           </div>
           <div>
@@ -87,7 +94,7 @@
           </div>
         </div>
         <div class="flex flex-col items-center">
-          <div>
+          <div class="text-xl">
             <i class="fa-solid fa-clipboard-check"></i>
           </div>
           <div>
@@ -95,15 +102,15 @@
           </div>
         </div>
         <div class="flex flex-col items-center">
-          <div>
+          <div class="text-xl">
             <i class="fa-solid fa-gift"></i>
           </div>
           <div>
-            <p>Подарък за всяка поръчка</p>
+            <p>Подарък при всяка поръчка</p>
           </div>
         </div>
         <div class="flex flex-col items-center">
-          <div>
+          <div class="text-xl">
             <i class="fa-solid fa-headset"></i>
           </div>
           <div>
@@ -134,7 +141,7 @@
             <p>Имейл: office@webstore.com</p>
             <p>Адрес: гр. София, ул. "Търговска" 22222</p>
             <p>Работно време: 9:00 - 17:00</p>
-            <div>
+            <div class="text-xl">
               <a href="#">
                 <i class="fa-brands fa-facebook"></i>
               </a>
