@@ -6,9 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/output.css" />
   </head>
-  <body
-    class="min-h-screen justify-center flex items-center transform -translate-y-36"
-  >
+  <body class="min-h-screen justify-center flex items-center">
     <div class="flex flex-col gap-8 items-center w-72">
       <div class="text-center">
         <div class="flex flex-col gap-3">
@@ -38,30 +36,35 @@
             placeholder="***********"
           />
         </div>
-        <div class="flex gap-2">
-          <input
-            class="relative peer shrink-0 appearance-none w-4 h-4 border-2 border-gray-300 rounded-md bg-white mt-1 checked:bg-blue-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-blue-100 disabled:border-slate-400 disabled:bg-slate-400"
-            type="checkbox"
-            id="rememberme-check"
-          />
-          <label for="rememberme-check">Remember me</label>
-          <svg
-            class="text-white absolute w-4 h-4 mt-1 hidden peer-checked:block pointer-events-none"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          <!-- whats the margin top for?? test it lol -->
+        <div class="flex justify-between shrink-0 text-sm font-bold">
+          <div class="flex gap-2">
+            <input
+              class="relative peer shrink-0 appearance-none w-4 h-4 border-2 border-gray-300 rounded-md bg-white mt-1 checked:bg-blue-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-blue-100 disabled:border-slate-400 disabled:bg-slate-400"
+              type="checkbox"
+              id="rememberme-check"
+            />
+            <label class="mt-0.5" for="rememberme-check">Remember me</label>
+            <svg
+              class="text-white absolute w-4 h-4 mt-1 hidden peer-checked:block pointer-events-none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <!-- whats the margin top for?? test it lol -->
+          </div>
+          <div class="mt-0.5">
+            <a href="#">Forgot Password</a>
+          </div>
         </div>
         <div class="">
           <a
-            class="bg-red-500 text-white px-3 py-1 rounded-lg block text-center"
+            class="bg-red-500 text-white px-3 py-2 rounded-xl block text-center"
             >Sign In</a
           >
         </div>
