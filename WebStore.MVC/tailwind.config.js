@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./wwwroot/pages/*.html", "./Views/**/*.cshtml"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        main: ["Montserrat", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
