@@ -32,9 +32,9 @@
                 </div>
                 <div class="flex items-center gap-5 justify-center">
                     <div>
-                        <input type="text" placeholder="Търси..." />
+                        <input class="outline-none" type="text" placeholder="Търси..." />
                     </div>
-                    <div>
+                    <div id="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <!-- <button>Търси</button> -->
@@ -67,7 +67,7 @@
                     <form class="flex flex-col gap-4" action="#">
                         <div class="flex flex-col items-start gap-2">
                             <label class="text-xs italic" for="subscribe-newsletter">Имейл *</label>
-                            <input class="bg-gray-100 rounded-r-xl px-5 py-2"
+                            <input class="bg-gray-100 rounded-r-xl px-5 py-2 outline-none"
                                    id="subscribe-newsletter"
                                    type="email"
                                    placeholder="Въведи своя имейл" />
@@ -163,18 +163,17 @@
         };
     </script>
     <script>
-        document.getElementById("header-mid-search-icon").onclick = function (e) {
-            var input = e.currentTarget.previousElementSibling;
+        document.getElementById("search-icon").onclick = function (e) {
+            var input = e.currentTarget.previousElementSibling.children[0].value;
             var minSearchLength = 2;
-            var searchText = input.value;
 
-            if (searchText.length < minSearchLength) {
+            if (input.length < minSearchLength) {
                 toastr.warning(`Моля, въведете поне ${minSearchLength} символа`);
                 return;
             }
 
-            if (searchText) {
-                window.location.href = `/Product/Index?search=${searchText}`;
+            if (input) {
+                window.location.href = `/Product/Index?search=${input}`;
             }
         };
     </script>
