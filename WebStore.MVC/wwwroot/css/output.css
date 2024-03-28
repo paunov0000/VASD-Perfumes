@@ -1144,6 +1144,16 @@ video {
   background-color: rgb(251 207 232 / var(--tw-bg-opacity));
 }
 
+.checked\:bg-slate-400:checked{
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
+.checked\:bg-slate-800:checked{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
 .focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;
