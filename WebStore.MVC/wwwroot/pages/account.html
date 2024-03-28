@@ -6,9 +6,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/output.css" />
   </head>
-  <body class="min-h-screen justify-center flex items-center">
+  <body
+    class="min-h-screen justify-center flex items-center font-main bg-gradient-to-br from-pink-300 to-blue-500"
+  >
     <!-- TODO: Add a diff font lol -->
-    <div class="flex flex-col gap-8 items-center w-72">
+    <div class="flex flex-col gap-8 items-center w-96">
       <div class="text-center">
         <div class="flex flex-col gap-3">
           <div class="text-4xl font-semibold">
@@ -22,7 +24,7 @@
         <div class="flex flex-col gap-2">
           <label class="font-semibold text-sm" for="email">Email</label>
           <input
-            class="border-gray-300 border-2 rounded-lg px-3 py-1 shadow-md shadow-gray-200 text-lg"
+            class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-sm shadow-pink-200 text-base outline-none"
             type="text"
             id="email"
             placeholder="Enter your email"
@@ -31,7 +33,7 @@
         <div class="flex flex-col gap-2">
           <label class="font-semibold text-sm" for="password">Password</label>
           <input
-            class="border-gray-300 border-2 rounded-lg px-3 py-1 shadow-md shadow-gray-200 text-lg"
+            class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-sm shadow-pink-200 text-base outline-none"
             type="password"
             id="password"
             placeholder="***********"
@@ -40,7 +42,7 @@
         <div class="flex justify-between shrink-0 text-sm font-semibold">
           <div class="flex gap-2">
             <input
-              class="relative peer shrink-0 appearance-none w-4 h-4 border-2 border-gray-300 rounded-md bg-white mt-1 checked:bg-blue-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-blue-100 disabled:border-slate-400 disabled:bg-slate-400"
+              class="relative peer shrink-0 appearance-none w-4 h-4 border-2 border-gray-300 rounded-md bg-white mt-1 checked:bg-pink-400 checked:border-0 focus:outline-none  disabled:border-slate-400 disabled:bg-slate-400"
               type="checkbox"
               id="rememberme-check"
             />
@@ -65,14 +67,15 @@
         </div>
         <div class="">
           <a
-            class="bg-red-500 text-white px-3 py-2 rounded-xl block text-center"
+            class="bg-red-500 text-white px-3 py-2 rounded-xl block text-center font-semibold"
+            href="#"
             >Sign In</a
           >
         </div>
-        <div class="text-center font-semibold text-sm text-gray-500">
+        <div class="text-center font-semibold text-sm text-white">
           <p>
             Don't have an account?
-            <a class="text-red-500" href="#">Sign up for free!</a>
+            <a class="text-pink-200" href="#">Sign up for free!</a>
           </p>
         </div>
       </div>
