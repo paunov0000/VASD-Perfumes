@@ -63,6 +63,8 @@ namespace WebStore.MVC.Controllers
 
                 await _signInManager.SignInAsync(user, false);
 
+                TempData[Status.Success] = SuccessOnRegisterMessage;
+
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
 
