@@ -7,60 +7,92 @@
 }
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>@ViewData["Title"] - VASD</title>
-    <link rel="stylesheet" type="text/css" href="slide navbar style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
-          rel="stylesheet" />
-    <link href="~/css/reset.css" rel="stylesheet" />
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="~/css/account.css" rel="stylesheet" />
-    <link href="~/lib/toastr/toastr.min.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebStore</title>
+    <link rel="stylesheet" href="../css/output.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
-    @* <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" /> *@
 </head>
-<body>
-    <partial name="_ToastrAlertMessagesPartial" />
-    <div class="main">
-        <!-- @* <input type="checkbox" id="chk" aria-hidden="true"> *@ -->
-        <div class="signup">
-            <form method="post">
-                <div id="input-wrapper">
-                    <label id="action-title">@ViewData["Title"]</label>
-                    <div asp-validation-summary="All" class="text-danger"></div>
-                    <!-- @* <input type="text" name="txt" placeholder="User name" required=""> *@ -->
-                    @* <label asp-for="@Model.Email" class="form-label"></label> *@
-                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
-                    <input class="form-input"
-                           asp-for="@Model.Email"
-                           placeholder="Имейл" />
-                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
-                    <input class="form-input"
-                           asp-for="@Model.Password"
-                           placeholder="Парола" />
-                    <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
-                    <input class="form-input" 
-                           asp-for="@Model.ConfirmPassword" 
-                           placeholder="Повтори парола" />
-                    <div id="register-wrapper">
-                        <p>
-                            Имате акаунт?
-                            <a class="register-text" asp-controller="Account" asp-action="Login">Вход</a>
-                        </p>
-                    </div>
-                    @* <div id="rememberme-wrapper">
-                    <label class="form-label" for="rememberme-check">Запомни ме</label>
-                    <input asp-for="@Model.RememberMe" id="rememberme-check" type="checkbox" />
-                    </div> *@
-                    <button type="submit">@ViewData["Title"]</button>
+<body class="min-h-screen justify-center flex items-center font-main bg-gradient-to-br from-pink-300 to-blue-500">
+    <!-- TODO: Add a diff font lol -->
+    <div class="flex flex-col gap-8 items-center w-96 bg-white px-10 py-8 rounded-lg">
+        <div class="text-center">
+            <div class="flex flex-col gap-3">
+                <div class="text-4xl font-semibold">
+                    <p>WELCOME BACK</p>
                 </div>
-            </form>
+                <div>Welcome back! Please enter your details.</div>
+            </div>
         </div>
+
+        @* <form asp-controller="Account" asp-action="Login" method="post"></form> *@
+        <form asp-controller="Account" asp-action="Register" method="post" class="flex flex-col gap-7 w-full">
+            <div asp-validation-summary="ModelOnly" class="text-xs italic text-red-500"></div>
+            <div class="flex flex-col gap-2">
+                <label asp-for="@Model.Email" class="font-semibold text-sm" for="email"></label>
+                <span asp-validation-for="@Model.Email" class="text-xs italic text-red-500"></span>
+                <input asp-for="@Model.Email" class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-md shadow-slate-400 text-base outline-none"
+                       type="text"
+                       id="email"
+                       placeholder="Enter your email" />
+            </div>
+            <div class="flex flex-col gap-2">
+                <label asp-for="@Model.Password" class="font-semibold text-sm" for="password"></label>
+                <span asp-validation-for="@Model.Password" class="text-xs italic text-red-500"></span>
+                <input asp-for="@Model.Password" class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-md shadow-slate-400 text-base outline-none"
+                       type="password"
+                       id="password"
+                       placeholder="***********" />
+            </div>
+            <div class="flex flex-col gap-2">
+                <label asp-for="@Model.ConfirmPassword" class="font-semibold text-sm" for="confirmPassword"></label>
+                <span asp-validation-for="@Model.ConfirmPassword" class="text-xs italic text-red-500"></span>
+                <input asp-for="@Model.ConfirmPassword" class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-md shadow-slate-400 text-base outline-none"
+                       type="password"
+                       id="confirmPassword"
+                       placeholder="***********" />
+            </div>
+            <div class="flex justify-between shrink-0 text-sm font-semibold">
+                <div class="flex gap-2">
+                    <input asp-for="@Model.RememberMe" class="relative peer shrink-0 appearance-none w-4 h-4 border-2 border-gray-300 rounded-md bg-white mt-1 checked:bg-slate-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-500 disabled:border-slate-400 disabled:bg-slate-400"
+                           type="checkbox"
+                           id="rememberme-check" />
+                    <!-- TODO: if i can somehow make some padding in the checkbox it'd be -->
+                    <!-- awesome -->
+                    <label asp-for="@Model.RememberMe" class="mt-0.5" for="rememberme-check"></label>
+                    <svg class="text-white absolute w-4 h-4 mt-1 hidden peer-checked:block pointer-events-none"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="4"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <!-- whats the margin top for?? test it lol -->
+                </div>
+                <div class="mt-0.5">
+                    <a href="#">Забравена парола?</a>
+                </div>
+            </div>
+            <div class="">
+                <button class="bg-slate-800 text-white px-3 py-2 rounded-xl text-center font-semibold block w-full">
+                    @ViewData["Title"]
+                </button>
+            </div>
+            <div class="text-center font-semibold text-sm">
+                <p>
+                    Имате акаунт?
+                    <a asp-controller="Account" asp-action="Login" class="text-blue-500">Вход</a>
+                </p>
+            </div>
+        </form>
     </div>
 
-    @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
+    <!-- <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     @* <script src="~/js/site.js" asp-append-version="true"></script> *@
     <partial name="_ValidationScriptsPartial"></partial>
     <script src="~/lib/toastr/toastr.min.js"></script>
