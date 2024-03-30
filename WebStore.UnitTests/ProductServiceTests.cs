@@ -101,17 +101,6 @@ namespace WebStore.UnitTests
 
 
         [Test]
-        public async Task GetAllProductsAsync_ShouldFetchAllProductsWhichAreNotMarkedAsDeleted()
-        {
-            var expectedCount = this.dbContext.Products.Count(p => p.IsActive);
-
-            var result = await this.productService.GetAllProductsAsync();
-
-            Assert.That(expectedCount, Is.EqualTo(result.Count()));
-        }
-
-
-        [Test]
         public async Task GetAllProductsAsync_ShouldFetchAllProductsMarkedAsActive()
         {
             var expectedCount = this.dbContext.Products.Count(p => p.IsActive);
