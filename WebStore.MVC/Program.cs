@@ -1,11 +1,4 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WebStore.Core.Contracts;
-using WebStore.Core.Contracts.Admin;
-using WebStore.Core.Misc;
-using WebStore.Core.Services;
-using WebStore.Core.Services.Admin;
-using WebStore.Infrastructure.Common;
 using WebStore.Infrastructure.Data;
 using WebStore.Infrastructure.Data.Entities;
 using WebStore.MVC.ModelBinders;
@@ -64,6 +57,8 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseStatusCodePagesWithRedirects("/{0}");
 
 app.UseRouting();
 
