@@ -16,7 +16,7 @@
 </head>
 <body class="min-h-screen justify-center flex items-center font-main bg-gradient-to-br from-pink-300 to-blue-500">
     <!-- TODO: Add a diff font lol -->
-    <div class="flex flex-col gap-8 items-center w-96">
+    <div class="flex flex-col gap-8 items-center w-96 bg-white px-10 py-8 rounded-lg">
         <div class="text-center">
             <div class="flex flex-col gap-3">
                 <div class="text-4xl font-semibold">
@@ -67,14 +67,14 @@
                 </div>
             </div>
             <div class="">
-                <button class="bg-slate-800 text-white px-3 py-2 rounded-xl block text-center font-semibold">
+                <button class="bg-slate-800 text-white px-3 py-2 rounded-xl text-center font-semibold block w-full">
                     @ViewData["Title"]
                 </button>
             </div>
-            <div class="text-center font-semibold text-sm text-white">
+            <div class="text-center font-semibold text-sm">
                 <p>
                     Нямате акаунт?
-                    <a asp-controller="Account" asp-action="Register" class="text-pink-200">Регистрация</a>
+                    <a asp-controller="Account" asp-action="Register" class="text-blue-500">Регистрация</a>
                 </p>
             </div>
         </form>
