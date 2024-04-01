@@ -112,10 +112,10 @@ namespace WebStore.Core.Services
         {
             var product = await this.repo.GetByIdAsync<Product>(id);
 
-            if (product.IsActive == false) //TODO: Is it okay to check if isActive here or should it be checked in the controller?
-            {
-                throw new InvalidOperationException("Entity not found");
-            }
+            //if (product.IsActive == false) //TODO: Is it okay to check if isActive here or should it be checked in the controller?
+            //{
+            //    throw new InvalidOperationException("Entity not found");
+            //}
 
             return new ProductAddViewModel()
             {
@@ -125,7 +125,10 @@ namespace WebStore.Core.Services
                 Name = product.Name,
                 Price = product.Price,
                 BrandId = product.BrandId,
-                CategoryId = product.CategoryId
+                CategoryId = product.CategoryId,
+                Quantity = product.Quantity,
+                IsActive = product.IsActive,
+                OnSale = product.OnSale
             };
         }
     }
