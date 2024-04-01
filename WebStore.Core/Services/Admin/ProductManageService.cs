@@ -67,7 +67,9 @@ namespace WebStore.Core.Services.Admin
                 BrandId = model.BrandId,
                 CategoryId = model.CategoryId,
                 SubcategoryId = model.SubcategoryId,
-                Id = model.Id
+                Id = model.Id,
+                IsActive = model.IsActive,
+                Quantity = model.Quantity,
             });
 
             await repo.SaveChangesAsync();
@@ -77,10 +79,10 @@ namespace WebStore.Core.Services.Admin
         {
             var entity = await repo.GetByIdAsync<Product>(model.Id);
 
-            if (entity.IsActive == false) //TODO: Is it okay to check if isActive here or should it be checked in the controller?
-            {
-                throw new InvalidOperationException("Product not found");
-            }
+            //if (entity.IsActive == false) //TODO: Is it okay to check if isActive here or should it be checked in the controller?
+            //{
+            //    throw new InvalidOperationException("Product not found");
+            //}
 
             entity.Description = model.Description;
             entity.ImageUrl = model.ImageUrl;
@@ -88,6 +90,9 @@ namespace WebStore.Core.Services.Admin
             entity.Price = model.Price;
             entity.BrandId = model.BrandId;
             entity.CategoryId = model.CategoryId;
+            entity.OnSale = model.OnSale;
+            entity.IsActive = model.IsActive;
+            entity.Quantity = model.Quantity;
 
             await repo.SaveChangesAsync();
         }
