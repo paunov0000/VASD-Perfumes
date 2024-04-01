@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<div class="query">
+@* <div class="query">
     <div class="display-count">
         <label for="count">Show</label>
         <select id="count">
@@ -27,61 +27,88 @@
             Add Product
         </a>
     </div>
-</div>
-<table>
-    <tr class="theader">
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BrandName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SubcategoryName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SoldCount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OnSale)
-        </th>
-    </tr>
-    @foreach (var product in Model)
-    {
-        <tr class="item">
-            <td>
-                @product.Quantity
-            </td>
-            <td>
-                @product.Name
-            </td>
-            <td>
-                @product.BrandName
-            </td>
-            <td>
-                @(product.Price) лв.
-            </td>
-            <td>
-                @product.CategoryName
-            </td>
-            <td>
-                @product.SubcategoryName
-            </td>
-            <td>
-                @product.SoldCount
-            </td>
-            <td>
-                @product.OnSale
-            </td>
+</div> *@
+<div class="border border-gray-300 rounded-lg overflow-hidden">
+    <table class="w-full">
+        <tr class="bg-gray-200 text-left">
+            <th class="pl-7 py-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="py-2">
+                @Html.DisplayNameFor(model => model.BrandName)
+            </th>
+            <th class="py-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th class="py-2">
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th class="py-2">
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th class="py-2">
+                @Html.DisplayNameFor(model => model.SubcategoryName)
+            </th>
+            <th class="py-2">
+                @Html.DisplayNameFor(model => model.SoldCount)
+            </th>
+            <th class="pr-1 py-2">
+                @Html.DisplayNameFor(model => model.OnSale)
+            </th>
         </tr>
-    }
-</table>
+        @foreach (var product in Model)
+        {
+            <tr class="text-left font-medium">
+                <td class="pl-7 py-2">
+                    <a class="hover:text-blue-500" asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id">
+                        @product.Name
+                    </a>
+                </td>
+                <td class="py-2">
+                    @product.BrandName
+                </td>
+                <td class="py-2">
+                    @(product.Price) лв.
+                </td>
+                <td class="py-2">
+                    @if (product.Quantity <= 0)
+                    {
+                        <span class="text-red-400">Out of Stock</span>
+                    }
+                    else if (product.Quantity <= 15)
+                    {
+                        <span class="text-yellow-400">@product.Quantity</span>
+                    }
+                    else
+                    {
+                        <span class="text-green-400">@product.Quantity</span>
+                    }
+                </td>
+                <td class="py-2">
+                    @product.CategoryName
+                </td>
+                <td class="py-2">
+                    @product.SubcategoryName
+                </td>
+                <td class="py-2">
+                    @product.SoldCount
+                </td>
+                <td class="pr-1 py-2">
+                    @if (product.OnSale)
+                    {
+                        <span class="text-green-400">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="text-red-400">
+                            <i class="fa-solid fa-x"></i>
+                        </span>
+                    }
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>
