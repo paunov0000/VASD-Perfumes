@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </head>
-<body class="flex justify-center m-auto max-w-screen-xl bg-gradient-to-br from-pink-300 to-blue-500 font-main">
+<body class="flex justify-center w-site-width m-auto bg-gradient-to-br from-pink-300 to-blue-500 font-main">
     <partial name="_ToastrAlertMessagesPartial" />
     <div class="flex flex-col w-full gap-40 bg-white px-8 py-4 rounded-lg">
         <header class="flex flex-col gap-20">
@@ -40,14 +40,33 @@
                     <!-- <button>Търси</button> -->
                 </div>
                 <div class="flex justify-end gap-6">
-                    <a asp-controller="Account" asp-action="Login" class="flex flex-col items-center">
-                        <i class="fa-solid fa-user"></i>
-                        <p>Вход</p>
-                    </a>
-                    <a class="flex flex-col items-center" href="#">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <p>Количка</p>
-                    </a>
+
+                    @if (User.Identity?.IsAuthenticated ?? false)
+                    {
+                        @if (User.IsInRole("Administrator"))
+                        {
+                            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="flex flex-col items-center">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <p>Администратор</p>
+                            </a>
+
+                        }
+                        <a class="flex flex-col items-center" href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <p>Количка</p>
+                        </a>
+                        <a asp-controller="Account" asp-action="Logout" class="flex flex-col items-center">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <p>Изход</p>
+                        </a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Login" class="flex flex-col items-center">
+                            <i class="fa-solid fa-user"></i>
+                            <p>Вход</p>
+                        </a>
+                    }
                 </div>
             </div>
         </header>
@@ -73,7 +92,7 @@
                                    placeholder="Въведи своя имейл" />
                         </div>
                         <div class="text-center">
-                            <button class="bg-lime-300 rounded-2xl px-5 py-1 text-sm">
+                            <button class="bg-lime-300 rounded-2xl px-5 py-1 text-sm font-semibold">
                                 Абонирай ме!
                             </button>
                         </div>
