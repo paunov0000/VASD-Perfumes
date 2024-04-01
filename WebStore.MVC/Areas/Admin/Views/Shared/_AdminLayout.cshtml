@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -8,76 +8,72 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-  </head>
-  <body class="min-w-[1500px] font-main">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="min-w-[1500px] font-main">
     <div class="flex flex-row min-h-screen">
-      <div class="flex flex-col gap-4 w-60 border-r border-gray-400 p-6">
-        <div class="text-3xl font-semibold">
-          <div>
-            <a href="#">WebStore</a>
-          </div>
+        <div class="flex flex-col gap-4 w-60 border-r border-gray-400 p-6">
+            <div class="text-3xl font-mono">
+                <div>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">WebStore</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2 text-gray-500">
+                <a class="flex items-center gap-2 hover:text-blue-500" href="#">
+                    <i class="fa-solid fa-house"></i>
+                    <p>Dashboard</p>
+                </a>
+                <div>
+                    <a class="flex items-center gap-2 hover:text-blue-500" asp-controller="Product" asp-action="Index">
+                        <i class="fa-solid fa-warehouse"></i>
+                        <p>Products</p>
+                    </a>
+                </div>
+                <div>
+                    <a class="flex items-center gap-2 hover:text-blue-500" href="#">
+                        <i class="fa-solid fa-users"></i>
+                        <p>Users</p>
+                    </a>
+                </div>
+                <div>
+                    <a class="flex items-center gap-2 hover:text-blue-500" href="#">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <p>Orders</p>
+                    </a>
+                </div>
+                <!-- <div>
+                    <a href="#">
+                        <i class="fa-solid fa-truck"></i>
+                        <p>Shipments</p>
+                    </a>
+                </div> -->
+                <!-- <div>
+                  <a class="flex items-center gap-2 hover:text-blue-500" href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    <p>Settings</p>
+                  </a>
+                </div> -->
+                <div>
+                    <a class="flex items-center gap-2 hover:text-blue-500" asp-area="" asp-controller="Account" asp-action="Logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <p>Logout</p>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="flex flex-col gap-2 text-gray-500">
-          <a class="flex items-center gap-2 hover:text-blue-500" href="#">
-            <i class="fa-solid fa-house"></i>
-            <p>Dashboard</p>
-          </a>
-          <div>
-            <a class="flex items-center gap-2 hover:text-blue-500" href="#">
-              <i class="fa-solid fa-warehouse"></i>
-              <p>Products</p>
-            </a>
-          </div>
-          <div>
-            <a class="flex items-center gap-2 hover:text-blue-500" href="#">
-              <i class="fa-solid fa-users"></i>
-              <p>Users</p>
-            </a>
-          </div>
-          <div>
-            <a class="flex items-center gap-2 hover:text-blue-500" href="#">
-              <i class="fa-regular fa-credit-card"></i>
-              <p>Orders</p>
-            </a>
-          </div>
-          <!-- <div>
-            <a href="#">
-                <i class="fa-solid fa-truck"></i>
-                <p>Shipments</p>
-            </a>
-        </div> -->
-          <!-- <div>
-            <a class="flex items-center gap-2 hover:text-blue-500" href="#">
-              <i class="fa-solid fa-gear"></i>
-              <p>Settings</p>
-            </a>
-          </div> -->
-          <div>
-            <a class="flex items-center gap-2 hover:text-blue-500" href="#">
-              <i class="fa-solid fa-right-from-bracket"></i>
-              <p>Logout</p>
-            </a>
-          </div>
+        <div class="flex flex-col w-full">
+            <!-- <div class="border-b-2 border-gray-200">
+              <p>Dashboard</p>
+            </div> -->
+            <div>
+                @RenderBody()
+            </div>
         </div>
-      </div>
-      <div class="flex flex-col w-full">
-        <!-- <div class="border-b-2 border-gray-200">
-          <p>Dashboard</p>
-        </div> -->
-        <div>
-        @RenderBody()
-        </div>
-      </div>
     </div>
-      <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/toastr/toastr.min.js"></script>
     <script>
@@ -86,5 +82,5 @@
         };
     </script>
     @await RenderSectionAsync("Scripts", required: false)
-  </body>
+</body>
 </html>
