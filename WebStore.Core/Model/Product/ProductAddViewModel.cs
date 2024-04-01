@@ -41,6 +41,14 @@ namespace WebStore.Core.Model.Product
         [Required(ErrorMessage = RequiredFieldMessage)]
         public string ImageUrl { get; set; } = null!;
 
+        [Display(Name = DisplayOnSale)]
+        [Required(ErrorMessage = RequiredFieldMessage)]
+        public bool OnSale { get; set; } 
+
+        [Display(Name = DisplayIsActive)]
+        [Required(ErrorMessage = RequiredFieldMessage)]
+        public bool IsActive { get; set; }
+
         [Display(Name = DisplayBrand)]
         [Required(ErrorMessage = RequiredFieldMessage)]
         public Guid BrandId { get; set; }
