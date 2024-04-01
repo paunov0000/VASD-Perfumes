@@ -56,7 +56,7 @@ namespace WebStore.MVC.Areas.Admin.Controllers
 
             TempData[Status.Success] = Product.SuccessOnAddMessage;
 
-            return RedirectToAction("Index", "Home", new {area= ""});
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
@@ -70,7 +70,7 @@ namespace WebStore.MVC.Areas.Admin.Controllers
 
                 return View(model);
             }
-            catch (InvalidOperationException ex)
+            catch (NullReferenceException ex)
             {
                 return NotFound(ex.Message);
             }
@@ -96,7 +96,7 @@ namespace WebStore.MVC.Areas.Admin.Controllers
 
                 return RedirectToAction("Index", "Product");
             }
-            catch (InvalidOperationException ex)
+            catch (NullReferenceException ex)
             {
                 return NotFound(ex.Message);
             }
