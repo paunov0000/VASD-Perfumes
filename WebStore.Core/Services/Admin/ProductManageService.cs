@@ -90,6 +90,7 @@ namespace WebStore.Core.Services.Admin
             entity.Price = model.Price;
             entity.BrandId = model.BrandId;
             entity.CategoryId = model.CategoryId;
+            entity.SubcategoryId = model.SubcategoryId;
             entity.OnSale = model.OnSale;
             entity.IsActive = model.IsActive;
             entity.Quantity = model.Quantity;
