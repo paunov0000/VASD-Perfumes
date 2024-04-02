@@ -66,7 +66,9 @@ namespace WebStore.MVC.Areas.Admin.Controllers
             {
                 var model = await productService.GetProductByIdAsync(id);
 
-                ViewBag.ProductCategories = await productManageService.GetAllCategories();
+                ViewBag.Subcategories = await productManageService.GetAllSubcategories();
+                ViewBag.Brands = await productManageService.GetAllBrands();
+                ViewBag.Categories = await productManageService.GetAllCategories();
 
                 return View(model);
             }
@@ -81,7 +83,9 @@ namespace WebStore.MVC.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.ProductCategories = await productManageService.GetAllCategories();
+                ViewBag.Subcategories = await productManageService.GetAllSubcategories();
+                ViewBag.Brands = await productManageService.GetAllBrands();
+                ViewBag.Categories = await productManageService.GetAllCategories();
 
                 TempData[Status.Error] = Product.InvalidInputMessage;
 
