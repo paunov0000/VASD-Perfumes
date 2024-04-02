@@ -4,66 +4,97 @@
     ViewData["Title"] = "Редактирай артикул";
 }
 
-<div class="container mt-5">
-    <div class="row justify-content-center align-items-center">
-        <div class="col-sm-12 col-md-12 col-lg-4">
-            <h1 class="mb-3">@ViewData["Title"]</h1>
+<div class="flex flex-col gap-5 items-center">
+    <div>
+        <h1 class="text-center">@ViewData["Title"]</h1>
+    </div>
 
-            <form method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="w-[36rem] border border-gray-300 rounded-lg py-6">
 
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.Name"></label>
-                    <input type="text" asp-for="@Model.Name" class="form-control" />
-                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+        <form class="flex flex-col items-center gap-7" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div>
+                <div class="flex">
+                    <label asp-for="@Model.Name"></label>
+                    <span asp-validation-for="@Model.Name"></span>
                 </div>
+                <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Name" />
+            </div>
 
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.BrandId"></label>
-                    <select asp-for="@Model.BrandId" class="form-control">
+            <div class="flex gap-5">
+                <div>
+                    <div class="flex">
+                        <label asp-for="@Model.BrandId"></label>
+                        <span asp-validation-for="@Model.BrandId"></span>
+                    </div>
+                    <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.BrandId">
                         @foreach (var brand in ViewBag.Brands)
                         {
                             <option value="@brand.Id">@brand.Name</option>
                         }
                     </select>
-                    <span asp-validation-for="@Model.BrandId" class="text-danger"></span>
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.Description"></label>
-                    <input type="text" asp-for="@Model.Description" class="form-control" />
-                    <span asp-validation-for="@Model.Description" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.Price"></label>
-                    <input type="text" asp-for="@Model.Price" class="form-control" />
-                    <span asp-validation-for="@Model.Price" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.ImageUrl"></label>
-                    <input type="text" asp-for="@Model.ImageUrl" class="form-control" />
-                    <span asp-validation-for="@Model.ImageUrl" class="text-danger"></span>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label" asp-for="@Model.CategoryId"></label>
-                    <select asp-for="@Model.CategoryId" class="form-control">
+                <div>
+                    <div class="flex">
+                        <label asp-for="@Model.CategoryId"></label>
+                        <span asp-validation-for="@Model.CategoryId"></span>
+                    </div>
+                    <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.CategoryId">
                         @foreach (var category in ViewBag.Categories)
                         {
                             <option value="@category.Id">@category.Name</option>
                         }
                     </select>
-                    <span asp-validation-for="@Model.CategoryId" class="text-danger"></span>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Редактирай</button>
+                <div>
+                    <div class="flex">
+                        <label asp-for="@Model.SubcategoryId"></label>
+                        <span asp-validation-for="@Model.SubcategoryId"></span>
+                    </div>
+                    <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.SubcategoryId">
+                        @foreach (var category in ViewBag.Subcategories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
 
-            </form>
-        </div>
+            <div>
+                <div class="flex">
+                    <label asp-for="@Model.Description"></label>
+                    <span asp-validation-for="@Model.Description"></span>
+                </div>
+                <textarea class="border-gray-400 border rounded-lg px-3 py-1.5" type="textarea" asp-for="@Model.Description"></textarea>
+            </div>
+
+            <div>
+                <div class="flex">
+                    <label asp-for="@Model.Price"></label>
+                    <span asp-validation-for="@Model.Price"></span>
+                </div>
+                <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Price" />
+            </div>
+
+            <div>
+                <div class="flex">
+                    <label asp-for="@Model.ImageUrl"></label>
+                    <span asp-validation-for="@Model.ImageUrl"></span>
+                </div>
+                <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.ImageUrl" />
+            </div>
+
+
+
+            <button class="text-lg bg-blue-500 text-white rounded-lg px-3 py-1.5 hover:bg-blue-600" type="submit">Редактирай</button>
+
+        </form>
     </div>
 </div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
