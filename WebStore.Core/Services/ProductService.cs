@@ -126,6 +126,7 @@ namespace WebStore.Core.Services
                 Price = product.Price,
                 BrandId = product.BrandId,
                 CategoryId = product.CategoryId,
+                SubcategoryId = product.SubcategoryId,
                 Quantity = product.Quantity,
                 IsActive = product.IsActive,
                 OnSale = product.OnSale
