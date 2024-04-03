@@ -24,6 +24,8 @@ namespace WebStore.Core.Constants
 
             public const string SuccessOnDeleteMessage = "Успешно изтрихте артикул.";
 
+            public const string SuccessOnRestockMessage = "Успешно заредихте артикул.";
+
             public const string InvalidInputMessage = "Невалидни данни, опитай отново.";
         }
 
