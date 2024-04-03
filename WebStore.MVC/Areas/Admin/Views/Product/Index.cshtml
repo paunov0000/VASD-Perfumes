@@ -28,87 +28,96 @@
         </a>
     </div>
 </div> *@
-<div class="border border-gray-300 rounded-lg overflow-hidden">
-    <table class="w-full">
-        <tr class="bg-gray-200 text-left">
-            <th class="pl-7 py-2">
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th class="py-2">
-                @Html.DisplayNameFor(model => model.BrandName)
-            </th>
-            <th class="py-2">
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th class="py-2">
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th class="py-2">
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th class="py-2">
-                @Html.DisplayNameFor(model => model.SubcategoryName)
-            </th>
-            <th class="py-2">
-                @Html.DisplayNameFor(model => model.SoldCount)
-            </th>
-            <th class="pr-1 py-2">
-                @Html.DisplayNameFor(model => model.OnSale)
-            </th>
-        </tr>
-        @foreach (var product in Model)
-        {
-            <tr class="text-left font-medium">
-                <td class="pl-7 py-2">
-                    <a class="hover:text-blue-500" asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id">
-                        @product.Name
-                    </a>
-                </td>
-                <td class="py-2">
-                    @product.BrandName
-                </td>
-                <td class="py-2">
-                    @(product.Price) лв.
-                </td>
-                <td class="py-2">
-                    @if (product.Quantity <= 0)
-                    {
-                        <span class="text-red-400">Out of Stock</span>
-                    }
-                    else if (product.Quantity <= 15)
-                    {
-                        <span class="text-yellow-400">@product.Quantity</span>
-                    }
-                    else
-                    {
-                        <span class="text-green-400">@product.Quantity</span>
-                    }
-                </td>
-                <td class="py-2">
-                    @product.CategoryName
-                </td>
-                <td class="py-2">
-                    @product.SubcategoryName
-                </td>
-                <td class="py-2">
-                    @product.SoldCount
-                </td>
-                <td class="pr-1 py-2">
-                    @if (product.OnSale)
-                    {
-                        <span class="text-green-400">
-                            <i class="fa-solid fa-check"></i>
-                        </span>
-                    }
-                    else
-                    {
-                        <span class="text-red-400">
-                            <i class="fa-solid fa-x"></i>
-                        </span>
-                    }
-                </td>
-
+<div class="flex flex-col gap-5">
+    <div>
+        <div>
+            <a asp-area="Admin" asp-controller="Product" asp-action="Add" class="text-white bg-green-500 hover:bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                Add Product
+            </a>
+        </div>
+    </div>
+    <div class="border border-gray-300 rounded-lg overflow-hidden">
+        <table class="w-full">
+            <tr class="bg-gray-200 text-left">
+                <th class="pl-7 py-2">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th class="py-2">
+                    @Html.DisplayNameFor(model => model.BrandName)
+                </th>
+                <th class="py-2">
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th class="py-2">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th class="py-2">
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </th>
+                <th class="py-2">
+                    @Html.DisplayNameFor(model => model.SubcategoryName)
+                </th>
+                <th class="py-2">
+                    @Html.DisplayNameFor(model => model.SoldCount)
+                </th>
+                <th class="pr-1 py-2">
+                    @Html.DisplayNameFor(model => model.OnSale)
+                </th>
             </tr>
-        }
-    </table>
+            @foreach (var product in Model)
+            {
+                <tr class="text-left font-medium">
+                    <td class="pl-7 py-2">
+                        <a class="hover:text-blue-500" asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id">
+                            @product.Name
+                        </a>
+                    </td>
+                    <td class="py-2">
+                        @product.BrandName
+                    </td>
+                    <td class="py-2">
+                        @(product.Price) лв.
+                    </td>
+                    <td class="py-2">
+                        @if (product.Quantity <= 0)
+                        {
+                            <span class="text-red-400">Out of Stock</span>
+                        }
+                        else if (product.Quantity <= 15)
+                        {
+                            <span class="text-yellow-400">@product.Quantity</span>
+                        }
+                        else
+                        {
+                            <span class="text-green-400">@product.Quantity</span>
+                        }
+                    </td>
+                    <td class="py-2">
+                        @product.CategoryName
+                    </td>
+                    <td class="py-2">
+                        @product.SubcategoryName
+                    </td>
+                    <td class="py-2">
+                        @product.SoldCount
+                    </td>
+                    <td class="pr-1 py-2">
+                        @if (product.OnSale)
+                        {
+                            <span class="text-green-400">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="text-red-400">
+                                <i class="fa-solid fa-x"></i>
+                            </span>
+                        }
+                    </td>
+
+                </tr>
+            }
+        </table>
+    </div>
 </div>
