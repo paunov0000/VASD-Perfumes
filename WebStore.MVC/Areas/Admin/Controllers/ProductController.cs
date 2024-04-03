@@ -106,6 +106,40 @@ namespace WebStore.MVC.Areas.Admin.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Restock()
+        {
+            ViewBag.Products = await productManageService.GetAllProductsAsync();
+
+            var model = new ProductRestockViewModel();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Restock(ProductRestockViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Products = await productManageService.GetAllProductsAsync();
+
+                return View(model);
+            }
+
+            try
+            {
+                await productManageService.RestockProductAsync(model.Id, model.Count);
+
+                TempData[Status.Success] = Product.SuccessOnRestockMessage; //TODO: Make it a success on action generic message
+
+                return RedirectToAction("Index", "Product");
+            }
+            catch (NullReferenceException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Delete(Guid id)
         {
