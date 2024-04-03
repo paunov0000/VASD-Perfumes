@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\css\\input.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\css\\input.output.css",
+      "PackagePath": "staticwebassets\\css\\input.output.css"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\css\\output.css",
       "PackagePath": "staticwebassets\\css\\output.css"
     },
@@ -319,6 +323,10 @@
     {
       "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\pages\\product_details.html",
       "PackagePath": "staticwebassets\\pages\\product_details.html"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\pages\\tailwind-admin-layout.html",
+      "PackagePath": "staticwebassets\\pages\\tailwind-admin-layout.html"
     },
     {
       "Id": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\wwwroot\\pages\\tailwind-card-partial.html",

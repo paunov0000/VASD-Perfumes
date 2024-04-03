@@ -692,3 +692,4 @@ C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\Microsoft.
 C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\package-lock.json
 C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\package.json
+C:\Users\Admin\Documents\workspace\VASD\WebStore.MVC\bin\Debug\net8.0\tailwind.extension.json

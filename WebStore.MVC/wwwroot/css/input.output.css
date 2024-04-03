@@ -572,6 +572,10 @@ video {
   position: relative;
 }
 
+.float-right{
+  float: right;
+}
+
 .m-auto{
   margin: auto;
 }
@@ -1116,6 +1120,10 @@ video {
 .checked\:bg-slate-800:checked{
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.hover\:cursor-pointer:hover{
+  cursor: pointer;
 }
 
 .hover\:bg-amber-600:hover{
