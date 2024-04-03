@@ -21,7 +21,7 @@
             public const string DisplayImage = "Снимка";
             public const string DisplayBrand = "Марка";
             public const string DisplayOnSale = "Промоция";
-            public const string DisplayIsActive = "Наличност";
+            public const string DisplayIsActive = "Видим";
         }
     }
 }
