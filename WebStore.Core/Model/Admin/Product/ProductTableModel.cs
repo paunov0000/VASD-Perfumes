@@ -23,6 +23,9 @@ namespace WebStore.Core.Model.Admin.Product
         [Display(Name = "On Sale")]
         public bool OnSale { get; set; }
 
+        [Display(Name = "Active")]
+        public bool IsActive { get; set; }
+
         [Display(Name = "Category")]
         public string CategoryName { get; set; } = null!;
 
