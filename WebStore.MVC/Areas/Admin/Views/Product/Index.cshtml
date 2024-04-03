@@ -60,9 +60,13 @@
                 <th class="py-2">
                     @Html.DisplayNameFor(model => model.SoldCount)
                 </th>
-                <th class="pr-1 py-2">
+                <th class="py-2">
                     @Html.DisplayNameFor(model => model.OnSale)
                 </th>
+                <th class="pr-1 py-2">
+                    @Html.DisplayNameFor(model => model.IsActive)
+                </th>
+                
             </tr>
             @foreach (var product in Model)
             {
@@ -101,8 +105,22 @@
                     <td class="py-2">
                         @product.SoldCount
                     </td>
-                    <td class="pr-1 py-2">
+                    <td class="py-2">
                         @if (product.OnSale)
+                        {
+                            <span class="text-green-400">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="text-red-400">
+                                <i class="fa-solid fa-x"></i>
+                            </span>
+                        }
+                    </td>
+                    <td class="pr-1 py-2">
+                        @if (product.IsActive)
                         {
                             <span class="text-green-400">
                                 <i class="fa-solid fa-check"></i>
