@@ -49,5 +49,9 @@ namespace WebStore.Core.Contracts.Admin
         /// </summary>
         /// <returns>An IEnumerable of SubcategoryFormModel</returns>
         Task<IEnumerable<SubcategoryFormModel>> GetAllSubcategories();
+
+        Task<IEnumerable<ProductTableModel>> GetProducts(int count);
+
+        Task RestockProductAsync(Guid id, int count);
     }
 }
