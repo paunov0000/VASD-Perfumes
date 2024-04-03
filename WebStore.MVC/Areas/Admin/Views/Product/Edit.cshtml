@@ -9,77 +9,125 @@
         <h1 class="text-center">@ViewData["Title"]</h1>
     </div>
 
-    <div class="w-[36rem] border border-gray-300 rounded-lg py-6">
+    <div class="flex gap-10 items-center">
 
-        <form class="flex flex-col items-center gap-7" method="post">
-            <div class="text-xs italic text-red-500" asp-validation-summary="ModelOnly"></div>
+        <div class="w-[36rem] border border-gray-300 rounded-lg py-6">
 
-
-            <div class="flex flex-col items-center">
-                <label asp-for="@Model.Name"></label>
-                <span class="text-xs italic text-red-500" asp-validation-for="@Model.Name"></span>
-                <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Name" />
-            </div>
+            <form class="flex flex-col items-center gap-7" method="post">
+                <div class="text-xs italic text-red-500" asp-validation-summary="ModelOnly"></div>
 
 
-            <div class="flex gap-5">
                 <div class="flex flex-col items-center">
-                    <label asp-for="@Model.BrandId"></label>
-                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.BrandId"></span>
-                    <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.BrandId">
-                        @foreach (var brand in ViewBag.Brands)
-                        {
-                            <option value="@brand.Id">@brand.Name</option>
-                        }
-                    </select>
+                    <label asp-for="@Model.Name"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.Name"></span>
+                    <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Name" />
+                </div>
+
+
+                <div class="flex gap-5">
+                    <div class="flex flex-col items-center">
+                        <label asp-for="@Model.BrandId"></label>
+                        <span class="text-xs italic text-red-500" asp-validation-for="@Model.BrandId"></span>
+                        <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.BrandId">
+                            @foreach (var brand in ViewBag.Brands)
+                            {
+                                <option value="@brand.Id">@brand.Name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <label asp-for="@Model.CategoryId"></label>
+                        <span class="text-xs italic text-red-500" asp-validation-for="@Model.CategoryId"></span>
+                        <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.CategoryId">
+                            @foreach (var category in ViewBag.Categories)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <label asp-for="@Model.SubcategoryId"></label>
+                        <span class="text-xs italic text-red-500" asp-validation-for="@Model.SubcategoryId"></span>
+                        <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.SubcategoryId">
+                            @foreach (var category in ViewBag.Subcategories)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        </select>
+                    </div>
                 </div>
 
                 <div class="flex flex-col items-center">
-                    <label asp-for="@Model.CategoryId"></label>
-                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.CategoryId"></span>
-                    <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.CategoryId">
-                        @foreach (var category in ViewBag.Categories)
-                        {
-                            <option value="@category.Id">@category.Name</option>
-                        }
-                    </select>
+                    <label asp-for="@Model.Description"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.Description"></span>
+                    <textarea class="border-gray-400 border rounded-lg px-3 py-1.5" type="textarea" asp-for="@Model.Description"></textarea>
                 </div>
 
                 <div class="flex flex-col items-center">
-                    <label asp-for="@Model.SubcategoryId"></label>
-                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.SubcategoryId"></span>
-                    <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.SubcategoryId">
-                        @foreach (var category in ViewBag.Subcategories)
-                        {
-                            <option value="@category.Id">@category.Name</option>
-                        }
-                    </select>
+                    <label asp-for="@Model.Price"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.Price"></span>
+                    <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Price" />
                 </div>
-            </div>
 
-            <div class="flex flex-col items-center">
-                <label asp-for="@Model.Description"></label>
-                <span class="text-xs italic text-red-500" asp-validation-for="@Model.Description"></span>
-                <textarea class="border-gray-400 border rounded-lg px-3 py-1.5" type="textarea" asp-for="@Model.Description"></textarea>
-            </div>
+                <div class="flex flex-col items-center">
+                    <label asp-for="@Model.ImageUrl"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.ImageUrl"></span>
+                    <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.ImageUrl" />
+                </div>
 
-            <div class="flex flex-col items-center">
-                <label asp-for="@Model.Price"></label>
-                <span class="text-xs italic text-red-500" asp-validation-for="@Model.Price"></span>
-                <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Price" />
-            </div>
+                <div class="flex w-full justify-evenly  ">
+                    <div class="flex gap-2">
+                        <input asp-for="@Model.IsActive" class="relative peer shrink-0 appearance-none w-4 h-4 border-2 border-gray-300 rounded-md bg-white mt-1 checked:bg-slate-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-500 disabled:border-slate-400 disabled:bg-slate-400"
+                               type="checkbox"
+                               id="is-active-check" />
+                        <!-- TODO: if i can somehow make some padding in the checkbox it'd be -->
+                        <!-- awesome -->
+                        <label asp-for="@Model.IsActive" class="mt-0.5" for="is-active-check"></label>
+                        <svg class="text-white absolute w-4 h-4 mt-1 hidden peer-checked:block pointer-events-none"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="4"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="flex gap-2">
+                        <input asp-for="@Model.OnSale" class="relative peer shrink-0 appearance-none w-4 h-4 border-2 border-gray-300 rounded-md bg-white mt-1 checked:bg-slate-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-500 disabled:border-slate-400 disabled:bg-slate-400"
+                               type="checkbox"
+                               id="on-sale-check" />
+                        <!-- TODO: if i can somehow make some padding in the checkbox it'd be -->
+                        <!-- awesome -->
+                        <label asp-for="@Model.OnSale" class="mt-0.5" for="on-sale-check"></label>
+                        <svg class="text-white absolute w-4 h-4 mt-1 hidden peer-checked:block pointer-events-none"
+                             xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="4"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <!-- whats the margin top for?? test it lol -->
+                    </div>
+                    <!-- whats the margin top for?? test it lol -->
+                </div>
 
-            <div class="flex flex-col items-center">
-                <label asp-for="@Model.ImageUrl"></label>
-                <span class="text-xs italic text-red-500" asp-validation-for="@Model.ImageUrl"></span>
-                <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.ImageUrl" />
-            </div>
 
 
 
-            <button class="text-lg bg-blue-500 text-white rounded-lg px-3 py-1.5 hover:bg-blue-600" type="submit">Редактирай</button>
+                <button class="text-lg bg-blue-500 text-white rounded-lg px-3 py-1.5 hover:bg-blue-600" type="submit">Редактирай</button>
 
-        </form>
+            </form>
+        </div>
+        <div class="w-[18rem]">
+            <img class="rounded-lg" src="@Model.ImageUrl" alt="Product Image" />
+        </div>
     </div>
 </div>
 
