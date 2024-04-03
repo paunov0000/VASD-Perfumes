@@ -29,6 +29,7 @@ namespace WebStore.Core.Services.Admin
                      SubcategoryName = p.Subcategory.Name,
                      OnSale = p.OnSale,
                      Quantity = p.Quantity,
+                     IsActive = p.IsActive
                  })
                  .ToListAsync();
         }
