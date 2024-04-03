@@ -4,64 +4,84 @@
     ViewData["Title"] = "Добави артикул";
 }
 
-<form asp-controller="Product" asp-action="Add" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="input-wrapper">
-        <label asp-for="@Model.Name"></label>
-        <input asp-for="@Model.Name" class="form-control" type="text" id="name" />
-        <span asp-validation-for="@Model.Name" class="text-danger"></span>
-    </div>
-    <div class="input-wrapper">
-        <label asp-for="@Model.Price"></label>
-        <input asp-for="@Model.Price" class="form-control" type="text" id="price" />
-        <span asp-validation-for="@Model.Price" class="text-danger"></span>
-    </div>
-    <div class="input-wrapper">
-        <label asp-for="@Model.Quantity"></label>
-        <input asp-for="@Model.Quantity" class="form-control" type="text" id="quantity" />
-        <span asp-validation-for="@Model.Quantity" class="text-danger"></span>
-    </div>
-    <div class="input-wrapper">
-        <label asp-for="@Model.Description"></label>
-        <textarea asp-for="@Model.Description" class="form-control" id="description"></textarea>
-        <span asp-validation-for="@Model.Description" class="text-danger"></span>
-    </div>
-    <div class="input-wrapper">
-        <label asp-for="@Model.ImageUrl"></label>
-        <input asp-for="@Model.ImageUrl" class="form-control" type="text" id="image" />
-        <span asp-validation-for="@Model.ImageUrl" class="text-danger"></span>
-    </div>
-    <div class="input-wrapper">
-        <label asp-for="@Model.CategoryId"></label>
-        <select asp-for="@Model.CategoryId">
-            @foreach (var category in ViewBag.Categories)
-            {
-                <option value="@category.Id">@category.Name</option>
-            }
-        </select>
-        <span asp-validation-for="@Model.CategoryId" class="text-danger"></span>
-    </div>
-    <div class="input-wrapper">
-        <label asp-for="@Model.BrandId"></label>
-        <select asp-for="@Model.BrandId">
-            @foreach (var brand in ViewBag.Brands)
-            {
-                <option value="@brand.Id">@brand.Name</option>
-            }
-        </select>
-    </div>
-    <div class="input-wrapper">
-        <label asp-for="@Model.SubcategoryId"></label>
-        <select asp-for="@Model.SubcategoryId">
-            @foreach (var subcategory in ViewBag.Subcategories)
-            {
-                <option value="@subcategory.Id">@subcategory.Name</option>
-            }
-        </select>
+<div class="flex flex-col gap-5 items-center">
+    <div>
+        <h1 class="text-center">@ViewData["Title"]</h1>
     </div>
 
-    <button type="submit">Добави</button>
-</form>
+    <div class="w-[36rem] border border-gray-300 rounded-lg py-6">
+
+        <form class="flex flex-col items-center gap-7" method="post">
+            <div class="text-xs italic text-red-500" asp-validation-summary="ModelOnly"></div>
+
+
+            <div class="flex flex-col items-center">
+                <label asp-for="@Model.Name"></label>
+                <span class="text-xs italic text-red-500" asp-validation-for="@Model.Name"></span>
+                <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Name" />
+            </div>
+
+
+            <div class="flex gap-5">
+                <div class="flex flex-col items-center">
+                    <label asp-for="@Model.BrandId"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.BrandId"></span>
+                    <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.BrandId">
+                        @foreach (var brand in ViewBag.Brands)
+                        {
+                            <option value="@brand.Id">@brand.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <label asp-for="@Model.CategoryId"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.CategoryId"></span>
+                    <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.CategoryId">
+                        @foreach (var category in ViewBag.Categories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <label asp-for="@Model.SubcategoryId"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.SubcategoryId"></span>
+                    <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.SubcategoryId">
+                        @foreach (var category in ViewBag.Subcategories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <label asp-for="@Model.Description"></label>
+                <span class="text-xs italic text-red-500" asp-validation-for="@Model.Description"></span>
+                <textarea class="border-gray-400 border rounded-lg px-3 py-1.5" type="textarea" asp-for="@Model.Description"></textarea>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <label asp-for="@Model.Price"></label>
+                <span class="text-xs italic text-red-500" asp-validation-for="@Model.Price"></span>
+                <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Price" />
+            </div>
+
+            <div class="flex flex-col items-center">
+                <label asp-for="@Model.ImageUrl"></label>
+                <span class="text-xs italic text-red-500" asp-validation-for="@Model.ImageUrl"></span>
+                <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.ImageUrl" />
+            </div>
+
+
+
+            <button class="text-lg bg-blue-500 text-white rounded-lg px-3 py-1.5 hover:bg-blue-600" type="submit">Добави</button>
+
+        </form>
+    </div>
+</div>
 
 
 @section Scripts {
