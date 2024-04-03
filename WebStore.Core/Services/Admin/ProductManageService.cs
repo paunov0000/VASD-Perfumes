@@ -124,5 +124,33 @@ namespace WebStore.Core.Services.Admin
             return result;
 
         }
+
+        public async Task RestockProductAsync(Guid id, int count)
+        {
+            var entity = await this.repo.GetByIdAsync<Product>(id);
+
+            entity.Quantity += count;
+
+            await repo.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<ProductTableModel>> GetProducts(int count)
+        {
+            var result = await this.repo.AllReadonly<Product>().Take(count).Select(p => new ProductTableModel()
+            {
+                Id = p.Id,
+                Name = p.Name,
+                BrandName = p.Brand.Name,
+                Price = p.Price,
+                SoldCount = p.SoldCount,
+                CategoryName = p.Category.Name,
+                SubcategoryName = p.Subcategory.Name,
+                OnSale = p.OnSale,
+                Quantity = p.Quantity,
+                IsActive = p.IsActive
+            }).ToListAsync();
+
+            return result;
+        }
     }
 }
