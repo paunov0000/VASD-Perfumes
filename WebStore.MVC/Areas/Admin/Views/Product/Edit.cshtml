@@ -12,22 +12,20 @@
     <div class="w-[36rem] border border-gray-300 rounded-lg py-6">
 
         <form class="flex flex-col items-center gap-7" method="post">
-            <div asp-validation-summary="ModelOnly"></div>
+            <div class="text-xs italic text-red-500" asp-validation-summary="ModelOnly"></div>
 
-            <div>
-                <div class="flex">
-                    <label asp-for="@Model.Name"></label>
-                    <span asp-validation-for="@Model.Name"></span>
-                </div>
+
+            <div class="flex flex-col items-center">
+                <label asp-for="@Model.Name"></label>
+                <span class="text-xs italic text-red-500" asp-validation-for="@Model.Name"></span>
                 <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Name" />
             </div>
 
+
             <div class="flex gap-5">
-                <div>
-                    <div class="flex">
-                        <label asp-for="@Model.BrandId"></label>
-                        <span asp-validation-for="@Model.BrandId"></span>
-                    </div>
+                <div class="flex flex-col items-center">
+                    <label asp-for="@Model.BrandId"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.BrandId"></span>
                     <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.BrandId">
                         @foreach (var brand in ViewBag.Brands)
                         {
@@ -36,11 +34,9 @@
                     </select>
                 </div>
 
-                <div>
-                    <div class="flex">
-                        <label asp-for="@Model.CategoryId"></label>
-                        <span asp-validation-for="@Model.CategoryId"></span>
-                    </div>
+                <div class="flex flex-col items-center">
+                    <label asp-for="@Model.CategoryId"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.CategoryId"></span>
                     <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.CategoryId">
                         @foreach (var category in ViewBag.Categories)
                         {
@@ -49,11 +45,9 @@
                     </select>
                 </div>
 
-                <div>
-                    <div class="flex">
-                        <label asp-for="@Model.SubcategoryId"></label>
-                        <span asp-validation-for="@Model.SubcategoryId"></span>
-                    </div>
+                <div class="flex flex-col items-center">
+                    <label asp-for="@Model.SubcategoryId"></label>
+                    <span class="text-xs italic text-red-500" asp-validation-for="@Model.SubcategoryId"></span>
                     <select class="border-gray-400 border rounded-lg px-3 py-1.5" asp-for="@Model.SubcategoryId">
                         @foreach (var category in ViewBag.Subcategories)
                         {
@@ -63,27 +57,21 @@
                 </div>
             </div>
 
-            <div>
-                <div class="flex">
-                    <label asp-for="@Model.Description"></label>
-                    <span asp-validation-for="@Model.Description"></span>
-                </div>
+            <div class="flex flex-col items-center">
+                <label asp-for="@Model.Description"></label>
+                <span class="text-xs italic text-red-500" asp-validation-for="@Model.Description"></span>
                 <textarea class="border-gray-400 border rounded-lg px-3 py-1.5" type="textarea" asp-for="@Model.Description"></textarea>
             </div>
 
-            <div>
-                <div class="flex">
-                    <label asp-for="@Model.Price"></label>
-                    <span asp-validation-for="@Model.Price"></span>
-                </div>
+            <div class="flex flex-col items-center">
+                <label asp-for="@Model.Price"></label>
+                <span class="text-xs italic text-red-500" asp-validation-for="@Model.Price"></span>
                 <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.Price" />
             </div>
 
-            <div>
-                <div class="flex">
-                    <label asp-for="@Model.ImageUrl"></label>
-                    <span asp-validation-for="@Model.ImageUrl"></span>
-                </div>
+            <div class="flex flex-col items-center">
+                <label asp-for="@Model.ImageUrl"></label>
+                <span class="text-xs italic text-red-500" asp-validation-for="@Model.ImageUrl"></span>
                 <input class="border-gray-400 border rounded-lg px-3 py-1.5" type="text" asp-for="@Model.ImageUrl" />
             </div>
 
