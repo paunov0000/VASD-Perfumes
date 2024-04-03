@@ -20,9 +20,9 @@ namespace WebStore.MVC.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index([FromQuery] int count = 10)
         {
-            var model = await productManageService.GetAllProductsAsync();
+            var model = await productManageService.GetProducts(count);
 
             return View(model);
         }
