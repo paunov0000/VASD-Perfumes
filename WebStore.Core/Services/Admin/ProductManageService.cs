@@ -152,5 +152,15 @@ namespace WebStore.Core.Services.Admin
 
             return result;
         }
+
+        public IQueryable<Product> GetIQueryableProducts()
+        {
+            return repo.AllReadonly<Product>();
+        }
+
+        public IQueryable<Product> GetIQueryableProducts(int count)
+        {
+            return repo.AllReadonly<Product>().Take(count);
+        }
     }
 }
