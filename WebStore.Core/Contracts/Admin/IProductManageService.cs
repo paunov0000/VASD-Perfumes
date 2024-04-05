@@ -1,5 +1,6 @@
 ﻿using WebStore.Core.Model.Admin.Product;
 using WebStore.Core.Model.Product;
+using WebStore.Infrastructure.Data.Entities;
 
 namespace WebStore.Core.Contracts.Admin
 {
@@ -50,8 +51,12 @@ namespace WebStore.Core.Contracts.Admin
         /// <returns>An IEnumerable of SubcategoryFormModel</returns>
         Task<IEnumerable<SubcategoryFormModel>> GetAllSubcategories();
 
-        Task<IEnumerable<ProductTableModel>> GetProducts(int count);
+        Task<IList<ProductTableModel>> GetProducts(int count);
 
         Task RestockProductAsync(Guid id, int count);
+
+        IQueryable<Product> GetIQueryableProducts();
+
+        IQueryable<Product> GetIQueryableProducts(int count);
     }
 }
