@@ -20,11 +20,60 @@ namespace WebStore.MVC.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index([FromQuery] int count = 10)
+        public async Task<IActionResult> Index([FromQuery] int count = 0, [FromQuery] string? sort = "name-asc")
         {
-            var model = await productManageService.GetProducts(count);
+            IQueryable<Infrastructure.Data.Entities.Product> model;
 
-            return View(model);
+            if (count == 0)
+            {
+                model = productManageService.GetIQueryableProducts();
+            }
+            else
+            {
+                model = productManageService.GetIQueryableProducts(count);
+            }
+
+
+            model = sort switch                                                                 //TODO: extract this to a method in the service
+            {                                                                                   //TODO: extract this to a method in the service
+                "name-asc" => model.OrderBy(p => p.Name),                                       //TODO: extract this to a method in the service
+                "name-desc" => model.OrderByDescending(p => p.Name),                            //TODO: extract this to a method in the service
+                "brand-asc" => model.OrderBy(p => p.Brand.Name),                                //TODO: extract this to a method in the service
+                "brand-desc" => model.OrderByDescending(p => p.Brand.Name),                     //TODO: extract this to a method in the service
+                "price-asc" => model.OrderBy(p => p.Price),                                     //TODO: extract this to a method in the service
+                "price-desc" => model.OrderByDescending(p => p.Price),                          //TODO: extract this to a method in the service
+                "quantity-asc" => model.OrderBy(p => p.Quantity),                               //TODO: extract this to a method in the service
+                "quantity-desc" => model.OrderByDescending(p => p.Quantity),                    //TODO: extract this to a method in the service
+                "category-asc" => model.OrderBy(p => p.Category.Name),                          //TODO: extract this to a method in the service
+                "category-desc" => model.OrderByDescending(p => p.Category.Name),               //TODO: extract this to a method in the service
+                "subcategory-asc" => model.OrderBy(p => p.Subcategory.Name),                    //TODO: extract this to a method in the service
+                "subcategory-desc" => model.OrderByDescending(p => p.Subcategory.Name),         //TODO: extract this to a method in the service
+                "soldcount-asc" => model.OrderBy(p => p.SoldCount),                             //TODO: extract this to a method in the service
+                "soldcount-desc" => model.OrderByDescending(p => p.SoldCount),                  //TODO: extract this to a method in the service
+                "onsale-f" => model.OrderBy(p => p.OnSale),                                     //TODO: extract this to a method in the service
+                "onsale-t" => model.OrderByDescending(p => p.OnSale),                           //TODO: extract this to a method in the service
+                                                                                                //TODO: extract this to a method in the service
+                _ => model.OrderBy(p => p.Name),                                                //TODO: extract this to a method in the service
+            };                                                                                  //TODO: extract this to a method in the service
+
+            var result = await model.Select(p => new ProductTableModel()
+        {
+                Id = p.Id,
+                Name = p.Name,
+                BrandName = p.Brand.Name,
+                Price = p.Price,
+                SoldCount = p.SoldCount,
+                CategoryName = p.Category.Name,
+                SubcategoryName = p.Subcategory.Name,
+                OnSale = p.OnSale,
+                Quantity = p.Quantity,
+                IsActive = p.IsActive
+            }).ToListAsync();
+
+
+            //var model = await productManageService.GetProducts(count);
+
+            return View(result);
         }
 
         [HttpGet]
