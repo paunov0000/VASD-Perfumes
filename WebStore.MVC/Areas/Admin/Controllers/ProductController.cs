@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebStore.Core.Contracts;
 using WebStore.Core.Contracts.Admin;
+using WebStore.Core.Model.Admin.Product;
 using WebStore.Core.Model.Product;
+using WebStore.Infrastructure.Data.Entities;
 using static WebStore.Core.Constants.TempDataKeyConstants;
 
 namespace WebStore.MVC.Areas.Admin.Controllers
@@ -96,14 +99,14 @@ namespace WebStore.MVC.Areas.Admin.Controllers
                 ViewBag.Categories = await productManageService.GetAllCategories();
                 ViewBag.Brands = await productManageService.GetAllBrands();
 
-                TempData[Status.Error] = Product.InvalidInputMessage;
+                TempData[Status.Error] = Core.Constants.TempDataKeyConstants.Product.InvalidInputMessage;
 
                 return View(model);
             }
 
             await productManageService.AddProductAsync(model);
 
-            TempData[Status.Success] = Product.SuccessOnAddMessage;
+            TempData[Status.Success] = Core.Constants.TempDataKeyConstants.Product.SuccessOnAddMessage;
 
             return RedirectToAction("Index", "Home");
         }
@@ -136,7 +139,7 @@ namespace WebStore.MVC.Areas.Admin.Controllers
                 ViewBag.Brands = await productManageService.GetAllBrands();
                 ViewBag.Categories = await productManageService.GetAllCategories();
 
-                TempData[Status.Error] = Product.InvalidInputMessage;
+                TempData[Status.Error] = Core.Constants.TempDataKeyConstants.Product.InvalidInputMessage;
 
                 return View(model);
             }
@@ -145,7 +148,7 @@ namespace WebStore.MVC.Areas.Admin.Controllers
             {
                 await productManageService.EditProductAsync(model);
 
-                TempData[Status.Success] = Product.SuccessOnEditMessage;
+                TempData[Status.Success] = Core.Constants.TempDataKeyConstants.Product.SuccessOnEditMessage;
 
                 return RedirectToAction("Index", "Product");
             }
@@ -179,7 +182,7 @@ namespace WebStore.MVC.Areas.Admin.Controllers
             {
                 await productManageService.RestockProductAsync(model.Id, model.Count);
 
-                TempData[Status.Success] = Product.SuccessOnRestockMessage; //TODO: Make it a success on action generic message
+                TempData[Status.Success] = Core.Constants.TempDataKeyConstants.Product.SuccessOnRestockMessage; //TODO: Make it a success on action generic message
 
                 return RedirectToAction("Index", "Product");
             }
