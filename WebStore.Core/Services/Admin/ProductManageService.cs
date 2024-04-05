@@ -15,7 +15,7 @@ namespace WebStore.Core.Services.Admin
         {
             repo = _repo;
         }
-        public async Task<IEnumerable<ProductTableModel>> GetAllProductsAsync()
+        public async Task<IList<ProductTableModel>> GetAllProductsAsync()
         {
             return await repo.AllReadonly<Product>()
                  .Select(p => new ProductTableModel()
@@ -134,7 +134,7 @@ namespace WebStore.Core.Services.Admin
             await repo.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<ProductTableModel>> GetProducts(int count)
+        public async Task<IList<ProductTableModel>> GetProducts(int count)
         {
             var result = await this.repo.AllReadonly<Product>().Take(count).Select(p => new ProductTableModel()
             {
