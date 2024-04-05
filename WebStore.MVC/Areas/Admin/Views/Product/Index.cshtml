@@ -29,17 +29,41 @@
     </div>
 </div> *@
 <div class="flex flex-col gap-5">
-    <div>
-        <label for="count">Show</label>
-        <select id="count">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-        </select>
-        <span>entries</span>
-        <a id="search" class="cursor-pointer">Search</a>
+    <div class="flex gap-7">
+        <div>
+            <label for="count">Show</label>
+            <select id="count">
+                <option value="0">All</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select>
+            <span>entries</span>
+        </div>
+        <div>
+            <label for="sort">Sort by</label>
+            <select id="sort">
+                <option value="name-asc">Name Ascending</option>
+                <option value="name-desc">Name Descending</option>
+                <option value="brand-asc">Brand Ascending</option>
+                <option value="brand-desc">Brand Descending</option>
+                <option value="price-asc">Price Ascending</option>
+                <option value="price-desc">Price Descending</option>
+                <option value="quantity-asc">Quantity Ascending</option>
+                <option value="quantity-desc">Quantity Descending</option>
+                <option value="category-asc">Category Ascending</option>
+                <option value="category-desc">Category Descending</option>
+                <option value="subcategory-asc">Subcategory Ascending</option>
+                <option value="subcategory-desc">Subcategory Descending</option>
+                <option value="soldcount-asc">Sold Count Ascending</option>
+                <option value="soldcount-desc">Sold Count Descending</option>
+                <option value="onsale-t">On Sale</option>
+                <option value="onsale-f">Not On Sale</option>
+            </select>
+        </div>
     </div>
+    <a id="search" class="cursor-pointer">Submit</a>
     <div class="flex gap-3  ">
         <div>
             <a asp-area="Admin" asp-controller="Product" asp-action="Add" class="text-white bg-green-500 hover:bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
@@ -161,8 +185,10 @@
     <script>
         document.getElementById("search").onclick = function () {
             var count = document.getElementById("count").value;
+            var sort = document.getElementById("sort").value;
             var url = new URL(window.location.href);
             url.searchParams.set("count", count);
+            url.searchParams.set("sort", sort);
             window.location.href = url;
         };
     </script>
