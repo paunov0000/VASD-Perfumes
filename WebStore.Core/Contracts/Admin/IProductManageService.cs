@@ -10,7 +10,7 @@ namespace WebStore.Core.Contracts.Admin
         /// Fetches all Product entities from the database and maps them to an IEnumerable of ProductTableModel
         /// </summary>
         /// <returns>An IEnumerable of ProductTableModel</returns>
-        Task<IEnumerable<ProductTableModel>> GetAllProductsAsync();
+        Task<IList<ProductTableModel>> GetAllProductsAsync();
 
         /// <summary>
         /// Fetches all Category entities from the database and maps them to an IEnumerable of CategoryFormViewModel
