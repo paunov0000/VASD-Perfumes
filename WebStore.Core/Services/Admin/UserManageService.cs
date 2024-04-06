@@ -42,18 +42,59 @@ namespace WebStore.Core.Services.Admin
             //TODO: do i have to save changes here??
         }
 
-        public async Task<IEnumerable<UserTableModel>> GetAllUsersAsync()
+        public async Task<IEnumerable<UserTableModel>> GetTableUsers(int count, string sort)
         {
-            return await repo.AllReadonly<ApplicationUser>()
-                .Select(u => new UserTableModel()
+            IQueryable<ApplicationUser> model;
+
+            if (count == 0)
+            {
+                model = repo.AllReadonly<ApplicationUser>();
+            }
+            else
+            {
+                model = repo.AllReadonly<ApplicationUser>().Take(count);
+            }
+
+
+            model = sort switch
+            {
+                //"name-asc" => model.OrderBy(p => $"{p.FirstName} {p.LastName}"),             
+                //"name-desc" => model.OrderByDescending(p => $"{p.FirstName} {p.LastName}"),  
+                "userName-asc" => model.OrderBy(p => p.UserName),
+                "userName-desc" => model.OrderByDescending(p => p.UserName),
+                "email-asc" => model.OrderBy(p => p.Email),
+                "email-desc" => model.OrderByDescending(p => p.Email),
+                "phoneNumber-f" => model.OrderBy(p => p.PhoneNumber != null),
+                "phoneNumber-t" => model.OrderByDescending(p => p.PhoneNumber != null),
+                _ => model.OrderBy(p => p.UserName),
+            };
+
+            var users = await model.ToListAsync();
+
+
+            var result = new List<UserTableModel>();
+
+            foreach (var user in users)
+            {
+                var roles = await userManager.GetRolesAsync(user);
+
+                result.Add(new UserTableModel()
                 {
-                    Id = u.Id,
-                    Name = $"{u.FirstName} {u.LastName}",
-                    Email = u.Email,
-                    UserName = u.UserName,
-                    PhoneNumber = u.PhoneNumber
-                })
-                .ToListAsync();
+                    Id = user.Id,
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    Roles = roles
+                });
+
+                if (roles.Count == 0)
+                {
+                    roles.Add("User");
+                }
+            }
+
+            return result;
+
         }
 
         public async Task<UserDetailsModel> GetUserByIdAsync(Guid id)
