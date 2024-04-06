@@ -1,9 +1,57 @@
-﻿@model ProductAddViewModel
+﻿@model ProductDetailsViewModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
 <div>
-    <h4>Product</h4>
+    <div>
+        <p>@Model.Name</p>
+        <a href="#">
+            <img src="@Model.ProductImg" alt="Product Img" />
+        </a>
+    </div>
+    <div>
+        <a href="#">Виж всички продукти от тази марка</a>
+    </div>
+</div>
+<div>
+    <div>
+        <img src="@Model.BrandImg" alt="Manufacturr Img" />
+    </div>
+    <div>
+        <div>
+            <p> - </p>
+            <input type="number" />
+            <p> + </p>
+        </div>
+        <div>
+            <a href="#">Добави в количката</a>
+            <a href="#">Купи</a>
+        </div>
+        <div>
+            <div>
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <div>
+                <p><span>Доставка до 48ч.</span> само за 3.99лв.!</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+                <p><span>Безплатна застраховка</span> на пратката</p>
+            </div>
+        </div>
+        <div>
+            <div>
+                <i class="fa-solid fa-thumbs-up"></i>
+            </div>
+            <div>
+                <p>Подкрепете <span>Българските Сайтове</span></p>
+            </div>
+        </div>
+    </div>
 </div>
