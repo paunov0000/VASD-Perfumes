@@ -16,5 +16,7 @@ namespace WebStore.Core.Contracts.Admin
         public Task DemoteUserAsync(Guid id);
 
         public Task BanUserAsync(Guid id);
+
+        public Task<IEnumerable<UserTableModel>> GetTableUsers(int count, string sort);
     }
 }
