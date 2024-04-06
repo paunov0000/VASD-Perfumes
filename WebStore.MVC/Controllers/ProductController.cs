@@ -45,7 +45,7 @@ namespace WebStore.MVC.Controllers
         {
             try
             {
-                var model = await productService.GetProductByIdAsync(id);
+                var model = await productService.GetProductDetailsById(id);
 
                 return View(model);
             }
