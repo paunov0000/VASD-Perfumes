@@ -17,6 +17,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IRepository, Repository>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductManageService, ProductManageService>();
+            services.AddScoped<IUserManageService, UserManageService>();
 
             return services;
         }
