@@ -15,7 +15,7 @@ namespace WebStore.MVC.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> Index([FromQuery] int count = 0, [FromQuery] string sort = "userName-asc")
         {
-            var model = await userManageService.GetAllUsersAsync();
+            var model = await userManageService.GetTableUsers(count, sort);
 
             return View(model);
         }
