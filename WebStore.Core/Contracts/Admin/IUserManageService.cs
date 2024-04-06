@@ -9,8 +9,6 @@ namespace WebStore.Core.Contracts.Admin
 {
     public interface IUserManageService
     {
-        public Task<IEnumerable<UserTableModel>> GetAllUsersAsync();
-
         public Task<UserDetailsModel> GetUserByIdAsync(Guid id);
 
         public Task PromoteUserAsync(Guid id);
