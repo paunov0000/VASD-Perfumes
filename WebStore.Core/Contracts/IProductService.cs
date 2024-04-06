@@ -48,5 +48,6 @@ namespace WebStore.Core.Contracts
         /// <returns>Product entity mapped to ProductAddViewModel</returns>
         Task<ProductAddViewModel> GetProductByIdAsync(Guid id);
 
+        Task<ProductDetailsViewModel> GetProductDetailsById(Guid id);
     }
 }
