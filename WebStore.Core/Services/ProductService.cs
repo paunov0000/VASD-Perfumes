@@ -132,5 +132,31 @@ namespace WebStore.Core.Services
                 OnSale = product.OnSale
             };
         }
+
+        public async Task<ProductDetailsViewModel> GetProductDetailsById(Guid id)
+        {
+            var entity = await this.repo.AllReadonly<Product>()
+                .Include(x => x.Brand)
+                .Include(x => x.Category)
+                .Include(x => x.Subcategory)
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            if (entity == null)
+            {
+                throw new InvalidOperationException("Entity not found");
+            }
+
+            return new ProductDetailsViewModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Description = entity.Description,
+                BrandImg = entity.Brand.ImageUrl,
+                ProductImg = entity.ImageUrl,
+                CategoryName = entity.Category.Name,
+                SubcategoryName = entity.Subcategory.Name,
+                Price = entity.Price
+            };
+        }
     }
 }
