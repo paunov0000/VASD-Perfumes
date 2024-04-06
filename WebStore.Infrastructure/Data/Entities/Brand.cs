@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static WebStore.Infrastructure.Data.Constants.ModelConstants.Brand;
 
 namespace WebStore.Infrastructure.Data.Entities
@@ -19,6 +14,9 @@ namespace WebStore.Infrastructure.Data.Entities
         [Required]
         [StringLength(NameMaxLength)]
         public string Name { get; set; } = null!;
+
+        [Required]
+        public string ImageUrl { get; set; } = null!;
 
         [Required]
         [Comment("The products that belong to the brand.")]
