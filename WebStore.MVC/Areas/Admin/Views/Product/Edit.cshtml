@@ -62,7 +62,7 @@
                 <div class="flex flex-col items-center">
                     <label asp-for="@Model.Description"></label>
                     <span class="text-xs italic text-red-500" asp-validation-for="@Model.Description"></span>
-                    <textarea class="border-gray-400 border rounded-lg px-3 py-1.5" type="textarea" asp-for="@Model.Description"></textarea>
+                    <textarea class="border-gray-400 border rounded-lg px-3 py-1.5 min-h-64" type="textarea" asp-for="@Model.Description"></textarea>
                 </div>
 
                 <div class="flex flex-col items-center">
