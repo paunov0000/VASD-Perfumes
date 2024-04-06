@@ -9,7 +9,7 @@ using WebStore.Infrastructure.Data;
 using WebStore.Infrastructure.Data.Entities;
 
 namespace Microsoft.Extensions.DependencyInjection
-{ 
+{
     public static class WebStoreServiceCollectionExtension
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
