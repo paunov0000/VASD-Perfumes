@@ -4,54 +4,90 @@
     ViewData["Title"] = "Details";
 }
 
-<div>
-    <div>
-        <p>@Model.Name</p>
-        <a href="#">
-            <img src="@Model.ProductImg" alt="Product Img" />
-        </a>
+<div class="flex flex-col">
+
+    <div class="flex justify-between">
+        <div class="flex items-center">
+            <p class="text-3xl font-semibold">@Model.Name</p>
+        </div>
+        <div class="w-[10rem]">
+            <img src="@Model.BrandImg" alt="Manufacturer Img" />
+        </div>
     </div>
+
     <div>
-        <a href="#">Виж всички продукти от тази марка</a>
+        <a class="text-fuchsia-500 hover:text-fuchsia-600 font-semibold underline" href="#">Виж всички продукти от тази марка</a>
+    </div>
+
+    <div class="flex justify-between items-start">
+        <div>
+            <a href="#">
+                <img src="@Model.ProductImg" alt="Product Img" />
+            </a>
+        </div>
+        <div class="border border-gray-300 rounded-lg p-7 h-auto">
+            <div class="flex justify-center text-lg items-center gap-1">
+                <p class="border border-gray-300 px-1.5 py-3">
+                    <i class="fa-solid fa-plus"></i>
+                </p>
+                <input class="border border-gray-300 px-1.5 py-3 w-1/5" type="number" />
+                <p class="border border-gray-300 px-1.5 py-3">
+                    <i class="fa-solid fa-minus"></i>
+                </p>
+            </div>
+            <div class="flex text-center">
+                <a class="w-full bg-green-600 text-white px-3 py-1 rounded" href="#">
+                    <p>
+                        <span><i class="fa-solid fa-cart-shopping"></i></span> В КОЛИЧКАТА
+                    </p>
+                </a>
+                @* <a href="#">Купи</a> *@
+            </div>
+            <div class="text-lg">
+                <div class="flex gap-2">
+                    <div class="text-2xl">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <p><span>Доставка до 48ч.</span> само за 3.99лв.!</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="text-2xl">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div>
+                        <p><span>Безплатна застраховка</span> на пратката</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div class="text-2xl">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+                    <div>
+                        <p>Подкрепете <span>Българските Сайтове</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div>
     </div>
 </div>
 <div>
     <div>
-        <img src="@Model.BrandImg" alt="Manufacturr Img" />
+        <p>Описание на @Model.Name</p>
     </div>
+
     <div>
         <div>
-            <p> - </p>
-            <input type="number" />
-            <p> + </p>
+            <p>Описание на продукта</p>
         </div>
         <div>
-            <a href="#">Добави в количката</a>
-            <a href="#">Купи</a>
-        </div>
-        <div>
-            <div>
-                <i class="fa-solid fa-truck-fast"></i>
-            </div>
-            <div>
-                <p><span>Доставка до 48ч.</span> само за 3.99лв.!</p>
-            </div>
-        </div>
-        <div>
-            <div>
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <div>
-                <p><span>Безплатна застраховка</span> на пратката</p>
-            </div>
-        </div>
-        <div>
-            <div>
-                <i class="fa-solid fa-thumbs-up"></i>
-            </div>
-            <div>
-                <p>Подкрепете <span>Българските Сайтове</span></p>
-            </div>
+            @Model.Description
         </div>
     </div>
 </div>
