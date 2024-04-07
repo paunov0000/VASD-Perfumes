@@ -1,4 +1,4 @@
-* {
+/** {
     box-sizing: border-box;
 }
 
@@ -13,9 +13,9 @@ html {
 
 img {
     display: block;
-    width: 100%;
+    width: 100%;*/
     /* height: auto; */
-}
+/*}
 
 a {
     text-decoration: none;
@@ -24,7 +24,7 @@ a {
 
 a:hover {
     text-decoration: none;
-}
+}*/
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
