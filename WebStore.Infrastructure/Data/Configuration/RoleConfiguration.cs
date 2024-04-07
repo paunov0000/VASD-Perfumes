@@ -30,6 +30,26 @@ namespace WebStore.Infrastructure.Data.Configuration
 
             roles.Add(role);
 
+            role = new ApplicationRole
+            {
+                Id = Guid.Parse("44e92506-a5bd-494a-b749-7d90bdfe9628"),
+                Name = "Customer",
+                NormalizedName = "CUSTOMER",
+                ConcurrencyStamp = "c675d451-7dec-4e15-8933-76e1348cdc20"
+            };
+
+            roles.Add(role);
+
+            role = new ApplicationRole
+            {
+                Id = Guid.Parse("85805833-8f47-4355-bd15-9465a8a65c07"),
+                Name = "Vip",
+                NormalizedName = "VIP",
+                ConcurrencyStamp = "cccc29af-0d53-4faa-ba1e-b08218c7b14b"
+            };
+
+            roles.Add(role);
+
             //role = new ApplicationRole
             //{
             //    Id = Guid.Parse("82546160-02c3-4485-b7e2-cd20797402fe"),
