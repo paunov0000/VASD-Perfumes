@@ -4,90 +4,90 @@
     ViewData["Title"] = "Details";
 }
 
-<div class="flex flex-col">
-
-    <div class="flex justify-between">
-        <div class="flex items-center">
-            <p class="text-2xl font-semibold">@Model.Name</p>
-        </div>
-        <div class="w-[10rem]">
-            <img src="@Model.BrandImg" alt="Manufacturer Img" />
-        </div>
-    </div>
-
-    <div>
-        <a class="text-fuchsia-500 hover:text-fuchsia-600 font-semibold underline" href="#">Виж всички продукти от тази марка</a>
-    </div>
-
-    <div class="flex justify-between items-start">
-        <div class="w-[30rem]">
-            <a href="#">
-                <img class="h-[30rem] w-full" src="@Model.ProductImg" alt="Product Img" />
-            </a>
-        </div>
-        <div class="flex flex-col gap-2 border border-gray-300 rounded-lg p-7">
-            <div class="flex justify-center text-lg items-center gap-1">
-                <p class="border border-gray-300 px-1.5 py-3">
-                    <i class="fa-solid fa-plus"></i>
-                </p>
-                <input class="border border-gray-300 px-1.5 py-3 w-1/5 text-xl text-center" type="number" />
-                <p class="border border-gray-300 px-1.5 py-3">
-                    <i class="fa-solid fa-minus"></i>
-                </p>
-            </div>
-            <div class="flex text-center mb-4">
-                <a class="w-full bg-green-600 text-white px-3 py-1.5 rounded font-semibold" href="#">
-                    <p>
-                        <span><i class="fa-solid fa-cart-shopping"></i></span> В КОЛИЧКАТА
-                    </p>
-                </a>
-                @* <a href="#">Купи</a> *@
-            </div>
-            <div class="flex flex-col gap-6 text-base">
-                <div class="flex gap-2 items-center">
-                    <div class="text-2xl">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-                    <div>
-                        <p><span class="font-semibold">Доставка до 48ч.</span> само за 3.99лв.!</p>
-                    </div>
-                </div>
-                <div class="flex gap-2 items-center">
-                    <div class="text-2xl">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </div>
-                    <div>
-                        <p><span class="font-semibold">Безплатна застраховка</span> на пратката</p>
-                    </div>
-                </div>
-                <div class="flex gap-2 items-center">
-                    <div class="text-2xl">
-                        <i class="fa-solid fa-thumbs-up"></i>
-                    </div>
-                    <div>
-                        <p>Подкрепете <span class="font-semibold">Българските Сайтове</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div>
-    </div>
-</div>
 <div>
-    <div>
-        <p>Описание на @Model.Name</p>
-    </div>
 
+    <div class="flex flex-col">
+
+        <div class="flex justify-between">
+            <div class="flex items-center">
+                <p class="text-2xl font-semibold">@Model.Name</p>
+            </div>
+            <div class="w-[10rem]">
+                <img src="@Model.BrandImg" alt="Manufacturer Img" />
+            </div>
+        </div>
+
+        <div>
+            <a class="text-fuchsia-500 hover:text-fuchsia-600 font-semibold underline" href="#">Виж всички продукти от тази марка</a>
+        </div>
+
+        <div class="flex justify-between items-start">
+            <div class="w-[30rem]">
+                <a href="#">
+                    <img class="h-[30rem] w-full" src="@Model.ProductImg" alt="Product Img" />
+                </a>
+            </div>
+            <div class="flex flex-col gap-2 border border-gray-300 rounded-lg p-7">
+                <div class="flex justify-center text-lg items-center gap-1">
+                    <p class="border border-gray-300 px-1.5 py-3">
+                        <i class="fa-solid fa-plus"></i>
+                    </p>
+                    <input class="border border-gray-300 px-1.5 py-3 w-1/5 text-xl text-center" type="number" />
+                    <p class="border border-gray-300 px-1.5 py-3">
+                        <i class="fa-solid fa-minus"></i>
+                    </p>
+                </div>
+                <div class="flex text-center mb-4">
+                    <a class="w-full bg-green-600 text-white px-3 py-1.5 rounded font-semibold" href="#">
+                        <p>
+                            <span><i class="fa-solid fa-cart-shopping"></i></span> В КОЛИЧКАТА
+                        </p>
+                    </a>
+                    @* <a href="#">Купи</a> *@
+                </div>
+                <div class="flex flex-col gap-6 text-base">
+                    <div class="flex gap-2 items-center">
+                        <div class="text-2xl">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">Доставка до 48ч.</span> само за 3.99лв.!</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <div class="text-2xl">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">Безплатна застраховка</span> на пратката</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        <div class="text-2xl">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </div>
+                        <div>
+                            <p>Подкрепете <span class="font-semibold">Българските Сайтове</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
     <div>
         <div>
-            <p>Описание на продукта</p>
+            <p>Описание на @Model.Name</p>
         </div>
+
         <div>
-            @Model.Description
+            <div>
+                <p>Описание на продукта</p>
+            </div>
+            <div>
+                @Model.Description
+            </div>
         </div>
     </div>
 </div>
