@@ -29,6 +29,30 @@ namespace WebStore.Infrastructure.Data.Configuration
 
             userRoles.Add(userRole);
 
+            userRole = new IdentityUserRole<Guid>
+            {
+                UserId = Guid.Parse("70852FF3-F2FC-4998-342B-08DC4DA7E32C"),
+                RoleId = Guid.Parse("85805833-8F47-4355-BD15-9465A8A65C07"),
+            };
+
+            userRoles.Add(userRole);
+
+            //userRole = new IdentityUserRole<Guid>
+            //{
+            //    UserId = Guid.Parse("A387DAFA-DEBD-44A2-28B5-08DC50E4EB14"),
+            //    RoleId = Guid.Parse("85805833-8F47-4355-BD15-9465A8A65C07"),
+            //};
+
+            //userRoles.Add(userRole);
+
+            userRole = new IdentityUserRole<Guid>
+            {
+                UserId = Guid.Parse("C0A0D5A0-4B6A-4B6A-8F4A-0C8F0B6F0B6C"),
+                RoleId = Guid.Parse("44E92506-A5BD-494A-B749-7D90BDFE9628"),
+            };
+
+            userRoles.Add(userRole);
+
             return userRoles;
         }
     }
