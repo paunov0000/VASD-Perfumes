@@ -8,7 +8,7 @@
 
     <div class="flex justify-between">
         <div class="flex items-center">
-            <p class="text-3xl font-semibold">@Model.Name</p>
+            <p class="text-2xl font-semibold">@Model.Name</p>
         </div>
         <div class="w-[10rem]">
             <img src="@Model.BrandImg" alt="Manufacturer Img" />
@@ -20,52 +20,52 @@
     </div>
 
     <div class="flex justify-between items-start">
-        <div>
+        <div class="w-[30rem]">
             <a href="#">
-                <img src="@Model.ProductImg" alt="Product Img" />
+                <img class="h-[30rem] w-full" src="@Model.ProductImg" alt="Product Img" />
             </a>
         </div>
-        <div class="border border-gray-300 rounded-lg p-7 h-auto">
+        <div class="flex flex-col gap-2 border border-gray-300 rounded-lg p-7">
             <div class="flex justify-center text-lg items-center gap-1">
                 <p class="border border-gray-300 px-1.5 py-3">
                     <i class="fa-solid fa-plus"></i>
                 </p>
-                <input class="border border-gray-300 px-1.5 py-3 w-1/5" type="number" />
+                <input class="border border-gray-300 px-1.5 py-3 w-1/5 text-xl text-center" type="number" />
                 <p class="border border-gray-300 px-1.5 py-3">
                     <i class="fa-solid fa-minus"></i>
                 </p>
             </div>
-            <div class="flex text-center">
-                <a class="w-full bg-green-600 text-white px-3 py-1 rounded" href="#">
+            <div class="flex text-center mb-4">
+                <a class="w-full bg-green-600 text-white px-3 py-1.5 rounded font-semibold" href="#">
                     <p>
                         <span><i class="fa-solid fa-cart-shopping"></i></span> В КОЛИЧКАТА
                     </p>
                 </a>
                 @* <a href="#">Купи</a> *@
             </div>
-            <div class="text-lg">
-                <div class="flex gap-2">
+            <div class="flex flex-col gap-6 text-base">
+                <div class="flex gap-2 items-center">
                     <div class="text-2xl">
                         <i class="fa-solid fa-truck-fast"></i>
                     </div>
                     <div>
-                        <p><span>Доставка до 48ч.</span> само за 3.99лв.!</p>
+                        <p><span class="font-semibold">Доставка до 48ч.</span> само за 3.99лв.!</p>
                     </div>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2 items-center">
                     <div class="text-2xl">
                         <i class="fa-solid fa-circle-check"></i>
                     </div>
                     <div>
-                        <p><span>Безплатна застраховка</span> на пратката</p>
+                        <p><span class="font-semibold">Безплатна застраховка</span> на пратката</p>
                     </div>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2 items-center">
                     <div class="text-2xl">
                         <i class="fa-solid fa-thumbs-up"></i>
                     </div>
                     <div>
-                        <p>Подкрепете <span>Българските Сайтове</span></p>
+                        <p>Подкрепете <span class="font-semibold">Българските Сайтове</span></p>
                     </div>
                 </div>
             </div>
