@@ -29,11 +29,11 @@
             </div>
             <div class="flex flex-col gap-2 border border-gray-300 rounded-lg p-7">
                 <div class="flex justify-center text-lg items-center gap-1">
-                    <p class="border border-gray-300 px-1.5 py-3">
+                    <p class="border border-gray-300 px-1.5 py-3" id="increment">
                         <i class="fa-solid fa-plus"></i>
                     </p>
-                    <input class="border border-gray-300 px-1.5 py-3 w-1/5 text-xl text-center" type="number" />
-                    <p class="border border-gray-300 px-1.5 py-3">
+                    <input class="border border-gray-300 px-1.5 py-3 w-1/5 text-xl text-center" type="number" id="quantity" value="1" />
+                    <p class="border border-gray-300 px-1.5 py-3" id="decrement">
                         <i class="fa-solid fa-minus"></i>
                     </p>
                 </div>
@@ -91,3 +91,19 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        document.getElementById("increment").onclick = () => {
+            var text = document.getElementById("quantity");
+
+            if (text.value === "") {
+                return text.value = 1
+            }
+
+            var qty = parseInt(text.value);
+
+            text.value = qty + 1;
+        }
+    </script>
+}
