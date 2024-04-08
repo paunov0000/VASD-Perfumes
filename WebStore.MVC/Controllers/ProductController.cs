@@ -38,7 +38,7 @@ namespace WebStore.MVC.Controllers
             return View(model);
         }
 
-        
+
 
         [HttpGet]
         public async Task<IActionResult> Details(Guid id)
@@ -48,6 +48,21 @@ namespace WebStore.MVC.Controllers
                 var model = await productService.GetProductDetailsById(id);
 
                 return View(model);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Cart(Guid id)
+        {
+            try
+            {
+                var model = await productService.GetProductCartModelById(id);
+
+                return Json(model);
             }
             catch (InvalidOperationException ex)
             {
