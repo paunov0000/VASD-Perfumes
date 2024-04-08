@@ -158,5 +158,23 @@ namespace WebStore.Core.Services
                 Price = entity.Price
             };
         }
+
+        public async Task<ProductCartViewModel> GetProductCartModelById(Guid id)
+        {
+            var entity = await this.repo.GetByIdAsync<Product>(id);
+
+            if (entity == null)
+            {
+                throw new InvalidOperationException("Entity not found");
+            }
+
+            return new ProductCartViewModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Price = entity.Price,
+                Quantity = entity.Quantity
+            };
+        }
     }
 }
