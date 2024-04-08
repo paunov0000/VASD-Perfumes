@@ -106,4 +106,22 @@
             text.value = qty + 1;
         }
     </script>
+
+    <script>
+        document.getElementById("decrement").onclick = () => {
+            var text = document.getElementById("quantity");
+
+            if (text.value === "") {
+                return text.value = 1
+            }
+
+            var qty = parseInt(text.value);
+
+            if (qty - 1 < 1) {
+                return text.value = 1
+            }
+
+            text.value = qty - 1;
+        }
+    </script>
 }
