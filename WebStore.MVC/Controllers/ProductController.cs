@@ -56,18 +56,14 @@ namespace WebStore.MVC.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Cart(Guid id)
+        public IActionResult Cart(ProductCartViewModel model)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                var model = await productService.GetProductCartModelById(id);
+                return RedirectToAction("Details", "Product");
+            }
 
-                return Json(model);
-            }
-            catch (InvalidOperationException ex)
-            {
-                return NotFound(ex.Message);
-            }
+            return Json(model);
         }
     }
 
