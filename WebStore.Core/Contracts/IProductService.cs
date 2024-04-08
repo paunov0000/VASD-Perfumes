@@ -49,5 +49,7 @@ namespace WebStore.Core.Contracts
         Task<ProductAddViewModel> GetProductByIdAsync(Guid id);
 
         Task<ProductDetailsViewModel> GetProductDetailsById(Guid id);
+
+        Task<ProductCartViewModel> GetProductCartModelById(Guid id);
     }
 }
