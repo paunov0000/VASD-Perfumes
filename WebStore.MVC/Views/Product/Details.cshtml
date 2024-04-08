@@ -33,14 +33,16 @@
                     <p class="border border-gray-300 px-1.5 py-3" id="increment">
                         <i class="fa-solid fa-plus"></i>
                     </p>
-                    <input class="border border-gray-300 px-1.5 py-3 w-1/5 text-xl text-center" type="number" id="quantity" value="1" />
+                    <input class="border border-gray-300 px-1.5 py-3 w-1/5 text-xl text-center" type="number" id="quantity" value="1" name="quantity" />
                     <p class="border border-gray-300 px-1.5 py-3" id="decrement">
                         <i class="fa-solid fa-minus"></i>
                     </p>
                 </div>
                 <div class="flex text-center mb-4">
+                    <input type="hidden" name="name" id="name" value="@Model.Name" />
+                    <input type="hidden" name="price" id="price" value="@Model.Price" />
                     <a class="w-full bg-green-600 text-white px-3 py-1.5 rounded font-semibold" id="add-to-cart">
-                        <p>
+                        <p type="submit">
                             <span><i class="fa-solid fa-cart-shopping"></i></span> В КОЛИЧКАТА
                         </p>
                     </a>
@@ -129,13 +131,69 @@
     <script>
         document.getElementById("add-to-cart").onclick = () => {
             let productId = document.getElementById("product-id");
+            let pname = document.getElementById("name");
+            let price = document.getElementById("price");
+            let quantity = document.getElementById("quantity");
             console.log(productId.value);
             let url = `/Product/Cart/${productId.value}`;
             console.log(url);
 
-            fetch(url)
-                .then(response => response.json())
-                .then(data => console.log(data));
+            let product = {
+                id: productId.value,
+                name: pname.value,
+                price: price.value,
+                quantity: quantity.value
+            }
+
+            if (!localStorage.getItem("cart")) {
+                localStorage.setItem("cart", "[]");
+            }
+
+
+            function addItemToCart(product) {
+                let cart = JSON.parse(localStorage.getItem("cart"));
+                if (cart.length === 0) {
+                    cart.push(product);
+                }
+                else {
+                    let isPresent = cart.find(x => x.id === product.id);
+
+                    if (isPresent === undefined) {
+                        cart.push(product)
+                    }
+                }
+
+                localStorage.setItem("cart", JSON.stringify(cart));
+            }
+
+            addItemToCart(product);
         }
+        // fetch(url)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         if (!localStorage.getItem("cart")) {
+        //             localStorage.setItem("cart", "[]");
+        //         }
+
+
+        //         function addItemToCart(product) {
+        //             let cart = JSON.parse(localStorage.getItem("cart"));
+        //             if (cart.length === 0) {
+        //                 cart.push(product);
+        //             }
+        //             else {
+        //                 let isPresent = cart.find(x => x.id === product.id);
+
+        //                 if (isPresent === undefined) {
+        //                     cart.push(product)
+        //                 }
+        //             }
+
+        //             localStorage.setItem("cart", JSON.stringify(cart));
+        //         }
+
+        //         addItemToCart(data);
+        //     });
+
     </script>
 }
