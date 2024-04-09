@@ -12,12 +12,6 @@ namespace WebStore.Core.Model.Product
         public string Name { get; set; } = null!;
         public int Quantity { get; set; }
         public decimal Price { get; set; }
-        public decimal TotalPrice
-        {
-            get
-            {
-                return Quantity * Price;
-            }
-        } // Quantity * Price
+        public decimal TotalPrice { get; set; }
     }
 }
