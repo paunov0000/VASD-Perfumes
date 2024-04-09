@@ -162,6 +162,9 @@
                     if (isPresent === undefined) {
                         cart.push(product)
                     }
+                    else {
+                        isPresent.quantity += product.quantity;
+                        isPresent.totalPrice = roundToTwo(isPresent.price * isPresent.quantity);
                 }
 
                 localStorage.setItem("cart", JSON.stringify(cart));
