@@ -166,8 +166,13 @@
                         isPresent.quantity += product.quantity;
                         isPresent.totalPrice = roundToTwo(isPresent.price * isPresent.quantity);
                 }
+                }
 
                 localStorage.setItem("cart", JSON.stringify(cart));
+            }
+
+            function roundToTwo(num) {
+                return +(Math.round(num + "e+2") + "e-2");
             }
 
             addItemToCart(product);
