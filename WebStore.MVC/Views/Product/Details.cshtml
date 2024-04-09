@@ -30,18 +30,18 @@
             </div>
             <div class="flex flex-col gap-2 border border-gray-300 rounded-lg p-7">
                 <div class="flex justify-center text-lg items-center gap-1">
-                    <p class="border border-gray-300 px-1.5 py-3" id="increment">
+                    <p class="border border-gray-300 px-1.5 py-3 cursor-pointer hover:bg-gray-200" id="increment">
                         <i class="fa-solid fa-plus"></i>
                     </p>
                     <input class="border border-gray-300 px-1.5 py-3 w-1/5 text-xl text-center" type="number" id="quantity" value="1" name="quantity" />
-                    <p class="border border-gray-300 px-1.5 py-3" id="decrement">
+                    <p class="border border-gray-300 px-1.5 py-3 cursor-pointer hover:bg-gray-200" id="decrement">
                         <i class="fa-solid fa-minus"></i>
                     </p>
                 </div>
                 <div class="flex text-center mb-4">
                     <input type="hidden" name="name" id="name" value="@Model.Name" />
                     <input type="hidden" name="price" id="price" value="@Model.Price" />
-                    <a class="w-full bg-green-600 text-white px-3 py-1.5 rounded font-semibold" id="add-to-cart">
+                    <a class="w-full bg-green-600 text-white px-3 py-1.5 rounded font-semibold cursor-pointer hover:bg-green-700" id="add-to-cart">
                         <p type="submit">
                             <span><i class="fa-solid fa-cart-shopping"></i></span> В КОЛИЧКАТА
                         </p>
@@ -165,7 +165,7 @@
                     else {
                         isPresent.quantity += product.quantity;
                         isPresent.totalPrice = roundToTwo(isPresent.price * isPresent.quantity);
-                }
+                    }
                 }
 
                 localStorage.setItem("cart", JSON.stringify(cart));
