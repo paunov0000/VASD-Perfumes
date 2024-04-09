@@ -141,8 +141,9 @@
             let product = {
                 id: productId.value,
                 name: pname.value,
-                price: price.value,
-                quantity: quantity.value
+                price: parseFloat(price.value),
+                quantity: parseInt(quantity.value),
+                totalPrice: roundToTwo(price.value * quantity.value)
             }
 
             if (!localStorage.getItem("cart")) {
