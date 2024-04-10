@@ -15,5 +15,7 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Date of creating the ApplicationUser")]
         public DateTime CreatedOn { get; set; }
 
+        public Customer? Customer { get; set; }
+
     }
 }
