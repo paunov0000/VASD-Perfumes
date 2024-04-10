@@ -148,7 +148,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasIndex("ProductsId");
 
-                    b.ToTable("OrderProduct");
+                    b.ToTable("OrderProduct", (string)null);
                 });
 
             modelBuilder.Entity("WebStore.Infrastructure.Data.Entities.ApplicationRole", b =>
@@ -327,7 +327,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands", t =>
+                    b.ToTable("Brands", null, t =>
                         {
                             t.HasComment("Holds info for the Brand entity");
                         });
@@ -410,7 +410,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", t =>
+                    b.ToTable("Categories", null, t =>
                         {
                             t.HasComment("Holds info for the Product Category entity");
                         });
@@ -458,7 +458,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Customers", t =>
+                    b.ToTable("Customers", null, t =>
                         {
                             t.HasComment("Holds info for the Customer entity");
                         });
@@ -502,7 +502,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasIndex("OrderStatusId");
 
-                    b.ToTable("Orders", t =>
+                    b.ToTable("Orders", null, t =>
                         {
                             t.HasComment("Holds info for the Order entity");
                         });
@@ -525,7 +525,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrderStatuses", t =>
+                    b.ToTable("OrderStatuses", null, t =>
                         {
                             t.HasComment("Holds info for the Status of the Order");
                         });
@@ -602,7 +602,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasIndex("SubcategoryId");
 
-                    b.ToTable("Products", t =>
+                    b.ToTable("Products", null, t =>
                         {
                             t.HasComment("Holds info for the Product entity");
                         });
@@ -815,7 +815,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Reviews", t =>
+                    b.ToTable("Reviews", null, t =>
                         {
                             t.HasComment("Holds info for the Review entity");
                         });
@@ -842,7 +842,7 @@ namespace WebStore.Infrastructure.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Subcategories", t =>
+                    b.ToTable("Subcategories", null, t =>
                         {
                             t.HasComment("Holds info for the Product Subcategory entity");
                         });
