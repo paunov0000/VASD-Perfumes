@@ -32,12 +32,15 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Id = Guid.Parse(Chanel05Id),
                     Name = "No. 5",
                     Description = "Iconic blend of rose and jasmine, a classic from luxury brand Chanel",
-                    Price = 120.00M,
+                    Price = 120.34M,
                     ImageUrl ="https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
-                    BrandId = Guid.Parse(ChanelId)
+                    BrandId = Guid.Parse(ChanelId),
+                    Quantity = 9,
+                    SoldCount = 37,
+                    OnSale = false
                 },
                 new Product
                 {
@@ -49,55 +52,71 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
-                    BrandId = Guid.Parse(MarcJacobsId)
+                    BrandId = Guid.Parse(MarcJacobsId),
+                    Quantity = 12,
+                    SoldCount = 51,
+                    OnSale = true
                 },
                 new Product
                 {
                     Id = Guid.Parse(GucciBloomId),
                     Name = "Bloom",
                     Description = "Modern and vibrant floral bouquet featuring tuberose and jasmine",
-                    Price = 150.00M,
+                    Price = 149.99M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
-                    BrandId = Guid.Parse(GucciId)
+                    BrandId = Guid.Parse(GucciId),
+                     Quantity = 193,
+                    SoldCount = 12,
+                    OnSale = true
                 },
                 new Product
                 {
                     Id = Guid.Parse(ViktorRolfFlowerbombId),
                     Name = "Flowerbomb",
                     Description = "Intensely floral with notes of jasmine, rose, and orchid",
-                    Price = 110.00M,
+                    Price = 110.82M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
-                    BrandId = Guid.Parse(ViktorRolfId)
+                    BrandId = Guid.Parse(ViktorRolfId),
+                     Quantity = 23,
+                    SoldCount = 84,
+                    OnSale = false,
+                    IsActive = true
                 },
                 new Product
                 {
                     Id = Guid.Parse(ShalimarByGuerlainId),
                     Name = "Shalimar",
                     Description = "Timeless oriental scent with vanilla, iris, and amber notes",
-                    Price = 140.00M,
+                    Price = 142.61M,
                     ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
-                    BrandId = Guid.Parse(GuerlainId)
+                    BrandId = Guid.Parse(GuerlainId),
+                     Quantity = 0,
+                    SoldCount = 93,
+                    OnSale = true
                 },
                 new Product
                 {
                     Id = Guid.Parse(OpiumByYvesSaintLaurentId),
                     Name = "Opium",
                     Description = "Rich and spicy oriental fragrance with exotic undertones",
-                    Price = 100.00M,
+                    Price = 101.00M,
                     ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
-                    BrandId = Guid.Parse(YvesSaintLaurentId)
+                    BrandId = Guid.Parse(YvesSaintLaurentId),
+                     Quantity = 4,
+                    SoldCount = 34,
+                    OnSale = false
                 },
                 new Product
                 {
@@ -109,7 +128,11 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
-                    BrandId = Guid.Parse(TomFordId)
+                    BrandId = Guid.Parse(TomFordId),
+                     Quantity = 17,
+                    SoldCount = 133,
+                    OnSale = false,
+                    IsActive = false
                 },
                 new Product
                 {
@@ -121,7 +144,10 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(MenSubcategoryId),
-                    BrandId = Guid.Parse(ArmaniId)
+                    BrandId = Guid.Parse(ArmaniId),
+                     Quantity = 95,
+                    SoldCount = 32,
+                    OnSale = true
                 },
                 new Product
                 {
@@ -133,19 +159,25 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(MenSubcategoryId),
-                    BrandId = Guid.Parse(HermesId)
+                    BrandId = Guid.Parse(HermesId),
+                     Quantity = 52,
+                    SoldCount = 3,
+                    OnSale = true,
                 },
                 new Product
                 {
                     Id = Guid.Parse(AventusByCreedId),
                     Name = "Aventus",
                     Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
-                    Price = 250.00M,
-                    ImageUrl = "https://creedboutique.com/cdn/shop/files/aventus-100ml-bottle_3413e5f4-3eee-40b3-8451-2546a370ec5b.jpg?v=1700498936&width=1500",
+                    Price = 249.99M,
+                    ImageUrl = "https://static.luckyscent.com/images/products/49365.jpg?width=400&404=product.png",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(UnisexSubcategoryId),
-                    BrandId = Guid.Parse(CreedId)
+                    BrandId = Guid.Parse(CreedId),
+                     Quantity = 0,
+                    SoldCount = 86,
+                    OnSale = false
                 }
             };
         }
