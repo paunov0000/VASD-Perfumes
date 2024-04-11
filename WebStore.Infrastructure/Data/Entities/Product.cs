@@ -57,7 +57,7 @@ namespace WebStore.Infrastructure.Data.Entities
 
         [Required]
         [Comment("A flag which sets the product state as whether its visible or not")]
-        public bool IsActive { get; set; } = true;
+        public bool IsActive { get; set; }
 
         [Required]
         [ForeignKey(nameof(Category))]
