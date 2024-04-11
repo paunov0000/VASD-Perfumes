@@ -68,7 +68,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(GucciId),
-                     Quantity = 193,
+                    Quantity = 193,
                     SoldCount = 12,
                     OnSale = true
                 },
@@ -83,7 +83,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(ViktorRolfId),
-                     Quantity = 23,
+                    Quantity = 23,
                     SoldCount = 84,
                     OnSale = false,
                     IsActive = true
@@ -99,7 +99,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(GuerlainId),
-                     Quantity = 0,
+                    Quantity = 0,
                     SoldCount = 93,
                     OnSale = true
                 },
@@ -114,7 +114,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(YvesSaintLaurentId),
-                     Quantity = 4,
+                    Quantity = 4,
                     SoldCount = 34,
                     OnSale = false
                 },
@@ -129,7 +129,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(WomenSubcategoryId),
                     BrandId = Guid.Parse(TomFordId),
-                     Quantity = 17,
+                    Quantity = 17,
                     SoldCount = 133,
                     OnSale = false,
                     IsActive = false
@@ -145,7 +145,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(MenSubcategoryId),
                     BrandId = Guid.Parse(ArmaniId),
-                     Quantity = 95,
+                    Quantity = 95,
                     SoldCount = 32,
                     OnSale = true
                 },
@@ -160,7 +160,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(MenSubcategoryId),
                     BrandId = Guid.Parse(HermesId),
-                     Quantity = 52,
+                    Quantity = 52,
                     SoldCount = 3,
                     OnSale = true,
                 },
@@ -175,7 +175,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(UnisexSubcategoryId),
                     BrandId = Guid.Parse(CreedId),
-                     Quantity = 0,
+                    Quantity = 0,
                     SoldCount = 86,
                     OnSale = false
                 }
