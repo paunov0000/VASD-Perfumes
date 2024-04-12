@@ -58,15 +58,11 @@ namespace WebStore.Core.Services.Admin
 
             model = sort switch
             {
-                //"name-asc" => model.OrderBy(p => $"{p.FirstName} {p.LastName}"),             
-                //"name-desc" => model.OrderByDescending(p => $"{p.FirstName} {p.LastName}"),  
-                "userName-asc" => model.OrderBy(p => p.UserName),
-                "userName-desc" => model.OrderByDescending(p => p.UserName),
                 "email-asc" => model.OrderBy(p => p.Email),
                 "email-desc" => model.OrderByDescending(p => p.Email),
                 "phoneNumber-f" => model.OrderBy(p => p.PhoneNumber != null),
                 "phoneNumber-t" => model.OrderByDescending(p => p.PhoneNumber != null),
-                _ => model.OrderBy(p => p.UserName),
+                _ => model.OrderBy(p => p.Email),
             };
 
             var users = await model.ToListAsync();
@@ -81,7 +77,6 @@ namespace WebStore.Core.Services.Admin
                 result.Add(new UserTableModel()
                 {
                     Id = user.Id,
-                    UserName = user.UserName,
                     Email = user.Email,
                     PhoneNumber = user.PhoneNumber,
                     Roles = roles
