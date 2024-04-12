@@ -20,8 +20,8 @@
         <div>
             <label for="sort">Sort by</label>
             <select id="sort">
-                <option value="userName-asc">Username Ascending</option>
-                <option value="userName-desc">Username Descending</option>
+                @* <option value="userName-asc">Username Ascending</option>
+                <option value="userName-desc">Username Descending</option> *@
                 <option value="email-asc">Email Ascending</option>
                 <option value="email-desc">Email Descending</option>
                 <option value="phoneNumber-t">With Phone Number</option>
@@ -46,10 +46,10 @@
     <div class="border border-gray-300 rounded-lg overflow-hidden">
         <table class="w-full">
             <tr class="bg-gray-200 text-left">
+                @*  <th class="pl-7 py-2">
+                @Html.DisplayNameFor(model => model.UserName)
+                </th> *@
                 <th class="pl-7 py-2">
-                    @Html.DisplayNameFor(model => model.UserName)
-                </th>
-                <th class="py-2">
                     @Html.DisplayNameFor(model => model.Email)
                 </th>
                 <th class="py-2">
@@ -65,12 +65,12 @@
                 <tr class="text-left font-medium">
                     <td class="pl-7 py-2">
                         <a class="hover:text-blue-500" asp-area="Admin" asp-controller="User" asp-action="Details" asp-route-id="@product.Id">
-                            @product.UserName
+                            @product.Email
                         </a>
                     </td>
-                    <td class="py-2">
-                        @product.Email
-                    </td>
+                    @*  <td class="py-2">
+                @product.Email
+                </td> *@
                     <td class="py-2">
 
                         @Html.Raw(string.Join(" | ", product.Roles.Select(r =>
