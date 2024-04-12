@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\WebStore.MVC.csproj": {}
+    "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Core\\WebStore.Core.csproj": {
+    "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Core\\WebStore.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Core\\WebStore.Core.csproj",
+        "projectUniqueName": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Core\\WebStore.Core.csproj",
         "projectName": "WebStore.Core",
-        "projectPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Core\\WebStore.Core.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Core\\obj\\",
+        "projectPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Core\\WebStore.Core.csproj",
+        "packagesPath": "C:\\Users\\lache\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lache\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj"
+              "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj"
               }
             }
           }
@@ -76,17 +76,17 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj": {
+    "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj",
         "projectName": "WebStore.Infrastructure",
-        "projectPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Infrastructure\\WebStore.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\lache\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lache\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -138,6 +138,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.3, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[6.0.1, )"
             }
           },
           "imports": [
@@ -160,17 +164,17 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\WebStore.MVC.csproj": {
+    "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\WebStore.MVC.csproj",
+        "projectUniqueName": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.MVC.csproj",
         "projectName": "WebStore.MVC",
-        "projectPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\WebStore.MVC.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.MVC\\obj\\",
+        "projectPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.MVC.csproj",
+        "packagesPath": "C:\\Users\\lache\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lache\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -184,8 +188,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Core\\WebStore.Core.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Documents\\workspace\\VASD\\WebStore.Core\\WebStore.Core.csproj"
+              "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Core\\WebStore.Core.csproj": {
+                "projectPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.Core\\WebStore.Core.csproj"
               }
             }
           }
