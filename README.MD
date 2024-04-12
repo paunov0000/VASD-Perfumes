@@ -91,7 +91,7 @@ This project is licensed under the MIT License: [https://opensource.org/license/
 
 We hope you enjoy exploring the world of fragrances with WebStore!
 
-## Images
+## Media
 
 - ### Default Area:
 
