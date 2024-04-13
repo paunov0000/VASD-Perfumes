@@ -53,12 +53,12 @@ namespace WebStore.Core.Services
         }
 
 
-        public async Task<IEnumerable<ProductViewModel>> GetMostSold()
+        public async Task<IEnumerable<ProductViewModel>> GetMostSold(int count)
         {
             var result = await this.repo.AllReadonly<Product>()
                 .Where(p => p.IsActive)
                 .OrderByDescending(x => x.SoldCount)
-                .Take(12)
+                .Take(count)
                 .Select(x => new ProductViewModel()
                 {
                     Description = x.Description,
