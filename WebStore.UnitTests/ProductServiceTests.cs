@@ -83,7 +83,7 @@ namespace WebStore.UnitTests
         [Test]
         public async Task GetMostRecent_ShouldReturnAllProductsWhenCountParamIsGreaterThanProductCount()
         {
-            var countToBeExpected = this.dbContext.Products.Count();
+            var countToBeExpected = this.dbContext.Products.Where(p => p.IsActive).Count();
 
             var result = await this.productService.GetMostRecent(100);
 
