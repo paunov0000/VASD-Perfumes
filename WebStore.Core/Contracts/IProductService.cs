@@ -32,7 +32,7 @@ namespace WebStore.Core.Contracts
         /// Fetches the most sold products from the database and maps them to an IEnumerable of ProductViewModel
         /// </summary>
         /// <returns>An IEnumerable of ProductViewModel</returns>
-        Task<IEnumerable<ProductViewModel>> GetMostSold();
+        Task<IEnumerable<ProductViewModel>> GetMostSold(int count);
 
 
         /// <summary>
