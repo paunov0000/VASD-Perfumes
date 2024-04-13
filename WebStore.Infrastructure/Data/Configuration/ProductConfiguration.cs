@@ -55,7 +55,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(MarcJacobsId),
                     Quantity = 12,
                     SoldCount = 51,
-                    OnSale = true
+                    OnSale = true,
+                    IsActive = true
                 },
                 new Product
                 {
@@ -70,7 +71,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(GucciId),
                     Quantity = 193,
                     SoldCount = 12,
-                    OnSale = true
+                    OnSale = true,
+                    IsActive= true
                 },
                 new Product
                 {
@@ -101,7 +103,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(GuerlainId),
                     Quantity = 0,
                     SoldCount = 93,
-                    OnSale = true
+                    OnSale = true,
+                    IsActive= true
                 },
                 new Product
                 {
@@ -116,7 +119,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(YvesSaintLaurentId),
                     Quantity = 4,
                     SoldCount = 34,
-                    OnSale = false
+                    OnSale = false,
+                    IsActive= false
                 },
                 new Product
                 {
@@ -132,7 +136,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 17,
                     SoldCount = 133,
                     OnSale = false,
-                    IsActive = false
+                    IsActive = true
                 },
                 new Product
                 {
@@ -147,7 +151,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(ArmaniId),
                     Quantity = 95,
                     SoldCount = 32,
-                    OnSale = true
+                    OnSale = true,
+                    IsActive = true
                 },
                 new Product
                 {
@@ -163,6 +168,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 52,
                     SoldCount = 3,
                     OnSale = true,
+                    IsActive = true
                 },
                 new Product
                 {
@@ -170,14 +176,15 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Name = "Aventus",
                     Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
                     Price = 249.99M,
-                    ImageUrl = "https://static.luckyscent.com/images/products/49365.jpg?width=400&404=product.png",
+                    ImageUrl = "https://www.creedfragrances.co.uk/cdn/shop/files/Clear-logo-with-black-hair.jpg?v=1708086869&width=750",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
                     SubcategoryId = Guid.Parse(UnisexSubcategoryId),
                     BrandId = Guid.Parse(CreedId),
                     Quantity = 0,
                     SoldCount = 86,
-                    OnSale = false
+                    OnSale = false,
+                    IsActive = true
                 }
             };
         }
