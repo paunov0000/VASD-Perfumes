@@ -114,6 +114,21 @@ namespace WebStore.UnitTests
             //Assert.That(totalCount, Is.Not.EqualTo(result.Count()));
         }
 
+        [Test]
+        public async Task GetMostSold_ShouldFetchCountMostSoldProducts()
+        {
+            var count = 7;
+            var expectedList = await this.dbContext.Products
+                .OrderBy(p => p.SoldCount)
+                .Take(count)
+                .ToListAsync();
+
+            var result = await this.productService.GetMostSold(count);
+
+            Assert.That(result.Count(), Is.EqualTo(count));
+            Assert.That(result.Count(), Is.EqualTo(expectedList.Count()));
+        }
+
 
         [TearDown]
         public void TearDown()
