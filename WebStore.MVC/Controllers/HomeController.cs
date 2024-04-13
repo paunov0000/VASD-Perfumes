@@ -23,10 +23,10 @@ namespace WebStore.MVC.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var mostRecentCount = 12;
+            var countToFetch = 12;
 
-            var mostRecent = await productService.GetMostRecent(mostRecentCount);
-            var mostSold = await productService.GetMostSold();
+            var mostRecent = await productService.GetMostRecent(countToFetch);
+            var mostSold = await productService.GetMostSold(countToFetch);
             var onSale = await productService.GetOnSale();
             var allProducts = await productService.GetAllProductsAsync();
 
