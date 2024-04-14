@@ -186,6 +186,22 @@ namespace WebStore.UnitTests
             Assert.That(result.Name, Is.EqualTo(expected.Name));
         }
 
+        [Test]
+        public async Task GetProductCartModelById_ShouldReturnAProductByGivenId()
+        {
+            var guid = Guid.Parse(TerreDhermesByHermesId);
+
+            var expected = await this.dbContext.Products.FindAsync(guid);
+
+            var result = await this.productService.GetProductCartModelById(guid);
+
+            Assert.That(result.Id, Is.EqualTo(guid));
+            Assert.That(result.Id, Is.EqualTo(expected.Id));
+            Assert.That(result.Name, Is.EqualTo(expected.Name));
+            Assert.That(result.Price, Is.EqualTo(expected.Price));
+            Assert.That(result.Quantity, Is.EqualTo(expected.Quantity));
+        }
+
 
         [TearDown]
         public void TearDown()
