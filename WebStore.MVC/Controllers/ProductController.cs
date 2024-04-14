@@ -27,7 +27,7 @@ namespace WebStore.MVC.Controllers
             }
             else
             {
-                model = await productService.GetFilteredProductsAsync(search);
+                model = await productService.GetProductsByName(search);
 
                 if (model.Count() == 0)
                 {
