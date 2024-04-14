@@ -15,7 +15,7 @@ WebStore implements a tiered user system, acknowledging your dedication to fragr
 
 - **User (Default):** Upon registration, gain access to browsing products, making purchases, and tracking your order history.
 - **Customer (Automatic upon reaching 10 Orders):** Enjoy exclusive access to special sales and promotions tailored to your fragrance preferences.
-- **VIP (100 Orders or 1500 BGN+ Total Spend):** Enjoy deeper discounts on sale items compared to the Customer role.
+- **VIP (100 Orders or 1500 BGN+ Total Spent):** Enjoy deeper discounts on sale items compared to the Customer role.
 - **Admin (Restricted Access):** Manage the entire WebStore platform, including users, orders, products, and more.
 
 ### Technology Stack
