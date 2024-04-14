@@ -141,7 +141,22 @@ namespace WebStore.UnitTests
             Assert.That(resultList.Count(), Is.EqualTo(expectedList.Count()));
         }
 
-        
+        [Test]
+        public async Task GetProductsByName_ShouldFetchAllActiveProductsWhichNamesStartsWith()
+        {
+            var search = "bl";
+
+            var expectedList = await this.dbContext.Products
+                .Where(p => p.Name.StartsWith(search) && p.IsActive)
+                .ToListAsync();
+
+            var resultList = await this.productService.GetProductsByName(search);
+
+            Assert.That(resultList.Count(), Is.EqualTo(expectedList.Count()));
+            Assert.That(resultList.All(p => p.Name.StartsWith(search)));
+        }
+
+
         [TearDown]
         public void TearDown()
         {
