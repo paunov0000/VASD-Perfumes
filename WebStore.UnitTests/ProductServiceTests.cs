@@ -168,8 +168,22 @@ namespace WebStore.UnitTests
             var result = await this.productService.GetProductByIdAsync(guid);
 
             Assert.That(result.Id, Is.EqualTo(guid));
-            Assert.That(result.Id, Is.EqualTo(expected?.Id ?? new Guid()));
-            Assert.That(result.Name, Is.EqualTo(expected?.Name ?? string.Empty));
+            Assert.That(result.Id, Is.EqualTo(expected.Id));
+            Assert.That(result.Name, Is.EqualTo(expected.Name));
+        }
+
+        [Test]
+        public async Task GetProductDetailsById_ShouldReturnAProductByGivenId()
+        {
+            var guid = Guid.Parse(Chanel05Id);
+
+            var expected = await this.dbContext.Products.FindAsync(guid);
+
+            var result = await this.productService.GetProductDetailsById(guid);
+
+            Assert.That(result.Id, Is.EqualTo(guid));
+            Assert.That(result.Id, Is.EqualTo(expected.Id));
+            Assert.That(result.Name, Is.EqualTo(expected.Name));
         }
 
 
