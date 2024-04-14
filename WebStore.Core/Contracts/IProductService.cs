@@ -16,7 +16,7 @@ namespace WebStore.Core.Contracts
         /// </summary>
         /// <param name="search">String filter which is applied</param>
         /// <returns>An IEnumerable of ProductViewModel</returns>
-        Task<IEnumerable<ProductViewModel>> GetFilteredProductsAsync(string search);
+        Task<IEnumerable<ProductViewModel>> GetProductsByName(string search);
 
 
         /// <summary>
