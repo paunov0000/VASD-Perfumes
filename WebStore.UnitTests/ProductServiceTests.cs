@@ -129,7 +129,19 @@ namespace WebStore.UnitTests
             Assert.That(result.Count(), Is.EqualTo(expectedList.Count()));
         }
 
+        [Test]
+        public async Task GetOnSale_ShouldFetchAllActiveProductsWhichAreOnSale()
+        {
+            var expectedList = await this.dbContext.Products
+                .Where(p => p.IsActive && p.OnSale)
+                .ToListAsync();
 
+            var resultList = await this.productService.GetOnSale();
+
+            Assert.That(resultList.Count(), Is.EqualTo(expectedList.Count()));
+        }
+
+        
         [TearDown]
         public void TearDown()
         {
