@@ -11,6 +11,8 @@ using WebStore.Infrastructure.Common;
 using WebStore.Infrastructure.Data;
 using WebStore.Infrastructure.Data.Entities;
 
+using static WebStore.Infrastructure.Data.Constants.ConfigurationConstants.Product;
+
 namespace WebStore.UnitTests
 {
     [TestFixture]
@@ -154,6 +156,20 @@ namespace WebStore.UnitTests
 
             Assert.That(resultList.Count(), Is.EqualTo(expectedList.Count()));
             Assert.That(resultList.All(p => p.Name.StartsWith(search)));
+        }
+
+        [Test]
+        public async Task GetProductByIdAsync_ShouldReturnAProductByGivenId()
+        {
+            var guid = Guid.Parse(AventusByCreedId);
+
+            var expected = await this.dbContext.Products.FindAsync(guid);
+
+            var result = await this.productService.GetProductByIdAsync(guid);
+
+            Assert.That(result.Id, Is.EqualTo(guid));
+            Assert.That(result.Id, Is.EqualTo(expected?.Id ?? new Guid()));
+            Assert.That(result.Name, Is.EqualTo(expected?.Name ?? string.Empty));
         }
 
 
