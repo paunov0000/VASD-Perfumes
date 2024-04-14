@@ -90,10 +90,10 @@ namespace WebStore.Core.Services
         }
 
 
-        public async Task<IEnumerable<ProductViewModel>> GetFilteredProductsAsync(string search)
+        public async Task<IEnumerable<ProductViewModel>> GetProductsByName(string search)
         {
             var result = await this.repo.AllReadonly<Product>()
-                .Where(p => p.Name.StartsWith(search))
+                .Where(p => p.Name.StartsWith(search) && p.IsActive == true)
                 .Select(x => new ProductViewModel()
                 {
                     Description = x.Description,
