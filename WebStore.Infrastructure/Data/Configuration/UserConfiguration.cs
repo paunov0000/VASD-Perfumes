@@ -18,7 +18,8 @@ namespace WebStore.Infrastructure.Data.Configuration
             //    .Property(p => p.EmailConfirmed)
             //    .HasDefaultValue(true);
 
-
+            builder.Property(p => p.Email).IsRequired();
+            builder.Property(p=> p.NormalizedEmail).IsRequired();
             builder.HasData(CreateUsers());
         }
 
