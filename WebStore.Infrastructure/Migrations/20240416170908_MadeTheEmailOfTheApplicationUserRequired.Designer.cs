@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebStore.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using WebStore.Infrastructure.Data;
 namespace WebStore.Infrastructure.Migrations
 {
     [DbContext(typeof(WebStoreDbContext))]
-    partial class WebStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240416170908_MadeTheEmailOfTheApplicationUserRequired")]
+    partial class MadeTheEmailOfTheApplicationUserRequired
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -269,7 +272,6 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NormalizedEmail")
-                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -316,7 +318,7 @@ namespace WebStore.Infrastructure.Migrations
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6c"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2a550f29-169a-42fb-a625-52d9376753c0",
+                            ConcurrencyStamp = "0785df59-cdcf-4c9b-858c-89ee466b26d9",
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bojkata@abv.bg",
                             EmailConfirmed = true,
@@ -325,7 +327,7 @@ namespace WebStore.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "BOJKATA@ABV.BG",
                             NormalizedUserName = "BOJKATA@ABV.BG",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN5MbjdYrBPJaAI3hzgkbHTpIR84qGGcUft6om2s2I8fK3lKfHGpmMJ0fEXIT5jdTQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN16Z2NrvzUdy/sbxURd+eVICpQz2Vjpn3WgoVCkNKkOQSq7UZEZWmGfR+euHT8sQA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "675bdfac-f10f-4acc-a641-4233cd7a4c14",
                             TwoFactorEnabled = false,
@@ -335,7 +337,7 @@ namespace WebStore.Infrastructure.Migrations
                         {
                             Id = new Guid("753efde4-efa1-4f88-abc9-8f091cf8b670"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "735b4afb-ebfd-41bc-9ec2-35fa96836dfa",
+                            ConcurrencyStamp = "60f5b46f-b534-42e3-b727-657d93307d46",
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@admin.bg",
                             EmailConfirmed = true,
@@ -344,7 +346,7 @@ namespace WebStore.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.BG",
                             NormalizedUserName = "ADMIN@ADMIN.BG",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJL1amf6Qd7C0z/GNB+EGiWTWI4VFnWJUL7buIdPAFPwQlGa+uxl167lGJmgNvP+oQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEP3yJD5sWD+8uqcNXX8CTpVyEDtFNYu1n+MExK7QfhZXkI0I28Kb4hlAI+Zf7Xn5CQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "efcff289-5cd2-42eb-8280-5faaab34daf5",
                             TwoFactorEnabled = false,
@@ -556,7 +558,7 @@ namespace WebStore.Infrastructure.Migrations
                         {
                             Id = 1,
                             CustomerId = new Guid("2d963508-bd53-4713-a82e-189a8dcc42b9"),
-                            OrderDate = new DateTime(2024, 4, 17, 9, 41, 49, 783, DateTimeKind.Utc).AddTicks(9518),
+                            OrderDate = new DateTime(2024, 4, 16, 17, 9, 7, 473, DateTimeKind.Utc).AddTicks(1583),
                             OrderStatusId = 3
                         });
                 });
@@ -738,7 +740,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6f"),
                             BrandId = new Guid("361f69c3-cdfb-4156-a88a-1620db540c6c"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9639),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5441),
                             Description = "Iconic blend of rose and jasmine, a classic from luxury brand Chanel",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
                             IsActive = false,
@@ -754,7 +756,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6e"),
                             BrandId = new Guid("c3a935d2-8a70-40f4-aa02-7dc52d4688ed"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9648),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5450),
                             Description = "Youthful and fresh floral scent with notes of jasmine and violet",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -770,7 +772,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6d"),
                             BrandId = new Guid("6c86c626-bef8-4627-a314-de021502e335"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9652),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5455),
                             Description = "Modern and vibrant floral bouquet featuring tuberose and jasmine",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -786,7 +788,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6c"),
                             BrandId = new Guid("99f87405-5144-46e6-ad55-724d05928736"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9657),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5459),
                             Description = "Intensely floral with notes of jasmine, rose, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -802,7 +804,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6b"),
                             BrandId = new Guid("586011c7-d606-4e73-a7e8-fca768656c03"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9661),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5463),
                             Description = "Timeless oriental scent with vanilla, iris, and amber notes",
                             ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
                             IsActive = true,
@@ -818,7 +820,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6a"),
                             BrandId = new Guid("57d95637-ffa7-4109-9d26-03bae7e0e6e1"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9712),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5469),
                             Description = "Rich and spicy oriental fragrance with exotic undertones",
                             ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
                             IsActive = false,
@@ -834,7 +836,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b69"),
                             BrandId = new Guid("28f3d7f5-3469-4036-b919-ec683688314b"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9716),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5474),
                             Description = "Luxurious blend of black truffle, vanilla, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -850,7 +852,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b68"),
                             BrandId = new Guid("dc6ccd03-c8c8-47a8-b9fe-83e878b158f8"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9720),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5477),
                             Description = "Fresh and aquatic scent with notes of citrus and rosemary",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -866,7 +868,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b67"),
                             BrandId = new Guid("dc4a85cb-8f2d-452b-8027-c3409538c244"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9725),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5483),
                             Description = "Citrusy and woody fragrance with notes of grapefruit and cedar",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s915447-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -882,7 +884,7 @@ namespace WebStore.Infrastructure.Migrations
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b66"),
                             BrandId = new Guid("f33371d7-fa64-42f0-89bd-7f707e285279"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
-                            CreatedOn = new DateTime(2024, 4, 17, 9, 41, 49, 637, DateTimeKind.Utc).AddTicks(9731),
+                            CreatedOn = new DateTime(2024, 4, 16, 17, 9, 7, 350, DateTimeKind.Utc).AddTicks(5489),
                             Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
                             ImageUrl = "https://www.creedfragrances.co.uk/cdn/shop/files/Clear-logo-with-black-hair.jpg?v=1708086869&width=750",
                             IsActive = true,
