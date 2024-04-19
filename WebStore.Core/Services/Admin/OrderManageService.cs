@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebStore.Core.Contracts.Admin;
 using WebStore.Core.Model.Admin.Order;
+using WebStore.Core.Model.Admin.OrderStatus;
 using WebStore.Infrastructure.Common;
 using WebStore.Infrastructure.Data.Entities;
 
@@ -32,7 +33,7 @@ namespace WebStore.Core.Services.Admin
             queryable = sort switch
             {
                 "date-asc" => queryable.OrderBy(o => o.OrderDate),
-                "date-desc" => queryable.OrderByDescending(o=> o.OrderDate),
+                "date-desc" => queryable.OrderByDescending(o => o.OrderDate),
             };
 
 
@@ -47,6 +48,22 @@ namespace WebStore.Core.Services.Admin
                 .ToListAsync();
 
             return result;
+        }
+
+        public async Task<List<OrderStatusFormModel>> GetAllOrderStatuses()
+        {
+            return await repo.AllReadonly<OrderStatus>()
+                .Select(os=> new OrderStatusFormModel()
+                {
+                    Id=os.Id,
+                    Name = os.Name,
+                })
+                .ToListAsync();
+        }
+
+        public async Task<Order> GetOrderById(int id)
+        {
+            return await repo.GetByIdAsync<Order>(id); //TODO: this way or return the model not the entity? must research
         }
     }
 }
