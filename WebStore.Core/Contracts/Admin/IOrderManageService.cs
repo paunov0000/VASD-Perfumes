@@ -1,4 +1,6 @@
 ﻿using WebStore.Core.Model.Admin.Order;
+using WebStore.Core.Model.Admin.OrderStatus;
+using WebStore.Infrastructure.Data.Entities;
 
 namespace WebStore.Core.Contracts.Admin
 {
@@ -9,5 +11,9 @@ namespace WebStore.Core.Contracts.Admin
         /// </summary>
         /// <returns>An IEnumerable of OrderTableModel</returns>
         Task<IEnumerable<OrderTableModel>> GetAllOrders(int count, string sort);
+
+        Task<Order> GetOrderById(int id);
+
+        Task<List<OrderStatusFormModel>> GetAllOrderStatuses(); 
     }
 }
