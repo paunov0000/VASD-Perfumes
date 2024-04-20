@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YgmXnoNXvocrQKM24ZkzJrxEnfBgpZTxiGtMqIEyoXbUzJFeJNfKaWKPnQgMTfZQpEyH3Q7fxp09uy57gkCx3w==",
+  "dgSpecHash": "/Rcu4kbaqe8VBZ5pPYxi7Z7piJiCO3SCVQgeAWJ3Ykj6uGZ5r284NZ68YNtYFIX10BwyQdDqCn/nBzk4768D3w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.MVC.csproj",
+  "projectFilePath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lache\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\lache\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

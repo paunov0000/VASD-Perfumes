@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebStore.Infrastructure.Data.Entities;
-using WebStore.MVC.Models.Account;
+using WebStore.Models.Account;
 using static WebStore.Core.Constants.ErrorMessageConstants.Account;
 using static WebStore.Core.Constants.TempDataKeyConstants.Account;
 using static WebStore.Core.Constants.TempDataKeyConstants;
 using WebStore.Infrastructure.Common;
 
-namespace WebStore.MVC.Controllers
+namespace WebStore.Controllers
 {
     public class AccountController : BaseController
     {

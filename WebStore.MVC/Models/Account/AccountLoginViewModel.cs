@@ -2,7 +2,7 @@
 using static WebStore.Core.Constants.ErrorMessageConstants.General;
 using static WebStore.Core.Constants.DisplayAttributeNameConstants.Account;
 
-namespace WebStore.MVC.Models.Account
+namespace WebStore.Models.Account
 {
     public class AccountLoginViewModel
     {

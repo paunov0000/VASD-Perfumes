@@ -2,7 +2,7 @@
 using WebStore.Core.Model.Product;
 using static WebStore.Core.Constants.TempDataKeyConstants;
 
-namespace WebStore.MVC.Controllers
+namespace WebStore.Controllers
 {
     public class CartController : Controller
     {

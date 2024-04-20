@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WebStore.MVC.Areas.Admin.Controllers
+namespace WebStore.Areas.Admin.Controllers
 {
     public class HomeController : BaseController
     {

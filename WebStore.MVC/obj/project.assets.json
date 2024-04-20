@@ -8939,9 +8939,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.MVC.csproj",
-      "projectName": "WebStore.MVC",
-      "projectPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.MVC.csproj",
+      "projectUniqueName": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.csproj",
+      "projectName": "WebStore",
+      "projectPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\WebStore.csproj",
       "packagesPath": "C:\\Users\\lache\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\obj\\",
       "projectStyle": "PackageReference",

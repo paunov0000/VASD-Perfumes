@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebStore.Core.Contracts.Admin;
 
-namespace WebStore.MVC.Areas.Admin.Controllers
+namespace WebStore.Areas.Admin.Controllers
 {
     public class UserController : BaseController
     {

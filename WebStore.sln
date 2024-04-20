@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.MVC", "WebStore.MVC\WebStore.MVC.csproj", "{EC85F235-2581-482D-A16E-BE0C3DF5F224}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore", "WebStore.MVC\WebStore.csproj", "{EC85F235-2581-482D-A16E-BE0C3DF5F224}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.Core", "WebStore.Core\WebStore.Core.csproj", "{EC63518E-752A-4F4A-B86C-50836727EE08}"
 EndProject

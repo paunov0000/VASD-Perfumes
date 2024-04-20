@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebStore.Infrastructure.Data;
 using WebStore.Infrastructure.Data.Entities;
-using WebStore.MVC.ModelBinders;
+using WebStore.ModelBinders;
 
 var builder = WebApplication.CreateBuilder(args);
 

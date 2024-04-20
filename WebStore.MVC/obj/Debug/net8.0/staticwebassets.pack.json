@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebStore.MVC.bundle.scp.css",
-      "PackagePath": "staticwebassets\\WebStore.MVC.bundle.scp.css"
+      "Id": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebStore.bundle.scp.css",
+      "PackagePath": "staticwebassets\\WebStore.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\lache\\Documents\\workspace\\WebStore\\WebStore.MVC\\wwwroot\\css\\account.css",
@@ -337,20 +337,20 @@
       "PackagePath": "staticwebassets\\pages\\tailwind-layout.html"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebStore.MVC.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebStore.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebStore.MVC.props",
-      "PackagePath": "build\\WebStore.MVC.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebStore.props",
+      "PackagePath": "build\\WebStore.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebStore.MVC.props",
-      "PackagePath": "buildMultiTargeting\\WebStore.MVC.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebStore.props",
+      "PackagePath": "buildMultiTargeting\\WebStore.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebStore.MVC.props",
-      "PackagePath": "buildTransitive\\WebStore.MVC.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebStore.props",
+      "PackagePath": "buildTransitive\\WebStore.props"
     }
   ],
   "ElementsToRemove": []

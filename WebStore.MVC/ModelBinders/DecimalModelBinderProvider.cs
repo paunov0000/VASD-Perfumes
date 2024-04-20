@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace WebStore.MVC.ModelBinders
+namespace WebStore.ModelBinders
 {
     public class DecimalModelBinderProvider : IModelBinderProvider
     {

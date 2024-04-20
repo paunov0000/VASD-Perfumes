@@ -1,4 +1,4 @@
-﻿namespace WebStore.MVC.Areas.Admin.Constants
+﻿namespace WebStore.Areas.Admin.Constants
 {
     public static class AdminConstants
     {

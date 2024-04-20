@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WebStore.MVC.Controllers
+namespace WebStore.Controllers
 {
     public class OrderController : Controller
     {

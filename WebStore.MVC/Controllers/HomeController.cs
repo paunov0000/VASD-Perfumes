@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebStore.Core.Contracts;
 using WebStore.Core.Model.Product;
-using WebStore.MVC.Models;
+using WebStore.Models;
 
-namespace WebStore.MVC.Controllers
+namespace WebStore.Controllers
 {
     public class HomeController : BaseController
     {

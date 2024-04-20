@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 using System.Globalization;
 using static WebStore.Core.Constants.ErrorMessageConstants.General;
 
-namespace WebStore.MVC.ModelBinders
+namespace WebStore.ModelBinders
 {
     public class DecimalModelBinder : IModelBinder
     {

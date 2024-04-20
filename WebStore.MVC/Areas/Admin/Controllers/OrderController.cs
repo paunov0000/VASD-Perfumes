@@ -4,7 +4,7 @@ using WebStore.Core.Model.Admin.Order;
 using WebStore.Core.Model.Admin.Product;
 using WebStore.Core.Services.Admin;
 
-namespace WebStore.MVC.Areas.Admin.Controllers
+namespace WebStore.Areas.Admin.Controllers
 {
     public class OrderController : BaseController
     {

@@ -7,7 +7,7 @@ using WebStore.Core.Model.Product;
 using WebStore.Infrastructure.Data.Entities;
 using static WebStore.Core.Constants.TempDataKeyConstants;
 
-namespace WebStore.MVC.Areas.Admin.Controllers
+namespace WebStore.Areas.Admin.Controllers
 {
     public class ProductController : BaseController
     {
