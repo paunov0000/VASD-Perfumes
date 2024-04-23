@@ -19,29 +19,29 @@
         </div>
 
         <div>
-            <a class="text-fuchsia-500 hover:text-fuchsia-600 font-semibold underline" href="#">Виж всички продукти от тази марка</a>
+            <a class="font-semibold text-fuchsia-500 underline hover:text-fuchsia-600" href="#">Виж всички продукти от тази марка</a>
         </div>
 
-        <div class="flex justify-between items-start">
+        <div class="flex items-start justify-between">
             <div class="w-[30rem]">
                 <a href="#">
                     <img class="h-[30rem] w-full" src="@Model.ProductImg" alt="Product Img" />
                 </a>
             </div>
-            <div class="flex flex-col gap-2 border border-gray-300 rounded-lg p-7">
-                <div class="flex justify-center text-lg items-center gap-1">
-                    <p class="border border-gray-300 px-1.5 py-3 cursor-pointer hover:bg-gray-200" id="increment">
+            <div class="flex flex-col gap-2 rounded-lg border border-gray-300 p-7">
+                <div class="flex items-center justify-center gap-1 text-lg">
+                    <p class="cursor-pointer border border-gray-300 px-1.5 py-3 hover:bg-gray-200" id="increment">
                         <i class="fa-solid fa-plus"></i>
                     </p>
-                    <input class="border border-gray-300 px-1.5 py-3 w-1/5 text-xl text-center" type="number" id="quantity" value="1" name="quantity" />
-                    <p class="border border-gray-300 px-1.5 py-3 cursor-pointer hover:bg-gray-200" id="decrement">
+                    <input class="w-1/5 border border-gray-300 px-1.5 py-3 text-center text-xl" type="number" id="quantity" value="1" name="quantity" />
+                    <p class="cursor-pointer border border-gray-300 px-1.5 py-3 hover:bg-gray-200" id="decrement">
                         <i class="fa-solid fa-minus"></i>
                     </p>
                 </div>
-                <div class="flex text-center mb-4">
+                <div class="mb-4 flex text-center">
                     <input type="hidden" name="name" id="name" value="@Model.Name" />
                     <input type="hidden" name="price" id="price" value="@Model.Price" />
-                    <a class="w-full bg-green-600 text-white px-3 py-1.5 rounded font-semibold cursor-pointer hover:bg-green-700" id="add-to-cart">
+                    <a class="w-full cursor-pointer rounded bg-green-600 px-3 py-1.5 font-semibold text-white hover:bg-green-700" id="add-to-cart">
                         <p type="submit">
                             <span><i class="fa-solid fa-cart-shopping"></i></span> В КОЛИЧКАТА
                         </p>
@@ -49,7 +49,7 @@
                     @* <a href="#">Купи</a> *@
                 </div>
                 <div class="flex flex-col gap-6 text-base">
-                    <div class="flex gap-2 items-center">
+                    <div class="flex items-center gap-2">
                         <div class="text-2xl">
                             <i class="fa-solid fa-truck-fast"></i>
                         </div>
@@ -57,7 +57,7 @@
                             <p><span class="font-semibold">Доставка до 48ч.</span> само за 3.99лв.!</p>
                         </div>
                     </div>
-                    <div class="flex gap-2 items-center">
+                    <div class="flex items-center gap-2">
                         <div class="text-2xl">
                             <i class="fa-solid fa-circle-check"></i>
                         </div>
@@ -65,7 +65,7 @@
                             <p><span class="font-semibold">Безплатна застраховка</span> на пратката</p>
                         </div>
                     </div>
-                    <div class="flex gap-2 items-center">
+                    <div class="flex items-center gap-2">
                         <div class="text-2xl">
                             <i class="fa-solid fa-thumbs-up"></i>
                         </div>
@@ -177,32 +177,5 @@
 
             addItemToCart(product);
         }
-        // fetch(url)
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         if (!localStorage.getItem("cart")) {
-        //             localStorage.setItem("cart", "[]");
-        //         }
-
-
-        //         function addItemToCart(product) {
-        //             let cart = JSON.parse(localStorage.getItem("cart"));
-        //             if (cart.length === 0) {
-        //                 cart.push(product);
-        //             }
-        //             else {
-        //                 let isPresent = cart.find(x => x.id === product.id);
-
-        //                 if (isPresent === undefined) {
-        //                     cart.push(product)
-        //                 }
-        //             }
-
-        //             localStorage.setItem("cart", JSON.stringify(cart));
-        //         }
-
-        //         addItemToCart(data);
-        //     });
-
     </script>
 }
