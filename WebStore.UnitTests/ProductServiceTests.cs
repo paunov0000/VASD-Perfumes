@@ -213,6 +213,15 @@ namespace WebStore.UnitTests
             Assert.That(result.Quantity, Is.EqualTo(expected.Quantity));
         }
 
+        [Test]
+        public void GetProductCartModelById_ShouldThrowAnInvalidOperationExceptionWhenEntityIsNotFound()
+        {
+            var guid = Guid.Parse("36e440a2-1a96-4756-83c3-0f7bfb5b285b");
+
+            var ex = Assert.ThrowsAsync<InvalidOperationException>(async () => await this.productService.GetProductCartModelById(guid));
+
+            Assert.That(ex.Message, Is.EqualTo("Entity not found"));
+        }
 
         [TearDown]
         public void TearDown()
