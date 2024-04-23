@@ -187,7 +187,7 @@ namespace WebStore.UnitTests
         }
 
         [Test]
-        public async Task GetProductDetailsById_ShouldThrowAnInvalidOperationExcepionWhenEntityIsNotFound()
+        public void GetProductDetailsById_ShouldThrowAnInvalidOperationExcepionWhenEntityIsNotFound()
         {
             var guid = Guid.Parse("36e440a2-1a96-4756-83c3-0f7bfb5b285b");
 
