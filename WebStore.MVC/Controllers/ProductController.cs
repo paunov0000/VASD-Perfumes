@@ -41,6 +41,7 @@ namespace WebStore.Controllers
 
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> Details(Guid id)
         {
             try
@@ -56,6 +57,7 @@ namespace WebStore.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Cart(ProductCartViewModel model)
         {
             if (!ModelState.IsValid)
