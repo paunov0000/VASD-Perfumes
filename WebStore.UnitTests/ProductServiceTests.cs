@@ -32,40 +32,6 @@ namespace WebStore.UnitTests
             this.dbContext.Database.EnsureCreated();
         }
 
-        //[Test]
-        //public async Task AddProductAsync_ShouldAddProduct()
-        //{
-        //    var categoryGuid = Guid.Parse("072a4bec-c3d3-4a66-aa9f-d3d7bc10d88e");
-        //    var brandGuid = Guid.Parse("df582419-a255-4774-8845-8cb094d59e78");
-        //    var productGuid = Guid.Parse("072a4bec-c3d3-4a66-aa9f-d3d7bc10d88f");
-
-        //    var product = new ProductAddViewModel()
-        //    {
-        //        Id = productGuid,
-        //        Description = "Test Description",
-        //        ImageUrl = "Test ImageUrl",
-        //        BrandId = brandGuid,
-        //        Name = "Test Name",
-        //        Price = 100,
-        //        CategoryId = categoryGuid
-        //    };
-
-        //    await this.productService.AddProductAsync(product);
-
-        //    var result = await this.repo.GetByIdAsync<Product>(productGuid);
-
-
-        //    Assert.That(categoryGuid == result.CategoryId);
-        //    Assert.That(productGuid == result.Id);
-        //    Assert.That("Test Description" == result.Description);
-        //    Assert.That("Test ImageUrl" == result.ImageUrl);
-        //    Assert.That(brandGuid == result.BrandId);
-        //    Assert.That("Test Name" == result.Name);
-        //    Assert.That(100 == result.Price);
-
-
-        //}
-
         [Test]
         public async Task GetMostRecent_ShouldReturn3MostRecentProducts()
         {
@@ -100,13 +66,9 @@ namespace WebStore.UnitTests
         {
             var expectedCount = this.dbContext.Products.Count(p => p.IsActive);
 
-            //var totalCount = this.dbContext.Products.Count();
-
             var result = await this.productService.GetAllProductsAsync();
 
             Assert.That(expectedCount, Is.EqualTo(result.Count()));
-
-            //Assert.That(totalCount, Is.Not.EqualTo(result.Count()));
         }
 
         [Test]
