@@ -15,22 +15,22 @@
     <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </head>
-<body class="flex justify-center w-site-width m-auto bg-gradient-to-br from-pink-300 to-blue-500 font-main">
+<body class="w-site-width font-main m-auto flex justify-center bg-gradient-to-br from-pink-300 to-blue-500">
     <partial name="_ToastrAlertMessagesPartial" />
-    <div class="flex flex-col w-full gap-40 bg-white px-8 py-4 rounded-lg">
+    <div class="flex w-full flex-col gap-40 rounded-lg bg-white px-8 py-4">
         <header class="flex flex-col gap-20">
-            <div class="flex justify-between bg-pink-400 px-8 py-1 rounded-b-lg">
+            <div class="flex justify-between rounded-b-lg bg-pink-400 px-8 py-1">
                 <p>
                     Избери перфектния подарък с до -40% и ОЩЕ -10% с код LOVE над 140
                     лв! ❤️
                 </p>
                 <p>+359 88 8888888</p>
             </div>
-            <div class="grid grid-cols-3">
+            <div class="grid-cols-3 grid">
                 <div class="flex items-center font-mono text-4xl">
                     <a asp-controller="Home" asp-action="Index">WebStore</a>
                 </div>
-                <div class="flex items-center gap-5 justify-center">
+                <div class="flex items-center justify-center gap-5">
                     <div>
                         <input class="outline-none" type="text" placeholder="Търси..." />
                     </div>
@@ -44,24 +44,28 @@
                     {
                         @if (User.IsInRole("Administrator"))
                         {
-                            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="flex flex-col items-center">
+                            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="flex flex-col items-center gap-1">
                                 <i class="fa-solid fa-briefcase"></i>
                                 <p>Администратор</p>
                             </a>
 
                         }
-                        <a class="flex flex-col items-center" href="#">
+                        <a class="flex flex-col items-center gap-1" href="#">
+                            <div id="cart" class="relative flex">
+
+                                @* <p class="absolute right-2.5 top-1.5 rounded-3xl bg-pink-400 px-1.5 py-0 text-xs font-bold">3</p> *@
                             <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
                             <p>Количка</p>
                         </a>
-                        <a asp-controller="Account" asp-action="Logout" class="flex flex-col items-center">
+                        <a asp-controller="Account" asp-action="Logout" class="flex flex-col items-center gap-1">
                             <i class="fa-solid fa-right-from-bracket"></i>
                             <p>Изход</p>
                         </a>
                     }
                     else
                     {
-                        <a asp-controller="Account" asp-action="Login" class="flex flex-col items-center">
+                        <a asp-controller="Account" asp-action="Login" class="flex flex-col items-center gap-1">
                             <i class="fa-solid fa-user"></i>
                             <p>Вход</p>
                         </a>
@@ -85,13 +89,13 @@
                     <form class="flex flex-col gap-4" action="#">
                         <div class="flex flex-col items-start gap-2">
                             <label class="text-xs italic" for="subscribe-newsletter">Имейл *</label>
-                            <input class="bg-gray-100 rounded-r-xl px-5 py-2 outline-none"
+                            <input class="rounded-r-xl bg-gray-100 px-5 py-2 outline-none"
                                    id="subscribe-newsletter"
                                    type="email"
                                    placeholder="Въведи своя имейл" />
                         </div>
                         <div class="text-center">
-                            <button class="bg-lime-300 rounded-2xl px-5 py-1 text-sm font-semibold hover:bg-lime-400">
+                            <button class="rounded-2xl bg-lime-300 px-5 py-1 text-sm font-semibold hover:bg-lime-400">
                                 Абонирай ме!
                             </button>
                         </div>
@@ -135,7 +139,7 @@
         </article>
 
         <footer class="flex flex-col items-center">
-            <div class="flex justify-between w-full">
+            <div class="flex w-full justify-between">
                 <div>
                     <h2>Информация</h2>
                     <ul>
