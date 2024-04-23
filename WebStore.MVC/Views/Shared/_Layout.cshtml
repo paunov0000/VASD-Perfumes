@@ -195,6 +195,18 @@
             }
         };
     </script>
+    <script>
+        let cartWrapper = document.getElementById("cart");
+        console.log(cartWrapper);
+        let cartItemsCount = JSON.parse(localStorage.getItem("cart")).length
+        console.log(cartItemsCount)
+        if (localStorage.getItem("cart")) {
+            let itemsCountElement = document.createElement("p");
+            itemsCountElement.textContent = cartItemsCount;
+            itemsCountElement.classList.add("absolute","right-2.5","top-1.5","rounded-3xl","bg-pink-400","px-1.5","py-0","text-xs","font-bold");
+            cartWrapper.appendChild(itemsCountElement);
+        }
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
