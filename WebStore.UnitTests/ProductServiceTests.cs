@@ -1,15 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebStore.Core.Contracts;
-using WebStore.Core.Model.Product;
 using WebStore.Core.Services;
 using WebStore.Infrastructure.Common;
 using WebStore.Infrastructure.Data;
-using WebStore.Infrastructure.Data.Entities;
 
 using static WebStore.Infrastructure.Data.Constants.ConfigurationConstants.Product;
 
