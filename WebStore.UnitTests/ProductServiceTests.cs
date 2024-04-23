@@ -187,6 +187,17 @@ namespace WebStore.UnitTests
         }
 
         [Test]
+        public async Task GetProductDetailsById_ShouldThrowAnInvalidOperationExcepionWhenEntityIsNotFound()
+        {
+            var guid = Guid.Parse("36e440a2-1a96-4756-83c3-0f7bfb5b285b");
+
+            var ex = Assert.ThrowsAsync<InvalidOperationException>(async () => await this.productService.GetProductDetailsById(guid));
+
+            Assert.That(ex.Message, Is.EqualTo("Entity not found"));
+
+        }
+
+        [Test]
         public async Task GetProductCartModelById_ShouldReturnAProductByGivenId()
         {
             var guid = Guid.Parse(TerreDhermesByHermesId);
