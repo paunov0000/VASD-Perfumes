@@ -83,7 +83,7 @@ namespace WebStore.UnitTests
             var result = await this.productService.GetMostSold(count);
 
             Assert.That(result.Count(), Is.EqualTo(count));
-            Assert.That(result.Count(), Is.EqualTo(expectedList.Count()));
+            Assert.That(result.Count(), Is.EqualTo(expectedList.Count));
         }
 
         [Test]
@@ -95,7 +95,7 @@ namespace WebStore.UnitTests
 
             var resultList = await this.productService.GetOnSale();
 
-            Assert.That(resultList.Count(), Is.EqualTo(expectedList.Count()));
+            Assert.That(resultList.Count(), Is.EqualTo(expectedList.Count));
         }
 
         [Test]
@@ -109,7 +109,7 @@ namespace WebStore.UnitTests
 
             var resultList = await this.productService.GetProductsByName(search);
 
-            Assert.That(resultList.Count(), Is.EqualTo(expectedList.Count()));
+            Assert.That(resultList.Count(), Is.EqualTo(expectedList.Count));
             Assert.That(resultList.All(p => p.Name.StartsWith(search)));
         }
 
