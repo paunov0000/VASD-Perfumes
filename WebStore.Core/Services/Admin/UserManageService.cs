@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebStore.Infrastructure.Data.Entities;
+﻿using WebStore.Infrastructure.Data.Entities;
 using WebStore.Core.Contracts.Admin;
 using WebStore.Core.Model.Admin.User;
 using WebStore.Infrastructure.Common;
