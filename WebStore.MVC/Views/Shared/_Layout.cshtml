@@ -40,36 +40,41 @@
                 </div>
                 <div class="flex justify-end gap-6">
 
-                    @if (User.Identity?.IsAuthenticated ?? false)
-                    {
-                        @if (User.IsInRole("Administrator"))
-                        {
+                    @if (User.Identity?.IsAuthenticated ?? false)                                                                                @*use login partial here*@
+                    {                                                                                                                            @*use login partial here*@
+                        @if (User.IsInRole("Administrator"))                                                                                     @*use login partial here*@
+                        {                                                                                                                        @*use login partial here*@
                             <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="flex flex-col items-center gap-1">
-                                <i class="fa-solid fa-briefcase"></i>
-                                <p>Администратор</p>
-                            </a>
-
-                        }
+                                @*use login partial here*@
+                                <i class="fa-solid fa-briefcase"></i>                                                                            @*use login partial here*@
+                                <p>Администратор</p>                                                                                             @*use login partial here*@
+                            </a>                                                                                                                 @*use login partial here*@
+                            @*use login partial here*@
+                        }                                                                                                                        @*use login partial here*@
                         <a class="flex flex-col items-center gap-1" href="#">
+                            @*use login partial here*@
                             <div id="cart" class="relative flex">
-
-                                @* <p class="absolute right-2.5 top-1.5 rounded-3xl bg-pink-400 px-1.5 py-0 text-xs font-bold">3</p> *@
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                            <p>Количка</p>
-                        </a>
+                                @*use login partial here*@
+                                @*use login partial here*@
+                                @* <p class="absolute right-2.5 top-1.5 rounded-3xl bg-pink-400 px-1.5 py-0 text-xs font-bold">3</p> *@          @*use login partial here*@
+                                <i class="fa-solid fa-cart-shopping"></i>                                                                        @*use login partial here*@
+                            </div>                                                                                                               @*use login partial here*@
+                            <p>Количка</p>                                                                                                       @*use login partial here*@
+                        </a>                                                                                                                     @*use login partial here*@
                         <a asp-controller="Account" asp-action="Logout" class="flex flex-col items-center gap-1">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            <p>Изход</p>
-                        </a>
-                    }
-                    else
-                    {
+                            @*use login partial here*@
+                            <i class="fa-solid fa-right-from-bracket"></i>                                                                       @*use login partial here*@
+                            <p>Изход</p>                                                                                                         @*use login partial here*@
+                        </a>                                                                                                                     @*use login partial here*@
+                    }                                                                                                                            @*use login partial here*@
+                    else                                                                                                                         @*use login partial here*@
+                    {                                                                                                                            @*use login partial here*@
                         <a asp-controller="Account" asp-action="Login" class="flex flex-col items-center gap-1">
-                            <i class="fa-solid fa-user"></i>
-                            <p>Вход</p>
-                        </a>
-                    }
+                            @*use login partial here*@
+                            <i class="fa-solid fa-user"></i>                                                                                     @*use login partial here*@
+                            <p>Вход</p>                                                                                                          @*use login partial here*@
+                        </a>                                                                                                                     @*use login partial here*@
+                    }                                                                                                                            @*use login partial here*@
                 </div>
             </div>
         </header>
@@ -197,8 +202,8 @@
     </script>
     <script>
         if (localStorage.getItem("cart")) {
-        let cartWrapper = document.getElementById("cart");
-        let cartItemsCount = JSON.parse(localStorage.getItem("cart")).length
+            let cartWrapper = document.getElementById("cart");
+            let cartItemsCount = JSON.parse(localStorage.getItem("cart")).length
             let itemsCountElement = document.createElement("p");
             itemsCountElement.textContent = cartItemsCount;
             itemsCountElement.classList.add("absolute", "right-2.5", "top-1.5", "rounded-3xl", "bg-pink-400", "px-1.5", "py-0", "text-xs", "font-bold");
