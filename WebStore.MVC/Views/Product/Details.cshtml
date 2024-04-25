@@ -86,13 +86,36 @@
         </div>
 
         <div class="flex flex-col">
-        <div>
             <div>
                 <p>Описание на продукта</p>
             </div>
             <div>
                 @Model.Description
             </div>
+        </div>
+    </div>
+    <div>
+        <div class="border-b-2 flex flex-col items-center border-fuchsia-500">
+            <p class="text-fuchsia-500"><span class="font-bold">Детайли на</span> @Model.Name</p>
+        </div>
+
+        <div class="flex flex-col">
+            <ul>
+                <li>
+                    <p>Име на продукт</p>
+                </li>
+                <li>
+                    <p>Категория</p>
+                </li>
+                <li>
+                    <p>
+                        Описание
+                    </p>
+                </li>
+                <li>
+                    <p>ID</p>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
