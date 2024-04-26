@@ -99,7 +99,7 @@
             <p class="text-fuchsia-500"><span class="font-bold">Детайли на</span> @Model.Name</p>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex gap-9">
             <ul>
                 <li>
                     <p>Име на продукт</p>
@@ -108,12 +108,24 @@
                     <p>Категория</p>
                 </li>
                 <li>
-                    <p>
-                        Описание
-                    </p>
+                    <p>Описание</p>
                 </li>
                 <li>
                     <p>ID</p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p>@Model.Name</p>
+                </li>
+                <li>
+                    <p>@Model.CategoryName</p>
+                </li>
+                <li>
+                    <p>@Model.SubcategoryName</p>
+                </li>
+                <li>
+                    <p>@Model.Id</p> @*TODO: add an id for the user, dont use the one in db keys*@
                 </li>
             </ul>
         </div>
