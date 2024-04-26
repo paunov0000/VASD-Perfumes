@@ -34,6 +34,7 @@ namespace WebStore.Core.Services.Admin
             {
                 "date-asc" => queryable.OrderBy(o => o.OrderDate),
                 "date-desc" => queryable.OrderByDescending(o => o.OrderDate),
+                _ =>  queryable.OrderBy(o=>o.OrderDate)
             };
 
 
