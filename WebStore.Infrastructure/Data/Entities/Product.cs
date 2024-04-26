@@ -78,6 +78,9 @@ namespace WebStore.Infrastructure.Data.Entities
         public Subcategory Subcategory { get; set; } = null!;
 
         [Required]
+        public FragrancePyramid Pyramid { get; set; } = null!;
+
+        [Required]
         [Comment("Orders of the product")]
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
