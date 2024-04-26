@@ -77,8 +77,11 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Navigation property to the Subcategory")]
         public Subcategory Subcategory { get; set; } = null!;
 
-        [Required]
-        public FragrancePyramid Pyramid { get; set; } = null!;
+        public string? TopNotes { get; set; }
+
+        public string? MiddleNotes { get; set; }
+
+        public string? BaseNotes { get; set; }
 
         [Required]
         [Comment("Orders of the product")]
