@@ -28,8 +28,6 @@ namespace WebStore.Infrastructure.Data
 
         public DbSet<Brand> Brands { get; set; }
 
-        public DbSet<FragrancePyramid> FragrancePyramids { get; set; }
-
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -43,7 +41,6 @@ namespace WebStore.Infrastructure.Data
             builder.ApplyConfiguration(new SubcategoryConfiguration());
             builder.ApplyConfiguration(new OrderStatusConfiguration());
             builder.ApplyConfiguration(new OrderConfiguration());
-            builder.ApplyConfiguration(new FragrancePyramidConfiguration());
 
             base.OnModelCreating(builder);
         }
