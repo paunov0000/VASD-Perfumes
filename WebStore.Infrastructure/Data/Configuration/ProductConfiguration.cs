@@ -72,7 +72,10 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 193,
                     SoldCount = 12,
                     OnSale = true,
-                    IsActive= true
+                    IsActive= true,
+                    TopNotes="Jasmine",
+                    MiddleNotes="Tuberose",
+                    BaseNotes="Orris Root, Honeysuckle"
                 },
                 new Product
                 {
@@ -120,7 +123,10 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 4,
                     SoldCount = 34,
                     OnSale = false,
-                    IsActive= false
+                    IsActive= false,
+                    TopNotes="Mandarin Orange, Bergamot, Lily-of-the-Valley",
+                    MiddleNotes="Myrhh, Jasmine",
+                    BaseNotes="Opoponax, Amber, Patchouli, Vanille"
                 },
                 new Product
                 {
@@ -136,7 +142,10 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 17,
                     SoldCount = 133,
                     OnSale = false,
-                    IsActive = true
+                    IsActive = true,
+                    TopNotes = "Truffle, Gardenia, Black Currant, Ylang-Ylang, Jasmine, Bergamot, Mandarin Orange, Amalfi Lemon",
+                    MiddleNotes="Orchid, Spices, Gardenia, Fruity Notes, Ylang-Ylang, Jasmine, Lostus",
+                    BaseNotes ="Mexican Chocolate, Patchouli, Vanille, Incense, Amber, Sandalwood, Vetiver, White Musk"
                 },
                 new Product
                 {
