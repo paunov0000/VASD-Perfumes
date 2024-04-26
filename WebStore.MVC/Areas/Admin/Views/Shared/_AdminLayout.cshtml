@@ -12,11 +12,13 @@
           rel="stylesheet" />
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib//toastr/toastr.min.css" />
 </head>
 <body class="max-w-[1500px] font-main">
-    <div class="flex flex-row min-h-screen">
-        <div class="flex flex-col gap-4 w-60 border-r border-gray-400 p-6">
-            <div class="text-3xl font-mono">
+    <partial name="_ToastrAlertMessagesPartial" />
+    <div class="flex min-h-screen flex-row">
+        <div class="flex w-60 flex-col gap-4 border-r border-gray-400 p-6">
+            <div class="font-mono text-3xl">
                 <div>
                     <a asp-area="" asp-controller="Home" asp-action="Index">WebStore</a>
                 </div>
@@ -64,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col w-full">
+        <div class="flex w-full flex-col">
             <!-- <div class="border-b-2 border-gray-200">
               <p>Dashboard</p>
             </div> -->
