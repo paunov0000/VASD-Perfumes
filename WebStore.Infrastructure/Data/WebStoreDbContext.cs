@@ -43,7 +43,7 @@ namespace WebStore.Infrastructure.Data
             builder.ApplyConfiguration(new SubcategoryConfiguration());
             builder.ApplyConfiguration(new OrderStatusConfiguration());
             builder.ApplyConfiguration(new OrderConfiguration());
-
+            builder.ApplyConfiguration(new FragrancePyramidConfiguration());
 
             base.OnModelCreating(builder);
         }
