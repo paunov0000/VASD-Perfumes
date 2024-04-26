@@ -52,14 +52,14 @@ namespace WebStore.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
-            {                                                   //TODO: is it okay to create users this way?
-                var customer = new Customer                     //TODO: is it okay to create users this way?
-                {                                               //TODO: is it okay to create users this way?
-                    UserId = user.Id,                           //TODO: is it okay to create users this way?
-                };                                              //TODO: is it okay to create users this way?
-                                                                //TODO: is it okay to create users this way?
-                await repo.AddAsync<Customer>(customer);        //TODO: is it okay to create users this way?
-                await repo.SaveChangesAsync();                  //TODO: is it okay to create users this way?
+            {
+                var customer = new Customer
+                {
+                    UserId = user.Id,
+                };
+
+                await repo.AddAsync<Customer>(customer);
+                await repo.SaveChangesAsync();
 
                 await _signInManager.SignInAsync(user, false);
 
