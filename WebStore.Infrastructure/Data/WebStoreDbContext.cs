@@ -28,6 +28,8 @@ namespace WebStore.Infrastructure.Data
 
         public DbSet<Brand> Brands { get; set; }
 
+        public DbSet<FragrancePyramid> FragrancePyramids { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
