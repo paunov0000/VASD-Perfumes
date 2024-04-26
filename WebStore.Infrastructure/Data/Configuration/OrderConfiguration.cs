@@ -10,26 +10,26 @@ namespace WebStore.Infrastructure.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Order> builder)
         {
-            builder.HasData(CreateOrders());                                          //TODO: idk if seeding the mapping tabble like this will work lol
-            builder.HasMany(o => o.Products)                                          //TODO: idk if seeding the mapping tabble like this will work lol
-                .WithMany(p => p.Orders)                                              //TODO: idk if seeding the mapping tabble like this will work lol
-                .UsingEntity(j => j.HasData(                                          //TODO: idk if seeding the mapping tabble like this will work lol
-                    new                                                               //TODO: idk if seeding the mapping tabble like this will work lol
-                    {                                                                 //TODO: idk if seeding the mapping tabble like this will work lol
-                        OrdersId = 1,                                                 //TODO: idk if seeding the mapping tabble like this will work lol
-                        ProductsId = Guid.Parse(Chanel05Id)                           //TODO: idk if seeding the mapping tabble like this will work lol
-                    },                                                                //TODO: idk if seeding the mapping tabble like this will work lol
-                    new                                                               //TODO: idk if seeding the mapping tabble like this will work lol
-                    {                                                                 //TODO: idk if seeding the mapping tabble like this will work lol
-                        OrdersId = 1,                                                 //TODO: idk if seeding the mapping tabble like this will work lol
-                        ProductsId = Guid.Parse(BlackOrchidByTomFordId)               //TODO: idk if seeding the mapping tabble like this will work lol
-                    },                                                                //TODO: idk if seeding the mapping tabble like this will work lol
-                    new                                                               //TODO: idk if seeding the mapping tabble like this will work lol
-                    {                                                                 //TODO: idk if seeding the mapping tabble like this will work lol
-                        OrdersId = 1,                                                 //TODO: idk if seeding the mapping tabble like this will work lol
-                        ProductsId = Guid.Parse(AventusByCreedId)                     //TODO: idk if seeding the mapping tabble like this will work lol
-                    }                                                                 //TODO: idk if seeding the mapping tabble like this will work lol
-                    ));                                                               //TODO: idk if seeding the mapping tabble like this will work lol
+            builder.HasData(CreateOrders());
+            builder.HasMany(o => o.Products)
+                .WithMany(p => p.Orders)
+                .UsingEntity(j => j.HasData(
+                    new
+                    {
+                        OrdersId = 1,
+                        ProductsId = Guid.Parse(Chanel05Id)
+                    },
+                    new
+                    {
+                        OrdersId = 1,
+                        ProductsId = Guid.Parse(BlackOrchidByTomFordId)
+                    },
+                    new
+                    {
+                        OrdersId = 1,
+                        ProductsId = Guid.Parse(AventusByCreedId)
+                    }
+                    ));
         }
 
         private List<Order> CreateOrders()
