@@ -55,18 +55,6 @@ namespace WebStore.Controllers
                 return NotFound(ex.Message);
             }
         }
-
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult Cart(ProductCartViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return RedirectToAction("Details", "Product");
-            }
-
-            return Json(model);
-        }
     }
 
 }
