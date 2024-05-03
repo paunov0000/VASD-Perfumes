@@ -1,11 +1,9 @@
-﻿@model ProductHomeViewModel;
-
-@{
+﻿@{
     ViewData["Title"] = "Home";
 }
 
-<div class="grid grid-cols-4 gap-16 justify-items-center">
-    @foreach (var product in Model.AllProducts)
+<div class="grid-cols-4 grid justify-items-center gap-16">
+    @foreach (var product in ViewBag.AllProducts)
     {
         <partial name="_HomeIndexCardPartial" model="product" />
     }
