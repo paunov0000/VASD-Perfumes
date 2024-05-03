@@ -17,22 +17,22 @@
 </head>
 <body class="font-main m-auto flex w-screen justify-center bg-white">
     <partial name="_ToastrAlertMessagesPartial" />
-    <div class="flex w-full flex-col gap-40 rounded-lg bg-white px-8 py-4">
-        <header class="flex flex-col gap-20">
-            <div class="flex justify-between rounded-b-lg bg-pink-400 px-8 py-1">
+    <div class="flex w-full flex-col gap-40">
+        <header class="flex flex-col">
+            <div class="flex justify-between bg-purple-400 px-8 py-1">
                 <p>
                     Избери перфектния подарък с до -40% и ОЩЕ -10% с код LOVE над 140
                     лв! ❤️
                 </p>
                 <p>+359 88 8888888</p>
             </div>
-            <div class="grid-cols-3 grid">
+            <div class="grid-cols-3 grid bg-black px-14 py-7 text-white">
                 <div class="flex items-center font-mono text-4xl">
                     <a asp-controller="Home" asp-action="Index">WebStore</a>
                 </div>
                 <div class="flex items-center justify-center gap-5">
                     <div>
-                        <input class="outline-none" type="text" placeholder="Търси..." />
+                        <input class="outline-none" type="text" placeholder="Търси парфюм, марка..." />
                     </div>
                     <div id="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
