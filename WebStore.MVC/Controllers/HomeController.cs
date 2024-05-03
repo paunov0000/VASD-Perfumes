@@ -11,13 +11,16 @@ namespace WebStore.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService productService;
+        private readonly IBrandService brandService;
 
         public HomeController(
             ILogger<HomeController> logger,
-            IProductService _productService)
+            IProductService _productService,
+            IBrandService _brandService)
         {
             _logger = logger;
             productService = _productService;
+            brandService = _brandService;
         }
 
         [AllowAnonymous]
