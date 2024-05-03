@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
 using WebStore.Core.Contracts;
 using WebStore.Core.Model.Product;
@@ -32,16 +33,15 @@ namespace WebStore.Controllers
             var mostSold = await productService.GetMostSold(countToFetch);
             var onSale = await productService.GetOnSale();
             var allProducts = await productService.GetAllProductsAsync();
+            var brands = await brandService.GetHomeBrands(18);
 
-            var model = new ProductHomeViewModel()
-            {
-                MostRecent = mostRecent,
-                MostSold = mostSold,
-                OnSale = onSale,
-                AllProducts = allProducts
-            };
+            ViewBag.MostRecent = mostRecent;
+            ViewBag.MostSold = mostSold;
+            ViewBag.OnSale = onSale;
+            ViewBag.Brands = brands;
+            ViewBag.AllProducts = allProducts;
 
-            return View(model);
+            return View();
         }
 
         [AllowAnonymous]
