@@ -15,12 +15,18 @@ module.exports = {
                     '50%': { backgroundPosition: '100% 50%' },
                     '100%': { backgroundPosition: '0% 50%' },
                 },
+                animatedhover: {
+                    '0%': { bottom: '0' },
+                    '50%': { bottom: '0.75rem' },
+                    '100%': { bottom: '0' }
+                }
             },
             backgroundSize: {
                 '200%': '200%'
             },
             animation: {
-                gradient: 'animatedgradient 6s ease infinite alternate'
+                gradient: 'animatedgradient 6s ease infinite alternate',
+                hover: 'animatedhover 1.25s ease-in-out infinite'
             }
         },
     },
