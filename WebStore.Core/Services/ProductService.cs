@@ -73,9 +73,10 @@ namespace WebStore.Core.Services
         }
 
 
-        public async Task<IEnumerable<ProductViewModel>> GetOnSale()
+        public async Task<IEnumerable<ProductViewModel>> GetOnSale(int count)
         {
             var result = await this.repo.AllReadonly<Product>(p => p.OnSale == true && p.IsActive)
+                .Take(count)
                 .Select(x => new ProductViewModel()
                 {
                     Description = x.Description,
