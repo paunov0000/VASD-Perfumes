@@ -87,13 +87,16 @@ namespace WebStore.UnitTests
         }
 
         [Test]
-        public async Task GetOnSale_ShouldFetchAllActiveProductsWhichAreOnSale()
+        public async Task GetOnSale_ShouldFetchCountActiveProductsWhichAreOnSale()
         {
+            var productCountToFetch = 3;
+
             var expectedList = await this.dbContext.Products
                 .Where(p => p.IsActive && p.OnSale)
+                .Take(productCountToFetch)
                 .ToListAsync();
 
-            var resultList = await this.productService.GetOnSale();
+            var resultList = await this.productService.GetOnSale(productCountToFetch);
 
             Assert.That(resultList.Count(), Is.EqualTo(expectedList.Count));
         }
