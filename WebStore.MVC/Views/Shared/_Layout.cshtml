@@ -1,4 +1,4 @@
-﻿    <!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -19,62 +19,64 @@
     <partial name="_ToastrAlertMessagesPartial" />
     <div class="flex w-full flex-col gap-40">
         <header class="flex flex-col">
-            <div class="flex justify-between bg-purple-400 px-8 py-1">
-                <p>
-                    Избери перфектния подарък с до -40% и ОЩЕ -10% с код LOVE над 140
-                    лв! ❤️
-                </p>
-                <p>+359 88 8888888</p>
-            </div>
-            <div class="grid-cols-3 grid bg-black px-14 py-7 text-white">
-                <div class="flex items-center font-mono text-4xl">
-                    <a asp-controller="Home" asp-action="Index">WebStore</a>
-                </div>
-                <div class="flex items-center justify-center gap-5">
-                    <div class="text-black">
-                        <input class="px-3 py-1.5 outline-none" type="text" placeholder="Търси парфюм, марка..." />
+            <div class="bg-black">
+                @* <div class="flex justify-between bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text px-8 py-1 text-transparent">
+                    <p>
+                        Избери перфектния подарък с до -40% и ОЩЕ -10% с код LOVE над 140
+                        лв! ❤️
+                    </p>
+                    <p>+359 88 8888888</p>
+                </div> *@
+                <div class="grid-cols-3 grid bg-black px-14 py-5 text-white">
+                    <div class="bg-200% animate-gradient flex items-center bg-gradient-to-r from-purple-400 via-pink-400 to-pink-400 bg-clip-text font-mono text-4xl text-transparent">
+                        <a asp-controller="Home" asp-action="Index">WebStore</a>
                     </div>
-                    <div id="search-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="flex items-center justify-center gap-5">
+                        <div class="text-black">
+                            <input class="px-3 py-1.5 outline-none" type="text" placeholder="Търси парфюм, марка..." />
+                        </div>
+                        <div id="search-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="flex justify-end gap-6">
+                    <div class="flex justify-end gap-6">
 
-                    @if (User.Identity?.IsAuthenticated ?? false)                                                                                @*use login partial here*@
-                    {                                                                                                                            @*use login partial here*@
-                        @if (User.IsInRole("Administrator"))                                                                                     @*use login partial here*@
-                        {                                                                                                                        @*use login partial here*@
-                            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="flex flex-col items-center gap-1">
+                        @if (User.Identity?.IsAuthenticated ?? false)                                                                                @*use login partial here*@
+                        {                                                                                                                            @*use login partial here*@
+                            @if (User.IsInRole("Administrator"))                                                                                     @*use login partial here*@
+                            {                                                                                                                        @*use login partial here*@
+                                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="flex flex-col items-center gap-1">
+                                    @*use login partial here*@
+                                    <i class="fa-solid fa-briefcase"></i>                                                                            @*use login partial here*@
+                                    <p>Администратор</p>                                                                                             @*use login partial here*@
+                                </a>                                                                                                                 @*use login partial here*@
                                 @*use login partial here*@
-                                <i class="fa-solid fa-briefcase"></i>                                                                            @*use login partial here*@
-                                <p>Администратор</p>                                                                                             @*use login partial here*@
-                            </a>                                                                                                                 @*use login partial here*@
-                            @*use login partial here*@
-                        }                                                                                                                        @*use login partial here*@
-                        <a class="flex flex-col items-center gap-1" href="#">
-                            @*use login partial here*@
-                            <div id="cart" class="relative flex">
+                            }                                                                                                                        @*use login partial here*@
+                            <a class="flex flex-col items-center gap-1" href="#">
                                 @*use login partial here*@
+                                <div id="cart" class="relative flex">
+                                    @*use login partial here*@
+                                    @*use login partial here*@
+                                    @* <p class="absolute right-2.5 top-1.5 rounded-3xl bg-pink-400 px-1.5 py-0 text-xs font-bold">3</p> *@          @*use login partial here*@
+                                    <i class="fa-solid fa-cart-shopping"></i>                                                                        @*use login partial here*@
+                                </div>                                                                                                               @*use login partial here*@
+                                <p>Количка</p>                                                                                                       @*use login partial here*@
+                            </a>                                                                                                                     @*use login partial here*@
+                            <a asp-controller="Account" asp-action="Logout" class="flex flex-col items-center gap-1">
                                 @*use login partial here*@
-                                @* <p class="absolute right-2.5 top-1.5 rounded-3xl bg-pink-400 px-1.5 py-0 text-xs font-bold">3</p> *@          @*use login partial here*@
-                                <i class="fa-solid fa-cart-shopping"></i>                                                                        @*use login partial here*@
-                            </div>                                                                                                               @*use login partial here*@
-                            <p>Количка</p>                                                                                                       @*use login partial here*@
-                        </a>                                                                                                                     @*use login partial here*@
-                        <a asp-controller="Account" asp-action="Logout" class="flex flex-col items-center gap-1">
-                            @*use login partial here*@
-                            <i class="fa-solid fa-right-from-bracket"></i>                                                                       @*use login partial here*@
-                            <p>Изход</p>                                                                                                         @*use login partial here*@
-                        </a>                                                                                                                     @*use login partial here*@
-                    }                                                                                                                            @*use login partial here*@
-                    else                                                                                                                         @*use login partial here*@
-                    {                                                                                                                            @*use login partial here*@
-                        <a asp-controller="Account" asp-action="Login" class="flex flex-col items-center gap-1">
-                            @*use login partial here*@
-                            <i class="fa-solid fa-user"></i>                                                                                     @*use login partial here*@
-                            <p>Вход</p>                                                                                                          @*use login partial here*@
-                        </a>                                                                                                                     @*use login partial here*@
-                    }                                                                                                                            @*use login partial here*@
+                                <i class="fa-solid fa-right-from-bracket"></i>                                                                       @*use login partial here*@
+                                <p>Изход</p>                                                                                                         @*use login partial here*@
+                            </a>                                                                                                                     @*use login partial here*@
+                        }                                                                                                                            @*use login partial here*@
+                        else                                                                                                                         @*use login partial here*@
+                        {                                                                                                                            @*use login partial here*@
+                            <a asp-controller="Account" asp-action="Login" class="flex flex-col items-center gap-1">
+                                @*use login partial here*@
+                                <i class="fa-solid fa-user"></i>                                                                                     @*use login partial here*@
+                                <p>Вход</p>                                                                                                          @*use login partial here*@
+                            </a>                                                                                                                     @*use login partial here*@
+                        }                                                                                                                            @*use login partial here*@
+                    </div>
                 </div>
             </div>
         </header>
