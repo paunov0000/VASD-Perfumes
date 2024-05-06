@@ -2,17 +2,92 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="">
-    @* @foreach (var product in ViewBag.AllProducts)
-    {
-    <partial name="_HomeIndexCardPartial" model="product" />
-    } *@
-    <div class="flex">
-        @foreach (var brand in ViewBag.Brands)
-        {
-            <div class="flex w-28 items-center border-r border-gray-200 px-3.5 duration-500 last:border-none hover:bg-gray-100">
-                <img class="w-full" src="@brand.ImageUrl" />
+<div class="flex flex-col gap-44">
+    <div class="flex items-center justify-center gap-5">
+        <div class="hidden text-2xl hover:cursor-pointer">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+
+        <div class="flex">
+            @foreach (var brand in ViewBag.Brands)
+            {
+                <div class="flex w-36 items-center border-r border-gray-200 px-3.5 duration-500 last:border-none hover:bg-gray-100">
+                    <img class="w-full" src="@brand.ImageUrl" />
+                </div>
+            }
+        </div>
+
+        <div class="text-2xl hover:cursor-pointer">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+    <div class="flex flex-col items-center gap-6">
+        <div class="text-xl font-semibold">
+            <p>
+                Най-продавани
+            </p>
+        </div>
+        <div class="flex items-center justify-center gap-5">
+            <div class="hidden text-2xl hover:cursor-pointer">
+                <i class="fa-solid fa-chevron-left"></i>
             </div>
-        }
+
+            <div class="flex gap-16">
+                @foreach (var product in ViewBag.MostSold)
+                {
+                    <partial name="_HomeIndexCardPartial" model="product" />
+                }
+            </div>
+
+            <div class="text-2xl hover:cursor-pointer">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col items-center gap-6">
+        <div class="text-xl font-semibold">
+            <p>
+                Тази седмица в промоция
+            </p>
+        </div>
+        <div class="flex items-center justify-center gap-5">
+            <div class="hidden text-2xl hover:cursor-pointer">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+
+            <div class="flex gap-16">
+                @foreach (var product in ViewBag.OnSale)
+                {
+                    <partial name="_HomeIndexCardPartial" model="product" />
+                }
+            </div>
+
+            <div class="text-2xl hover:cursor-pointer">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col items-center gap-6">
+        <div class="text-xl font-semibold">
+            <p>
+                Нови продукти на <span>WebStore</span>
+            </p>
+        </div>
+        <div class="flex items-center justify-center gap-5">
+            <div class="hidden text-2xl hover:cursor-pointer">
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
+
+            <div class="flex gap-16">
+                @foreach (var product in ViewBag.MostRecent)
+                {
+                    <partial name="_HomeIndexCardPartial" model="product" />
+                }
+            </div>
+
+            <div class="text-2xl hover:cursor-pointer">
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
     </div>
 </div>
