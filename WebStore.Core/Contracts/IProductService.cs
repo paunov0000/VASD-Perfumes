@@ -39,7 +39,7 @@ namespace WebStore.Core.Contracts
         /// Fetches the products that are currently on sale from the database and maps them to an IEnumerable of ProductViewModel
         /// </summary>
         /// <returns>An IEnumerable of ProductViewModel</returns>
-        Task<IEnumerable<ProductViewModel>> GetOnSale();
+        Task<IEnumerable<ProductViewModel>> GetOnSale(int count);
 
         /// <summary>
         /// Fetches a Product entity from the database by its id and maps it to a ProductAddViewModel
