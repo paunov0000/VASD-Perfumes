@@ -27,13 +27,14 @@ namespace WebStore.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            var countToFetch = 12;
+            var productCountToFetch = 4;
+            var brandCountToFetch = 6;
 
-            var mostRecent = await productService.GetMostRecent(countToFetch);
-            var mostSold = await productService.GetMostSold(countToFetch);
-            var onSale = await productService.GetOnSale();
+            var mostRecent = await productService.GetMostRecent(productCountToFetch);
+            var mostSold = await productService.GetMostSold(productCountToFetch);
+            var onSale = await productService.GetOnSale(productCountToFetch);
             var allProducts = await productService.GetAllProductsAsync();
-            var brands = await brandService.GetHomeBrands(18);
+            var brands = await brandService.GetHomeBrands(brandCountToFetch);
 
             ViewBag.MostRecent = mostRecent;
             ViewBag.MostSold = mostSold;
