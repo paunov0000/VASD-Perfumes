@@ -97,12 +97,10 @@ We hope you enjoy exploring the world of fragrances with WebStore!
 
   - #### Home/Index:
 
-    !["index.png"](/images/index.png)
-
-  - #### Layout footer:
-
-    !["index-footer.png"](/images/index-footer.png)
-
+    !["index page, header and main elements"](./images/index-header-main.png)
+    !["index page, main element"](./images/index-main.png)
+    !["index page, footer element"](./images/index-main-footer.png)
+  
   - #### Product/Details (WIP):
 
     !["product-details-wip"](/images/product-details-wip.png)
