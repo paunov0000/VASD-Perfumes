@@ -114,7 +114,7 @@ namespace WebStore.Core.Services.Admin
 
         public async Task<IEnumerable<SubcategoryFormModel>> GetAllSubcategories()
         {
-            var result = await this.repo.AllReadonly<Subcategory>().Select(x => new SubcategoryFormModel()
+            var result = await this.repo.AllReadonly<ParentSubcategory>().Select(x => new SubcategoryFormModel()
             {
                 Id = x.Id,
                 Name = x.Name
