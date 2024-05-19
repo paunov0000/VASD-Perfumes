@@ -152,8 +152,8 @@ namespace WebStore.Core.Services
                 Id = entity.Id,
                 Name = entity.Name,
                 Description = entity.Description,
-                BrandImg = entity.Brand.ImageUrl,
                 ProductImg = entity.ImageUrl,
+                BrandName = entity.Brand.Name,
                 CategoryName = entity.Category.Name,
                 SubcategoryName = entity.Subcategory.Name,
                 Price = entity.Price
