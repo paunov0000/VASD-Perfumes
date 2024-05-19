@@ -28,6 +28,6 @@ namespace WebStore.Infrastructure.Data.Entities
 
         [Required]
         [Comment("Collection of subcategories for the given Category")]
-        public ICollection<Subcategory> Subcategories { get; set; } = new List<Subcategory>();
+        public ICollection<ParentSubcategory> ParentSubcategories { get; set; } = new List<ParentSubcategory>();
     }
 }
