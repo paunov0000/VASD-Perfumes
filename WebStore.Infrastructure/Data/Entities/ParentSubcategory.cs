@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace WebStore.Infrastructure.Data.Entities
 {
     [Comment("Holds info for the Product Subcategory entity")]
-    public class Subcategory
+    public class ParentSubcategory
     {
         [Key]
         [Comment("Primary key of the product subcategory")]
@@ -26,5 +26,8 @@ namespace WebStore.Infrastructure.Data.Entities
         [Required]
         [Comment("A collection of products which are related to the subcategory")]
         public ICollection<Product> Products { get; set; } = new List<Product>();
+
+        [Required]
+        public ICollection<ChildSubcategory> ChildSubcategories { get; set; } = new List<ChildSubcategory>();
     }
 }
