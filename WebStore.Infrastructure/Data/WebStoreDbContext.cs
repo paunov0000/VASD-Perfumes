@@ -16,7 +16,7 @@ namespace WebStore.Infrastructure.Data
 
         public DbSet<Category> Categories { get; set; }
 
-        public DbSet<Subcategory> Subcategories { get; set; }
+        public DbSet<ParentSubcategory> ParentSubcategories { get; set; }
 
         public DbSet<Order> Orders { get; set; }
 
@@ -28,6 +28,8 @@ namespace WebStore.Infrastructure.Data
 
         public DbSet<Brand> Brands { get; set; }
 
+        public DbSet<ChildSubcategory> ChildSubcategories { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -38,7 +40,7 @@ namespace WebStore.Infrastructure.Data
             builder.ApplyConfiguration(new CustomerConfiguration());
             builder.ApplyConfiguration(new RoleConfiguration());
             builder.ApplyConfiguration(new UserRoleConfiguration());
-            builder.ApplyConfiguration(new SubcategoryConfiguration());
+            builder.ApplyConfiguration(new ParentSubcategoryConfiguration());
             builder.ApplyConfiguration(new OrderStatusConfiguration());
             builder.ApplyConfiguration(new OrderConfiguration());
 
