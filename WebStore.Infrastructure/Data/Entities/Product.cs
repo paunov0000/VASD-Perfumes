@@ -69,13 +69,13 @@ namespace WebStore.Infrastructure.Data.Entities
         public Category Category { get; set; } = null!;
 
         [Required]
-        [ForeignKey(nameof(Subcategory))]
-        [Comment("Foreign key of the Subcategory")]
-        public Guid SubcategoryId { get; set; }
+        [ForeignKey(nameof(ParentSubcategory))]
+        [Comment("Foreign key of the ParentSubcategory")]
+        public Guid ParentSubcategoryId { get; set; }
 
         [Required]
         [Comment("Navigation property to the Subcategory")]
-        public Subcategory Subcategory { get; set; } = null!;
+        public ParentSubcategory ParentSubcategory { get; set; } = null!;
 
         public string? TopNotes { get; set; }
 
