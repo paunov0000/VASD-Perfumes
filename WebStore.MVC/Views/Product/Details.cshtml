@@ -6,129 +6,15 @@
 
 
 
-<div class="flex flex-col gap-36 px-24">
+<div class="flex">
     <div>
-
-        <div class="flex justify-between">
-            <div class="flex items-center">
-                <p class="text-2xl font-semibold">@Model.Name</p>
-            </div>
-            <div class="w-[10rem]">
-                <img src="@Model.BrandImg" alt="Manufacturer Img" />
-                <input type="hidden" value="@Model.Id" id="product-id" />
-            </div>
-        </div>
-
-        <div class="mb-10">
-            <a class="font-semibold text-fuchsia-500 underline hover:text-fuchsia-600" href="#">Виж всички продукти от тази марка</a>
-        </div>
-
-        <div class="flex items-start justify-between">
-            <div class="w-[30rem]">
-                <a href="#">
-                    <img class="w-full" src="@Model.ProductImg" alt="Product Img" />
-                </a>
-            </div>
-            <div class="flex flex-col gap-2 rounded-lg border border-gray-300 p-7">
-                <div class="flex items-center justify-center gap-1 text-lg">
-                    <p class="cursor-pointer border border-gray-300 px-1.5 py-3 hover:bg-gray-200" id="increment">
-                        <i class="fa-solid fa-plus"></i>
-                    </p>
-                    <input class="w-1/5 border border-gray-300 px-1.5 py-3 text-center text-xl" type="number" id="quantity" value="1" name="quantity" />
-                    <p class="cursor-pointer border border-gray-300 px-1.5 py-3 hover:bg-gray-200" id="decrement">
-                        <i class="fa-solid fa-minus"></i>
-                    </p>
-                </div>
-                <div class="mb-4 flex text-center">
-                    <input type="hidden" name="name" id="name" value="@Model.Name" />
-                    <input type="hidden" name="price" id="price" value="@Model.Price" />
-                    <a class="w-full cursor-pointer rounded bg-green-600 px-3 py-1.5 font-semibold text-white hover:bg-green-700" id="add-to-cart">
-                        <p type="submit">
-                            <span><i class="fa-solid fa-cart-shopping"></i></span> В КОЛИЧКАТА
-                        </p>
-                    </a>
-                    @* <a href="#">Купи</a> *@
-                </div>
-                <div class="flex flex-col gap-6 text-base">
-                    <div class="flex items-center gap-2">
-                        <div class="text-2xl">
-                            <i class="fa-solid fa-truck-fast"></i>
-                        </div>
-                        <div>
-                            <p><span class="font-semibold">Доставка до 48ч.</span> само за 3.99лв.!</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="text-2xl">
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-                        <div>
-                            <p><span class="font-semibold">Безплатна застраховка</span> на пратката</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <div class="text-2xl">
-                            <i class="fa-solid fa-thumbs-up"></i>
-                        </div>
-                        <div>
-                            <p>Подкрепете <span class="font-semibold">Българските Сайтове</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+        <img src="@Model.ProductImg" alt="Alternate Text" />
     </div>
-    <div class="flex flex-col gap-5">
-        <div class="border-b-2 flex flex-col items-center border-fuchsia-500">
-            <p class="text-fuchsia-500"><span class="font-bold">Описание на</span> @Model.Name</p>
-        </div>
-
-        <div class="flex flex-col">
-            <div>
-                <p>Описание на продукта</p>
-            </div>
-            <div>
-                @Model.Description
-            </div>
-        </div>
-    </div>
-    <div class="flex flex-col gap-5">
-        <div class="border-b-2 flex flex-col items-center border-fuchsia-500">
-            <p class="text-fuchsia-500"><span class="font-bold">Детайли на</span> @Model.Name</p>
-        </div>
-
-        <div class="flex gap-9">
-            <ul>
-                <li>
-                    <p>Име на продукт</p>
-                </li>
-                <li>
-                    <p>Категория</p>
-                </li>
-                <li>
-                    <p>Описание</p>
-                </li>
-                <li>
-                    <p>ID</p>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <p>@Model.Name</p>
-                </li>
-                <li>
-                    <p>@Model.CategoryName</p>
-                </li>
-                <li>
-                    <p>@Model.SubcategoryName</p>
-                </li>
-                <li>
-                    <p>@Model.Id</p> @*TODO: add an id for the user, dont use the one in db keys*@
-                </li>
-            </ul>
-        </div>
+    <div>
+        <p>
+            <a class="font-light underline" href="#">@Model.BrandName</a> <span class="font-bold">@Model.Name</span>
+        </p>
+        <p>@Model.CategoryName</p>
     </div>
 </div>
 
