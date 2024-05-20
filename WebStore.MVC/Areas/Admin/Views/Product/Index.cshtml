@@ -64,23 +64,23 @@
         </div>
     </div>
     <a id="search" class="cursor-pointer">Submit</a>
-    <div class="flex gap-3  ">
+    <div class="flex gap-3">
         <div>
-            <a asp-area="Admin" asp-controller="Product" asp-action="Add" class="text-white bg-green-500 hover:bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            <a asp-area="Admin" asp-controller="Product" asp-action="Add" class="rounded-lg bg-green-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-green-700">
                 Add Product
             </a>
         </div>
 
         <div>
-            <a asp-area="Admin" asp-controller="Product" asp-action="Restock" class="text-white bg-amber-500 hover:bg-amber-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+            <a asp-area="Admin" asp-controller="Product" asp-action="Restock" class="rounded-lg bg-amber-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-amber-700">
                 Restock
             </a>
         </div>
     </div>
-    <div class="border border-gray-300 rounded-lg overflow-hidden">
+    <div class="overflow-hidden rounded-lg border border-gray-300">
         <table class="w-full">
             <tr class="bg-gray-200 text-left">
-                <th class="pl-7 py-2">
+                <th class="py-2 pl-7">
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
                 <th class="py-2">
@@ -96,7 +96,7 @@
                     @Html.DisplayNameFor(model => model.CategoryName)
                 </th>
                 <th class="py-2">
-                    @Html.DisplayNameFor(model => model.SubcategoryName)
+                    @Html.DisplayNameFor(model => model.ParentSubcategoryName)
                 </th>
                 <th class="py-2">
                     @Html.DisplayNameFor(model => model.SoldCount)
@@ -104,7 +104,7 @@
                 <th class="py-2">
                     @Html.DisplayNameFor(model => model.OnSale)
                 </th>
-                <th class="pr-1 py-2">
+                <th class="py-2 pr-1">
                     @Html.DisplayNameFor(model => model.IsActive)
                 </th>
 
@@ -112,7 +112,7 @@
             @foreach (var product in Model)
             {
                 <tr class="text-left font-medium">
-                    <td class="pl-7 py-2">
+                    <td class="py-2 pl-7">
                         <a class="hover:text-blue-500" asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id">
                             @product.Name
                         </a>
@@ -141,7 +141,7 @@
                         @product.CategoryName
                     </td>
                     <td class="py-2">
-                        @product.SubcategoryName
+                        @product.ParentSubcategoryName
                     </td>
                     <td class="py-2">
                         @product.SoldCount
@@ -160,7 +160,7 @@
                             </span>
                         }
                     </td>
-                    <td class="pr-1 py-2">
+                    <td class="py-2 pr-1">
                         @if (product.IsActive)
                         {
                             <span class="text-green-400">
