@@ -127,7 +127,7 @@ namespace WebStore.Core.Services
                 Price = product.Price,
                 BrandId = product.BrandId,
                 CategoryId = product.CategoryId,
-                SubcategoryId = product.SubcategoryId,
+                SubcategoryId = product.ParentSubcategoryId,
                 Quantity = product.Quantity,
                 IsActive = product.IsActive,
                 OnSale = product.OnSale
@@ -139,7 +139,7 @@ namespace WebStore.Core.Services
             var entity = await this.repo.AllReadonly<Product>()
                 .Include(x => x.Brand)
                 .Include(x => x.Category)
-                .Include(x => x.Subcategory)
+                .Include(x => x.ParentSubcategory)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             if (entity == null)
@@ -155,7 +155,7 @@ namespace WebStore.Core.Services
                 ProductImg = entity.ImageUrl,
                 BrandName = entity.Brand.Name,
                 CategoryName = entity.Category.Name,
-                SubcategoryName = entity.Subcategory.Name,
+                SubcategoryName = entity.ParentSubcategory.Name,
                 Price = entity.Price
             };
         }

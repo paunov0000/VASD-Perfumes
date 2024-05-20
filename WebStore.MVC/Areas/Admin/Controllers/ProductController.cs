@@ -49,8 +49,8 @@ namespace WebStore.Areas.Admin.Controllers
                 "quantity-desc" => model.OrderByDescending(p => p.Quantity),                    //TODO: extract this to a method in the service
                 "category-asc" => model.OrderBy(p => p.Category.Name),                          //TODO: extract this to a method in the service
                 "category-desc" => model.OrderByDescending(p => p.Category.Name),               //TODO: extract this to a method in the service
-                "subcategory-asc" => model.OrderBy(p => p.Subcategory.Name),                    //TODO: extract this to a method in the service
-                "subcategory-desc" => model.OrderByDescending(p => p.Subcategory.Name),         //TODO: extract this to a method in the service
+                "subcategory-asc" => model.OrderBy(p => p.ParentSubcategory.Name),                    //TODO: extract this to a method in the service
+                "subcategory-desc" => model.OrderByDescending(p => p.ParentSubcategory.Name),         //TODO: extract this to a method in the service
                 "soldcount-asc" => model.OrderBy(p => p.SoldCount),                             //TODO: extract this to a method in the service
                 "soldcount-desc" => model.OrderByDescending(p => p.SoldCount),                  //TODO: extract this to a method in the service
                 "onsale-f" => model.OrderBy(p => p.OnSale),                                     //TODO: extract this to a method in the service
@@ -67,7 +67,7 @@ namespace WebStore.Areas.Admin.Controllers
                 Price = p.Price,
                 SoldCount = p.SoldCount,
                 CategoryName = p.Category.Name,
-                SubcategoryName = p.Subcategory.Name,
+                ParentSubcategoryName = p.ParentSubcategory.Name,
                 OnSale = p.OnSale,
                 Quantity = p.Quantity,
                 IsActive = p.IsActive

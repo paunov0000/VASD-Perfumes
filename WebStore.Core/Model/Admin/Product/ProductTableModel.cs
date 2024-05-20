@@ -30,7 +30,7 @@ namespace WebStore.Core.Model.Admin.Product
         public string CategoryName { get; set; } = null!;
 
         [Display(Name = "Subcategory")]
-        public string SubcategoryName { get; set; } = null!;
+        public string ParentSubcategoryName { get; set; } = null!;
 
 
     }

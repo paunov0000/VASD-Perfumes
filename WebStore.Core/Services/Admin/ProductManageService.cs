@@ -26,7 +26,7 @@ namespace WebStore.Core.Services.Admin
                      Price = p.Price,
                      SoldCount = p.SoldCount,
                      CategoryName = p.Category.Name,
-                     SubcategoryName = p.Subcategory.Name,
+                     ParentSubcategoryName = p.ParentSubcategory.Name,
                      OnSale = p.OnSale,
                      Quantity = p.Quantity,
                      IsActive = p.IsActive
@@ -67,7 +67,7 @@ namespace WebStore.Core.Services.Admin
                 Price = model.Price,
                 BrandId = model.BrandId,
                 CategoryId = model.CategoryId,
-                SubcategoryId = model.SubcategoryId,
+                ParentSubcategoryId = model.SubcategoryId,
                 Id = model.Id,
                 IsActive = model.IsActive,
                 Quantity = model.Quantity,
@@ -91,7 +91,7 @@ namespace WebStore.Core.Services.Admin
             entity.Price = model.Price;
             entity.BrandId = model.BrandId;
             entity.CategoryId = model.CategoryId;
-            entity.SubcategoryId = model.SubcategoryId;
+            entity.ParentSubcategoryId = model.SubcategoryId;
             entity.OnSale = model.OnSale;
             entity.IsActive = model.IsActive;
             entity.Quantity = model.Quantity;
@@ -144,7 +144,7 @@ namespace WebStore.Core.Services.Admin
                 Price = p.Price,
                 SoldCount = p.SoldCount,
                 CategoryName = p.Category.Name,
-                SubcategoryName = p.Subcategory.Name,
+                ParentSubcategoryName = p.ParentSubcategory.Name,
                 OnSale = p.OnSale,
                 Quantity = p.Quantity,
                 IsActive = p.IsActive
