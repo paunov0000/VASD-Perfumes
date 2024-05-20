@@ -59,6 +59,6 @@ namespace WebStore.Core.Model.Product
 
         [Display(Name = DisplaySubcategory)]
         [Required(ErrorMessage = RequiredFieldMessage)]
-        public Guid SubcategoryId { get; set; }
+        public Guid? SubcategoryId { get; set; }
     }
 }
