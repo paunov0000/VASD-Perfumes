@@ -33,6 +33,19 @@ namespace WebStore.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            //builder.Entity<Product>()
+            //    .HasOne(p=>p.ParentSubcategory)
+            //    .WithMany(psc=>psc.Products)
+            //    .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Product>()
+                .HasOne(p => p.ChildSubcategory)
+                .WithOne(csc => csc.Product);
+
+            builder.Entity<ParentSubcategory>()
+                .HasMany(psc => psc.ChildSubcategories)
+                .WithMany(csc => csc.ParentSubcategories);
+
             builder.ApplyConfiguration(new BrandConfiguration());
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new CategoryConfiguration());
