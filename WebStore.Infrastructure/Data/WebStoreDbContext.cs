@@ -38,9 +38,6 @@ namespace WebStore.Infrastructure.Data
             //    .WithMany(psc=>psc.Products)
             //    .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Entity<Product>()
-                .HasOne(p => p.ChildSubcategory)
-                .WithOne(csc => csc.Product);
 
             builder.Entity<ParentSubcategory>()
                 .HasMany(psc => psc.ChildSubcategories)
