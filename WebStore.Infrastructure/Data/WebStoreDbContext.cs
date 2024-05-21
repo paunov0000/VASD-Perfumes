@@ -44,6 +44,7 @@ namespace WebStore.Infrastructure.Data
                 .WithMany(csc => csc.ParentSubcategories);
 
             builder.ApplyConfiguration(new BrandConfiguration());
+            builder.ApplyConfiguration(new ChildSubcategoryConfiguration());
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
