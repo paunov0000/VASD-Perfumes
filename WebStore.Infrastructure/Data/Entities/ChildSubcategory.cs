@@ -12,10 +12,11 @@ namespace WebStore.Infrastructure.Data.Entities
         [MaxLength(100)]
         public string Name { get; set; } = null!;
 
-        [ForeignKey(nameof(ParentSubcategory))]
-        public Guid ParentSubcategoryId { get; set; }
+        [ForeignKey(nameof(Product))]
+        public Guid? ProductId { get; set; }
+        public Product Product { get; set; } = null!;
 
         [Required]
-        public ParentSubcategory ParentSubcategory { get; set; } = null!;
+        public ICollection<ParentSubcategory> ParentSubcategories { get; set; } = new List<ParentSubcategory>();
     }
 }
