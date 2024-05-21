@@ -40,7 +40,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(ChanelId),
                     Quantity = 9,
                     SoldCount = 37,
-                    OnSale = false
+                    OnSale = false,
+                    ChildSubcategoryId = Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
                 },
                 new Product
                 {
@@ -56,7 +57,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 12,
                     SoldCount = 51,
                     OnSale = true,
-                    IsActive = true
+                    IsActive = true,
+                    ChildSubcategoryId = Guid.Parse("3716553d-4f92-4e15-a411-0ff574e459cc")
                 },
                 new Product
                 {
@@ -75,7 +77,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     IsActive= true,
                     TopNotes="Jasmine",
                     MiddleNotes="Tuberose",
-                    BaseNotes="Orris Root, Honeysuckle"
+                    BaseNotes="Orris Root, Honeysuckle",
+                    ChildSubcategoryId = Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
                 },
                 new Product
                 {
@@ -91,7 +94,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 23,
                     SoldCount = 84,
                     OnSale = false,
-                    IsActive = true
+                    IsActive = true,
+                    ChildSubcategoryId = Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
                 },
                 new Product
                 {
@@ -107,7 +111,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 0,
                     SoldCount = 93,
                     OnSale = true,
-                    IsActive= true
+                    IsActive= true,
+                    ChildSubcategoryId = Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
                 },
                 new Product
                 {
@@ -126,7 +131,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     IsActive= false,
                     TopNotes="Mandarin Orange, Bergamot, Lily-of-the-Valley",
                     MiddleNotes="Myrhh, Jasmine",
-                    BaseNotes="Opoponax, Amber, Patchouli, Vanille"
+                    BaseNotes="Opoponax, Amber, Patchouli, Vanille",
+                    ChildSubcategoryId = Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
                 },
                 new Product
                 {
@@ -145,7 +151,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     IsActive = true,
                     TopNotes = "Truffle, Gardenia, Black Currant, Ylang-Ylang, Jasmine, Bergamot, Mandarin Orange, Amalfi Lemon",
                     MiddleNotes="Orchid, Spices, Gardenia, Fruity Notes, Ylang-Ylang, Jasmine, Lostus",
-                    BaseNotes ="Mexican Chocolate, Patchouli, Vanille, Incense, Amber, Sandalwood, Vetiver, White Musk"
+                    BaseNotes ="Mexican Chocolate, Patchouli, Vanille, Incense, Amber, Sandalwood, Vetiver, White Musk",
+                    ChildSubcategoryId=Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
                 },
                 new Product
                 {
@@ -161,7 +168,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 95,
                     SoldCount = 32,
                     OnSale = true,
-                    IsActive = true
+                    IsActive = true,
+                    ChildSubcategoryId = Guid.Parse("3716553d-4f92-4e15-a411-0ff574e459cc")
                 },
                 new Product
                 {
@@ -177,7 +185,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 52,
                     SoldCount = 3,
                     OnSale = true,
-                    IsActive = true
+                    IsActive = true,
+                    ChildSubcategoryId = Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
                 },
                 new Product
                 {
@@ -193,7 +202,8 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Quantity = 0,
                     SoldCount = 86,
                     OnSale = false,
-                    IsActive = true
+                    IsActive = true,
+                    ChildSubcategoryId = Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
                 }
             };
         }
