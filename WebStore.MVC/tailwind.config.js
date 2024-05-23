@@ -7,7 +7,7 @@ module.exports = {
                 main: ["Montserrat", "sans-serif"],
             },
             width: {
-                "site-width": "1500px",
+                "main-width": "1035px",
             },
             keyframes: {
                 animatedgradient: {
