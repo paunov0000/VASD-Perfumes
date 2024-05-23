@@ -17,7 +17,7 @@
 </head>
 <body class="font-main w-screen bg-white">
     <partial name="_ToastrAlertMessagesPartial" />
-    <div class="flex w-full flex-col">
+    <div class="flex min-h-screen w-full flex-col">
         <header class="flex flex-col pb-5">
             <div class="bg-black">
                 <div class="flex gap-5 bg-black px-10 py-4 text-neutral-200">
@@ -73,7 +73,8 @@
                 </div>
             </div>
         </header>
-        <main class="w-site-width self-center bg-white py-10">
+
+        <main class="w-main-width flex-grow self-center bg-white py-10">
             @RenderBody()
         </main>
         <footer class="flex w-screen justify-center bg-black py-10 text-neutral-200">
@@ -82,7 +83,6 @@
                         <div>
                         <p>&copy; @(DateTime.UtcNow.Year) Всички права запазени</p>
                     </div>
-                </article>
             </div>
         </footer>
     </div>
