@@ -78,8 +78,25 @@
             @RenderBody()
         </main>
         <footer class="flex w-screen justify-center bg-black py-10 text-neutral-200">
-            <div class="w-main-width flex flex-col gap-14">
-
+            <div class="w-main-width flex flex-col items-center gap-14">
+                <div class="font-medium">
+                    <div class="mr-8 inline-block">
+                        <p class="text-2xl hover:underline">+359 88 888888</p>
+                        <p class="text-xs font-normal text-gray-400">пон. - пет. 9-17:30</p>
+                    </div>
+                    <div class="translate-y-[-80%] relative inline-flex text-sm">
+                        <div class="border-r border-r-zinc-700 pr-4">
+                            <p>
+                                <a class="underline" href="mailto:info@website.bg">info@website.bg</a>
+                            </p>
+                        </div>
+                        <div class="pl-4">
+                            <p>
+                                <a class="text-nowrap underline" href="#">Данни за контакт</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <p>&copy; @(DateTime.UtcNow.Year) Всички права запазени</p>
                 </div>
