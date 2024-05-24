@@ -596,6 +596,10 @@ video {
   margin: auto;
 }
 
+.mr-8{
+  margin-right: 2rem;
+}
+
 .mt-0{
   margin-top: 0px;
 }
@@ -612,8 +616,16 @@ video {
   display: block;
 }
 
+.inline-block{
+  display: inline-block;
+}
+
 .flex{
   display: flex;
+}
+
+.inline-flex{
+  display: inline-flex;
 }
 
 .table{
@@ -668,6 +680,10 @@ video {
   width: 15rem;
 }
 
+.w-72{
+  width: 18rem;
+}
+
 .w-96{
   width: 24rem;
 }
@@ -694,6 +710,30 @@ video {
 
 .w-screen{
   width: 100vw;
+}
+
+.w-\[25\%\]{
+  width: 25%;
+}
+
+.w-\[30\%\]{
+  width: 30%;
+}
+
+.w-\[27\%\]{
+  width: 27%;
+}
+
+.w-\[60\%\]{
+  width: 60%;
+}
+
+.w-\[73\%\]{
+  width: 73%;
+}
+
+.w-\[70\%\]{
+  width: 70%;
 }
 
 .min-w-\[1500px\]{
@@ -730,6 +770,11 @@ video {
 
 .basis-\[200\%\]{
   flex-basis: 200%;
+}
+
+.translate-y-\[-80\%\]{
+  --tw-translate-y: -80%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @keyframes animatedgradient{
@@ -884,6 +929,10 @@ video {
   overflow: hidden;
 }
 
+.text-nowrap{
+  text-wrap: nowrap;
+}
+
 .rounded-2xl{
   border-radius: 1rem;
 }
@@ -943,6 +992,11 @@ video {
 .border-gray-400{
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+
+.border-r-zinc-700{
+  --tw-border-opacity: 1;
+  border-right-color: rgb(63 63 70 / var(--tw-border-opacity));
 }
 
 .bg-amber-500{
@@ -1138,12 +1192,20 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.pl-4{
+  padding-left: 1rem;
+}
+
 .pl-7{
   padding-left: 1.75rem;
 }
 
 .pr-1{
   padding-right: 0.25rem;
+}
+
+.pr-4{
+  padding-right: 1rem;
 }
 
 .text-left{
@@ -1182,6 +1244,10 @@ video {
   line-height: 1.5rem;
 }
 
+.text-footerSub{
+  font-size: 1.17rem;
+}
+
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1214,12 +1280,20 @@ video {
   font-weight: 500;
 }
 
+.font-normal{
+  font-weight: 400;
+}
+
 .font-semibold{
   font-weight: 600;
 }
 
 .italic{
   font-style: italic;
+}
+
+.leading-tight{
+  line-height: 1.25;
 }
 
 .text-black{
@@ -1235,6 +1309,11 @@ video {
 .text-fuchsia-500{
   --tw-text-opacity: 1;
   color: rgb(217 70 239 / var(--tw-text-opacity));
+}
+
+.text-gray-400{
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .text-gray-500{
@@ -1403,6 +1482,10 @@ video {
 .hover\:text-blue-500:hover{
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover{
+  text-decoration-line: underline;
 }
 
 .hover\:opacity-100:hover{

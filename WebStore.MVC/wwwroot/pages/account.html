@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="../css/output.css" />
   </head>
   <body
-    class="min-h-screen justify-center flex items-center font-main bg-gradient-to-br from-pink-300 to-blue-500"
+    class="font-main flex min-h-screen items-center justify-center bg-gradient-to-br from-pink-300 to-blue-500"
   >
     <!-- TODO: Add a diff font lol -->
-    <div class="flex flex-col gap-8 items-center w-96">
+    <div class="flex w-96 flex-col items-center gap-8">
       <div class="text-center">
         <div class="flex flex-col gap-3">
           <div class="text-4xl font-semibold">
@@ -20,29 +20,29 @@
         </div>
       </div>
 
-      <div class="flex flex-col gap-7 w-full">
+      <div class="flex w-full flex-col gap-7">
         <div class="flex flex-col gap-2">
-          <label class="font-semibold text-sm" for="email">Email</label>
+          <label class="text-sm font-semibold" for="email">Email</label>
           <input
-            class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-md shadow-slate-400 text-base outline-none"
+            class="border-2 rounded-lg border-gray-300 px-3 py-1.5 text-base shadow-md shadow-slate-400 outline-none"
             type="text"
             id="email"
             placeholder="Enter your email"
           />
         </div>
         <div class="flex flex-col gap-2">
-          <label class="font-semibold text-sm" for="password">Password</label>
+          <label class="text-sm font-semibold" for="password">Password</label>
           <input
-            class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-md shadow-slate-400 text-base outline-none"
+            class="border-2 rounded-lg border-gray-300 px-3 py-1.5 text-base shadow-md shadow-slate-400 outline-none"
             type="password"
             id="password"
             placeholder="***********"
           />
         </div>
-        <div class="flex justify-between shrink-0 text-sm font-semibold">
+        <div class="shrink-0 flex justify-between text-sm font-semibold">
           <div class="flex gap-2">
             <input
-              class="relative peer shrink-0 appearance-none w-4 h-4 border-2 border-gray-300 rounded-md bg-white mt-1 checked:bg-slate-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-500 disabled:border-slate-400 disabled:bg-slate-400"
+              class="shrink-0 border-2 peer relative mt-1 h-4 w-4 appearance-none rounded-md border-gray-300 bg-white checked:bg-slate-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-500 disabled:border-slate-400 disabled:bg-slate-400"
               type="checkbox"
               id="rememberme-check"
             />
@@ -50,7 +50,7 @@
             <!-- awesome -->
             <label class="mt-0.5" for="rememberme-check">Remember me</label>
             <svg
-              class="text-white absolute w-4 h-4 mt-1 hidden peer-checked:block pointer-events-none"
+              class="pointer-events-none absolute mt-1 hidden h-4 w-4 text-white peer-checked:block"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -69,12 +69,12 @@
         </div>
         <div class="">
           <a
-            class="bg-slate-800 text-white px-3 py-2 rounded-xl block text-center font-semibold"
+            class="block rounded-xl bg-slate-800 px-3 py-2 text-center font-semibold text-white"
             href="#"
             >Sign In</a
           >
         </div>
-        <div class="text-center font-semibold text-sm text-white">
+        <div class="text-center text-sm font-semibold text-white">
           <p>
             Don't have an account?
             <a class="text-pink-200" href="#">Sign up for free!</a>
