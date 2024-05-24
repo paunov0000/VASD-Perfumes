@@ -6,6 +6,9 @@ module.exports = {
             fontFamily: {
                 main: ["Montserrat", "sans-serif"],
             },
+            fontSize: {
+                footerSub: '1.17rem'
+            },
             width: {
                 "main-width": "1035px",
             },
