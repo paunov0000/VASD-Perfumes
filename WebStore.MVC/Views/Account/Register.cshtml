@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="../css/output.css" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </head>
-<body class="min-h-screen justify-center flex items-center font-main bg-gradient-to-br from-pink-300 to-blue-500">
+<body class="font-main flex min-h-screen items-center justify-center bg-gradient-to-br from-pink-300 to-blue-500">
     <!-- TODO: Add a diff font lol -->
-    <div class="flex flex-col gap-8 items-center w-96 bg-white px-10 py-8 rounded-lg">
+    <div class="flex w-96 flex-col items-center gap-8 rounded-lg bg-white px-10 py-8">
         <div class="text-center">
             <div class="flex flex-col gap-3">
                 <div class="text-4xl font-semibold">
@@ -27,41 +27,41 @@
         </div>
 
         @* <form asp-controller="Account" asp-action="Login" method="post"></form> *@
-        <form asp-controller="Account" asp-action="Register" method="post" class="flex flex-col gap-7 w-full">
+        <form asp-controller="Account" asp-action="Register" method="post" class="flex w-full flex-col gap-7">
             <div asp-validation-summary="ModelOnly" class="text-xs italic text-red-500"></div>
             <div class="flex flex-col gap-2">
-                <label asp-for="@Model.Email" class="font-semibold text-sm" for="email"></label>
+                <label asp-for="@Model.Email" class="text-sm font-semibold" for="email"></label>
                 <span asp-validation-for="@Model.Email" class="text-xs italic text-red-500"></span>
-                <input asp-for="@Model.Email" class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-md shadow-slate-400 text-base outline-none"
+                <input asp-for="@Model.Email" class="border-2 rounded-lg border-gray-300 px-3 py-1.5 text-base shadow-md shadow-slate-400 outline-none"
                        type="text"
                        id="email"
                        placeholder="Enter your email" />
             </div>
             <div class="flex flex-col gap-2">
-                <label asp-for="@Model.Password" class="font-semibold text-sm" for="password"></label>
+                <label asp-for="@Model.Password" class="text-sm font-semibold" for="password"></label>
                 <span asp-validation-for="@Model.Password" class="text-xs italic text-red-500"></span>
-                <input asp-for="@Model.Password" class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-md shadow-slate-400 text-base outline-none"
+                <input asp-for="@Model.Password" class="border-2 rounded-lg border-gray-300 px-3 py-1.5 text-base shadow-md shadow-slate-400 outline-none"
                        type="password"
                        id="password"
                        placeholder="***********" />
             </div>
             <div class="flex flex-col gap-2">
-                <label asp-for="@Model.ConfirmPassword" class="font-semibold text-sm" for="confirmPassword"></label>
+                <label asp-for="@Model.ConfirmPassword" class="text-sm font-semibold" for="confirmPassword"></label>
                 <span asp-validation-for="@Model.ConfirmPassword" class="text-xs italic text-red-500"></span>
-                <input asp-for="@Model.ConfirmPassword" class="border-gray-300 border-2 rounded-lg px-3 py-1.5 shadow-md shadow-slate-400 text-base outline-none"
+                <input asp-for="@Model.ConfirmPassword" class="border-2 rounded-lg border-gray-300 px-3 py-1.5 text-base shadow-md shadow-slate-400 outline-none"
                        type="password"
                        id="confirmPassword"
                        placeholder="***********" />
             </div>
-            <div class="flex shrink-0 text-sm font-semibold">
+            <div class="shrink-0 flex text-sm font-semibold">
                 <div class="flex gap-2">
-                    <input asp-for="@Model.RememberMe" class="relative peer shrink-0 appearance-none w-4 h-4 border-2 border-gray-300 rounded-md bg-white mt-1 checked:bg-slate-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-500 disabled:border-slate-400 disabled:bg-slate-400"
+                    <input asp-for="@Model.RememberMe" class="shrink-0 border-2 peer relative mt-1 h-4 w-4 appearance-none rounded-md border-gray-300 bg-white checked:bg-slate-800 checked:border-0 focus:outline-none focus:ring-offset-0 focus:ring-2 focus:ring-slate-500 disabled:border-slate-400 disabled:bg-slate-400"
                            type="checkbox"
                            id="rememberme-check" />
                     <!-- TODO: if i can somehow make some padding in the checkbox it'd be -->
                     <!-- awesome -->
                     <label asp-for="@Model.RememberMe" class="mt-0.5" for="rememberme-check"></label>
-                    <svg class="text-white absolute w-4 h-4 mt-1 hidden peer-checked:block pointer-events-none"
+                    <svg class="pointer-events-none absolute mt-1 hidden h-4 w-4 text-white peer-checked:block"
                          xmlns="http://www.w3.org/2000/svg"
                          viewBox="0 0 24 24"
                          fill="none"
@@ -75,11 +75,11 @@
                 </div>
             </div>
             <div class="">
-                <button class="bg-slate-800 text-white px-3 py-2 rounded-xl text-center font-semibold block w-full">
+                <button class="block w-full rounded-xl bg-slate-800 px-3 py-2 text-center font-semibold text-white">
                     @ViewData["Title"]
                 </button>
             </div>
-            <div class="text-center font-semibold text-sm">
+            <div class="text-center text-sm font-semibold">
                 <p>
                     Имате акаунт?
                     <a asp-controller="Account" asp-action="Login" class="text-blue-500">Вход</a>
