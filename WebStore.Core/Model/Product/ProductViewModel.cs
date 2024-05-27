@@ -17,6 +17,5 @@ namespace WebStore.Core.Model.Product
         public string Manufacturer { get; set; } = null!;
 
         public Guid ProductCategoryId { get; set; }
-        public int SoldCount { get; set; }
     }
 }
