@@ -16,6 +16,8 @@ namespace WebStore.Core.Model.Product
 
         public string Manufacturer { get; set; } = null!;
 
+        public bool OnSale { get; set; }
+
         public Guid ProductCategoryId { get; set; }
     }
 }
