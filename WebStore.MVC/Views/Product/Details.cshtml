@@ -22,6 +22,14 @@
                 <p>тоалетна вода</p>
             </div>
         </div>
+        @if (Model.Price >= 100)
+        {
+            <div class="inline-block bg-black px-2 py-1 text-xs font-bold text-neutral-200">
+                <p>
+                    Безплатна доставка
+                </p>
+        </div>
+        }
         <div class="flex items-end justify-between">
             <div>
                 <p>100мл.</p>
