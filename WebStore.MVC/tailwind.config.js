@@ -7,7 +7,8 @@ module.exports = {
                 main: ["Montserrat", "sans-serif"],
             },
             fontSize: {
-                footerSub: '1.17rem'
+                footerSub: '1.17rem',
+                xxs: '0.7rem'
             },
             width: {
                 "main-width": "1035px",
