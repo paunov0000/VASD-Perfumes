@@ -7,9 +7,64 @@
 
 
 <div class="flex gap-28">
-    <div class="basis-[200%]">
+    <div class="basis-[200%] flex flex-col items-center gap-20">
+        <div class="w-64">
         <img src="@Model.ProductImg" alt="Alternate Text" />
-        @* <p>Test</p> *@
+        </div>
+        
+        <div class="flex w-full flex-col gap-12">
+            <div class="flex gap-7 border-b border-gray-300 text-sm">
+                <p class="border-gray-500 pb-2.5 hover:border-b">
+                    <a>
+                        Описание
+                    </a>
+                </p>
+                <p class="border-gray-500 pb-2.5 hover:border-b">
+                    <a>
+                        Състав
+                    </a>
+                </p>
+                <p class="border-gray-500 pb-2.5 hover:border-b">
+                    <a>
+                        За марката
+                    </a>
+                </p>
+            </div>
+            <div>
+                <div class="mb-4 text-xl font-semibold">
+                    <p>Описание @Model.Name</p>
+                </div>
+                <div class="rounded-sm border border-neutral-200 text-sm">
+                    <div class="flex bg-neutral-100 px-3 py-3">
+                        <p class="basis-[50%]">глава</p>
+                        <p class="basis-[50%] font-medium">бергамот, палисандър, кардамон, лимон, карамбола</p>
+                    </div>
+                    <div class="flex px-3 py-3">
+                        <p class="basis-[50%]">сърце</p>
+                        <p class="basis-[50%] font-medium">градински чай, кедър, пипер</p>
+                    </div>
+                    <div class="flex bg-neutral-100 px-3 py-3">
+                        <p class="basis-[50%]">база</p>
+                        <p class="basis-[50%] font-medium">кехлибар, шафран, мускус, дървесни тонове, Чинар</p>
+                    </div>
+                    <div class="flex px-3 py-3">
+                        <p class="basis-[50%]">Вид аромат</p>
+                        <p class="basis-[50%] font-medium">Водни, Дървесни</p>
+                    </div>
+                </div>
+            </div>
+            <div class="leading-relaxed">
+                <p>Почерпете сила от Средиземноморието. Тоалетната вода Versace Man Eau Fraîche представлява по-свеж вариант на аромата Versace Man и има по-ярък воден характер. Перфектно допълва мъжа, който не иска да е просто един от тълпата, а напротив, мечтае да впечатли с индивидуалния си стил и личния си чар.</p>
+            </div>
+            <div>
+                <div class="text-lg font-semibold">
+                    <p>Съставки на аромата</p>
+                </div>
+                <div class="leading-relaxed">
+                    <p>От първите мигове след вдъхването на аромата ще ви освежат цитрусовите нотки на искрящите бергамот и лимон, допълнени от сочна карамбола, напомняща жасмин. Не липсват и дървесни акорди с дъх на рози под формата на палисандър и пронизващ, пикантен кардамон. В сърцевинните нотки кедровото дърво се съчетава с билковите есенции на салвия и стипчив пипер. Дървесна е и базата на аромата Versace Man Eau Fraîche. Тук доминират акордите на платан, преплитащи се с топлината на амбра и мускус. Шафранът пък гарантира уникално докосване, което е упоително сладко, нежно цветно и в същото време пикантно.</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="basis-[100%]">
         <div class="flex flex-col gap-2.5">
