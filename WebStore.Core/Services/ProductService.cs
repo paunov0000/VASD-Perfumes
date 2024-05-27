@@ -26,7 +26,8 @@ namespace WebStore.Core.Services
                     Id = x.Id,
                     ImageUrl = x.ImageUrl,
                     Name = x.Name,
-                    Price = x.Price
+                    Price = x.Price,
+                    OnSale = x.OnSale,
 
                 }).ToListAsync();
 
@@ -44,7 +45,8 @@ namespace WebStore.Core.Services
                  Id = x.Id,
                  ImageUrl = x.ImageUrl,
                  Name = x.Name,
-                 Price = x.Price
+                 Price = x.Price,
+                 OnSale = x.OnSale,
 
              }).ToListAsync();
 
@@ -65,7 +67,8 @@ namespace WebStore.Core.Services
                     Id = x.Id,
                     ImageUrl = x.ImageUrl,
                     Name = x.Name,
-                    Price = x.Price
+                    Price = x.Price,
+                    OnSale = x.OnSale,
 
                 }).ToListAsync();
 
@@ -83,7 +86,8 @@ namespace WebStore.Core.Services
                     Id = x.Id,
                     ImageUrl = x.ImageUrl,
                     Name = x.Name,
-                    Price = x.Price
+                    Price = x.Price,
+                    OnSale = x.OnSale,
 
                 }).ToListAsync();
 
