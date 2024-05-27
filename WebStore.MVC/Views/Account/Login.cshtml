@@ -13,11 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebStore</title>
     <link rel="stylesheet" href="../css/output.css" />
-    <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
+    @* <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" /> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
 </head>
 <body class="font-main flex min-h-screen items-center justify-center bg-gradient-to-br from-pink-300 to-blue-500">
-    <partial name="_ToastrAlertMessagesPartial" />
+    @* <partial name="_ToastrAlertMessagesPartial" /> *@
     <!-- TODO: Add a diff font lol -->
     <div class="flex w-96 flex-col items-center gap-8 rounded-lg bg-white px-10 py-8">
         <div class="text-center">
@@ -88,6 +88,6 @@
     @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
     @* <script src="~/js/site.js" asp-append-version="true"></script> *@
     <partial name="_ValidationScriptsPartial"></partial>
-    <script src="~/lib/toastr/toastr.min.js"></script>
+    @* <script src="~/lib/toastr/toastr.min.js"></script> *@
 </body>
 </html>
