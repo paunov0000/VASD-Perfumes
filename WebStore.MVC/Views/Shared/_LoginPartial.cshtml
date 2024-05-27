@@ -3,32 +3,33 @@
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
-<div id="header-mid-options">
 
-@if (SignInManager.IsSignedIn(User))
-{
-        <a asp-controller="Account" asp-action="Login" id="header-mid-options-login">
-            <i class="fa-solid fa-user"></i>
-            <p>Профил</p>
-        </a>
-        <a href="#" id="header-mid-options-cart">
-            <i class="fa-solid fa-cart-shopping"></i>
+<div class="flex justify-end gap-6 font-semibold">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        @if (User.IsInRole("Administrator"))
+        {
+            <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="flex flex-col items-center gap-1 text-red-500">
+                <i class="fa-solid fa-briefcase"></i>
+                <p class="">Админ</p>
+            </a>
+        }
+        <a class="flex flex-col items-center gap-1" href="#">
+            <div id="cart" class="relative flex">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
             <p>Количка</p>
         </a>
-        <a asp-controller="Account" asp-action="Logout" id="header-mid-options-login">
+        <a asp-controller="Account" asp-action="Logout" class="flex flex-col items-center gap-1">
             <i class="fa-solid fa-right-from-bracket"></i>
             <p>Изход</p>
         </a>
-}
-else
-{
-        <a asp-controller="Account" asp-action="Login" id="header-mid-options-login">
-            <i class="fa-solid fa-user-secret"></i>
+    }
+    else
+    {
+        <a asp-controller="Account" asp-action="Login" class="flex flex-col items-center gap-1">
+            <i class="fa-solid fa-user"></i>
             <p>Вход</p>
         </a>
-        <a href="#" id="header-mid-options-cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <p>Количка</p>
-        </a>
-}
+    }
 </div>
