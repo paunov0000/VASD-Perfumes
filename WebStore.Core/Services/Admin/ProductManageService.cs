@@ -101,6 +101,7 @@ namespace WebStore.Core.Services.Admin
             entity.OnSale = model.OnSale;
             entity.IsActive = model.IsActive;
             entity.Quantity = model.Quantity;
+            entity.OriginalPrice = model.OriginalPrice > model.Price ? model.OriginalPrice : model.Price;
 
             await repo.SaveChangesAsync();
         }
