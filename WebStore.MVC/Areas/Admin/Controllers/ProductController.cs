@@ -60,7 +60,7 @@ namespace WebStore.Areas.Admin.Controllers
             };                                                                                  //TODO: extract this to a method in the service
 
             var result = await model.Select(p => new ProductTableModel()
-        {
+            {
                 Id = p.Id,
                 Name = p.Name,
                 BrandName = p.Brand.Name,
@@ -151,6 +151,16 @@ namespace WebStore.Areas.Admin.Controllers
                 TempData[Status.Success] = Core.Constants.TempDataKeyConstants.Product.SuccessOnEditMessage;
 
                 return RedirectToAction("Index", "Product");
+            }
+            catch (InvalidOperationException iex)
+            {
+                ViewBag.Subcategories = await productManageService.GetAllSubcategories();
+                ViewBag.Brands = await productManageService.GetAllBrands();
+                ViewBag.Categories = await productManageService.GetAllCategories();
+
+
+                TempData[Status.Error] = iex.Message;
+                return View(model);
             }
             catch (NullReferenceException ex)
             {
