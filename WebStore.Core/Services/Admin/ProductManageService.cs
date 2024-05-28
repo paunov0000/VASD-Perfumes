@@ -69,6 +69,7 @@ namespace WebStore.Core.Services.Admin
                 CategoryId = model.CategoryId,
                 ParentSubcategoryId = model.SubcategoryId,
                 Id = model.Id,
+                OriginalPrice = model.Price,
                 IsActive = model.IsActive,
                 Quantity = model.Quantity,
             });
