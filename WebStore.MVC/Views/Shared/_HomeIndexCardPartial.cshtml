@@ -1,6 +1,6 @@
 ﻿@model ProductViewModel;
 
-<div class="flex flex-col items-center justify-between gap-5 overflow-hidden w-[10rem] opacity-85 transition-all duration-700 hover:-translate-y-3 hover:relative hover:opacity-100">
+<div class="flex w-[10rem] flex-col items-center justify-between gap-5 overflow-hidden transition-all duration-700 hover:-translate-y-3 hover:relative">
     <div class="h-full w-full bg-white">
 
         <!-- make somehow its' children stretch to the full width or sum idk -->
@@ -13,14 +13,14 @@
                         <img class="h-[10rem] w-full rounded-xl" src="@Model.ImageUrl"
                              alt="Product Image" />
                     </div>
-                    <div class="flex flex-col items-center absolute bottom-0 overflow-visible gap-0.5 font-medium">
+                    <div class="absolute bottom-0 flex flex-col items-center gap-0.5 overflow-visible font-medium">
                     @if (Model.OnSale)
                     {
-                        <span class="text-xxs text-center text-white bg-pink-600 px-2 py-0.5">РАЗПРОДАЖБА</span>
+                        <span class="text-xxs bg-pink-600 px-2 py-0.5 text-center text-white">РАЗПРОДАЖБА</span>
                     }
                     @if (Model.Price >= 75)
                     {
-                            <span class="text-xxs text-center text-white bg-black text-nowrap px-2 py-0.5">БЕЗПЛАТНА ДОСТАВКА</span>
+                            <span class="text-xxs text-nowrap bg-black px-2 py-0.5 text-center text-white">БЕЗПЛАТНА ДОСТАВКА</span>
                         }
                     </div>
                 </a>
