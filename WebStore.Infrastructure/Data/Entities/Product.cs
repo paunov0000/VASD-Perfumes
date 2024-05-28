@@ -36,6 +36,10 @@ namespace WebStore.Infrastructure.Data.Entities
         public decimal Price { get; set; }
 
         [Required]
+        [Comment("Original price of product")]
+        public decimal OriginalPrice { get; set; }
+
+        [Required]
         [Comment("Image URL of the product")]
         public string ImageUrl { get; set; } = null!;
 
