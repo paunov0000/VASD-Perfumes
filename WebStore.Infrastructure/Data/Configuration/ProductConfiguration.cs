@@ -20,6 +20,10 @@ namespace WebStore.Infrastructure.Data.Configuration
                 .Property(p => p.Price)
                 .HasPrecision(18, 2);
 
+            builder
+                .Property(p => p.OriginalPrice)
+                .HasPrecision(18, 2);
+
             builder.HasData(CreateProducts());
         }
 
@@ -33,6 +37,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Name = "No. 5",
                     Description = "Iconic blend of rose and jasmine, a classic from luxury brand Chanel",
                     Price = 120.34M,
+                    OriginalPrice = 120.34M,
                     ImageUrl ="https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
@@ -49,6 +54,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Name = "Daisy",
                     Description = "Youthful and fresh floral scent with notes of jasmine and violet",
                     Price = 80.00M,
+                    OriginalPrice = 120.00M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
@@ -73,6 +79,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(GucciId),
                     Quantity = 193,
                     SoldCount = 12,
+                    OriginalPrice = 179.99M,
                     OnSale = true,
                     IsActive= true,
                     TopNotes="Jasmine",
@@ -86,6 +93,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Name = "Flowerbomb",
                     Description = "Intensely floral with notes of jasmine, rose, and orchid",
                     Price = 110.82M,
+                    OriginalPrice = 110.82M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
@@ -110,6 +118,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(GuerlainId),
                     Quantity = 0,
                     SoldCount = 93,
+                    OriginalPrice = 251.49M,
                     OnSale = true,
                     IsActive= true,
                     ChildSubcategoryId = Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
@@ -120,6 +129,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Name = "Opium",
                     Description = "Rich and spicy oriental fragrance with exotic undertones",
                     Price = 101.00M,
+                    OriginalPrice = 101.00M,
                     ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
@@ -140,6 +150,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Name = "Black Orchid",
                     Description = "Luxurious blend of black truffle, vanilla, and orchid",
                     Price = 180.00M,
+                    OriginalPrice = 180.00M,
                     ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
@@ -167,6 +178,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(ArmaniId),
                     Quantity = 95,
                     SoldCount = 32,
+                    OriginalPrice = 121.21M,
                     OnSale = true,
                     IsActive = true,
                     ChildSubcategoryId = Guid.Parse("3716553d-4f92-4e15-a411-0ff574e459cc")
@@ -184,6 +196,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     BrandId = Guid.Parse(HermesId),
                     Quantity = 52,
                     SoldCount = 3,
+                    OriginalPrice = 333.33M,
                     OnSale = true,
                     IsActive = true,
                     ChildSubcategoryId = Guid.Parse("0eff9eb3-f46f-408b-bb68-561e136aef76")
@@ -194,6 +207,7 @@ namespace WebStore.Infrastructure.Data.Configuration
                     Name = "Aventus",
                     Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
                     Price = 249.99M,
+                    OriginalPrice = 249.99M,
                     ImageUrl = "https://www.creedfragrances.co.uk/cdn/shop/files/Clear-logo-with-black-hair.jpg?v=1708086869&width=750",
                     CreatedOn = DateTime.UtcNow,
                     CategoryId = Guid.Parse(FragranceId),
