@@ -33,6 +33,10 @@ namespace WebStore.Core.Model.Product
         //[RegularExpression(@"^\d+$", ErrorMessage = "Please enter a valid number.")]
         public decimal Price { get; set; }
 
+        [Display(Name = "Оригинална Цена")]
+        [Required(ErrorMessage = RequiredFieldMessage)]
+        public decimal OriginalPrice { get; set; }
+
         [Required(ErrorMessage = RequiredFieldMessage)]
         [Range(0, 5000, ErrorMessage = InvalidQuantityRangeMessage)]
         public int Quantity { get; set; }
