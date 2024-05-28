@@ -86,6 +86,11 @@ namespace WebStore.Core.Services.Admin
             //    throw new InvalidOperationException("Product not found");
             //}
 
+            if (model.OnSale && model.Price >= model.OriginalPrice)
+            {
+                throw new InvalidOperationException($"Cant put Product on sale if Price is lower or equal to: {entity.OriginalPrice}");
+            }
+
             entity.Description = model.Description;
             entity.ImageUrl = model.ImageUrl;
             entity.Name = model.Name;
