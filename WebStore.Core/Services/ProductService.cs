@@ -129,6 +129,7 @@ namespace WebStore.Core.Services
                 ImageUrl = product.ImageUrl,
                 Name = product.Name,
                 Price = product.Price,
+                OriginalPrice = product.OriginalPrice,
                 BrandId = product.BrandId,
                 CategoryId = product.CategoryId,
                 SubcategoryId = product.ParentSubcategoryId,
