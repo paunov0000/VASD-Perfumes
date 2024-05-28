@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebStore.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using WebStore.Infrastructure.Data;
 namespace WebStore.Infrastructure.Migrations
 {
     [DbContext(typeof(WebStoreDbContext))]
-    partial class WebStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240528142320_ExtendedProductsTableWithOriginalPriceColumnAndExtendedProductConfiguration")]
+    partial class ExtendedProductsTableWithOriginalPriceColumnAndExtendedProductConfiguration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -393,7 +396,7 @@ namespace WebStore.Infrastructure.Migrations
                         {
                             Id = new Guid("c0a0d5a0-4b6a-4b6a-8f4a-0c8f0b6f0b6c"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0c2e61f3-bb41-460f-b619-6831519312c2",
+                            ConcurrencyStamp = "20efea43-6d26-4dd4-81d7-d4f2a07198e6",
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bojkata@abv.bg",
                             EmailConfirmed = true,
@@ -402,7 +405,7 @@ namespace WebStore.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "BOJKATA@ABV.BG",
                             NormalizedUserName = "BOJKATA@ABV.BG",
-                            PasswordHash = "AQAAAAIAAYagAAAAEONV/yNnx/icxA+zFaQQuZrdWARrl//BIvbppQcw6FGkAKv+B5FJDq1v274vVlMxmA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECbtOiCPmGy3Pl7F0MmDLR34SBGPaJhiKsgY9qukAo4Isr7xhe+iP2/DPVXDlHUizQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "675bdfac-f10f-4acc-a641-4233cd7a4c14",
                             TwoFactorEnabled = false,
@@ -412,7 +415,7 @@ namespace WebStore.Infrastructure.Migrations
                         {
                             Id = new Guid("753efde4-efa1-4f88-abc9-8f091cf8b670"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a8a0f7e0-7f02-4277-9e92-9ae032195342",
+                            ConcurrencyStamp = "ceba8dd4-3412-482c-b204-b44909c24b24",
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@admin.bg",
                             EmailConfirmed = true,
@@ -421,7 +424,7 @@ namespace WebStore.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.BG",
                             NormalizedUserName = "ADMIN@ADMIN.BG",
-                            PasswordHash = "AQAAAAIAAYagAAAAELVSWHpB3um/x/VOkRbDnBEbWZwovf1ESXlRwdgDvzQ4TdiUNg484TCHAtPwTnd2Ww==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN5uVptzfHNsT3dqxowWqMOohNduv0lD3aBzdxqm2JmHwmuQMTSK/RP0gQ8Xw8HOLw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "efcff289-5cd2-42eb-8280-5faaab34daf5",
                             TwoFactorEnabled = false,
@@ -671,7 +674,7 @@ namespace WebStore.Infrastructure.Migrations
                         {
                             Id = 1,
                             CustomerId = new Guid("2d963508-bd53-4713-a82e-189a8dcc42b9"),
-                            OrderDate = new DateTime(2024, 5, 28, 15, 24, 0, 682, DateTimeKind.Utc).AddTicks(1701),
+                            OrderDate = new DateTime(2024, 5, 28, 14, 23, 19, 429, DateTimeKind.Utc).AddTicks(890),
                             OrderStatusId = 3
                         });
                 });
@@ -873,7 +876,7 @@ namespace WebStore.Infrastructure.Migrations
                         .HasColumnType("bit")
                         .HasComment("A flag which sets the product state whether its on sale or not");
 
-                    b.Property<decimal>("OriginalPrice")
+                    b.Property<decimal?>("OriginalPrice")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)")
                         .HasComment("Original price of product");
@@ -920,13 +923,12 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("361f69c3-cdfb-4156-a88a-1620db540c6c"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("0eff9eb3-f46f-408b-bb68-561e136aef76"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8010),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9521),
                             Description = "Iconic blend of rose and jasmine, a classic from luxury brand Chanel",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s465690-main-zoom.jpg?imwidth=612",
                             IsActive = false,
                             Name = "No. 5",
                             OnSale = false,
-                            OriginalPrice = 120.34m,
                             ParentSubcategoryId = new Guid("98c91d15-4a4c-4fc4-b226-f9835e1560d2"),
                             Price = 120.34m,
                             Quantity = 9,
@@ -938,7 +940,7 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("c3a935d2-8a70-40f4-aa02-7dc52d4688ed"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("3716553d-4f92-4e15-a411-0ff574e459cc"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8019),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9536),
                             Description = "Youthful and fresh floral scent with notes of jasmine and violet",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1029958-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -957,7 +959,7 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("6c86c626-bef8-4627-a314-de021502e335"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("0eff9eb3-f46f-408b-bb68-561e136aef76"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8025),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9542),
                             Description = "Modern and vibrant floral bouquet featuring tuberose and jasmine",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1964832-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -977,13 +979,12 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("99f87405-5144-46e6-ad55-724d05928736"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("0eff9eb3-f46f-408b-bb68-561e136aef76"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8069),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9551),
                             Description = "Intensely floral with notes of jasmine, rose, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1377159-main-zoom.jpg?imwidth=612",
                             IsActive = true,
                             Name = "Flowerbomb",
                             OnSale = false,
-                            OriginalPrice = 110.82m,
                             ParentSubcategoryId = new Guid("98c91d15-4a4c-4fc4-b226-f9835e1560d2"),
                             Price = 110.82m,
                             Quantity = 23,
@@ -995,7 +996,7 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("586011c7-d606-4e73-a7e8-fca768656c03"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("0eff9eb3-f46f-408b-bb68-561e136aef76"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8074),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9558),
                             Description = "Timeless oriental scent with vanilla, iris, and amber notes",
                             ImageUrl = "https://douglas.bg/media/catalog/product/cache/dd4850ad4231b6306bceadf38a0bbeed/1/_/1_4439.jpg",
                             IsActive = true,
@@ -1014,14 +1015,13 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("57d95637-ffa7-4109-9d26-03bae7e0e6e1"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("0eff9eb3-f46f-408b-bb68-561e136aef76"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8080),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9565),
                             Description = "Rich and spicy oriental fragrance with exotic undertones",
                             ImageUrl = "https://www.yslbeautyus.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-ysl-master-catalog/default/dwfd20b6ef/Fragrance/Fragrance/Opium_Eau_De_Toilette_Spray/3365440556386_Opium-Eau-De-Tpilette-Spray_01.jpg?sw=698&sh=698&sm=cut&sfrm=jpg&q=85",
                             IsActive = false,
                             MiddleNotes = "Myrhh, Jasmine",
                             Name = "Opium",
                             OnSale = false,
-                            OriginalPrice = 101.00m,
                             ParentSubcategoryId = new Guid("98c91d15-4a4c-4fc4-b226-f9835e1560d2"),
                             Price = 101.00m,
                             Quantity = 4,
@@ -1035,14 +1035,13 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("28f3d7f5-3469-4036-b919-ec683688314b"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("0eff9eb3-f46f-408b-bb68-561e136aef76"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8088),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9570),
                             Description = "Luxurious blend of black truffle, vanilla, and orchid",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s1007731-main-zoom.jpg?imwidth=612",
                             IsActive = true,
                             MiddleNotes = "Orchid, Spices, Gardenia, Fruity Notes, Ylang-Ylang, Jasmine, Lostus",
                             Name = "Black Orchid",
                             OnSale = false,
-                            OriginalPrice = 180.00m,
                             ParentSubcategoryId = new Guid("98c91d15-4a4c-4fc4-b226-f9835e1560d2"),
                             Price = 180.00m,
                             Quantity = 17,
@@ -1055,7 +1054,7 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("dc6ccd03-c8c8-47a8-b9fe-83e878b158f8"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("3716553d-4f92-4e15-a411-0ff574e459cc"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8093),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9577),
                             Description = "Fresh and aquatic scent with notes of citrus and rosemary",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -1073,7 +1072,7 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("dc4a85cb-8f2d-452b-8027-c3409538c244"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("0eff9eb3-f46f-408b-bb68-561e136aef76"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8097),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9584),
                             Description = "Citrusy and woody fragrance with notes of grapefruit and cedar",
                             ImageUrl = "https://www.sephora.com/productimages/sku/s915447-main-zoom.jpg?imwidth=612",
                             IsActive = true,
@@ -1091,13 +1090,12 @@ namespace WebStore.Infrastructure.Migrations
                             BrandId = new Guid("f33371d7-fa64-42f0-89bd-7f707e285279"),
                             CategoryId = new Guid("53146915-6199-44eb-aedb-e9902299be6c"),
                             ChildSubcategoryId = new Guid("0eff9eb3-f46f-408b-bb68-561e136aef76"),
-                            CreatedOn = new DateTime(2024, 5, 28, 15, 24, 0, 556, DateTimeKind.Utc).AddTicks(8103),
+                            CreatedOn = new DateTime(2024, 5, 28, 14, 23, 19, 299, DateTimeKind.Utc).AddTicks(9591),
                             Description = "Fresh and fruity scent with notes of pineapple and blackcurrant",
                             ImageUrl = "https://www.creedfragrances.co.uk/cdn/shop/files/Clear-logo-with-black-hair.jpg?v=1708086869&width=750",
                             IsActive = true,
                             Name = "Aventus",
                             OnSale = false,
-                            OriginalPrice = 249.99m,
                             ParentSubcategoryId = new Guid("45c73d43-2499-422e-a5b5-5f0086331e51"),
                             Price = 249.99m,
                             Quantity = 0,
