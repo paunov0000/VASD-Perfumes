@@ -161,7 +161,9 @@ namespace WebStore.Core.Services
                 BrandName = entity.Brand.Name,
                 CategoryName = entity.Category.Name,
                 SubcategoryName = entity.ParentSubcategory.Name,
-                Price = entity.Price
+                Price = entity.Price,
+                OriginalPrice = entity.OriginalPrice,
+                OnSale = entity.OnSale,
             };
         }
 
