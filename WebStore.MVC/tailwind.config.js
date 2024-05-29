@@ -8,7 +8,8 @@ module.exports = {
             },
             fontSize: {
                 footerSub: '1.17rem',
-                xxs: '0.7rem'
+                xxs: '0.7rem',
+                small: '0.92rem'
             },
             width: {
                 "main-width": "1035px",
