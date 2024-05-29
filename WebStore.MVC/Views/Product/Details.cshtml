@@ -11,7 +11,7 @@
         <div class="w-64">
             <img src="@Model.ProductImg" alt="Alternate Text" />
         </div>
-        
+
         <div class="flex w-full flex-col gap-12">
             <div class="flex gap-7 border-b border-gray-300 text-sm">
                 <p class="border-b border-b-transparent pb-2.5 hover:border-gray-500">
@@ -104,14 +104,14 @@
         }
         else
         {
-        @if (Model.Price >= 100)
-        {
+            @if (Model.Price >= 100)
+            {
                 <div class="inline-block bg-black px-2 py-1 text-xs font-bold text-white">
-                <p>
-                    Безплатна доставка
-                </p>
-            </div>
-        }
+                    <p>
+                        Безплатна доставка
+                    </p>
+                </div>
+            }
         }
         <div class="mb-2 mt-6 flex items-end justify-between">
             <div>
