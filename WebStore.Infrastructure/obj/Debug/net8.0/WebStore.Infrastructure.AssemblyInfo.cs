@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e89fd3a76597de416b1810562c1fc403cc67a02c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd6024bcbd0bc57dae63b89148179d788f53ec60")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebStore.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
