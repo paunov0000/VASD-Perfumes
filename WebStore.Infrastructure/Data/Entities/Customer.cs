@@ -40,5 +40,9 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Orders of the Customer entity")]
         [Required]
         public ICollection<Order> Orders { get; set; } = new List<Order>();
+
+        [Comment("Wishlist")]
+        [Required]
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }

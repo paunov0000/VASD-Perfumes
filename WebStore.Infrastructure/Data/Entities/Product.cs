@@ -72,12 +72,12 @@ namespace WebStore.Infrastructure.Data.Entities
         [Comment("Navigation property to the Category")]
         public Category Category { get; set; } = null!;
 
-        
+
         [ForeignKey(nameof(ParentSubcategory))]
         [Comment("Foreign key of the ParentSubcategory")]
         public Guid? ParentSubcategoryId { get; set; }
 
-        
+
         [Comment("Navigation property to the Subcategory")]
         public ParentSubcategory ParentSubcategory { get; set; } = null!;
 
@@ -93,5 +93,8 @@ namespace WebStore.Infrastructure.Data.Entities
         [Required]
         [Comment("Orders of the product")]
         public ICollection<Order> Orders { get; set; } = new List<Order>();
+
+        [Comment("Product is wishlisted by customers")]
+        public ICollection<Customer> Customers { get; set; } = new List<Customer>();
     }
 }
