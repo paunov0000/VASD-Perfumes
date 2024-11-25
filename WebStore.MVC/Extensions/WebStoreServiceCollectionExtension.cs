@@ -20,6 +20,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IUserManageService, UserManageService>();
             services.AddScoped<IOrderManageService, OrderManageService>();
             services.AddScoped<IBrandService, BrandService>();
+            services.AddScoped<IOrderService, OrderService>();
 
             return services;
         }
