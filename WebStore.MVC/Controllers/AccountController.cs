@@ -7,6 +7,11 @@ using static WebStore.Core.Constants.ErrorMessageConstants.Account;
 using static WebStore.Core.Constants.TempDataKeyConstants.Account;
 using static WebStore.Core.Constants.TempDataKeyConstants;
 using WebStore.Infrastructure.Common;
+using Microsoft.Identity.Client;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
+using WebStore.Core.Model.Order;
+using WebStore.Core.Contracts;
 
 namespace WebStore.Controllers
 {
@@ -14,16 +19,19 @@ namespace WebStore.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IOrderService _orderService;
         private readonly IRepository repo;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
+            IOrderService orderService,
             IRepository _repo)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             repo = _repo;
+            this._orderService = orderService;
         }
 
         [HttpGet]
@@ -135,6 +143,22 @@ namespace WebStore.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Details()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Orders()
+        {
+            var customerId = this._userManager.GetUserId(User);
+
+            var result = await this._orderService.GetUserOrders(customerId); //basically cant be null lol
+
+
+            return View(result);
+        }
 
     }
 }
