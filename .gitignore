@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+#Build Folders
+./WebStore.Core/bin/
+./WebStore.Core/obj/
+./WebStore.Infrastructure/bin/
+./WebStore.Infrastructure/obj/
+./WebStore.MVC/bin/
+./WebStore.MVC/obj/
+./WebStore.UnitTests/bin/
+./WebStore.UnitTests/obj/
