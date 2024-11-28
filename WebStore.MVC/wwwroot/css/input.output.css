@@ -1449,11 +1449,6 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity, 1));
 }
 
-.text-red-600{
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity, 1));
-}
-
 .text-transparent{
   color: transparent;
 }
@@ -1591,10 +1586,6 @@ video {
 .hover\:bg-stone-700:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(68 64 60 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:font-bold:hover{
-  font-weight: 700;
 }
 
 .hover\:text-blue-500:hover{

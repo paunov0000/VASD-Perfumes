@@ -7,7 +7,7 @@
 
 
 <div class="flex gap-28">
-    <div class="basis-[200%] flex flex-col items-center gap-20">
+    <div class="flex basis-[200%] flex-col items-center gap-20">
         <div class="w-64">
             <img src="@Model.ProductImg" alt="Alternate Text" />
         </div>
@@ -94,7 +94,7 @@
                             Спестете @{
                                 var absolute = Math.Abs(Model.OriginalPrice - Model.Price);
                                 var toDivide = (Model.OriginalPrice + Model.Price) / 2;
-                                var sum =  100 * (absolute / toDivide);
+                                var sum = 100 * (absolute / toDivide);
                                 @($"{Math.Round(sum)}%")
                             }
                         </p>
@@ -141,10 +141,21 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <div class="grow-[5] flex cursor-pointer items-center justify-center bg-black text-neutral-200 transition-colors duration-300 hover:bg-stone-700">
-                <a>
-                    <p>В кошницата</p>
-                </a>
+            <div class="flex grow-[5] cursor-pointer items-center justify-center bg-black text-neutral-200 transition-colors duration-300 hover:bg-stone-700">
+                @* <a id="add-to-cart"> *@
+                @*     <p>В кошницата</p> *@
+                @* </a> *@
+                <form id="cart-form">
+                    <input id="product-id" type="hidden" value="@Model.Id" />
+                    <input id="name" type="hidden" value="@Model.Name" />
+                    <input id="price" type="hidden" value="@Model.Price" />
+
+                    <button id="add-to-cart">
+                        <p>
+                            В кошницата
+                        </p>
+                    </button>
+                </form>
             </div>
         </div>
         @*  <div class="flex flex-col gap-5">
