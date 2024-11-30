@@ -141,16 +141,13 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            <div class="flex grow-[5] cursor-pointer items-center justify-center bg-black text-neutral-200 transition-colors duration-300 hover:bg-stone-700">
-                @* <a id="add-to-cart"> *@
-                @*     <p>В кошницата</p> *@
-                @* </a> *@
+            <div id="add-to-cart" class="flex grow-[5] cursor-pointer items-center justify-center bg-black text-neutral-200 transition-colors duration-300 hover:bg-stone-700">
                 <form id="cart-form">
                     <input id="product-id" type="hidden" value="@Model.Id" />
                     <input id="name" type="hidden" value="@Model.Name" />
                     <input id="price" type="hidden" value="@Model.Price" />
 
-                    <button id="add-to-cart">
+                    <button>
                         <p>
                             В кошницата
                         </p>
