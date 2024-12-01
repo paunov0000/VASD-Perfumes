@@ -1,1 +1,31 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Cart";
+}
+
+<h1>Your cart</h1>
+<div id="cart-items-container">
+    <p>Loading cart items...</p>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", test);
+
+        async function test()
+        {
+            let cartItems = localStorage.getItem("cart");
+
+            if(cartItems)
+            {
+                cartItems = JSON.parse(cartItems);
+                let response = await fetch('/Cart/FetchCartItems', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(cartItems)
+                });
+            }
+        }
+    </script>
+}

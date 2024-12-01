@@ -9,6 +9,13 @@ namespace WebStore.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult FetchCartItems([FromBody] object productsJson)
+        {
             return View();
         }
     }
