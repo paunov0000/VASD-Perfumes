@@ -121,18 +121,28 @@
     <script>
         function updateCartCount()
         {
-            if (localStorage.getItem("cart")) {
+            let cart = localStorage.getItem("cart");
+            if (cart) {
                 let cartWrapper = document.getElementById("cart");
-                let cartItemsCount = JSON.parse(localStorage.getItem("cart")).length
+                let cartItemsCount = JSON.parse(cart).length
                 let itemsCountElement = document.createElement("p");
                 itemsCountElement.textContent = cartItemsCount;
                 itemsCountElement.classList.add("absolute", "right-2.5", "top-1.5", "rounded-3xl", "bg-purple-500", "px-1.5", "py-0", "text-xs", "font-bold");
                 cartWrapper.appendChild(itemsCountElement);
+
+                cart = JSON.parse(cart);
+                fetch("/Cart/FetchCartItems",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body:JSON.stringify(cart)
+                });
             }
         }
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+
+         document.addEventListener('DOMContentLoaded', () => {
             updateCartCount();
         });
     </script>

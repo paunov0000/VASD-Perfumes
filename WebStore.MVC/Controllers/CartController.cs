@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using WebStore.Core.Model.Product;
 using static WebStore.Core.Constants.TempDataKeyConstants;
 
@@ -9,18 +10,20 @@ namespace WebStore.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var productModels = new List<ProductCartViewModel>();
+
+            if (TempData["CartItems"] != null)
+            {
+                productModels = JsonConvert.DeserializeObject<List<ProductCartViewModel>>(TempData["CartItems"].ToString());
+            }
+
+            return View(productModels);
         }
 
         [HttpPost]
-        public IActionResult Index([FromBody] List<ProductCartViewModel> productsJson)
+        public void FetchCartItems([FromBody] List<ProductCartViewModel> cartItems)
         {
-            if (!ModelState.IsValid)
-            {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
-            }
-
-            return View(productsJson);
+            TempData["CartItems"] = JsonConvert.SerializeObject(cartItems);
         }
     }
 }

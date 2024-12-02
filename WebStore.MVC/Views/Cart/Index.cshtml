@@ -6,36 +6,11 @@
 
 <h1>Your cart</h1>
 <div id="cart-items-container">
-    <p>Loading cart items...</p>
+    @foreach(var product in Model)
+    {
+        <p>@product.Name</p>
+        <p>@product.Price</p>
+        <p>@product.Quantity</p>
+        <p>@product.TotalPrice</p>
+    }
 </div>
-
-@section Scripts {
-    <script>
-        document.addEventListener("DOMContentLoaded", test);
-
-        async function test()
-        {
-            let cartItems = localStorage.getItem("cart");
-
-            if(cartItems)
-            {
-                cartItems = JSON.parse(cartItems);
-                await fetch('/Cart/Index', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(cartItems)
-                }).then(response => {
-                    let cartContainer = document.getElementById("cart-items-container");
-                    if(!response.ok){
-                    cartContainer.innerHTML = 'Failed to get your cart';
-                    }
-                    else{
-                        cartContainer.innerHTML = '';
-                    }
-                });
-            }
-        }
-    </script>
-}
